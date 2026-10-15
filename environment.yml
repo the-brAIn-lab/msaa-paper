@@ -1,0 +1,19 @@
+name: msaa-paper
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
+  - scikit-learn
+  - nibabel
+  - nilearn
+  - seaborn
+  - pillow
+  - threadpoolctl
+  - jupyter
+  - nbformat
+  - nbconvert
+  - pip

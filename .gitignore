@@ -1,0 +1,101 @@
+# ------------------------------------------------------------
+# OS / editor / Python / Jupyter clutter
+# ------------------------------------------------------------
+.DS_Store
+Thumbs.db
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# ------------------------------------------------------------
+# MATLAB data inputs
+#
+# The reproducible analysis starts from pieman_data.mat and
+# pieman_posterior_K700.mat, but these large inputs should be
+# obtained separately and placed in data/input/.
+# MATLAB source code (*.m), if added later, is NOT ignored.
+# ------------------------------------------------------------
+*.mat
+
+# ------------------------------------------------------------
+# Large binary / fitted-model intermediates
+# ------------------------------------------------------------
+*.npz
+*.npy
+*.pkl
+*.pickle
+*.joblib
+*.h5
+*.hdf5
+
+# ------------------------------------------------------------
+# Canonical local data areas
+# Keep directory placeholders, ignore generated/intermediate data.
+# ------------------------------------------------------------
+data/input/*
+!data/input/.gitkeep
+!data/input/README.md
+
+data/derived/*
+!data/derived/.gitkeep
+!data/derived/README.md
+
+data/reference/*
+!data/reference/.gitkeep
+!data/reference/README.md
+
+# Generic intermediate/cache directories wherever they occur
+**/intermediate/
+**/cache/
+**/tmp/
+**/temp/
+
+# ------------------------------------------------------------
+# New pipeline outputs
+# ------------------------------------------------------------
+outputs/*
+!outputs/.gitkeep
+!outputs/smoke/
+!outputs/smoke/.gitkeep
+!outputs/mini_paper/
+!outputs/mini_paper/.gitkeep
+
+# ------------------------------------------------------------
+# Original-analysis generated result directories
+# These can be regenerated from the analysis code and inputs.
+# ------------------------------------------------------------
+msaa_flexible_outputs_npz/
+msaa_four_condition_ratio_within_outputs_npz/
+msaa_condrank_decoding_outputs_*/
+msaa_flexible_decoding_outputs_*/
+msaa_heldout_topm_outputs_*/
+msaa_edge_trim_sensitivity_*/
+pca_aa_equivalence_outputs/
+pca_matched_baseline_outputs/
+four_condition_ratio_decoding_outputs/
+aa_information_concentration_outputs/
+temporal_decoding_summaries/
+simulation_*_outputs/
+postprocess_*_outputs/
+revision_*_outputs/
+paper_figure_outputs/
+paper_decoding_figures/
+paper_compression_ratio_figures/
+figures/
+tables/generated/
+
+# Optional local reference copy from the old repo
+reference/original_outputs/
+
+# ------------------------------------------------------------
+# Logs / local run metadata
+# ------------------------------------------------------------
+*.log
+*.out
+*.err

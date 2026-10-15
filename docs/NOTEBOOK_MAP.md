@@ -1,0 +1,124 @@
+# Notebook map
+
+The reorganized folders contain curated working copies. The complete code-only notebook snapshot from the uploaded repo is preserved under `legacy/original_notebooks/`.
+
+## Curated analysis and figure notebooks
+
+- `analysis/01_fit/001_fit_msaa_flexible.ipynb`
+- `analysis/02_decode/002_decode_msaa.ipynb`
+- `analysis/02_decode/003_postprocess_across_spatial.ipynb`
+- `analysis/02_decode/004_postprocess_across_temporal_weaksqrt_saved_decoding_original_brainplots.ipynb`
+- `analysis/02_decode/005_postprocess_within_spatial.ipynb`
+- `analysis/02_decode/006_postprocess_within_temporal.ipynb`
+- `analysis/03_core_results/009_decoding_plots_outputs.ipynb`
+- `analysis/03_core_results/010_decoding_compression_ratio.ipynb`
+- `analysis/03_core_results/011_decoding_normalized_component_ratio_stats.ipynb`
+- `analysis/03_core_results/012_topm_bump_normalized_component_ratio_spatial_minus_temporal.ipynb`
+- `analysis/03_core_results/014_top_decoding_archetype_clustering_validation_spatial_enabled.ipynb`
+- `analysis/03_core_results/015_representational_efficiency_topm_geometry.ipynb`
+- `analysis/03_core_results/016_joint_decoding_clustering_score.ipynb`
+- `analysis/03_core_results/017_exact_matched_ratio_topm_decoding_heatmaps.ipynb`
+- `analysis/03_core_results/revision_04_heldout_topm_msaa_crossfit.ipynb`
+- `analysis/03_core_results/revision_05_matched_pca_aa_equivalence_integrated_benchmark.ipynb`
+- `analysis/03_core_results/revision_test_AA_information_concentration.ipynb`
+- `analysis/04_interpretation/revision_06_archetype_interpretation_K46_independent_groups.ipynb`
+- `analysis/05_robustness/013_network_localization_analysis_strict_null_matched_ratio.ipynb`
+- `analysis/05_robustness/revision_07_K46_edge_trim_heldout_top5_sensitivity.ipynb`
+- `analysis/06_four_condition/01_fit_four_condition.ipynb`
+- `analysis/06_four_condition/02_decode_four_condition.ipynb`
+- `analysis/06_four_condition/03_four_condition_figures.ipynb`
+- `analysis/07_simulations/PCA_ICA_coupling_mechanisms.ipynb`
+- `analysis/07_simulations/PCA_ICA_coupling_mechanisms_revised.ipynb`
+- `analysis/07_simulations/revision_benchmark_simulation_02.ipynb`
+- `analysis/07_simulations/revision_extended_benchmark_05.ipynb`
+- `analysis/07_simulations/revision_four_regime_benchmark.ipynb`
+- `analysis/07_simulations/revision_simple_simulation_01.ipynb`
+- `analysis/07_simulations/revision_simulation.ipynb`
+- `analysis/07_simulations/revision_simulation_soft_membership_04.ipynb`
+- `analysis/07_simulations/revision_three_regime_with_paired_inference_03.ipynb`
+- `paper/main_figures/paper_figure02_empirical_PCA_MSAA_benchmark_main.ipynb`
+- `paper/main_figures/paper_figure03_PCA_MSAA_simulation_benchmark.ipynb`
+- `paper/main_figures/paper_figure04_heldout_sparse_MSAA_condensed_fixed.ipynb`
+- `paper/main_figures/paper_figure05_selected_K46_archetypes.ipynb`
+- `paper/main_figures/paper_figure06_support_and_robustness.ipynb`
+- `paper/supplement/paper_supp_figure_PCA_validation_condensed.ipynb`
+- `paper/supplement/supp_01_PCA_validation_condensed.ipynb`
+- `paper/supplement/supp_02_joint_intact_word_convergence.ipynb`
+- `paper/supplement/supp_03_full_across_within_ratio_landscapes.ipynb`
+- `paper/supplement/supp_04_same_data_vs_heldout_topm.ipynb`
+- `paper/supplement/supp_05_edge_trim_diagnostics.ipynb`
+- `paper/supplement/supp_06_paragraph_four_condition_validation.ipynb`
+- `paper/supplement/supp_07_network_localization_nulls_fixed.ipynb`
+- `paper/supplement/supp_08_clustering_geometry.ipynb`
+- `paper/supplement/supp_08_joint_decoding_clustering_new_topm_crossfit.ipynb`
+- `paper/supplement/supp_08_joint_decoding_clustering_new_topm_crossfit_RESUMABLE.ipynb`
+- `paper/supplement/supp_08_joint_decoding_clustering_new_topm_crossfit_RESUMABLE_fixed.ipynb`
+- `paper/supplement/supp_08_joint_decoding_clustering_replicated.ipynb`
+- `paper/supplement/supp_09_simulation_overlap_dynamics.ipynb`
+- `paper/supplement/supp_10_simulation_robustness.ipynb`
+- `paper/supplement/supp_11_simulation_temporal.ipynb`
+
+## Complete legacy/source snapshot
+
+- `legacy/original_notebooks/001_fit_msaa_flexible.ipynb`
+- `legacy/original_notebooks/002_decode_msaa.ipynb`
+- `legacy/original_notebooks/003_postprocess_across_spatial.ipynb`
+- `legacy/original_notebooks/004_postprocess_across_temporal_weaksqrt_saved_decoding_original_brainplots.ipynb`
+- `legacy/original_notebooks/005_postprocess_within_spatial.ipynb`
+- `legacy/original_notebooks/006_postprocess_within_temporal.ipynb`
+- `legacy/original_notebooks/007_across_cluster_selected_decode.ipynb`
+- `legacy/original_notebooks/008_across_target3_cluster_heatmaps.ipynb`
+- `legacy/original_notebooks/009_decoding_plots_outputs.ipynb`
+- `legacy/original_notebooks/010_decoding_compression_ratio.ipynb`
+- `legacy/original_notebooks/011_decoding_normalized_component_ratio_stats.ipynb`
+- `legacy/original_notebooks/012_topm_bump_normalized_component_ratio_spatial_minus_temporal.ipynb`
+- `legacy/original_notebooks/013_network_localization_analysis_strict_null_matched_ratio.ipynb`
+- `legacy/original_notebooks/014_top_decoding_archetype_clustering_validation_spatial_enabled.ipynb`
+- `legacy/original_notebooks/015_representational_efficiency_topm_geometry.ipynb`
+- `legacy/original_notebooks/016_joint_decoding_clustering_score.ipynb`
+- `legacy/original_notebooks/017_exact_matched_ratio_topm_decoding_heatmaps.ipynb`
+- `legacy/original_notebooks/PCA_ICA_coupling_mechanisms.ipynb`
+- `legacy/original_notebooks/PCA_ICA_coupling_mechanisms_revised.ipynb`
+- `legacy/original_notebooks/paper_figure02_empirical_PCA_MSAA_benchmark_main.ipynb`
+- `legacy/original_notebooks/paper_figure03_PCA_MSAA_simulation_benchmark.ipynb`
+- `legacy/original_notebooks/paper_figure04_heldout_sparse_MSAA_condensed_fixed.ipynb`
+- `legacy/original_notebooks/paper_figure05_selected_K46_archetypes.ipynb`
+- `legacy/original_notebooks/paper_figure06_support_and_robustness.ipynb`
+- `legacy/original_notebooks/paper_replicate_current_manuscript_figure_3.ipynb`
+- `legacy/original_notebooks/paper_supp_figure_PCA_validation_condensed.ipynb`
+- `legacy/original_notebooks/revision_01_fit_four_condition_ratio_matched_msaa_paragraph_fixed.ipynb`
+- `legacy/original_notebooks/revision_02_decode_four_condition_ratio_matched_msaa_pca_htfa_paragraph_fixed.ipynb`
+- `legacy/original_notebooks/revision_03_four_condition_ratio_matched_figures_paragraph_fixed.ipynb`
+- `legacy/original_notebooks/revision_04_heldout_topm_msaa_crossfit.ipynb`
+- `legacy/original_notebooks/revision_05_matched_pca_aa_equivalence_integrated_benchmark.ipynb`
+- `legacy/original_notebooks/revision_06_archetype_interpretation_K46_independent_groups.ipynb`
+- `legacy/original_notebooks/revision_07_K46_edge_trim_heldout_top5_sensitivity.ipynb`
+- `legacy/original_notebooks/revision_08_figure5_selected_K46_archetypes_summary_layout.ipynb`
+- `legacy/original_notebooks/revision_benchmark_simulation_02.ipynb`
+- `legacy/original_notebooks/revision_extended_benchmark_05.ipynb`
+- `legacy/original_notebooks/revision_four_regime_benchmark.ipynb`
+- `legacy/original_notebooks/revision_simple_simulation_01.ipynb`
+- `legacy/original_notebooks/revision_simulation.ipynb`
+- `legacy/original_notebooks/revision_simulation_soft_membership_04.ipynb`
+- `legacy/original_notebooks/revision_test_AA_information_concentration.ipynb`
+- `legacy/original_notebooks/revision_three_regime_with_paired_inference_03.ipynb`
+- `legacy/original_notebooks/revisions_matched_pca_aa_equivalence.ipynb`
+- `legacy/original_notebooks/revisions_matched_pca_baseline.ipynb`
+- `legacy/original_notebooks/supp_01_PCA_validation_condensed.ipynb`
+- `legacy/original_notebooks/supp_02_joint_intact_word_convergence.ipynb`
+- `legacy/original_notebooks/supp_03_full_across_within_ratio_landscapes.ipynb`
+- `legacy/original_notebooks/supp_04_same_data_vs_heldout_topm.ipynb`
+- `legacy/original_notebooks/supp_05_edge_trim_diagnostics.ipynb`
+- `legacy/original_notebooks/supp_06_paragraph_four_condition_validation.ipynb`
+- `legacy/original_notebooks/supp_07_network_localization_nulls_fixed.ipynb`
+- `legacy/original_notebooks/supp_08_clustering_geometry.ipynb`
+- `legacy/original_notebooks/supp_08_joint_decoding_clustering_new_topm_crossfit.ipynb`
+- `legacy/original_notebooks/supp_08_joint_decoding_clustering_new_topm_crossfit_RESUMABLE.ipynb`
+- `legacy/original_notebooks/supp_08_joint_decoding_clustering_new_topm_crossfit_RESUMABLE_fixed.ipynb`
+- `legacy/original_notebooks/supp_08_joint_decoding_clustering_replicated.ipynb`
+- `legacy/original_notebooks/supp_09_simulation_overlap_dynamics.ipynb`
+- `legacy/original_notebooks/supp_10_simulation_robustness.ipynb`
+- `legacy/original_notebooks/supp_11_simulation_temporal.ipynb`
+
+**Curated notebook copies:** 53
+**Notebooks in source snapshot:** 59

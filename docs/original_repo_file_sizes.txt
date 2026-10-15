@@ -1,0 +1,2429 @@
+223M	./data/pieman/raw/pieman_posterior_K700.mat
+211M	./data/pieman/raw/pieman_data.mat
+172M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K700.npz
+151M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K600.npz
+130M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K300.npz
+119M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K257.npz
+113M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K500.npz
+110M	./data/pieman/raw/niis/sub-002-task-intact1.nii.gz
+107M	./data/pieman/raw/niis/sub-005-task-intact1.nii.gz
+104M	./data/pieman/raw/niis/sub-003-task-intact1.nii.gz
+103M	./data/pieman/raw/niis/sub-001-task-intact1.nii.gz
+ 96M	./data/pieman/raw/niis/sub-004-task-intact1.nii.gz
+ 90M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K400.npz
+ 85M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K214.npz
+ 82M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K200.npz
+ 78M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K171.npz
+ 66M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K129.npz
+ 66M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K300.npz
+ 62M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_intact_K700.npz
+ 62M	./msaa_flexible_outputs_npz/spatialAA_within_intact_K700.npz
+ 61M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_word_K700.npz
+ 61M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_rest_K700.npz
+ 61M	./msaa_flexible_outputs_npz/spatialAA_within_word_K700.npz
+ 61M	./msaa_flexible_outputs_npz/spatialAA_within_rest_K700.npz
+ 58M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K108.npz
+ 57M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K252.npz
+ 55M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K100.npz
+ 51M	./msaa_flexible_outputs_npz/spatialAA_within_word_K600.npz
+ 50M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K90.npz
+ 48M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_word_K300.npz
+ 48M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_intact_K300.npz
+ 48M	./msaa_flexible_outputs_npz/temporalAA_within_word_K300.npz
+ 48M	./msaa_flexible_outputs_npz/temporalAA_within_word_K257.npz
+ 48M	./msaa_flexible_outputs_npz/temporalAA_within_intact_K300.npz
+ 48M	./msaa_flexible_outputs_npz/spatialAA_within_rest_K600.npz
+ 48M	./msaa_flexible_outputs_npz/spatialAA_within_intact_K600.npz
+ 47M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K210.npz
+ 46M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K81.npz
+ 45M	./paper_figure_outputs/new_topm_crossfit_clustering_long.csv
+ 45M	./msaa_flexible_outputs_npz/temporalAA_within_rest_K257.npz
+ 45M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K200.npz
+ 43M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_rest_K300.npz
+ 43M	./msaa_flexible_outputs_npz/temporalAA_within_rest_K300.npz
+ 43M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K189.npz
+ 42M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K75.npz
+ 41M	./msaa_heldout_topm_outputs_spatial_across/heldout_per_archetype_ranking_runs.csv
+ 41M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_word_K525.npz
+ 41M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_rest_K525.npz
+ 41M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_intact_K525.npz
+ 40M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K175.npz
+ 40M	./data/archetypes/all_results_265.zip
+ 39M	./msaa_flexible_outputs_npz/temporalAA_within_intact_K257.npz
+ 39M	./013_network_localization_analysis_strict_null_matched_ratio.ipynb
+ 38M	./msaa_flexible_outputs_npz/spatialAA_within_word_K500.npz
+ 38M	./msaa_flexible_outputs_npz/spatialAA_within_rest_K500.npz
+ 38M	./msaa_flexible_outputs_npz/spatialAA_within_intact_K500.npz
+ 37M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K65.npz
+ 36M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_word_K225.npz
+ 35M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K60.npz
+ 33M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_intact_K225.npz
+ 33M	./msaa_flexible_outputs_npz/temporalAA_within_word_K214.npz
+ 33M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K140.npz
+ 32M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_rest_K225.npz
+ 32M	./msaa_flexible_outputs_npz/temporalAA_within_intact_K214.npz
+ 32M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K55.npz
+ 32M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K54.npz
+ 31M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K126.npz
+ 30M	./msaa_flexible_outputs_npz/temporalAA_within_rest_K214.npz
+ 30M	./msaa_flexible_outputs_npz/spatialAA_within_word_K400.npz
+ 30M	./msaa_flexible_outputs_npz/spatialAA_within_rest_K400.npz
+ 30M	./msaa_flexible_outputs_npz/spatialAA_within_intact_K400.npz
+ 29M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K50.npz
+ 28M	./msaa_flexible_outputs_npz/temporalAA_within_intact_K171.npz
+ 27M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_intact_K350.npz
+ 27M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K105.npz
+ 26M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_intact_K150.npz
+ 26M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_word_K350.npz
+ 26M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_rest_K350.npz
+ 26M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_paragraph_K700.npz
+ 26M	./msaa_flexible_outputs_npz/temporalAA_within_word_K171.npz
+ 26M	./msaa_flexible_outputs_npz/temporalAA_within_rest_K171.npz
+ 26M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K45.npz
+ 26M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K100.npz
+ 24M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_rest_K150.npz
+ 24M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K40.npz
+ 23M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_word_K150.npz
+ 23M	./msaa_flexible_outputs_npz/spatialAA_within_word_K300.npz
+ 23M	./msaa_flexible_outputs_npz/spatialAA_within_intact_K300.npz
+ 23M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K88.npz
+ 22M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_paragraph_K272.npz
+ 22M	./msaa_flexible_outputs_npz/temporalAA_within_rest_K129.npz
+ 22M	./msaa_flexible_outputs_npz/temporalAA_within_intact_K129.npz
+ 22M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K38.npz
+ 22M	./msaa_flexible_outputs_npz/spatialAA_within_rest_K300.npz
+ 22M	./.ipynb_checkpoints/demo_msaa-Copy1-checkpoint.ipynb
+ 21M	./notebook_attempts/04_spatialAA_within_decoding_inspection_from_flexible_outputs.ipynb
+ 21M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_rest_K120.npz
+ 21M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_intact_K120.npz
+ 21M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_word_K280.npz
+ 21M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_rest_K280.npz
+ 21M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_intact_K280.npz
+ 21M	./msaa_flexible_outputs_npz/temporalAA_within_word_K129.npz
+ 21M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K35.npz
+ 21M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K75.npz
+ 20M	./notebook_attempts/03_temporalAA_TRANSPOSED_within_archetype_inspection_from_npz.ipynb
+ 20M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_word_K120.npz
+ 20M	./msaa_flexible_outputs_npz/temporalAA_within_rest_K108.npz
+ 20M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K70.npz
+ 20M	./004_postprocess_across_temporal_weaksqrt_saved_decoding_original_brainplots.ipynb
+ 19M	./msaa_flexible_outputs_npz/temporalAA_within_intact_K108.npz
+ 19M	./msaa_flexible_outputs_npz/spatialAA_within_word_K252.npz
+ 19M	./msaa_flexible_outputs_npz/spatialAA_within_rest_K252.npz
+ 19M	./msaa_flexible_outputs_npz/spatialAA_within_intact_K252.npz
+ 19M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K65.npz
+ 18M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_paragraph_K525.npz
+ 18M	./msaa_flexible_outputs_npz/temporalAA_within_word_K108.npz
+ 18M	./msaa_flexible_outputs_npz/temporalAA_within_rest_K100.npz
+ 18M	./msaa_flexible_outputs_npz/temporalAA_within_intact_K100.npz
+ 18M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K30.npz
+ 18M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K63.npz
+ 18M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K60.npz
+ 17M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_rest_K90.npz
+ 17M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_paragraph_K204.npz
+ 17M	./msaa_flexible_outputs_npz/temporalAA_within_word_K100.npz
+ 17M	./msaa_flexible_outputs_npz/temporalAA_within_rest_K90.npz
+ 17M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K27.npz
+ 17M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K58.npz
+ 17M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K56.npz
+ 17M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K55.npz
+ 16M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_word_K90.npz
+ 16M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_intact_K90.npz
+ 16M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_word_K210.npz
+ 16M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_rest_K210.npz
+ 16M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_intact_K210.npz
+ 16M	./msaa_flexible_outputs_npz/temporalAA_within_word_K90.npz
+ 16M	./msaa_flexible_outputs_npz/temporalAA_within_intact_K90.npz
+ 16M	./msaa_flexible_outputs_npz/spatialAA_within_word_K210.npz
+ 16M	./msaa_flexible_outputs_npz/spatialAA_within_rest_K210.npz
+ 16M	./msaa_flexible_outputs_npz/spatialAA_within_rest_K200.npz
+ 16M	./msaa_flexible_outputs_npz/spatialAA_within_intact_K210.npz
+ 16M	./msaa_flexible_outputs_npz/spatialAA_within_intact_K200.npz
+ 16M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K54.npz
+ 16M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K53.npz
+ 16M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K52.npz
+ 16M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K50.npz
+ 15M	./msaa_flexible_outputs_npz/temporalAA_within_rest_K81.npz
+ 15M	./msaa_flexible_outputs_npz/temporalAA_within_intact_K81.npz
+ 15M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K25.npz
+ 15M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K23.npz
+ 15M	./msaa_flexible_outputs_npz/spatialAA_within_word_K200.npz
+ 15M	./msaa_flexible_outputs_npz/spatialAA_within_word_K189.npz
+ 15M	./msaa_flexible_outputs_npz/spatialAA_within_rest_K189.npz
+ 15M	./msaa_flexible_outputs_npz/spatialAA_within_intact_K189.npz
+ 15M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K48.npz
+ 15M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K46.npz
+ 15M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K45.npz
+ 14M	./notebook_attempts/05_postprocess_within_spatial_old.ipynb
+ 14M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_rest_K75.npz
+ 14M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_intact_K75.npz
+ 14M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_word_K175.npz
+ 14M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_rest_K175.npz
+ 14M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_intact_K175.npz
+ 14M	./msaa_flexible_outputs_npz/temporalAA_within_word_K81.npz
+ 14M	./msaa_flexible_outputs_npz/temporalAA_within_rest_K75.npz
+ 14M	./msaa_flexible_outputs_npz/temporalAA_within_intact_K75.npz
+ 14M	./msaa_flexible_outputs_npz/spatialAA_within_word_K175.npz
+ 14M	./msaa_flexible_outputs_npz/spatialAA_within_rest_K175.npz
+ 14M	./msaa_flexible_outputs_npz/spatialAA_within_intact_K175.npz
+ 14M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K44.npz
+ 14M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K42.npz
+ 14M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K40.npz
+ 14M	./007_across_cluster_selected_decode.ipynb
+ 14M	./.ipynb_checkpoints/006_postprocess_within_temporal_refined-checkpoint.ipynb
+ 14M	./.ipynb_checkpoints/006_postprocess_within_temporal_condition_specific-checkpoint.ipynb
+ 14M	./.ipynb_checkpoints/005_postprocess_within_spatial_refined-checkpoint.ipynb
+ 14M	./.ipynb_checkpoints/005_postprocess_within_spatial_condition_specific-checkpoint.ipynb
+ 13M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_word_K75.npz
+ 13M	./msaa_flexible_outputs_npz/temporalAA_within_word_K75.npz
+ 13M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K20.npz
+ 12M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_rest_K60.npz
+ 12M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_paragraph_K350.npz
+ 12M	./msaa_flexible_outputs_npz/temporalAA_within_rest_K60.npz
+ 12M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K18.npz
+ 12M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K35.npz
+ 12M	./008_across_target3_cluster_heatmaps.ipynb
+ 12M	./.ipynb_checkpoints/008_across_target3_cluster_heatmaps-checkpoint.ipynb
+ 12M	./.ipynb_checkpoints/007_across_target3_cluster_selected_decode_visualize-checkpoint.ipynb
+ 12M	./.ipynb_checkpoints/007_across_target3_cluster_selected_decode_visualize_explicit_save_v2-Copy1-checkpoint.ipynb
+ 12M	./.ipynb_checkpoints/007_across_target3_cluster_selected_decode_visualize_explicit_save_v2-checkpoint.ipynb
+ 11M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_word_K60.npz
+ 11M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_paragraph_K136.npz
+ 11M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_intact_K60.npz
+ 11M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_word_K140.npz
+ 11M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_rest_K140.npz
+ 11M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_intact_K140.npz
+ 11M	./msaa_flexible_outputs_npz/temporalAA_within_word_K60.npz
+ 11M	./msaa_flexible_outputs_npz/temporalAA_within_intact_K60.npz
+ 11M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K17.npz
+ 11M	./msaa_flexible_outputs_npz/spatialAA_within_word_K140.npz
+ 11M	./msaa_flexible_outputs_npz/spatialAA_within_rest_K140.npz
+ 11M	./msaa_flexible_outputs_npz/spatialAA_within_intact_K140.npz
+ 11M	./msaa_flexible_outputs_npz/spatialAA_within_intact_K126.npz
+ 11M	./014_top_decoding_archetype_clustering_validation_spatial_enabled.ipynb
+ 10M	./notebook_attempts/demo_msaa-Copy1.ipynb
+ 10M	./msaa_flexible_outputs_npz/temporalAA_within_word_K54.npz
+ 10M	./msaa_flexible_outputs_npz/temporalAA_within_rest_K54.npz
+ 10M	./msaa_flexible_outputs_npz/temporalAA_within_intact_K54.npz
+ 10M	./msaa_flexible_outputs_npz/spatialAA_within_word_K126.npz
+ 10M	./msaa_flexible_outputs_npz/spatialAA_within_rest_K126.npz
+9.9M	./msaa_flexible_outputs_npz/temporalAA_within_rest_K50.npz
+9.8M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K15.npz
+9.8M	./data/archetypes/all_results_50.zip
+9.7M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K25.npz
+9.6M	./msaa_flexible_outputs_npz/temporalAA_within_intact_K50.npz
+9.4M	./notebook_attempts/decoding_msaa_across.ipynb
+9.4M	./msaa_flexible_outputs_npz/temporalAA_within_word_K50.npz
+9.4M	./.ipynb_checkpoints/decoding_msaa_across-checkpoint.ipynb
+9.4M	./.ipynb_checkpoints/003_postprocess_across_spatial_saved_decoding_no_recursion_v2-Copy1-checkpoint.ipynb
+9.3M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_paragraph_K280.npz
+9.3M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K14.npz
+9.3M	./.ipynb_checkpoints/003_postprocess_across_spatial_saved_decoding_no_recursion-checkpoint.ipynb
+9.3M	./.ipynb_checkpoints/003_postprocess_across_spatial_saved_decoding_no_recursion_v2-checkpoint.ipynb
+9.3M	./.ipynb_checkpoints/003_postprocess_across_spatial_explicit_save_v2-checkpoint.ipynb
+9.3M	./.ipynb_checkpoints/003_postprocess_across_spatial_condition_specific-checkpoint.ipynb
+9.3M	./.ipynb_checkpoints/003_postprocess_across_spatial_clean_cached-checkpoint.ipynb
+9.3M	./.ipynb_checkpoints/003_postprocess_across_spatial_cached_v2_helpers-checkpoint.ipynb
+9.3M	./.ipynb_checkpoints/003_postprocess_across_spatial_autosave_once-checkpoint.ipynb
+9.1M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_rest_K105.npz
+9.1M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_intact_K105.npz
+9.1M	./msaa_flexible_outputs_npz/spatialAA_within_rest_K105.npz
+9.1M	./msaa_flexible_outputs_npz/spatialAA_within_intact_K105.npz
+9.0M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_rest_K45.npz
+9.0M	./msaa_flexible_outputs_npz/temporalAA_within_rest_K45.npz
+8.9M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_paragraph_K109.npz
+8.9M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K21.npz
+8.8M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_intact_K45.npz
+8.8M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_word_K105.npz
+8.8M	./msaa_flexible_outputs_npz/temporalAA_within_intact_K45.npz
+8.8M	./msaa_flexible_outputs_npz/spatialAA_within_word_K105.npz
+8.7M	./msaa_flexible_outputs_npz/spatialAA_within_rest_K100.npz
+8.6M	./msaa_flexible_outputs_npz/spatialAA_within_intact_K100.npz
+8.5M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_word_K45.npz
+8.5M	./msaa_flexible_outputs_npz/temporalAA_within_word_K45.npz
+8.5M	./msaa_flexible_outputs_npz/spatialAA_within_word_K100.npz
+8.2M	./016_joint_decoding_clustering_score.ipynb
+8.0M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_rest_K88.npz
+8.0M	./msaa_flexible_outputs_npz/spatialAA_within_rest_K88.npz
+7.9M	./notebook_attempts/decoding_msaa-Copy1.ipynb
+7.9M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_intact_K88.npz
+7.9M	./msaa_flexible_outputs_npz/spatialAA_within_intact_K88.npz
+7.9M	./.ipynb_checkpoints/decoding_msaa-Copy1-checkpoint.ipynb
+7.8M	./notebook_attempts/04_postprocess_across_temporal_old_2.ipynb
+7.7M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_rest_K38.npz
+7.7M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_word_K88.npz
+7.7M	./msaa_flexible_outputs_npz/temporalAA_within_rest_K38.npz
+7.7M	./msaa_flexible_outputs_npz/spatialAA_within_word_K88.npz
+7.7M	./.ipynb_checkpoints/004_postprocess_across_temporal_weaksqrt_saved_decoding-checkpoint.ipynb
+7.7M	./.ipynb_checkpoints/004_postprocess_across_temporal_weaksqrt_saved_decoding_original_brainplots-checkpoint.ipynb
+7.7M	./.ipynb_checkpoints/004_postprocess_across_temporal_saved_decoding-checkpoint.ipynb
+7.7M	./.ipynb_checkpoints/004_postprocess_across_temporal_explicit_save_v2-checkpoint.ipynb
+7.7M	./.ipynb_checkpoints/004_postprocess_across_temporal_condition_specific-checkpoint.ipynb
+7.6M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_intact_K38.npz
+7.6M	./msaa_flexible_outputs_npz/temporalAA_within_intact_K38.npz
+7.5M	./notebook_attempts/04_postprocess_across_temporal_old_3.ipynb
+7.5M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_word_K38.npz
+7.5M	./msaa_flexible_outputs_npz/temporalAA_within_word_K38.npz
+7.4M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K11.npz
+7.2M	./msaa_flexible_outputs_npz/temporalAA_within_rest_K35.npz
+7.2M	./msaa_flexible_outputs_npz/spatialAA_within_rest_K75.npz
+7.1M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_paragraph_K210.npz
+7.0M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_paragraph_K82.npz
+7.0M	./msaa_flexible_outputs_npz/temporalAA_within_word_K35.npz
+7.0M	./msaa_flexible_outputs_npz/temporalAA_within_intact_K35.npz
+7.0M	./msaa_flexible_outputs_npz/spatialAA_within_intact_K75.npz
+6.8M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_rest_K70.npz
+6.8M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K10.npz
+6.8M	./msaa_flexible_outputs_npz/spatialAA_within_word_K75.npz
+6.8M	./msaa_flexible_outputs_npz/spatialAA_within_rest_K70.npz
+6.7M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_intact_K70.npz
+6.7M	./msaa_flexible_outputs_npz/spatialAA_within_intact_K70.npz
+6.5M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_word_K70.npz
+6.5M	./msaa_flexible_outputs_npz/spatialAA_within_word_K70.npz
+6.4M	./notebook_attempts/decoding_msaa.ipynb
+6.4M	./notebook_attempts/04_postprocess_across_temporal_old.ipynb
+6.4M	./.ipynb_checkpoints/decoding_msaa-checkpoint.ipynb
+6.4M	./.ipynb_checkpoints/04_postprocess_across_temporal_old-checkpoint.ipynb
+6.3M	./msaa_flexible_outputs_npz/spatialAA_within_rest_K63.npz
+6.3M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K14.npz
+6.2M	./notebook_attempts/decoding_msaa_across-Copy1.ipynb
+6.2M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_rest_K30.npz
+6.2M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_intact_K30.npz
+6.2M	./msaa_flexible_outputs_npz/temporalAA_within_rest_K30.npz
+6.2M	./msaa_flexible_outputs_npz/temporalAA_within_intact_K30.npz
+6.2M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K9.npz
+6.2M	./msaa_flexible_outputs_npz/spatialAA_within_intact_K63.npz
+6.1M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_word_K30.npz
+6.1M	./msaa_flexible_outputs_npz/temporalAA_within_word_K30.npz
+6.1M	./msaa_flexible_outputs_npz/spatialAA_within_word_K63.npz
+6.1M	./017_exact_matched_ratio_topm_decoding_heatmaps.ipynb
+6.0M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_paragraph_K175.npz
+6.0M	./006_postprocess_within_temporal.ipynb
+5.9M	./005_postprocess_within_spatial.ipynb
+5.8M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_paragraph_K68.npz
+5.7M	./msaa_heldout_topm_outputs_spatial_across/heldout_topm_crossfit_runs.csv
+5.7M	./msaa_flexible_outputs_npz/spatialAA_within_rest_K53.npz
+5.6M	./simulation_soft_membership_revised_outputs/empirical_K46_node_membership_summary.csv
+5.6M	./simulation_soft_membership_outputs/empirical_K46_node_membership_summary.csv
+5.6M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_rest_K52.npz
+5.6M	./msaa_flexible_outputs_npz/temporalAA_within_rest_K27.npz
+5.6M	./msaa_flexible_outputs_npz/temporalAA_within_intact_K27.npz
+5.5M	./msaa_flexible_outputs_npz/temporalAA_within_word_K27.npz
+5.5M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K8.npz
+5.5M	./msaa_flexible_outputs_npz/spatialAA_within_rest_K50.npz
+5.5M	./msaa_flexible_outputs_npz/spatialAA_within_intact_K53.npz
+5.4M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_intact_K52.npz
+5.4M	./msaa_flexible_outputs_npz/spatialAA_within_word_K53.npz
+5.3M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_word_K52.npz
+5.3M	./msaa_flexible_outputs_npz/temporalAA_within_intact_K25.npz
+5.3M	./msaa_flexible_outputs_npz/spatialAA_within_intact_K50.npz
+5.2M	./msaa_flexible_outputs_npz/temporalAA_within_word_K25.npz
+5.2M	./msaa_flexible_outputs_npz/temporalAA_within_rest_K25.npz
+5.1M	./notebook_attempts/03_postprocess_across_spatial_old.ipynb
+5.1M	./msaa_flexible_outputs_npz/spatialAA_within_word_K50.npz
+5.0M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_paragraph_K140.npz
+4.9M	./msaa_flexible_outputs_npz/temporalAA_within_word_K23.npz
+4.9M	./msaa_flexible_outputs_npz/temporalAA_within_rest_K23.npz
+4.9M	./msaa_flexible_outputs_npz/temporalAA_within_intact_K23.npz
+4.9M	./msaa_flexible_outputs_npz/spatialAA_within_rest_K42.npz
+4.9M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K10.npz
+4.8M	./notebook_attempts/03_spatial_acrosss_clustering_and_brainplots.ipynb
+4.8M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_paragraph_K54.npz
+4.7M	./notebook_attempts/demo_msaa.ipynb
+4.7M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_word_K22.npz
+4.7M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_rest_K22.npz
+4.7M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_intact_K22.npz
+4.7M	./015_representational_efficiency_topm_geometry.ipynb
+4.7M	./.ipynb_checkpoints/decoding_msaa_across-Copy1-checkpoint.ipynb
+4.6M	./msaa_flexible_outputs_npz/spatialAA_within_word_K42.npz
+4.6M	./msaa_flexible_outputs_npz/spatialAA_within_intact_K42.npz
+4.3M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_rest_K35.npz
+4.3M	./msaa_flexible_outputs_npz/temporalAA_within_word_K20.npz
+4.3M	./msaa_flexible_outputs_npz/temporalAA_within_rest_K20.npz
+4.3M	./msaa_flexible_outputs_npz/temporalAA_within_intact_K20.npz
+4.3M	./msaa_flexible_outputs_npz/spatialAA_within_rest_K35.npz
+4.2M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_intact_K35.npz
+4.2M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K6.npz
+4.2M	./msaa_flexible_outputs_npz/spatialAA_within_intact_K35.npz
+4.0M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_word_K35.npz
+4.0M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_paragraph_K105.npz
+4.0M	./msaa_flexible_outputs_npz/spatialAA_within_word_K35.npz
+3.9M	./msaa_flexible_outputs_npz/temporalAA_within_word_K18.npz
+3.9M	./msaa_flexible_outputs_npz/temporalAA_within_rest_K18.npz
+3.9M	./msaa_flexible_outputs_npz/temporalAA_within_intact_K18.npz
+3.8M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_paragraph_K41.npz
+3.8M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K7.npz
+3.7M	./msaa_flexible_outputs_npz/temporalAA_within_word_K17.npz
+3.7M	./msaa_flexible_outputs_npz/temporalAA_within_rest_K17.npz
+3.7M	./msaa_flexible_outputs_npz/temporalAA_within_intact_K17.npz
+3.6M	./notebook_attempts/03_postprocess_across_spatial_old_2.ipynb
+3.6M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K5.npz
+3.5M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_paragraph_K88.npz
+3.4M	./msaa_flexible_outputs_npz/spatialAA_within_rest_K25.npz
+3.3M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_word_K15.npz
+3.3M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_rest_K15.npz
+3.3M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_intact_K15.npz
+3.3M	./msaa_flexible_outputs_npz/temporalAA_within_word_K15.npz
+3.3M	./msaa_flexible_outputs_npz/temporalAA_within_rest_K15.npz
+3.3M	./msaa_flexible_outputs_npz/temporalAA_within_intact_K15.npz
+3.3M	./msaa_flexible_outputs_npz/spatialAA_within_word_K25.npz
+3.3M	./msaa_flexible_outputs_npz/spatialAA_within_intact_K25.npz
+3.3M	./msaa_condrank_decoding_outputs_spatial_across/per_archetype_mean_accuracy.csv
+3.2M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_paragraph_K34.npz
+3.2M	./003_postprocess_across_spatial.ipynb
+3.2M	./.ipynb_checkpoints/msaa_all_in_one_k_sweep_clustering_corrected-checkpoint.ipynb
+3.0M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_rest_K21.npz
+3.0M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_intact_K21.npz
+3.0M	./msaa_flexible_outputs_npz/spatialAA_within_rest_K21.npz
+3.0M	./msaa_flexible_outputs_npz/spatialAA_within_intact_K21.npz
+2.9M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_word_K21.npz
+2.9M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_paragraph_K70.npz
+2.9M	./msaa_flexible_outputs_npz/spatialAA_within_word_K21.npz
+2.9M	./msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K5.npz
+2.8M	./msaa_condrank_decoding_outputs_spatial_within/per_archetype_mean_accuracy.csv
+2.7M	./.ipynb_checkpoints/demo_msaa-checkpoint.ipynb
+2.6M	./revision_8_figure5_selected_K46_outputs/Figure5_selected_K46_archetypes_summary_layout.png
+2.6M	./paper_figure_outputs/Figure5_selected_K46_archetypes.png
+2.6M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_paragraph_K27.npz
+2.5M	./msaa_flexible_outputs_npz/temporalAA_within_word_K11.npz
+2.5M	./msaa_flexible_outputs_npz/temporalAA_within_rest_K11.npz
+2.5M	./msaa_flexible_outputs_npz/temporalAA_within_intact_K11.npz
+2.5M	./012_topm_bump_normalized_component_ratio_spatial_minus_temporal.ipynb
+2.4M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_paragraph_K52.npz
+2.3M	./msaa_flexible_outputs_npz/temporalAA_within_word_K10.npz
+2.3M	./msaa_flexible_outputs_npz/temporalAA_within_rest_K10.npz
+2.3M	./msaa_flexible_outputs_npz/temporalAA_within_intact_K10.npz
+2.2M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_word_K14.npz
+2.2M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_rest_K14.npz
+2.2M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_intact_K14.npz
+2.2M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K3.npz
+2.2M	./msaa_flexible_outputs_npz/spatialAA_within_word_K14.npz
+2.2M	./msaa_flexible_outputs_npz/spatialAA_within_rest_K14.npz
+2.2M	./msaa_flexible_outputs_npz/spatialAA_within_intact_K14.npz
+2.1M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_word_K9.npz
+2.1M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_intact_K9.npz
+2.1M	./msaa_flexible_outputs_npz/temporalAA_within_word_K9.npz
+2.1M	./msaa_flexible_outputs_npz/temporalAA_within_intact_K9.npz
+2.0M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_rest_K9.npz
+2.0M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_paragraph_K20.npz
+2.0M	./msaa_flexible_outputs_npz/temporalAA_within_rest_K9.npz
+1.9M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_paragraph_K35.npz
+1.7M	./msaa_flexible_outputs_npz/spatialAA_within_rest_K10.npz
+1.7M	./msaa_flexible_outputs_npz/spatialAA_within_intact_K10.npz
+1.6M	./revisions_matched_pca_baseline.ipynb
+1.6M	./msaa_flexible_outputs_npz/spatialAA_within_word_K10.npz
+1.6M	./msaa_condrank_decoding_outputs_temporal_across/per_archetype_mean_accuracy.csv
+1.5M	./revision_05_matched_pca_aa_equivalence_integrated_benchmark.ipynb
+1.5M	./revision_04_heldout_topm_msaa_crossfit.ipynb
+1.4M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_word_K6.npz
+1.4M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_rest_K6.npz
+1.4M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_paragraph_K14.npz
+1.4M	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_intact_K6.npz
+1.4M	./msaa_flexible_outputs_npz/temporalAA_within_word_K6.npz
+1.4M	./msaa_flexible_outputs_npz/temporalAA_within_rest_K6.npz
+1.4M	./msaa_flexible_outputs_npz/temporalAA_within_intact_K6.npz
+1.4M	./msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K2.npz
+1.3M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_word_K7.npz
+1.3M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_rest_K7.npz
+1.3M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_paragraph_K21.npz
+1.3M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_intact_K7.npz
+1.3M	./msaa_flexible_outputs_npz/spatialAA_within_word_K7.npz
+1.3M	./msaa_flexible_outputs_npz/spatialAA_within_rest_K7.npz
+1.3M	./msaa_flexible_outputs_npz/spatialAA_within_intact_K7.npz
+1.2M	./msaa_flexible_outputs_npz/temporalAA_within_word_K5.npz
+1.2M	./msaa_flexible_outputs_npz/temporalAA_within_rest_K5.npz
+1.2M	./msaa_flexible_outputs_npz/temporalAA_within_intact_K5.npz
+1.2M	./msaa_condrank_decoding_outputs_temporal_within/per_archetype_mean_accuracy.csv
+1.1M	./revision_test_AA_information_concentration.ipynb
+1.0M	./tables/003c_exact_matched_ratio_topm_heatmaps/topm_summary_exact_matched_ratios_only.csv
+1.0M	./revisions_matched_pca_aa_equivalence.ipynb
+1.0M	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_paragraph_K14.npz
+1.0M	./msaa_flexible_outputs_npz/spatialAA_within_word_K5.npz
+1.0M	./msaa_flexible_outputs_npz/spatialAA_within_rest_K5.npz
+1.0M	./msaa_flexible_outputs_npz/spatialAA_within_intact_K5.npz
+1.0M	./.ipynb_checkpoints/revision_05_matched_pca_aa_equivalence_integrated_benchmark-checkpoint.ipynb
+1.0M	./.ipynb_checkpoints/PCA_ICA_coupling_mechanisms-checkpoint.ipynb
+1.0M	./.ipynb_checkpoints/PCA_ICA_coupling_mechanisms_revised-checkpoint.ipynb
+956K	./revision_simulation.ipynb
+948K	./PCA_ICA_coupling_mechanisms_revised.ipynb
+932K	./msaa_flexible_decoding_outputs_spatial_across/per_archetype_mean_accuracy.csv
+888K	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_paragraph_K8.npz
+888K	./002_decode_msaa.ipynb
+880K	./revision_08_figure5_selected_K46_archetypes_summary_layout.ipynb
+872K	./paper_figure05_selected_K46_archetypes.ipynb
+848K	./PCA_ICA_coupling_mechanisms.ipynb
+792K	./revision_05_archetype_interpretation_and_support/selected_archetypes_main.png
+776K	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_word_K3.npz
+776K	./msaa_flexible_outputs_npz/temporalAA_within_word_K3.npz
+764K	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_intact_K3.npz
+764K	./msaa_flexible_outputs_npz/temporalAA_within_intact_K3.npz
+748K	./paper_figure_outputs/Figure6_selected_motif_support_robustness.png
+744K	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_rest_K3.npz
+744K	./msaa_flexible_outputs_npz/temporalAA_within_rest_K3.npz
+736K	./revision_06_archetype_interpretation_K46_independent_groups.ipynb
+728K	./data/archetypes/all_results_265/word/subjects/word_subj9_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj8_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj7_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj6_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj5_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj4_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj35_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj34_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj33_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj32_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj31_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj30_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj3_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj29_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj28_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj27_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj26_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj25_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj24_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj23_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj22_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj21_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj20_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj2_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj19_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj18_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj17_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj16_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj15_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj14_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj13_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj12_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj11_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj10_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj1_S.npy
+728K	./data/archetypes/all_results_265/word/subjects/word_subj0_S.npy
+728K	./data/archetypes/all_results_265/word/C.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj9_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj8_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj7_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj6_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj5_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj4_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj35_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj34_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj33_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj32_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj31_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj30_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj3_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj29_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj28_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj27_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj26_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj25_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj24_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj23_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj22_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj21_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj20_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj2_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj19_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj18_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj17_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj16_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj15_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj14_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj13_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj12_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj11_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj10_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj1_S.npy
+728K	./data/archetypes/all_results_265/rest/subjects/rest_subj0_S.npy
+728K	./data/archetypes/all_results_265/rest/C.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj9_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj8_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj7_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj6_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj5_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj4_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj35_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj34_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj33_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj32_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj31_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj30_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj3_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj29_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj28_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj27_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj26_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj25_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj24_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj23_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj22_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj21_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj20_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj2_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj19_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj18_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj17_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj16_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj15_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj14_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj13_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj12_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj11_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj10_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj1_S.npy
+728K	./data/archetypes/all_results_265/intact/subjects/intact_subj0_S.npy
+728K	./data/archetypes/all_results_265/intact/C.npy
+724K	./009_decoding_plots_outputs.ipynb
+724K	./.ipynb_checkpoints/009_decoding_plots_outputs_explicit_save_v2-checkpoint.ipynb
+724K	./.ipynb_checkpoints/009_decoding_plots_condition_specific_outputs-checkpoint.ipynb
+720K	./simulation_pca_msaa_extended_outputs/main_simulation_figure.png
+708K	./revision_03_four_condition_ratio_matched_figures_paragraph_fixed.ipynb
+704K	./msaa_edge_trim_sensitivity_K46_top5/edge_trim_per_archetype_ranking_runs.csv
+688K	./revision_extended_benchmark_05.ipynb
+684K	./notebook_attempts/04_temporalAA_TRANSPOSED_topm_gif_visualization_v2.ipynb
+632K	./.ipynb_checkpoints/02_decode_msaa_flexible_with_plots-Copy4-checkpoint.ipynb
+632K	./.ipynb_checkpoints/02_decode_msaa_flexible_with_plots-Copy3-checkpoint.ipynb
+632K	./.ipynb_checkpoints/02_decode_msaa_flexible_with_plots-Copy2-checkpoint.ipynb
+632K	./.ipynb_checkpoints/02_decode_msaa_flexible_with_plots-Copy1-checkpoint.ipynb
+628K	./.ipynb_checkpoints/002_decode_msaa_appendable_autosave_once_v2_topmfix-Copy3-checkpoint.ipynb
+628K	./.ipynb_checkpoints/002_decode_msaa_appendable_autosave_once_v2_topmfix-Copy2-checkpoint.ipynb
+628K	./.ipynb_checkpoints/002_decode_msaa_appendable_autosave_once_v2_topmfix-Copy1-checkpoint.ipynb
+616K	./notebook_attempts/demo_msaa_T.ipynb
+616K	./.ipynb_checkpoints/demo_msaa_T-checkpoint.ipynb
+612K	./msaa_four_condition_ratio_within_outputs_npz/spatialAA_within_paragraph_K7.npz
+604K	./temporal_decoding_summaries/topm_runs.csv
+600K	./msaa_heldout_topm_outputs_spatial_across/heldout_archetype_selection_stability.csv
+580K	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_paragraph_K5.npz
+576K	./paper_figure_outputs/Figure3_replication.png
+572K	./revision_simulation_soft_membership_04.ipynb
+548K	./notebook_attempts/decoding_msaa_across_all.ipynb
+548K	./.ipynb_checkpoints/decoding_msaa_across_all-checkpoint.ipynb
+528K	./revision_four_regime_benchmark.ipynb
+528K	./pca_matched_baseline_outputs/pca_variance_ranked_topm_summary.csv
+528K	./paper_figure_outputs/Supplement_joint_decoding_clustering.png
+528K	./paper_figure_outputs/Supplement_clustering_geometry.png
+516K	./msaa_flexible_outputs_npz/temporalAA_within_intact_K2.npz
+512K	./msaa_flexible_outputs_npz/temporalAA_within_word_K2.npz
+504K	./msaa_flexible_outputs_npz/temporalAA_within_rest_K2.npz
+500K	./revision_benchmark_simulation_02.ipynb
+480K	./msaa_condrank_decoding_outputs_spatial_across/topm_summary.csv
+468K	./paper_figure_outputs/Figure2_empirical_PCA_MSAA_benchmark.png
+464K	./simulation_soft_membership_revised_outputs/Supplement_subject_heterogeneity_recovery.png
+460K	./msaa_condrank_decoding_outputs_temporal_across/topm_summary.csv
+456K	./revision_8_figure5_selected_K46_outputs/Figure5_selected_K46_archetypes_summary_layout.pdf
+456K	./paper_figure_outputs/Figure5_selected_K46_archetypes.pdf
+444K	./revision_three_regime_with_paired_inference_03.ipynb
+436K	./paper_figure_outputs/Figure3_PCA_MSAA_simulation_benchmark.png
+432K	./notebook_attempts/02_spatial_acrosss_decoding_analysis.ipynb
+428K	./simulation_soft_membership_outputs/Supplement_soft_membership.png
+416K	./paper_figure_outputs/Supplement_four_condition_paragraph_retention.png
+412K	./paper_figure_outputs/Supplement_four_condition_paragraph_validation.png
+412K	./011_decoding_normalized_component_ratio_stats.ipynb
+408K	./simulation_soft_membership_revised_outputs/Supplement_node_mixing_recovery.png
+408K	./msaa_flexible_decoding_outputs_spatial_across_old/topm_runs.csv
+404K	./paper_figure_outputs/Supplement_joint_decoding_clustering_source.csv
+396K	./paper_figure_outputs/Figure4_heldout_sparse_MSAA_condensed.png
+392K	./notebook_attempts/02_decoding_analysis_temporalAA_TRANSPOSED_within_from_npz.ipynb
+392K	./.ipynb_checkpoints/02_decoding_analysis_flexible-checkpoint.ipynb
+392K	./.ipynb_checkpoints/011_decoding_normalized_component_ratio_stats_v2-Copy2-checkpoint.ipynb
+392K	./.ipynb_checkpoints/011_decoding_normalized_component_ratio_stats_v2-Copy1-checkpoint.ipynb
+380K	./simulation_pca_msaa_extended_outputs/supp_overlap_dynamics.png
+376K	./four_condition_ratio_decoding_outputs/aa_per_archetype_summary.csv
+364K	./msaa_four_condition_ratio_within_outputs_npz/temporalAA_within_paragraph_K3.npz
+352K	./paper_figure_outputs/Supplement_network_localization_nulls.png
+348K	./msaa_flexible_decoding_outputs_temporal_across_old/topm_runs.csv
+348K	./msaa_condrank_decoding_outputs_spatial_within/topm_summary.csv
+344K	./paper_figure_outputs/Supplement_full_across_within_ratio_landscapes.png
+332K	./paper_figure_outputs/Supplement_same_data_vs_heldout_topm.png
+332K	./paper_figure_outputs/Supplement_edge_trim_diagnostics.png
+328K	./revision_8_figure5_selected_K46_outputs/Figure5_spatial_maps_allnodes.csv
+328K	./paper_figure_outputs/Figure5_spatial_maps_allnodes.csv
+328K	./paper_figure_outputs/Figure2_empirical_PCA_MSAA_benchmark_main.png
+324K	./paper_figure_outputs/Supplement_PCA_validation.png
+324K	./paper_figure_outputs/Supplement_joint_decoding_clustering_new_topm.png
+320K	./supp_06_paragraph_four_condition_validation.ipynb
+316K	./msaa_condrank_decoding_outputs_temporal_within/topm_summary.csv
+312K	./data/archetypes/all_results_265/word/subjects/word_subj9_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj8_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj7_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj6_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj5_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj4_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj35_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj34_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj33_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj32_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj31_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj30_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj3_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj29_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj28_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj27_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj26_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj25_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj24_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj23_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj22_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj21_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj20_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj2_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj19_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj18_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj17_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj16_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj15_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj14_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj13_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj12_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj11_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj10_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj1_sXC.npy
+312K	./data/archetypes/all_results_265/word/subjects/word_subj0_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj9_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj8_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj7_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj6_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj5_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj4_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj35_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj34_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj33_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj32_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj31_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj30_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj3_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj29_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj28_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj27_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj26_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj25_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj24_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj23_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj22_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj21_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj20_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj2_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj19_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj18_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj17_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj16_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj15_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj14_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj13_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj12_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj11_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj10_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj1_sXC.npy
+312K	./data/archetypes/all_results_265/rest/subjects/rest_subj0_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj9_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj8_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj7_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj6_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj5_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj4_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj35_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj34_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj33_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj32_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj31_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj30_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj3_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj29_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj28_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj27_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj26_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj25_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj24_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj23_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj22_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj21_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj20_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj2_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj19_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj18_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj17_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj16_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj15_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj14_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj13_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj12_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj11_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj10_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj1_sXC.npy
+312K	./data/archetypes/all_results_265/intact/subjects/intact_subj0_sXC.npy
+304K	./paper_figure_outputs/supp_simulation_robustness.png
+304K	./.ipynb_checkpoints/PCA_ICA_revised_diagnostics-checkpoint.ipynb
+300K	./paper_figure_outputs/Figure4_heldout_sparse_MSAA.png
+292K	./supp_08_joint_decoding_clustering_new_topm_crossfit_RESUMABLE_fixed.ipynb
+288K	./revision_simple_simulation_01.ipynb
+288K	./.ipynb_checkpoints/revision_simulation_01-checkpoint.ipynb
+288K	./.ipynb_checkpoints/revision_simple_simulation_01-checkpoint.ipynb
+276K	./revision_07_K46_edge_trim_heldout_top5_sensitivity.ipynb
+276K	./paper_figure_outputs/clustering_checkpoints/word_K700_top10.csv
+276K	./paper_figure_outputs/clustering_checkpoints/rest_K700_top10.csv
+276K	./paper_figure_outputs/clustering_checkpoints/intact_K700_top10.csv
+272K	./revision_02_decode_four_condition_ratio_matched_msaa_pca_htfa_paragraph_fixed.ipynb
+272K	./paper_figure_outputs/Supplement_PCA_validation_condensed.png
+268K	./paper_figure_outputs/new_topm_crossfit_clustering_summary.csv
+260K	./paper_figure_outputs/clustering_checkpoints/intact_K700_top5.csv
+256K	./paper_figure06_support_and_robustness.ipynb
+256K	./paper_figure03_PCA_MSAA_simulation_benchmark.ipynb
+252K	./revision_05_archetype_interpretation_and_support/condition_specific_support_independent.png
+252K	./paper_figure_outputs/clustering_checkpoints/word_K700_top3.csv
+252K	./paper_figure_outputs/clustering_checkpoints/intact_K700_top3.csv
+248K	./supp_08_joint_decoding_clustering_new_topm_crossfit.ipynb
+248K	./revision_05_archetype_interpretation_and_support/condition_specific_support.png
+248K	./paper_figure_outputs/clustering_checkpoints/word_K700_top5.csv
+248K	./paper_figure_outputs/clustering_checkpoints/rest_K700_top5.csv
+248K	./010_decoding_compression_ratio.ipynb
+244K	./pca_aa_equivalence_outputs/aa_vs_pca_same_m.csv
+244K	./.ipynb_checkpoints/010_decoding_compression_ratio_explicit_save_v2-checkpoint.ipynb
+240K	./paper_figure_outputs/clustering_checkpoints/rest_K700_top3.csv
+240K	./.ipynb_checkpoints/010_decoding_compression_ratio_condition_specific-checkpoint.ipynb
+236K	./supp_08_joint_decoding_clustering_replicated.ipynb
+228K	./paper_replicate_current_manuscript_figure_3.ipynb
+224K	./.ipynb_checkpoints/PCA_ICA_updated-checkpoint.ipynb
+216K	./paper_figure_outputs/supp_simulation_temporal.png
+212K	./paper_figure_outputs/supp_simulation_overlap_dynamics.png
+212K	./msaa_flexible_decoding_outputs_temporal_across/per_archetype_mean_accuracy.csv
+204K	./paper_figure_outputs/clustering_checkpoints/rest_K500_top10.csv
+204K	./paper_figure_outputs/clustering_checkpoints/intact_K300_top10.csv
+200K	./paper_figure_outputs/clustering_checkpoints/word_K88_top10.csv
+200K	./paper_figure_outputs/clustering_checkpoints/word_K65_top10.csv
+200K	./paper_figure_outputs/clustering_checkpoints/word_K60_top10.csv
+200K	./paper_figure_outputs/clustering_checkpoints/word_K52_top10.csv
+200K	./paper_figure_outputs/clustering_checkpoints/word_K50_top10.csv
+200K	./paper_figure_outputs/clustering_checkpoints/word_K48_top10.csv
+200K	./paper_figure_outputs/clustering_checkpoints/rest_K58_top10.csv
+200K	./paper_figure_outputs/clustering_checkpoints/rest_K54_top10.csv
+200K	./paper_figure_outputs/clustering_checkpoints/rest_K53_top10.csv
+200K	./paper_figure_outputs/clustering_checkpoints/rest_K52_top10.csv
+200K	./paper_figure_outputs/clustering_checkpoints/rest_K48_top10.csv
+200K	./paper_figure_outputs/clustering_checkpoints/rest_K46_top10.csv
+200K	./paper_figure_outputs/clustering_checkpoints/rest_K45_top10.csv
+200K	./paper_figure_outputs/clustering_checkpoints/rest_K44_top10.csv
+200K	./paper_figure_outputs/clustering_checkpoints/rest_K40_top10.csv
+200K	./paper_figure_outputs/clustering_checkpoints/rest_K300_top10.csv
+200K	./paper_figure_outputs/clustering_checkpoints/intact_K88_top10.csv
+200K	./paper_figure_outputs/clustering_checkpoints/intact_K58_top10.csv
+200K	./paper_figure_outputs/clustering_checkpoints/intact_K52_top10.csv
+200K	./paper_figure_outputs/clustering_checkpoints/intact_K500_top10.csv
+200K	./paper_figure_outputs/clustering_checkpoints/intact_K45_top10.csv
+196K	./paper_figure_outputs/clustering_checkpoints/word_K54_top10.csv
+196K	./paper_figure_outputs/clustering_checkpoints/word_K500_top10.csv
+196K	./paper_figure_outputs/clustering_checkpoints/word_K40_top10.csv
+196K	./paper_figure_outputs/clustering_checkpoints/word_K300_top10.csv
+196K	./paper_figure_outputs/clustering_checkpoints/word_K25_top10.csv
+196K	./paper_figure_outputs/clustering_checkpoints/word_K126_top10.csv
+196K	./paper_figure_outputs/clustering_checkpoints/rest_K88_top10.csv
+196K	./paper_figure_outputs/clustering_checkpoints/rest_K175_top10.csv
+196K	./paper_figure_outputs/clustering_checkpoints/rest_K126_top10.csv
+196K	./paper_figure_outputs/clustering_checkpoints/intact_K53_top10.csv
+196K	./paper_figure_outputs/clustering_checkpoints/intact_K175_top10.csv
+192K	./tables/003c_exact_matched_ratio_topm_heatmaps/custom_spatial_across_minus_temporal_across_differences.csv
+192K	./paper_figure_outputs/clustering_checkpoints/word_K58_top10.csv
+192K	./paper_figure_outputs/clustering_checkpoints/word_K55_top10.csv
+192K	./paper_figure_outputs/clustering_checkpoints/word_K53_top10.csv
+192K	./paper_figure_outputs/clustering_checkpoints/word_K500_top5.csv
+192K	./paper_figure_outputs/clustering_checkpoints/word_K46_top10.csv
+192K	./paper_figure_outputs/clustering_checkpoints/word_K45_top10.csv
+192K	./paper_figure_outputs/clustering_checkpoints/word_K44_top10.csv
+192K	./paper_figure_outputs/clustering_checkpoints/word_K35_top10.csv
+192K	./paper_figure_outputs/clustering_checkpoints/word_K175_top10.csv
+192K	./paper_figure_outputs/clustering_checkpoints/rest_K70_top10.csv
+192K	./paper_figure_outputs/clustering_checkpoints/rest_K65_top10.csv
+192K	./paper_figure_outputs/clustering_checkpoints/rest_K60_top5.csv
+192K	./paper_figure_outputs/clustering_checkpoints/rest_K60_top10.csv
+192K	./paper_figure_outputs/clustering_checkpoints/rest_K50_top10.csv
+192K	./paper_figure_outputs/clustering_checkpoints/rest_K25_top10.csv
+192K	./paper_figure_outputs/clustering_checkpoints/rest_K21_top10.csv
+192K	./paper_figure_outputs/clustering_checkpoints/intact_K70_top10.csv
+192K	./paper_figure_outputs/clustering_checkpoints/intact_K65_top10.csv
+192K	./paper_figure_outputs/clustering_checkpoints/intact_K63_top10.csv
+192K	./paper_figure_outputs/clustering_checkpoints/intact_K60_top10.csv
+192K	./paper_figure_outputs/clustering_checkpoints/intact_K55_top10.csv
+192K	./paper_figure_outputs/clustering_checkpoints/intact_K54_top10.csv
+192K	./paper_figure_outputs/clustering_checkpoints/intact_K50_top10.csv
+192K	./paper_figure_outputs/clustering_checkpoints/intact_K48_top10.csv
+192K	./paper_figure_outputs/clustering_checkpoints/intact_K46_top10.csv
+192K	./paper_figure_outputs/clustering_checkpoints/intact_K44_top10.csv
+192K	./paper_figure_outputs/clustering_checkpoints/intact_K40_top10.csv
+192K	./paper_figure_outputs/clustering_checkpoints/intact_K300_top5.csv
+192K	./paper_figure_outputs/clustering_checkpoints/intact_K25_top10.csv
+188K	./paper_figure_outputs/clustering_checkpoints/word_K65_top5.csv
+188K	./paper_figure_outputs/clustering_checkpoints/word_K65_top3.csv
+188K	./paper_figure_outputs/clustering_checkpoints/word_K54_top5.csv
+188K	./paper_figure_outputs/clustering_checkpoints/word_K52_top3.csv
+188K	./paper_figure_outputs/clustering_checkpoints/word_K45_top3.csv
+188K	./paper_figure_outputs/clustering_checkpoints/word_K44_top5.csv
+188K	./paper_figure_outputs/clustering_checkpoints/word_K40_top5.csv
+188K	./paper_figure_outputs/clustering_checkpoints/word_K300_top3.csv
+188K	./paper_figure_outputs/clustering_checkpoints/word_K25_top5.csv
+188K	./paper_figure_outputs/clustering_checkpoints/word_K14_top10.csv
+188K	./paper_figure_outputs/clustering_checkpoints/word_K10_top5.csv
+188K	./paper_figure_outputs/clustering_checkpoints/rest_K63_top10.csv
+188K	./paper_figure_outputs/clustering_checkpoints/rest_K60_top3.csv
+188K	./paper_figure_outputs/clustering_checkpoints/rest_K58_top5.csv
+188K	./paper_figure_outputs/clustering_checkpoints/rest_K58_top3.csv
+188K	./paper_figure_outputs/clustering_checkpoints/rest_K55_top5.csv
+188K	./paper_figure_outputs/clustering_checkpoints/rest_K55_top10.csv
+188K	./paper_figure_outputs/clustering_checkpoints/rest_K54_top5.csv
+188K	./paper_figure_outputs/clustering_checkpoints/rest_K54_top3.csv
+188K	./paper_figure_outputs/clustering_checkpoints/rest_K53_top3.csv
+188K	./paper_figure_outputs/clustering_checkpoints/rest_K500_top3.csv
+188K	./paper_figure_outputs/clustering_checkpoints/rest_K48_top5.csv
+188K	./paper_figure_outputs/clustering_checkpoints/rest_K48_top3.csv
+188K	./paper_figure_outputs/clustering_checkpoints/rest_K46_top3.csv
+188K	./paper_figure_outputs/clustering_checkpoints/rest_K45_top3.csv
+188K	./paper_figure_outputs/clustering_checkpoints/rest_K44_top5.csv
+188K	./paper_figure_outputs/clustering_checkpoints/rest_K44_top3.csv
+188K	./paper_figure_outputs/clustering_checkpoints/rest_K300_top3.csv
+188K	./paper_figure_outputs/clustering_checkpoints/rest_K25_top5.csv
+188K	./paper_figure_outputs/clustering_checkpoints/rest_K175_top5.csv
+188K	./paper_figure_outputs/clustering_checkpoints/rest_K10_top5.csv
+188K	./paper_figure_outputs/clustering_checkpoints/intact_K60_top3.csv
+188K	./paper_figure_outputs/clustering_checkpoints/intact_K58_top5.csv
+188K	./paper_figure_outputs/clustering_checkpoints/intact_K55_top5.csv
+188K	./paper_figure_outputs/clustering_checkpoints/intact_K55_top3.csv
+188K	./paper_figure_outputs/clustering_checkpoints/intact_K54_top5.csv
+188K	./paper_figure_outputs/clustering_checkpoints/intact_K54_top3.csv
+188K	./paper_figure_outputs/clustering_checkpoints/intact_K53_top5.csv
+188K	./paper_figure_outputs/clustering_checkpoints/intact_K53_top3.csv
+188K	./paper_figure_outputs/clustering_checkpoints/intact_K500_top3.csv
+188K	./paper_figure_outputs/clustering_checkpoints/intact_K50_top5.csv
+188K	./paper_figure_outputs/clustering_checkpoints/intact_K50_top3.csv
+188K	./paper_figure_outputs/clustering_checkpoints/intact_K48_top3.csv
+188K	./paper_figure_outputs/clustering_checkpoints/intact_K46_top3.csv
+188K	./paper_figure_outputs/clustering_checkpoints/intact_K40_top3.csv
+188K	./paper_figure_outputs/clustering_checkpoints/intact_K300_top3.csv
+188K	./paper_figure_outputs/clustering_checkpoints/intact_K25_top5.csv
+188K	./paper_figure_outputs/clustering_checkpoints/intact_K126_top10.csv
+188K	./paper_figure_outputs/clustering_checkpoints/intact_K10_top5.csv
+184K	./paper_figure04_heldout_sparse_MSAA_condensed_fixed.ipynb
+184K	./paper_figure_outputs/clustering_checkpoints/word_K88_top5.csv
+184K	./paper_figure_outputs/clustering_checkpoints/word_K88_top3.csv
+184K	./paper_figure_outputs/clustering_checkpoints/word_K70_top10.csv
+184K	./paper_figure_outputs/clustering_checkpoints/word_K63_top5.csv
+184K	./paper_figure_outputs/clustering_checkpoints/word_K63_top10.csv
+184K	./paper_figure_outputs/clustering_checkpoints/word_K60_top5.csv
+184K	./paper_figure_outputs/clustering_checkpoints/word_K58_top5.csv
+184K	./paper_figure_outputs/clustering_checkpoints/word_K58_top3.csv
+184K	./paper_figure_outputs/clustering_checkpoints/word_K56_top10.csv
+184K	./paper_figure_outputs/clustering_checkpoints/word_K55_top5.csv
+184K	./paper_figure_outputs/clustering_checkpoints/word_K54_top3.csv
+184K	./paper_figure_outputs/clustering_checkpoints/word_K53_top3.csv
+184K	./paper_figure_outputs/clustering_checkpoints/word_K52_top5.csv
+184K	./paper_figure_outputs/clustering_checkpoints/word_K50_top5.csv
+184K	./paper_figure_outputs/clustering_checkpoints/word_K50_top3.csv
+184K	./paper_figure_outputs/clustering_checkpoints/word_K48_top3.csv
+184K	./paper_figure_outputs/clustering_checkpoints/word_K46_top3.csv
+184K	./paper_figure_outputs/clustering_checkpoints/word_K45_top5.csv
+184K	./paper_figure_outputs/clustering_checkpoints/word_K42_top10.csv
+184K	./paper_figure_outputs/clustering_checkpoints/word_K40_top3.csv
+184K	./paper_figure_outputs/clustering_checkpoints/word_K300_top5.csv
+184K	./paper_figure_outputs/clustering_checkpoints/word_K25_top3.csv
+184K	./paper_figure_outputs/clustering_checkpoints/word_K10_top3.csv
+184K	./paper_figure_outputs/clustering_checkpoints/rest_K88_top5.csv
+184K	./paper_figure_outputs/clustering_checkpoints/rest_K65_top5.csv
+184K	./paper_figure_outputs/clustering_checkpoints/rest_K65_top3.csv
+184K	./paper_figure_outputs/clustering_checkpoints/rest_K56_top10.csv
+184K	./paper_figure_outputs/clustering_checkpoints/rest_K53_top5.csv
+184K	./paper_figure_outputs/clustering_checkpoints/rest_K52_top5.csv
+184K	./paper_figure_outputs/clustering_checkpoints/rest_K500_top5.csv
+184K	./paper_figure_outputs/clustering_checkpoints/rest_K50_top5.csv
+184K	./paper_figure_outputs/clustering_checkpoints/rest_K42_top10.csv
+184K	./paper_figure_outputs/clustering_checkpoints/rest_K40_top5.csv
+184K	./paper_figure_outputs/clustering_checkpoints/rest_K40_top3.csv
+184K	./paper_figure_outputs/clustering_checkpoints/rest_K35_top5.csv
+184K	./paper_figure_outputs/clustering_checkpoints/rest_K35_top10.csv
+184K	./paper_figure_outputs/clustering_checkpoints/rest_K300_top5.csv
+184K	./paper_figure_outputs/clustering_checkpoints/rest_K126_top3.csv
+184K	./paper_figure_outputs/clustering_checkpoints/rest_K10_top3.csv
+184K	./paper_figure_outputs/clustering_checkpoints/intact_K88_top5.csv
+184K	./paper_figure_outputs/clustering_checkpoints/intact_K65_top5.csv
+184K	./paper_figure_outputs/clustering_checkpoints/intact_K63_top5.csv
+184K	./paper_figure_outputs/clustering_checkpoints/intact_K60_top5.csv
+184K	./paper_figure_outputs/clustering_checkpoints/intact_K56_top10.csv
+184K	./paper_figure_outputs/clustering_checkpoints/intact_K52_top5.csv
+184K	./paper_figure_outputs/clustering_checkpoints/intact_K52_top3.csv
+184K	./paper_figure_outputs/clustering_checkpoints/intact_K500_top5.csv
+184K	./paper_figure_outputs/clustering_checkpoints/intact_K5_top3.csv
+184K	./paper_figure_outputs/clustering_checkpoints/intact_K48_top5.csv
+184K	./paper_figure_outputs/clustering_checkpoints/intact_K46_top5.csv
+184K	./paper_figure_outputs/clustering_checkpoints/intact_K45_top5.csv
+184K	./paper_figure_outputs/clustering_checkpoints/intact_K45_top3.csv
+184K	./paper_figure_outputs/clustering_checkpoints/intact_K44_top5.csv
+184K	./paper_figure_outputs/clustering_checkpoints/intact_K44_top3.csv
+184K	./paper_figure_outputs/clustering_checkpoints/intact_K42_top10.csv
+184K	./paper_figure_outputs/clustering_checkpoints/intact_K40_top5.csv
+184K	./paper_figure_outputs/clustering_checkpoints/intact_K35_top10.csv
+184K	./paper_figure_outputs/clustering_checkpoints/intact_K25_top3.csv
+184K	./paper_figure_outputs/clustering_checkpoints/intact_K21_top10.csv
+184K	./paper_figure_outputs/clustering_checkpoints/intact_K14_top10.csv
+184K	./paper_figure_outputs/clustering_checkpoints/intact_K126_top3.csv
+184K	./paper_figure_outputs/clustering_checkpoints/intact_K10_top3.csv
+180K	./paper_figure_outputs/clustering_checkpoints/word_K63_top3.csv
+180K	./paper_figure_outputs/clustering_checkpoints/word_K60_top3.csv
+180K	./paper_figure_outputs/clustering_checkpoints/word_K55_top3.csv
+180K	./paper_figure_outputs/clustering_checkpoints/word_K53_top5.csv
+180K	./paper_figure_outputs/clustering_checkpoints/word_K500_top3.csv
+180K	./paper_figure_outputs/clustering_checkpoints/word_K48_top5.csv
+180K	./paper_figure_outputs/clustering_checkpoints/word_K46_top5.csv
+180K	./paper_figure_outputs/clustering_checkpoints/word_K44_top3.csv
+180K	./paper_figure_outputs/clustering_checkpoints/word_K42_top5.csv
+180K	./paper_figure_outputs/clustering_checkpoints/word_K42_top3.csv
+180K	./paper_figure_outputs/clustering_checkpoints/word_K35_top5.csv
+180K	./paper_figure_outputs/clustering_checkpoints/word_K21_top5.csv
+180K	./paper_figure_outputs/clustering_checkpoints/word_K21_top10.csv
+180K	./paper_figure_outputs/clustering_checkpoints/word_K175_top5.csv
+180K	./paper_figure_outputs/clustering_checkpoints/word_K175_top3.csv
+180K	./paper_figure_outputs/clustering_checkpoints/word_K126_top3.csv
+180K	./paper_figure_outputs/clustering_checkpoints/rest_K88_top3.csv
+180K	./paper_figure_outputs/clustering_checkpoints/rest_K70_top5.csv
+180K	./paper_figure_outputs/clustering_checkpoints/rest_K70_top3.csv
+180K	./paper_figure_outputs/clustering_checkpoints/rest_K56_top3.csv
+180K	./paper_figure_outputs/clustering_checkpoints/rest_K55_top3.csv
+180K	./paper_figure_outputs/clustering_checkpoints/rest_K52_top3.csv
+180K	./paper_figure_outputs/clustering_checkpoints/rest_K50_top3.csv
+180K	./paper_figure_outputs/clustering_checkpoints/rest_K5_top3.csv
+180K	./paper_figure_outputs/clustering_checkpoints/rest_K46_top5.csv
+180K	./paper_figure_outputs/clustering_checkpoints/rest_K45_top5.csv
+180K	./paper_figure_outputs/clustering_checkpoints/rest_K35_top3.csv
+180K	./paper_figure_outputs/clustering_checkpoints/rest_K14_top3.csv
+180K	./paper_figure_outputs/clustering_checkpoints/rest_K14_top10.csv
+180K	./paper_figure_outputs/clustering_checkpoints/intact_K88_top3.csv
+180K	./paper_figure_outputs/clustering_checkpoints/intact_K70_top5.csv
+180K	./paper_figure_outputs/clustering_checkpoints/intact_K65_top3.csv
+180K	./paper_figure_outputs/clustering_checkpoints/intact_K63_top3.csv
+180K	./paper_figure_outputs/clustering_checkpoints/intact_K58_top3.csv
+180K	./paper_figure_outputs/clustering_checkpoints/intact_K56_top3.csv
+180K	./paper_figure_outputs/clustering_checkpoints/intact_K42_top3.csv
+180K	./paper_figure_outputs/clustering_checkpoints/intact_K35_top3.csv
+180K	./paper_figure_outputs/clustering_checkpoints/intact_K21_top3.csv
+180K	./paper_figure_outputs/clustering_checkpoints/intact_K175_top5.csv
+180K	./paper_figure_outputs/clustering_checkpoints/intact_K175_top3.csv
+176K	./paper_figure_outputs/clustering_checkpoints/word_K70_top5.csv
+176K	./paper_figure_outputs/clustering_checkpoints/word_K7_top5.csv
+176K	./paper_figure_outputs/clustering_checkpoints/word_K7_top3.csv
+176K	./paper_figure_outputs/clustering_checkpoints/word_K56_top5.csv
+176K	./paper_figure_outputs/clustering_checkpoints/word_K5_top3.csv
+176K	./paper_figure_outputs/clustering_checkpoints/word_K21_top3.csv
+176K	./paper_figure_outputs/clustering_checkpoints/word_K14_top3.csv
+176K	./paper_figure_outputs/clustering_checkpoints/word_K126_top5.csv
+176K	./paper_figure_outputs/clustering_checkpoints/rest_K7_top5.csv
+176K	./paper_figure_outputs/clustering_checkpoints/rest_K7_top3.csv
+176K	./paper_figure_outputs/clustering_checkpoints/rest_K63_top5.csv
+176K	./paper_figure_outputs/clustering_checkpoints/rest_K56_top5.csv
+176K	./paper_figure_outputs/clustering_checkpoints/rest_K42_top5.csv
+176K	./paper_figure_outputs/clustering_checkpoints/rest_K25_top3.csv
+176K	./paper_figure_outputs/clustering_checkpoints/rest_K175_top3.csv
+176K	./paper_figure_outputs/clustering_checkpoints/rest_K126_top5.csv
+176K	./paper_figure_outputs/clustering_checkpoints/intact_K70_top3.csv
+176K	./paper_figure_outputs/clustering_checkpoints/intact_K56_top5.csv
+176K	./paper_figure_outputs/clustering_checkpoints/intact_K42_top5.csv
+176K	./paper_figure_outputs/clustering_checkpoints/intact_K35_top5.csv
+176K	./paper_figure_outputs/clustering_checkpoints/intact_K14_top3.csv
+176K	./paper_figure_outputs/clustering_checkpoints/intact_K126_top5.csv
+172K	./paper_figure_outputs/clustering_checkpoints/word_K70_top3.csv
+172K	./paper_figure_outputs/clustering_checkpoints/word_K56_top3.csv
+172K	./paper_figure_outputs/clustering_checkpoints/word_K35_top3.csv
+172K	./paper_figure_outputs/clustering_checkpoints/word_K14_top5.csv
+172K	./paper_figure_outputs/clustering_checkpoints/rest_K63_top3.csv
+172K	./paper_figure_outputs/clustering_checkpoints/rest_K42_top3.csv
+172K	./paper_figure_outputs/clustering_checkpoints/rest_K21_top5.csv
+172K	./paper_figure_outputs/clustering_checkpoints/rest_K21_top3.csv
+172K	./paper_figure_outputs/clustering_checkpoints/rest_K14_top5.csv
+172K	./paper_figure_outputs/clustering_checkpoints/intact_K7_top5.csv
+172K	./paper_figure_outputs/clustering_checkpoints/intact_K21_top5.csv
+172K	./paper_figure_outputs/clustering_checkpoints/intact_K14_top5.csv
+168K	./paper_figure_outputs/clustering_checkpoints/intact_K7_top3.csv
+168K	./figures/full_reconstruction_decoding/combined_difference_across_within_heatmaps_m_gt_K_masked_word.pdf
+168K	./figures/full_reconstruction_decoding/combined_difference_across_within_heatmaps_m_gt_K_masked_intact.pdf
+164K	./revision_05_archetype_interpretation_and_support/participant_support_distribution_independent.png
+164K	./figures/003c_exact_matched_ratio_topm_heatmaps/combined_difference_across_within_heatmaps_m_gt_K_masked_intact.pdf
+164K	./.ipynb_checkpoints/revision_17_pca_ica_clean_simulation_benchmark-checkpoint.ipynb
+160K	./supp_08_clustering_geometry.ipynb
+160K	./figures/003c_exact_matched_ratio_topm_heatmaps/combined_difference_across_within_heatmaps_m_gt_K_masked_word.pdf
+156K	./supp_07_network_localization_nulls_fixed.ipynb
+156K	./figures/full_reconstruction_decoding/combined_difference_across_within_heatmaps_m_gt_K_masked_rest.pdf
+152K	./pca_aa_equivalence_outputs/aa_pca_equivalent_dimensions.csv
+152K	./paper_figure02_empirical_PCA_MSAA_benchmark_main.ipynb
+152K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K10_arch3_opacity.png
+152K	./figures/003c_exact_matched_ratio_topm_heatmaps/combined_difference_across_within_heatmaps_m_gt_K_masked_rest.pdf
+148K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K25_arch4_opacity.png
+144K	./msaa_edge_trim_sensitivity_K46_top5/selection_frequency_baseline_vs_trimmed.png
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_strongly_mixed_rep019.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_strongly_mixed_rep018.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_strongly_mixed_rep017.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_strongly_mixed_rep016.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_strongly_mixed_rep015.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_strongly_mixed_rep014.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_strongly_mixed_rep013.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_strongly_mixed_rep012.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_strongly_mixed_rep011.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_strongly_mixed_rep010.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_strongly_mixed_rep009.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_strongly_mixed_rep008.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_strongly_mixed_rep007.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_strongly_mixed_rep006.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_strongly_mixed_rep005.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_strongly_mixed_rep004.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_strongly_mixed_rep003.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_strongly_mixed_rep002.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_strongly_mixed_rep001.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_strongly_mixed_rep000.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_selective_rep019.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_selective_rep018.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_selective_rep017.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_selective_rep016.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_selective_rep015.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_selective_rep014.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_selective_rep013.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_selective_rep012.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_selective_rep011.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_selective_rep010.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_selective_rep009.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_selective_rep008.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_selective_rep007.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_selective_rep006.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_selective_rep005.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_selective_rep004.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_selective_rep003.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_selective_rep002.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_selective_rep001.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_selective_rep000.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_canonical_rep019.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_canonical_rep018.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_canonical_rep017.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_canonical_rep016.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_canonical_rep015.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_canonical_rep014.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_canonical_rep013.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_canonical_rep012.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_canonical_rep011.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_canonical_rep010.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_canonical_rep009.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_canonical_rep008.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_canonical_rep007.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_canonical_rep006.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_canonical_rep005.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_canonical_rep004.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_canonical_rep003.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_canonical_rep002.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_canonical_rep001.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_mix_canonical_rep000.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_strong_rep019.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_strong_rep018.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_strong_rep017.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_strong_rep016.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_strong_rep015.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_strong_rep014.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_strong_rep013.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_strong_rep012.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_strong_rep011.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_strong_rep010.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_strong_rep009.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_strong_rep008.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_strong_rep007.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_strong_rep006.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_strong_rep005.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_strong_rep004.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_strong_rep003.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_strong_rep002.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_strong_rep001.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_strong_rep000.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_moderate_rep019.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_moderate_rep018.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_moderate_rep017.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_moderate_rep016.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_moderate_rep015.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_moderate_rep014.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_moderate_rep013.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_moderate_rep011.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_moderate_rep010.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_moderate_rep009.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_moderate_rep007.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_moderate_rep006.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_moderate_rep004.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_moderate_rep003.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_moderate_rep002.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_moderate_rep001.npz
+140K	./simulation_soft_membership_revised_outputs/details/paper_het_moderate_rep000.npz
+140K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K10_arch3_networkcolor.png
+140K	./figures/003c_exact_matched_ratio_topm_heatmaps/custom_difference_and_within_heatmaps_m_gt_K_masked_intact.pdf
+140K	./figures/003c_exact_matched_ratio_topm_heatmaps/custom_difference_and_within_heatmaps_intact.pdf
+140K	./data/archetypes/all_results_50/word/subjects/word_subj9_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj8_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj7_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj6_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj5_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj4_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj35_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj34_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj33_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj32_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj31_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj30_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj3_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj29_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj28_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj27_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj26_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj25_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj24_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj23_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj22_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj21_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj20_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj2_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj19_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj18_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj17_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj16_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj15_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj14_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj13_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj12_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj11_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj10_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj1_S.npy
+140K	./data/archetypes/all_results_50/word/subjects/word_subj0_S.npy
+140K	./data/archetypes/all_results_50/word/C.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj9_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj8_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj7_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj6_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj5_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj4_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj35_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj34_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj33_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj32_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj31_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj30_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj3_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj29_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj28_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj27_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj26_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj25_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj24_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj23_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj22_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj21_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj20_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj2_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj19_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj18_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj17_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj16_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj15_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj14_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj13_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj12_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj11_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj10_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj1_S.npy
+140K	./data/archetypes/all_results_50/rest/subjects/rest_subj0_S.npy
+140K	./data/archetypes/all_results_50/rest/C.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj9_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj8_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj7_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj6_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj5_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj4_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj35_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj34_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj33_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj32_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj31_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj30_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj3_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj29_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj28_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj27_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj26_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj25_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj24_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj23_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj22_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj21_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj20_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj2_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj19_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj18_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj17_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj16_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj15_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj14_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj13_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj12_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj11_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj10_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj1_S.npy
+140K	./data/archetypes/all_results_50/intact/subjects/intact_subj0_S.npy
+140K	./data/archetypes/all_results_50/intact/C.npy
+140K	./aa_information_concentration_outputs/AA_PCA_information_concentration_long.csv
+136K	./tables/003c_exact_matched_ratio_topm_heatmaps/custom_spatial_across_minus_temporal_across_differences_m_gt_K_masked.csv
+136K	./supp_04_same_data_vs_heldout_topm.ipynb
+136K	./supp_03_full_across_within_ratio_landscapes.ipynb
+136K	./simulation_soft_membership_revised_outputs/details/paper_het_moderate_rep012.npz
+136K	./simulation_soft_membership_revised_outputs/details/paper_het_moderate_rep008.npz
+136K	./simulation_soft_membership_revised_outputs/details/paper_het_moderate_rep005.npz
+136K	./figures/full_reconstruction_decoding/spatial_minus_temporal_relative_spatial_topm_shared_colorbar.pdf
+136K	./figures/003c_exact_matched_ratio_topm_heatmaps/custom_difference_and_within_heatmaps_word.pdf
+136K	./figures/003c_exact_matched_ratio_topm_heatmaps/custom_difference_and_within_heatmaps_m_gt_K_masked_word.pdf
+132K	./paper_figure_outputs/Supplement_joint_intact_word_convergence.png
+132K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K25_arch4_networkcolor.png
+132K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K10_arch2_opacity.png
+132K	./figures/full_reconstruction_decoding/spatial_minus_temporal_shared_colorbar_saturating_topm_intact_labels.pdf
+132K	./figures/full_reconstruction_decoding/spatial_minus_temporal_relative_spatial_topm_thinned_x_shared_colorbar.pdf
+132K	./figures/003c_exact_matched_ratio_topm_heatmaps/exact_matched_ratio_topm_decoding_heatmaps_word.pdf
+132K	./figures/003c_exact_matched_ratio_topm_heatmaps/exact_matched_ratio_topm_decoding_heatmaps_intact.pdf
+132K	./.ipynb_checkpoints/revision_extended_benchmark_05-checkpoint.ipynb
+128K	./figures/003c_exact_matched_ratio_topm_heatmaps/exact_matched_ratio_topm_decoding_heatmaps_rest.pdf
+128K	./figures/003c_exact_matched_ratio_topm_heatmaps/custom_difference_and_within_heatmaps_rest.pdf
+128K	./.ipynb_checkpoints/revision_simulation-checkpoint.ipynb
+124K	./temporal_decoding_summaries/full_reconstruction_runs.csv
+124K	./supp_05_edge_trim_diagnostics.ipynb
+124K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K25_arch5_opacity.png
+124K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K25_arch2_opacity.png
+124K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K10_arch7_opacity.png
+124K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K10_arch2_networkcolor.png
+124K	./figures/full_reconstruction_decoding/spatial_minus_temporal_shared_colorbar_sparse_labels.pdf
+124K	./figures/full_reconstruction_decoding/spatial_minus_temporal_relative_spatial_topm_binned_shared_colorbar.pdf
+124K	./figures/003c_exact_matched_ratio_topm_heatmaps/custom_difference_and_within_heatmaps_m_gt_K_masked_rest.pdf
+120K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K50_arch4_opacity.png
+120K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K25_arch5_networkcolor.png
+120K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K25_arch2_networkcolor.png
+120K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K10_arch7_networkcolor.png
+120K	./figures/003_ratio_matched_topm_heatmaps/ratio_matched_topm_decoding_heatmaps_intact.pdf
+116K	./supp_10_simulation_robustness.ipynb
+116K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K75_arch10_opacity.png
+116K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K50_arch4_networkcolor.png
+116K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K100_arch14_opacity.png
+116K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K100_arch14_networkcolor.png
+116K	./figures/full_reconstruction_decoding/spatial_minus_temporal_shared_colorbar_best_cells.pdf
+112K	./supp_01_PCA_validation_condensed.ipynb
+112K	./paper_supp_figure_PCA_validation_condensed.ipynb
+112K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K75_arch10_networkcolor.png
+112K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K50_arch8_opacity.png
+112K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K50_arch8_networkcolor.png
+112K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K50_arch11_opacity.png
+112K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K50_arch11_networkcolor.png
+112K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K100_arch9_opacity.png
+112K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K100_arch9_networkcolor.png
+112K	./figures/003_ratio_matched_topm_heatmaps/ratio_matched_topm_decoding_heatmaps_word.pdf
+108K	./revision_05_archetype_interpretation_and_support/participant_support_distribution.png
+108K	./paper_figure_outputs/Supplement_PCA_validation_source_data.csv
+108K	./paper_figure_outputs/Figure2_source_data.csv
+108K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K75_arch13_opacity.png
+108K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K75_arch13_networkcolor.png
+108K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K75_arch0_opacity.png
+108K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K75_arch0_networkcolor.png
+108K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K100_arch13_opacity.png
+108K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K100_arch13_networkcolor.png
+108K	./msaa_flexible_decoding_outputs_temporal_within_old/topm_runs.csv
+108K	./msaa_flexible_decoding_outputs_spatial_within_old/topm_runs.csv
+108K	./figures/003b_observed_ratio_topm_heatmaps/observed_ratio_topm_decoding_heatmaps_intact.pdf
+108K	./001_fit_msaa_flexible.ipynb
+108K	./.ipynb_checkpoints/01_fit_msaa_flexible-Copy8-checkpoint.ipynb
+108K	./.ipynb_checkpoints/01_fit_msaa_flexible-Copy7-checkpoint.ipynb
+108K	./.ipynb_checkpoints/01_fit_msaa_flexible-Copy6-checkpoint.ipynb
+108K	./.ipynb_checkpoints/01_fit_msaa_flexible-Copy4-checkpoint.ipynb
+104K	./msaa_flexible_decoding_outputs_temporal_within/per_archetype_mean_accuracy.csv
+104K	./msaa_flexible_decoding_outputs_spatial_within/per_archetype_mean_accuracy.csv
+104K	./figures/003_ratio_matched_topm_heatmaps/ratio_matched_topm_decoding_heatmaps_rest.pdf
+100K	./tables/003c_exact_matched_ratio_topm_heatmaps/spatial_minus_temporal_exact_matched_ratio_differences.csv
+100K	./simulation_pca_ica_msaa_outputs_simpleica/pca_ica_msaa_results_paper.csv
+100K	./revision_01_fit_four_condition_ratio_matched_msaa_paragraph_fixed.ipynb
+100K	./figures/003b_observed_ratio_topm_heatmaps/observed_ratio_topm_decoding_heatmaps_word.pdf
+100K	./figures/003b_observed_ratio_topm_heatmaps/observed_ratio_topm_decoding_heatmaps_rest.pdf
+100K	./figures/003_ratio_matched_topm_heatmaps/raw_grid_topm_decoding_heatmaps_intact.pdf
+ 96K	./simulation_soft_membership_revised_outputs/details/quick_mix_selective_rep002.npz
+ 96K	./simulation_soft_membership_revised_outputs/details/quick_mix_selective_rep001.npz
+ 96K	./simulation_soft_membership_revised_outputs/details/quick_mix_selective_rep000.npz
+ 96K	./simulation_soft_membership_outputs/details/quick_selective_rep001.npz
+ 96K	./simulation_soft_membership_outputs/details/quick_selective_rep000.npz
+ 96K	./msaa_edge_trim_sensitivity_K46_top5/baseline_vs_edge_trim_top5_accuracy.png
+ 96K	./figures/003_ratio_matched_topm_heatmaps/raw_grid_topm_decoding_heatmaps_word.pdf
+ 92K	./simulation_soft_membership_revised_outputs/details/quick_mix_strongly_mixed_rep002.npz
+ 92K	./simulation_soft_membership_revised_outputs/details/quick_mix_strongly_mixed_rep001.npz
+ 92K	./simulation_soft_membership_revised_outputs/details/quick_mix_strongly_mixed_rep000.npz
+ 92K	./simulation_soft_membership_revised_outputs/details/quick_mix_canonical_rep002.npz
+ 92K	./simulation_soft_membership_revised_outputs/details/quick_mix_canonical_rep001.npz
+ 92K	./simulation_soft_membership_revised_outputs/details/quick_mix_canonical_rep000.npz
+ 92K	./simulation_soft_membership_revised_outputs/details/quick_het_strong_rep002.npz
+ 92K	./simulation_soft_membership_revised_outputs/details/quick_het_strong_rep001.npz
+ 92K	./simulation_soft_membership_revised_outputs/details/quick_het_strong_rep000.npz
+ 92K	./simulation_soft_membership_revised_outputs/details/quick_het_moderate_rep002.npz
+ 92K	./simulation_soft_membership_revised_outputs/details/quick_het_moderate_rep001.npz
+ 92K	./simulation_soft_membership_revised_outputs/details/quick_het_moderate_rep000.npz
+ 92K	./simulation_soft_membership_outputs/details/quick_strongly_mixed_rep001.npz
+ 92K	./simulation_soft_membership_outputs/details/quick_strongly_mixed_rep000.npz
+ 92K	./simulation_soft_membership_outputs/details/quick_canonical_rep001.npz
+ 92K	./simulation_soft_membership_outputs/details/quick_canonical_rep000.npz
+ 92K	./simulation_pca_msaa_extended_outputs/pca_msaa_extended_results_paper.csv
+ 92K	./four_condition_ratio_decoding_outputs/aa_topm_summary_with_retention.csv
+ 92K	./figures/003_ratio_matched_topm_heatmaps/raw_grid_topm_decoding_heatmaps_rest.pdf
+ 92K	./data/pieman/raw/niis/avg152T1_gray_3mm.nii.gz
+ 88K	./data/pieman/raw/Schaefer2018_1000Parcels_7Networks_order_FSLMNI152_2mm.nii.gz
+ 88K	./.ipynb_checkpoints/revision_simulation_soft_membership_04-checkpoint.ipynb
+ 84K	./supp_09_simulation_overlap_dynamics.ipynb
+ 84K	./figures/full_reconstruction_decoding/separate_heatmaps_for_illustrator/word_across_spatial_accuracy.pdf
+ 84K	./figures/full_reconstruction_decoding/separate_heatmaps_for_illustrator/rest_across_spatial_accuracy.pdf
+ 84K	./figures/003c_exact_matched_ratio_topm_heatmaps/separate_heatmaps_for_illustrator/rest_across_spatial_accuracy.pdf
+ 84K	./.ipynb_checkpoints/revision_four_regime_benchmark-checkpoint.ipynb
+ 80K	./supp_11_simulation_temporal.ipynb
+ 80K	./figures/full_reconstruction_decoding/separate_heatmaps_for_illustrator/intact_within_spatial_accuracy_all_available_K.pdf
+ 80K	./figures/full_reconstruction_decoding/separate_heatmaps_for_illustrator/intact_across_spatial_accuracy.pdf
+ 80K	./.ipynb_checkpoints/revision_four_regime_benchmark_05-checkpoint.ipynb
+ 80K	./.ipynb_checkpoints/revision_07_K46_edge_trim_heldout_top5_sensitivity-checkpoint.ipynb
+ 80K	./.ipynb_checkpoints/013_network_localization_analysis_v5_strict_null_matched_ratio-checkpoint.ipynb
+ 76K	./postprocess_across_spatial_outputs/spatial_across_per_archetype_summary_clean_refactored.csv
+ 76K	./figures/full_reconstruction_decoding/separate_heatmaps_for_illustrator/word_within_spatial_accuracy_all_available_K.pdf
+ 76K	./figures/full_reconstruction_decoding/separate_heatmaps_for_illustrator/intact_within_temporal_accuracy_all_available_K.pdf
+ 76K	./figures/003c_exact_matched_ratio_topm_heatmaps/separate_heatmaps_for_illustrator/word_within_spatial_accuracy_all_available_K.pdf
+ 76K	./figures/003c_exact_matched_ratio_topm_heatmaps/separate_heatmaps_for_illustrator/word_across_spatial_accuracy.pdf
+ 76K	./figures/003c_exact_matched_ratio_topm_heatmaps/separate_heatmaps_for_illustrator/intact_within_spatial_accuracy_all_available_K.pdf
+ 76K	./figures/003c_exact_matched_ratio_topm_heatmaps/separate_heatmaps_for_illustrator/intact_across_spatial_accuracy.pdf
+ 72K	./supp_08_joint_decoding_clustering_new_topm_crossfit_RESUMABLE.ipynb
+ 72K	./paper_figure_outputs/Figure2_empirical_PCA_MSAA_benchmark.pdf
+ 72K	./figures/full_reconstruction_decoding/separate_heatmaps_for_illustrator/word_within_temporal_accuracy_all_available_K.pdf
+ 72K	./figures/full_reconstruction_decoding/separate_heatmaps_for_illustrator/rest_within_temporal_accuracy_all_available_K.pdf
+ 72K	./figures/full_reconstruction_decoding/separate_heatmaps_for_illustrator/rest_within_spatial_accuracy_all_available_K.pdf
+ 72K	./figures/full_reconstruction_decoding/separate_heatmaps_for_illustrator/intact_across_difference_spatial_minus_temporal.pdf
+ 72K	./figures/003c_exact_matched_ratio_topm_heatmaps/separate_heatmaps_for_illustrator/word_within_temporal_accuracy_all_available_K.pdf
+ 72K	./figures/003c_exact_matched_ratio_topm_heatmaps/separate_heatmaps_for_illustrator/rest_within_spatial_accuracy_all_available_K.pdf
+ 72K	./figures/003c_exact_matched_ratio_topm_heatmaps/separate_heatmaps_for_illustrator/intact_within_temporal_accuracy_all_available_K.pdf
+ 72K	./figures/003_ratio_matched_topm_heatmaps/single_spatial_across_intact_ratio_matched.pdf
+ 68K	./revision_8_figure5_selected_K46_outputs/Figure5_temporal_profiles.csv
+ 68K	./revision_05_archetype_interpretation_and_support/selected_archetype_support_by_independent_participant.csv
+ 68K	./paper_figure_outputs/Figure6_support_source.csv
+ 68K	./paper_figure_outputs/Figure5_temporal_profiles.csv
+ 68K	./msaa_heldout_topm_outputs_spatial_across/heldout_topm_summary.csv
+ 68K	./msaa_flexible_decoding_outputs_spatial_across_old/full_reconstruction_runs.csv
+ 68K	./msaa_edge_trim_sensitivity_K46_top5/edge_trim_above_chance_fraction_preserved.png
+ 68K	./four_condition_ratio_decoding_outputs/aa_topm_summary.csv
+ 68K	./figures/full_reconstruction_decoding/separate_heatmaps_for_illustrator/word_across_temporal_accuracy.pdf
+ 68K	./figures/full_reconstruction_decoding/separate_heatmaps_for_illustrator/word_across_difference_spatial_minus_temporal.pdf
+ 68K	./figures/full_reconstruction_decoding/separate_heatmaps_for_illustrator/rest_across_temporal_accuracy.pdf
+ 68K	./figures/003c_exact_matched_ratio_topm_heatmaps/separate_heatmaps_for_illustrator/word_across_temporal_accuracy.pdf
+ 68K	./figures/003c_exact_matched_ratio_topm_heatmaps/separate_heatmaps_for_illustrator/rest_within_temporal_accuracy_all_available_K.pdf
+ 68K	./figures/003c_exact_matched_ratio_topm_heatmaps/separate_heatmaps_for_illustrator/rest_across_temporal_accuracy.pdf
+ 68K	./figures/003c_exact_matched_ratio_topm_heatmaps/separate_heatmaps_for_illustrator/intact_across_difference_spatial_minus_temporal.pdf
+ 68K	./.ipynb_checkpoints/supp_08_joint_decoding_clustering_new_topm_crossfit_RESUMABLE-checkpoint.ipynb
+ 68K	./.ipynb_checkpoints/supp_08_joint_decoding_clustering_new_topm_crossfit_RESUMABLE_fixed-checkpoint.ipynb
+ 68K	./.ipynb_checkpoints/revisions_matched_pca_aa_equivalence-checkpoint.ipynb
+ 64K	./supp_02_joint_intact_word_convergence.ipynb
+ 64K	./paper_figure_outputs/Figure4_source_data.csv
+ 64K	./paper_figure_outputs/Figure3_replication.pdf
+ 64K	./figures/full_reconstruction_decoding/separate_heatmaps_for_illustrator/rest_across_difference_spatial_minus_temporal.pdf
+ 64K	./figures/full_reconstruction_decoding/separate_heatmaps_for_illustrator/intact_across_temporal_accuracy.pdf
+ 64K	./figures/003c_exact_matched_ratio_topm_heatmaps/separate_heatmaps_for_illustrator/word_across_difference_spatial_minus_temporal.pdf
+ 64K	./figures/003c_exact_matched_ratio_topm_heatmaps/separate_heatmaps_for_illustrator/rest_across_difference_spatial_minus_temporal.pdf
+ 64K	./figures/003b_observed_ratio_topm_heatmaps/single_spatial_across_intact_observed_ratio.pdf
+ 64K	./.ipynb_checkpoints/revision_test_AA_information_concentration-checkpoint.ipynb
+ 64K	./.ipynb_checkpoints/revision_benchmark_simulation_02-checkpoint.ipynb
+ 64K	./.ipynb_checkpoints/msaa_all_in_one_k_sweep_clustering_paper_aligned-checkpoint.ipynb
+ 60K	./msaa_flexible_decoding_outputs_temporal_across_old/full_reconstruction_runs.csv
+ 60K	./helpers/.ipynb_checkpoints/demo_msaa_T-checkpoint.ipynb
+ 60K	./figures/003c_exact_matched_ratio_topm_heatmaps/separate_heatmaps_for_illustrator/intact_across_temporal_accuracy.pdf
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj9_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj8_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj7_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj6_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj5_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj4_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj35_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj34_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj33_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj32_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj31_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj30_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj3_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj29_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj28_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj27_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj26_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj25_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj24_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj23_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj22_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj21_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj20_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj2_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj19_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj18_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj17_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj16_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj15_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj14_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj13_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj12_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj11_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj10_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj1_sXC.npy
+ 60K	./data/archetypes/all_results_50/word/subjects/word_subj0_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj9_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj8_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj7_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj6_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj5_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj4_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj35_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj34_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj33_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj32_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj31_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj30_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj3_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj29_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj28_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj27_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj26_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj25_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj24_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj23_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj22_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj21_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj20_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj2_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj19_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj18_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj17_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj16_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj15_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj14_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj13_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj12_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj11_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj10_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj1_sXC.npy
+ 60K	./data/archetypes/all_results_50/rest/subjects/rest_subj0_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj9_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj8_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj7_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj6_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj5_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj4_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj35_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj34_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj33_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj32_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj31_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj30_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj3_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj29_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj28_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj27_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj26_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj25_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj24_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj23_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj22_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj21_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj20_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj2_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj19_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj18_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj17_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj16_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj15_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj14_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj13_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj12_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj11_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj10_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj1_sXC.npy
+ 60K	./data/archetypes/all_results_50/intact/subjects/intact_subj0_sXC.npy
+ 60K	./.ipynb_checkpoints/revision_three_regime_with_paired_inference_03-checkpoint.ipynb
+ 60K	./.ipynb_checkpoints/revision_04_heldout_topm_msaa-checkpoint.ipynb
+ 60K	./.ipynb_checkpoints/paper_figure03_PCA_MSAA_simulation_benchmark-checkpoint.ipynb
+ 60K	./.ipynb_checkpoints/013_network_localization_analysis_v4_ratio_brainplots_nulls-checkpoint.ipynb
+ 60K	./.ipynb_checkpoints/002_decode_msaa_appendable_explicit_save_v2-Copy1-checkpoint.ipynb
+ 56K	./simulation_three_regime_outputs/three_regime_results_paper.csv
+ 56K	./simulation_pca_msaa_extended_outputs/main_simulation_figure.pdf
+ 56K	./select_top10_decode_then_top5_cluster_spatial_across_outputs/all_archetypes_scored_spatial_across.csv
+ 56K	./pca_aa_equivalence_outputs/pca_summary.csv
+ 56K	./pca_aa_equivalence_outputs/aa_pca_equivalence_focus.csv
+ 56K	./paper_figure_outputs/Supplement_full_across_within_ratio_landscapes.pdf
+ 56K	./paper_figure_outputs/Figure4_heldout_sparse_MSAA_condensed.pdf
+ 56K	./figures/003c_exact_matched_ratio_topm_heatmaps/spatial_across_minus_temporal_across_difference_heatmap_word.pdf
+ 56K	./figures/003c_exact_matched_ratio_topm_heatmaps/spatial_across_minus_temporal_across_difference_heatmap_rest.pdf
+ 56K	./figures/003c_exact_matched_ratio_topm_heatmaps/spatial_across_minus_temporal_across_difference_heatmap_intact.pdf
+ 56K	./.ipynb_checkpoints/supp_08_joint_decoding_clustering_new_topm_crossfit-checkpoint.ipynb
+ 56K	./.ipynb_checkpoints/revisions_matched_pca_baseline-checkpoint.ipynb
+ 56K	./.ipynb_checkpoints/002_decode_msaa_appendable_stable_v2-checkpoint.ipynb
+ 52K	./tables/003c_exact_matched_ratio_topm_heatmaps/spatial_across_minus_temporal_across_all_matched_ratio_differences.csv
+ 52K	./paper_figure_outputs/Figure6_selected_motif_support_robustness.pdf
+ 52K	./paper_figure_outputs/Figure2_empirical_PCA_MSAA_benchmark_main.pdf
+ 52K	./helpers/.ipynb_checkpoints/demo_msaa-checkpoint.ipynb
+ 52K	./figures/003c_exact_matched_ratio_topm_heatmaps/spatial_minus_temporal_difference_heatmap_word.pdf
+ 52K	./figures/003c_exact_matched_ratio_topm_heatmaps/spatial_minus_temporal_difference_heatmap_rest.pdf
+ 52K	./figures/003c_exact_matched_ratio_topm_heatmaps/spatial_minus_temporal_difference_heatmap_intact.pdf
+ 52K	./.ipynb_checkpoints/002_decode_msaa_condition_specific_appendable-Copy3-checkpoint.ipynb
+ 52K	./.ipynb_checkpoints/002_decode_msaa_condition_specific_appendable-Copy2-checkpoint.ipynb
+ 52K	./.ipynb_checkpoints/002_decode_msaa_condition_specific_appendable-Copy1-checkpoint.ipynb
+ 52K	./.ipynb_checkpoints/002_decode_msaa_appendable_explicit_save_v2-checkpoint.ipynb
+ 52K	./.ipynb_checkpoints/002_decode_msaa_appendable_autosave_once-checkpoint.ipynb
+ 52K	./.ipynb_checkpoints/002_decode_msaa_appendable_autosave_once_v2_topmfix-checkpoint.ipynb
+ 48K	./simulation_soft_membership_revised_outputs/details/paper_het_none_rep019.npz
+ 48K	./simulation_soft_membership_revised_outputs/details/paper_het_none_rep018.npz
+ 48K	./simulation_soft_membership_revised_outputs/details/paper_het_none_rep017.npz
+ 48K	./simulation_soft_membership_revised_outputs/details/paper_het_none_rep016.npz
+ 48K	./simulation_soft_membership_revised_outputs/details/paper_het_none_rep015.npz
+ 48K	./simulation_soft_membership_revised_outputs/details/paper_het_none_rep014.npz
+ 48K	./simulation_soft_membership_revised_outputs/details/paper_het_none_rep013.npz
+ 48K	./simulation_soft_membership_revised_outputs/details/paper_het_none_rep012.npz
+ 48K	./simulation_soft_membership_revised_outputs/details/paper_het_none_rep011.npz
+ 48K	./simulation_soft_membership_revised_outputs/details/paper_het_none_rep010.npz
+ 48K	./simulation_soft_membership_revised_outputs/details/paper_het_none_rep009.npz
+ 48K	./simulation_soft_membership_revised_outputs/details/paper_het_none_rep008.npz
+ 48K	./simulation_soft_membership_revised_outputs/details/paper_het_none_rep007.npz
+ 48K	./simulation_soft_membership_revised_outputs/details/paper_het_none_rep006.npz
+ 48K	./simulation_soft_membership_revised_outputs/details/paper_het_none_rep005.npz
+ 48K	./simulation_soft_membership_revised_outputs/details/paper_het_none_rep004.npz
+ 48K	./simulation_soft_membership_revised_outputs/details/paper_het_none_rep003.npz
+ 48K	./simulation_soft_membership_revised_outputs/details/paper_het_none_rep002.npz
+ 48K	./simulation_soft_membership_revised_outputs/details/paper_het_none_rep001.npz
+ 48K	./simulation_soft_membership_revised_outputs/details/paper_het_none_rep000.npz
+ 48K	./paper_figure_outputs/Figure3_PCA_MSAA_simulation_benchmark.pdf
+ 48K	./.ipynb_checkpoints/revision_three_regime_metastable_simulation_03-checkpoint.ipynb
+ 48K	./.ipynb_checkpoints/03_clustering_and_brainplots_from_npz_spectral_decoding_per_archetype-checkpoint.ipynb
+ 48K	./.ipynb_checkpoints/002_decode_msaa_condition_specific_appendable_savefig-checkpoint.ipynb
+ 48K	./.ipynb_checkpoints/002_decode_msaa_condition_specific_appendable_savefig_v2-checkpoint.ipynb
+ 44K	./paper_figure_outputs/Supplement_same_data_vs_heldout_topm.pdf
+ 44K	./paper_figure_outputs/Supplement_PCA_validation.pdf
+ 44K	./paper_figure_outputs/Supplement_PCA_validation_condensed.pdf
+ 44K	./paper_figure_outputs/Supplement_joint_decoding_clustering.pdf
+ 44K	./paper_figure_outputs/Supplement_four_condition_paragraph_validation.pdf
+ 44K	./paper_figure_outputs/Figure4_heldout_sparse_MSAA.pdf
+ 44K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K25_arch2_pie.png
+ 44K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K10_arch3_pie.png
+ 44K	./data/pieman/raw/Schaefer2018_1000Parcels_7Networks_order.txt
+ 44K	./.ipynb_checkpoints/revision_06_msaa_pca_network_motif_simulation-checkpoint.ipynb
+ 44K	./.ipynb_checkpoints/revision_06_archetype_interpretation_K46_independent_groups-checkpoint.ipynb
+ 44K	./.ipynb_checkpoints/msaa_all_in_one_k_sweep_clustering-checkpoint.ipynb
+ 44K	./.ipynb_checkpoints/015_representational_efficiency_topm_geometry-checkpoint.ipynb
+ 44K	./.ipynb_checkpoints/002_decode_msaa_condition_specific_appendable-checkpoint.ipynb
+ 40K	./simulation_soft_membership_revised_outputs/Supplement_node_mixing_recovery.pdf
+ 40K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K25_arch5_pie.png
+ 40K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K10_arch7_pie.png
+ 40K	./four_condition_ratio_decoding_outputs/aa_full_summary_with_retention.csv
+ 40K	./.ipynb_checkpoints/revision_simuliation_soft_membership_extension_04-checkpoint.ipynb
+ 40K	./.ipynb_checkpoints/revision_06_archetype_interpretation_and_support_K46-checkpoint.ipynb
+ 40K	./.ipynb_checkpoints/revision_04_heldout_topm_msaa_crossfit-checkpoint.ipynb
+ 40K	./.ipynb_checkpoints/revision_02_decode_four_condition_ratio_matched_msaa_pca_htfa_paragraph_fixed-checkpoint.ipynb
+ 40K	./.ipynb_checkpoints/msaa_clean_across_condition_spatialAA_by_condition_decode_timecourse_cluster-checkpoint.ipynb
+ 40K	./.ipynb_checkpoints/03_clustering_and_brainplots_from_npz_spectral_updated-checkpoint.ipynb
+ 40K	./.ipynb_checkpoints/014_top_decoding_archetype_clustering_validation_spatial_enabled-checkpoint.ipynb
+ 40K	./.ipynb_checkpoints/011_decoding_normalized_component_ratio_stats_v8_clean-checkpoint.ipynb
+ 36K	./simulation_soft_membership_revised_outputs/Supplement_subject_heterogeneity_recovery.pdf
+ 36K	./simulation_soft_membership_revised_outputs/details/quick_het_none_rep002.npz
+ 36K	./simulation_soft_membership_revised_outputs/details/quick_het_none_rep001.npz
+ 36K	./simulation_soft_membership_revised_outputs/details/quick_het_none_rep000.npz
+ 36K	./simulation_soft_membership_outputs/Supplement_soft_membership.pdf
+ 36K	./pca_matched_baseline_outputs/pca_full_summary.csv
+ 36K	./paper_figure_outputs/Supplement_edge_trim_diagnostics.pdf
+ 36K	./paper_figure_outputs/Supplement_clustering_geometry.pdf
+ 36K	./paper_figure_outputs/supp_simulation_robustness.pdf
+ 36K	./paper_figure_outputs/new_topm_crossfit_consensus_subsets.csv
+ 36K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K75_arch10_pie.png
+ 36K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K50_arch8_pie.png
+ 36K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K50_arch4_pie.png
+ 36K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K25_arch4_pie.png
+ 36K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K100_arch14_pie.png
+ 36K	./msaa_condrank_decoding_outputs_spatial_across/rankings.npy
+ 36K	./.ipynb_checkpoints/revision_08_figure5_selected_K46_archetypes_summary_layout-checkpoint.ipynb
+ 36K	./.ipynb_checkpoints/revision_02_decode_four_condition_ratio_matched_msaa_pca_htfa-checkpoint.ipynb
+ 36K	./.ipynb_checkpoints/02_decode_msaa_flexible_appendable-checkpoint.ipynb
+ 36K	./.ipynb_checkpoints/01_fit_msaa_flexible-checkpoint.ipynb
+ 32K	./simulation_pca_msaa_extended_outputs/supp_overlap_dynamics.pdf
+ 32K	./revision_05_archetype_interpretation_and_support/selected_archetype_support_by_observation.csv
+ 32K	./paper_figure_outputs/Supplement_network_localization_nulls.pdf
+ 32K	./paper_figure_outputs/Supplement_joint_decoding_clustering_new_topm.pdf
+ 32K	./paper_figure_outputs/supp_simulation_overlap_dynamics.pdf
+ 32K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K75_arch13_pie.png
+ 32K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K50_arch11_pie.png
+ 32K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K100_arch9_pie.png
+ 32K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K100_arch13_pie.png
+ 32K	./msaa_edge_trim_sensitivity_K46_top5/edge_trim_top5_crossfit_runs.csv
+ 32K	./msaa_condrank_decoding_outputs_spatial_within/rankings.npy
+ 32K	./four_condition_ratio_decoding_outputs/aa_full_summary.csv
+ 32K	./figures/full_reconstruction_decoding/full_reconstruction_combined_within_across_ci95.pdf
+ 32K	./figures/full_reconstruction_decoding/full_recon_K_across.pdf
+ 32K	./data/archetypes/archetypes_df_word.csv
+ 32K	./aa_information_concentration_outputs/AA_information_concentration_by_K.csv
+ 32K	./.ipynb_checkpoints/revision_08_figure5_selected_K46_archetypes_glassbrain-checkpoint.ipynb
+ 32K	./.ipynb_checkpoints/revision_03_four_condition_ratio_matched_figures_paragraph_fixed-checkpoint.ipynb
+ 32K	./.ipynb_checkpoints/paper_figure05_selected_K46_archetypes-checkpoint.ipynb
+ 32K	./.ipynb_checkpoints/msaa_clean_across_condition_spatialAA_by_condition_decode-checkpoint.ipynb
+ 32K	./.ipynb_checkpoints/07_across_cluster_selected_archetypes_decode_and_visualize-checkpoint.ipynb
+ 32K	./.ipynb_checkpoints/03_temporalAA_TRANSPOSED_within_archetype_analysis_from_npz-checkpoint.ipynb
+ 32K	./.ipynb_checkpoints/03_temporalAA_TRANSPOSED_archetype_analysis_v4-checkpoint.ipynb
+ 32K	./.ipynb_checkpoints/03_temporalAA_TRANSPOSED_archetype_analysis_v3-checkpoint.ipynb
+ 32K	./.ipynb_checkpoints/03_temporalAA_TRANSPOSED_archetype_analysis_v2-checkpoint.ipynb
+ 32K	./.ipynb_checkpoints/03_temporalAA_TRANSPOSED_archetype_analysis_from_npz-checkpoint.ipynb
+ 32K	./.ipynb_checkpoints/02_decode_msaa_flexible_appendable_full-checkpoint.ipynb
+ 32K	./.ipynb_checkpoints/013_network_localization_analysis-checkpoint.ipynb
+ 32K	./.ipynb_checkpoints/012_topm_bump_normalized_component_ratio_v5_spatial_minus_temporal-checkpoint.ipynb
+ 32K	./.ipynb_checkpoints/012_topm_bump_normalized_component_ratio_v4_patched_axes-checkpoint.ipynb
+ 32K	./.ipynb_checkpoints/012_topm_bump_normalized_component_ratio_v2_matched-checkpoint.ipynb
+ 32K	./.ipynb_checkpoints/011_decoding_normalized_component_ratio_stats_v2-checkpoint.ipynb
+ 28K	./tables/003c_exact_matched_ratio_topm_heatmaps/exact_matched_ratio_top3_raw_K_annotations.csv
+ 28K	./tables/003_ratio_matched_topm_heatmaps/all_top3_raw_K_annotations.csv
+ 28K	./simulation_soft_membership_revised_outputs/mixing_results_paper.csv
+ 28K	./simulation_soft_membership_revised_outputs/heterogeneity_results_paper.csv
+ 28K	./paper_figure_outputs/Supplement_four_condition_paragraph_retention.pdf
+ 28K	./paper_figure_outputs/supp_simulation_temporal.pdf
+ 28K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K75_arch0_pie.png
+ 28K	./notebook_attempts/clustering_brainplots_exact_notebook_style/K10_arch2_pie.png
+ 28K	./msaa_flexible_decoding_outputs_spatial_across/topm_summary.csv
+ 28K	./msaa_condrank_decoding_outputs_spatial_across/full_summary.csv
+ 28K	./hypertools/__pycache__/srm.cpython-311.pyc
+ 28K	./figures/full_reconstruction_decoding/full_reconstruction_combined_within_across_ci95_zoom_ratio_0_02.pdf
+ 28K	./figures/full_reconstruction_decoding/full_reconstruction_across_only_ci95.pdf
+ 28K	./figures/full_reconstruction_decoding/full_recon_K_within.pdf
+ 28K	./data/archetypes/archetypes_df_paragraph.csv
+ 28K	./data/archetypes/archetypes_df_intact.csv
+ 28K	./.ipynb_checkpoints/supp_08_joint_decoding_clustering_replicated-checkpoint.ipynb
+ 28K	./.ipynb_checkpoints/spatial_msaa_clustering_rewrite-checkpoint.ipynb
+ 28K	./.ipynb_checkpoints/revision_08_visualize_selected_K46_archetypes-checkpoint.ipynb
+ 28K	./.ipynb_checkpoints/revision_08_figure5_selected_K46_archetypes_paper_ready-checkpoint.ipynb
+ 28K	./.ipynb_checkpoints/revision_01_fit_four_condition_ratio_matched_msaa_paragraph_fixed-checkpoint.ipynb
+ 28K	./.ipynb_checkpoints/msaa_clean_across_condition_spatialAA-checkpoint.ipynb
+ 28K	./.ipynb_checkpoints/03_clustering_and_brainplots_from_npz_notebook_style_opacity_replacement-checkpoint.ipynb
+ 28K	./.ipynb_checkpoints/03_clustering_and_brainplots_from_npz_notebook_style_opacity_fixed-checkpoint.ipynb
+ 28K	./.ipynb_checkpoints/03_clustering_and_brainplots_from_npz_notebook_style_opacity_final_fixed-checkpoint.ipynb
+ 28K	./.ipynb_checkpoints/03_clustering_and_brainplots_from_npz_exact_notebook_style-checkpoint.ipynb
+ 28K	./.ipynb_checkpoints/02_decoding_analysis_from_npz_updated_v2-checkpoint.ipynb
+ 28K	./.ipynb_checkpoints/016_joint_decoding_clustering_score-checkpoint.ipynb
+ 24K	./tables/003b_observed_ratio_topm_heatmaps/all_observed_ratio_top3_raw_K_annotations.csv
+ 24K	./paper_figure_outputs/Supplement_joint_intact_word_convergence.pdf
+ 24K	./paper_decoding_figures/decoding_topm_grid_temporal_within.pdf
+ 24K	./paper_decoding_figures/decoding_topm_grid_temporal_across.pdf
+ 24K	./paper_decoding_figures/decoding_topm_grid_spatial_within.pdf
+ 24K	./paper_decoding_figures/decoding_topm_grid_spatial_across.pdf
+ 24K	./msaa_condrank_decoding_outputs_temporal_across/full_summary.csv
+ 24K	./hypertools/srm.py
+ 24K	./helpers/__pycache__/MultiSubject_AA.cpython-311.pyc
+ 24K	./helpers/__pycache__/MultiSubject_AA_T.cpython-311.pyc
+ 24K	./figures/full_reconstruction_decoding/full_reconstruction_spatial_vs_temporal_same_axes.pdf
+ 24K	./figures/003c_exact_matched_ratio_topm_heatmaps/figure5_decoding_by_analysis_topm_10_word.pdf
+ 24K	./figures/003c_exact_matched_ratio_topm_heatmaps/figure5_decoding_by_analysis_topm_10_rest.pdf
+ 24K	./figures/003c_exact_matched_ratio_topm_heatmaps/figure5_decoding_by_analysis_topm_10_intact.pdf
+ 24K	./009_paper_decoding_figures_condition_specific/decoding_topm_grid_spatial_across.pdf
+ 24K	./008_across_target3_cluster_heatmaps_spatial/cluster_scores_all_archetypes_spatial_across.csv
+ 24K	./007_across_target3_cluster_selected_decode_visualize_temporal/cluster_scores_all_archetypes_temporal_across.csv
+ 24K	./003_postprocess_across_spatial_cache/cluster_summary_df.csv
+ 24K	./.ipynb_checkpoints/revision_01_fit_four_condition_ratio_matched_msaa-checkpoint.ipynb
+ 24K	./.ipynb_checkpoints/10_decoding_compression_ratio_comparison-checkpoint.ipynb
+ 24K	./.ipynb_checkpoints/09_decoding_plots_from_saved_outputs-checkpoint.ipynb
+ 24K	./.ipynb_checkpoints/09_decoding_plots_from_saved_outputs_v3_appendable_compatible-checkpoint.ipynb
+ 24K	./.ipynb_checkpoints/03_clustering_and_brainplots_from_npz_yeo_revised-checkpoint.ipynb
+ 24K	./.ipynb_checkpoints/02_decoding_analysis_from_npz_updated-checkpoint.ipynb
+ 24K	./.ipynb_checkpoints/017_ratio_matched_topm_decoding_heatmaps-checkpoint.ipynb
+ 24K	./.DS_Store
+ 24K	./__pycache__/MultiSubject_AA.cpython-311.pyc
+ 20K	./simulation_pca_ica_msaa_extended_outputs/pca_ica_msaa_extended_results_quick.csv
+ 20K	./paper_decoding_figures/decoding_within_vs_across_temporal_full.pdf
+ 20K	./paper_decoding_figures/decoding_top4_spatial_across.pdf
+ 20K	./paper_decoding_figures/decoding_spatial_vs_temporal_within_full.pdf
+ 20K	./paper_compression_ratio_figures/decoding_vs_rawK_across_full.pdf
+ 20K	./paper_compression_ratio_figures/decoding_vs_axis_compression_ratio_across_full.pdf
+ 20K	./notebook_attempts/02_decoding_analysis_flexible.ipynb
+ 20K	./notebook_attempts/01_fit_msaa_flexible_new.ipynb
+ 20K	./msaa_flexible_decoding_outputs_temporal_within_old/full_reconstruction_runs.csv
+ 20K	./msaa_flexible_decoding_outputs_spatial_within_old/full_reconstruction_runs.csv
+ 20K	./msaa_edge_trim_sensitivity_K46_top5/edge_trim_accuracy_paired_outer_reps.csv
+ 20K	./msaa_condrank_decoding_outputs_temporal_within/full_summary.csv
+ 20K	./msaa_condrank_decoding_outputs_temporal_across/rankings.npy
+ 20K	./msaa_condrank_decoding_outputs_spatial_within/full_summary.csv
+ 20K	./hypertools/__pycache__/srm.cpython-310.pyc
+ 20K	./data/archetypes/archetypes_df_rest.csv
+ 20K	./across_cluster_selected_decode_visualize_spatial/cluster_scores_all_archetypes_spatial_across.csv
+ 20K	./010_paper_compression_ratio_figures_condition_specific/decoding_vs_rawK_across_full.pdf
+ 20K	./010_paper_compression_ratio_figures_condition_specific/decoding_vs_axis_compression_ratio_across_full.pdf
+ 20K	./003_postprocess_across_spatial_condition_specific_outputs/spatial_across_per_archetype_summary_clean_refactored.csv
+ 20K	./.ipynb_checkpoints/paper_figure04_heldout_sparse_MSAA_condensed-checkpoint.ipynb
+ 20K	./.ipynb_checkpoints/paper_figure04_heldout_sparse_MSAA_condensed_fixed-checkpoint.ipynb
+ 20K	./.ipynb_checkpoints/paper_figure02_empirical_PCA_MSAA_benchmark_main-checkpoint.ipynb
+ 20K	./.ipynb_checkpoints/07_across_select_top10_decode_then_top5_cluster-checkpoint.ipynb
+ 20K	./.ipynb_checkpoints/04_spatialAA_within_decoding_inspection_from_flexible_outputs-checkpoint.ipynb
+ 20K	./.ipynb_checkpoints/03_temporalAA_TRANSPOSED_within_archetype_inspection_from_npz-checkpoint.ipynb
+ 20K	./.ipynb_checkpoints/02_decode_msaa_flexible_with_plots-checkpoint.ipynb
+ 20K	./.ipynb_checkpoints/017_observed_ratio_topm_decoding_heatmaps-checkpoint.ipynb
+ 20K	./.ipynb_checkpoints/017_exact_matched_ratio_topm_decoding_heatmaps-checkpoint.ipynb
+ 20K	./.ipynb_checkpoints/012_topm_bump_normalized_component_ratio-checkpoint.ipynb
+ 20K	./.ipynb_checkpoints/011_decoding_normalized_component_ratio-checkpoint.ipynb
+ 20K	./.ipynb_checkpoints/011_decoding_normalized_component_ratio_stats-checkpoint.ipynb
+ 20K	./.ipynb_checkpoints/01_fit_msaa_flexible_within_across_spatial_temporal_v3-checkpoint.ipynb
+ 20K	./.ipynb_checkpoints/01_fit_msaa_flexible_within_across_spatial_temporal_v2-checkpoint.ipynb
+ 16K	./paper_decoding_figures/decoding_within_vs_across_spatial_full.pdf
+ 16K	./paper_decoding_figures/decoding_top5_temporal_within.pdf
+ 16K	./paper_decoding_figures/decoding_top5_temporal_across.pdf
+ 16K	./paper_decoding_figures/decoding_top5_spatial_within.pdf
+ 16K	./paper_decoding_figures/decoding_top5_spatial_across.pdf
+ 16K	./paper_decoding_figures/decoding_top4_temporal_within.pdf
+ 16K	./paper_decoding_figures/decoding_top4_temporal_across.pdf
+ 16K	./paper_decoding_figures/decoding_top4_spatial_within.pdf
+ 16K	./paper_decoding_figures/decoding_top3_temporal_within.pdf
+ 16K	./paper_decoding_figures/decoding_top3_temporal_across.pdf
+ 16K	./paper_decoding_figures/decoding_top3_spatial_within.pdf
+ 16K	./paper_decoding_figures/decoding_top3_spatial_across.pdf
+ 16K	./paper_decoding_figures/decoding_top2_temporal_within.pdf
+ 16K	./paper_decoding_figures/decoding_top2_temporal_across.pdf
+ 16K	./paper_decoding_figures/decoding_top2_spatial_within.pdf
+ 16K	./paper_decoding_figures/decoding_top2_spatial_across.pdf
+ 16K	./paper_decoding_figures/decoding_top10_temporal_within.pdf
+ 16K	./paper_decoding_figures/decoding_top10_temporal_across.pdf
+ 16K	./paper_decoding_figures/decoding_top10_spatial_within.pdf
+ 16K	./paper_decoding_figures/decoding_top10_spatial_across.pdf
+ 16K	./paper_decoding_figures/decoding_top1_temporal_within.pdf
+ 16K	./paper_decoding_figures/decoding_top1_temporal_across.pdf
+ 16K	./paper_decoding_figures/decoding_top1_spatial_within.pdf
+ 16K	./paper_decoding_figures/decoding_top1_spatial_across.pdf
+ 16K	./paper_decoding_figures/decoding_spatial_vs_temporal_across_full.pdf
+ 16K	./paper_decoding_figures/decoding_full_temporal_within.pdf
+ 16K	./paper_decoding_figures/decoding_full_temporal_across.pdf
+ 16K	./paper_decoding_figures/decoding_full_spatial_within.pdf
+ 16K	./paper_decoding_figures/decoding_full_spatial_across.pdf
+ 16K	./paper_compression_ratio_figures/decoding_vs_rawK_within_full.pdf
+ 16K	./paper_compression_ratio_figures/decoding_vs_axis_compression_ratio_within_full.pdf
+ 16K	./notebook_attempts/clustering_brainplots_exact_notebook_style/htfa_node_counts.pdf
+ 16K	./notebook_attempts/02_decode_msaa_flexible.ipynb
+ 16K	./notebook_attempts/01_fit_msaa_flexible_old.ipynb
+ 16K	./msaa_four_condition_ratio_within_outputs_npz/fit_audit.csv
+ 16K	./msaa_flexible_decoding_outputs_temporal_within/topm_summary.csv
+ 16K	./msaa_flexible_decoding_outputs_temporal_across/topm_summary.csv
+ 16K	./msaa_flexible_decoding_outputs_spatial_within/topm_summary.csv
+ 16K	./msaa_flexible_decoding_outputs_spatial_across_old/per_archetype_mean_accuracy.csv
+ 16K	./msaa_condrank_decoding_outputs_temporal_within/rankings.npy
+ 16K	./hypertools/__pycache__/helpers.cpython-311.pyc
+ 16K	./htfa_node_counts.pdf
+ 16K	./helpers/MultiSubject_AA.py
+ 16K	./helpers/MultiSubject_AA_T.py
+ 16K	./helpers/.ipynb_checkpoints/MultiSubject_AA-checkpoint.py
+ 16K	./four_condition_ratio_decoding_outputs/pca_summary_with_retention.csv
+ 16K	./009_paper_decoding_figures_condition_specific/decoding_within_vs_across_spatial_full.pdf
+ 16K	./009_paper_decoding_figures_condition_specific/decoding_top5_spatial_across.pdf
+ 16K	./009_paper_decoding_figures_condition_specific/decoding_top3_spatial_across.pdf
+ 16K	./009_paper_decoding_figures_condition_specific/decoding_top2_spatial_across.pdf
+ 16K	./009_paper_decoding_figures_condition_specific/decoding_top10_spatial_across.pdf
+ 16K	./009_paper_decoding_figures_condition_specific/decoding_top1_spatial_across.pdf
+ 16K	./009_paper_decoding_figures_condition_specific/decoding_spatial_vs_temporal_across_full.pdf
+ 16K	./009_paper_decoding_figures_condition_specific/decoding_full_spatial_across.pdf
+ 16K	./.ipynb_checkpoints/paper_supp_figure_PCA_validation-checkpoint.ipynb
+ 16K	./.ipynb_checkpoints/paper_figure06_support_and_robustness-checkpoint.ipynb
+ 16K	./.ipynb_checkpoints/paper_figure02_empirical_PCA_MSAA_benchmark-checkpoint.ipynb
+ 16K	./.ipynb_checkpoints/paper_fig03_replicate_current_manuscript-checkpoint.ipynb
+ 16K	./.ipynb_checkpoints/04_postprocess_across_temporal-checkpoint.ipynb
+ 16K	./.ipynb_checkpoints/03_postprocess_across_spatial-checkpoint.ipynb
+ 16K	./.ipynb_checkpoints/02_decoding_analysis_TRUE_temporal_from_npz-checkpoint.ipynb
+ 16K	./.ipynb_checkpoints/02_decoding_analysis_temporalAA_TRANSPOSED_within_from_npz-checkpoint.ipynb
+ 16K	./.ipynb_checkpoints/02_decoding_analysis_temporal_from_npz-checkpoint.ipynb
+ 16K	./.ipynb_checkpoints/02_decode_msaa_flexible_appendable_helpers-checkpoint.ipynb
+ 16K	./.ipynb_checkpoints/01_fit_msaa_flexible_within_across_spatial_temporal-checkpoint.ipynb
+ 12K	./tables/003_ratio_matched_topm_heatmaps/ratio_matched_top3_raw_K_annotations_rest.csv
+ 12K	./tables/003_ratio_matched_topm_heatmaps/ratio_matched_top3_raw_K_annotations_intact.csv
+ 12K	./simulation_pca_msaa_extended_outputs/pca_msaa_extended_results_quick.csv
+ 12K	./simulation_pca_ica_msaa_outputs/pca_ica_msaa_results_quick.csv
+ 12K	./simulation_pca_ica_msaa_outputs_simpleica/pca_ica_msaa_results_quick.csv
+ 12K	./simulation_pca_ica_msaa_outputs_robustica/pca_ica_msaa_results_quick.csv
+ 12K	./simulation_benchmark_outputs/benchmark_results_quick.csv
+ 12K	./pca_aa_equivalence_outputs/reviewer_spatial_AA_PCA_equivalence.csv
+ 12K	./paper_figure_outputs/Figure4_joint_stimulus_score.csv
+ 12K	./paper_compression_ratio_figures/best_decoding_by_compression_threshold_within_full.pdf
+ 12K	./paper_compression_ratio_figures/best_decoding_by_compression_threshold_across_full.pdf
+ 12K	./msaa_flexible_decoding_outputs_temporal_across_old/topm_summary.csv
+ 12K	./msaa_flexible_decoding_outputs_temporal_across_old/per_archetype_mean_accuracy.csv
+ 12K	./msaa_flexible_decoding_outputs_spatial_across/full_summary.csv
+ 12K	./msaa_flexible_decoding_outputs_spatial_across_old/topm_summary.csv
+ 12K	./msaa_edge_trim_sensitivity_K46_top5/edge_trim_top5_sets_by_crossfit.csv
+ 12K	./hypertools/__pycache__/text2mat.cpython-311.pyc
+ 12K	./hypertools/__pycache__/reduce.cpython-311.pyc
+ 12K	./hypertools/__pycache__/load.cpython-311.pyc
+ 12K	./hypertools/__pycache__/helpers.cpython-310.pyc
+ 12K	./hypertools/__pycache__/format_data.cpython-311.pyc
+ 12K	./helpers/__pycache__/MultiSubject_AA.cpython-310.pyc
+ 12K	./helpers/__pycache__/MultiSubject_AA_T.cpython-310.pyc
+ 12K	./four_condition_ratio_decoding_outputs/pca_summary.csv
+ 12K	./figures/full_reconstruction_decoding/separate_heatmaps_for_illustrator/word_difference_colorbar.pdf
+ 12K	./figures/full_reconstruction_decoding/separate_heatmaps_for_illustrator/shared_decoding_accuracy_colorbar.pdf
+ 12K	./figures/full_reconstruction_decoding/separate_heatmaps_for_illustrator/rest_difference_colorbar.pdf
+ 12K	./figures/full_reconstruction_decoding/separate_heatmaps_for_illustrator/intact_difference_colorbar.pdf
+ 12K	./figures/003c_exact_matched_ratio_topm_heatmaps/separate_heatmaps_for_illustrator/word_difference_colorbar.pdf
+ 12K	./figures/003c_exact_matched_ratio_topm_heatmaps/separate_heatmaps_for_illustrator/shared_decoding_accuracy_colorbar.pdf
+ 12K	./figures/003c_exact_matched_ratio_topm_heatmaps/separate_heatmaps_for_illustrator/rest_difference_colorbar.pdf
+ 12K	./figures/003c_exact_matched_ratio_topm_heatmaps/separate_heatmaps_for_illustrator/intact_difference_colorbar.pdf
+ 12K	./data/pieman/.DS_Store
+ 12K	./010_paper_compression_ratio_figures_condition_specific/best_decoding_by_compression_threshold_across_full.pdf
+ 12K	./.ipynb_checkpoints/supp_07_network_localization_nulls_fixed-checkpoint.ipynb
+ 12K	./.ipynb_checkpoints/supp_06_paragraph_four_condition_validation-checkpoint.ipynb
+ 12K	./.ipynb_checkpoints/supp_01_PCA_validation_condensed-checkpoint.ipynb
+ 12K	./.ipynb_checkpoints/paper_supp_figure_PCA_validation_condensed-checkpoint.ipynb
+ 12K	./.ipynb_checkpoints/paper_figure04_heldout_sparse_MSAA-checkpoint.ipynb
+ 12K	./.ipynb_checkpoints/06_postprocess_within_temporal-checkpoint.ipynb
+ 12K	./.ipynb_checkpoints/05_postprocess_within_spatial-checkpoint.ipynb
+ 12K	./.ipynb_checkpoints/04_temporalAA_TRANSPOSED_topm_gif_visualization_v2-checkpoint.ipynb
+ 12K	./.ipynb_checkpoints/03_clustering_and_brainplots_from_npz-checkpoint.ipynb
+ 12K	./.ipynb_checkpoints/02_decoding_analysis_temporalAA_TRANSPOSED_from_npz-checkpoint.ipynb
+ 12K	./.ipynb_checkpoints/02_decoding_analysis_from_npz-checkpoint.ipynb
+ 12K	./.ipynb_checkpoints/01_fit_temporalAA_TRANSPOSED_save_npz-checkpoint.ipynb
+ 12K	./.ipynb_checkpoints/01_fit_msaa_temporal_save_npz-checkpoint.ipynb
+ 12K	./.ipynb_checkpoints/01_fit_msaa_save_npz-checkpoint.ipynb
+8.0K	./temporal_decoding_summaries/topm_summary.csv
+8.0K	./tables/003b_observed_ratio_topm_heatmaps/observed_ratio_top3_raw_K_annotations_word.csv
+8.0K	./tables/003b_observed_ratio_topm_heatmaps/observed_ratio_top3_raw_K_annotations_rest.csv
+8.0K	./tables/003b_observed_ratio_topm_heatmaps/observed_ratio_top3_raw_K_annotations_intact.csv
+8.0K	./tables/003_ratio_matched_topm_heatmaps/ratio_matched_top3_raw_K_annotations_word.csv
+8.0K	./simulation_three_regime_outputs/three_regime_results_quick.csv
+8.0K	./simulation_soft_membership_revised_outputs/mixing_results_quick.csv
+8.0K	./simulation_soft_membership_revised_outputs/heterogeneity_results_quick.csv
+8.0K	./select_top10_decode_then_top5_cluster_spatial_across_outputs/selected_top5_from_top10decode_spatial_across.csv
+8.0K	./revision_05_archetype_interpretation_and_support/selected_archetype_support_by_participant.csv
+8.0K	./revision_05_archetype_interpretation_and_support/.DS_Store
+8.0K	./repo_folder_sizes.txt
+8.0K	./postprocess_across_spatial_outputs/spatial_across_per_archetype_summary.csv
+8.0K	./paper_figure_outputs/.DS_Store
+8.0K	./paper_compression_ratio_figures/decoding_with_compression_metrics_across.csv
+8.0K	./notebook_attempts/.DS_Store
+8.0K	./msaa_four_condition_ratio_within_outputs_npz/ratio_K_map_unique_fits.csv
+8.0K	./msaa_four_condition_ratio_within_outputs_npz/ratio_K_map_all_requested.csv
+8.0K	./msaa_four_condition_ratio_within_outputs_npz/.DS_Store
+8.0K	./msaa_flexible_outputs_npz/.DS_Store
+8.0K	./msaa_flexible_decoding_outputs_spatial_within/full_summary.csv
+8.0K	./msaa_flexible_decoding_outputs_spatial_across/rankings.npy
+8.0K	./hypertools/text2mat.py
+8.0K	./hypertools/reduce.py
+8.0K	./hypertools/procrustes.py
+8.0K	./hypertools/load.py
+8.0K	./hypertools/helpers.py
+8.0K	./hypertools/format_data.py
+8.0K	./hypertools/datageometry.py
+8.0K	./hypertools/align.py
+8.0K	./hypertools/__pycache__/text2mat.cpython-310.pyc
+8.0K	./hypertools/__pycache__/reduce.cpython-310.pyc
+8.0K	./hypertools/__pycache__/procrustes.cpython-311.pyc
+8.0K	./hypertools/__pycache__/ppca.cpython-311.pyc
+8.0K	./hypertools/__pycache__/normalize.cpython-311.pyc
+8.0K	./hypertools/__pycache__/load.cpython-310.pyc
+8.0K	./hypertools/__pycache__/format_data.cpython-310.pyc
+8.0K	./hypertools/__pycache__/datageometry.cpython-311.pyc
+8.0K	./hypertools/__pycache__/datageometry.cpython-310.pyc
+8.0K	./hypertools/__pycache__/align.cpython-311.pyc
+8.0K	./hypertools/__pycache__/align.cpython-310.pyc
+8.0K	./helpers/SupdateIndiStep.py
+8.0K	./helpers/furthest_sum.py
+8.0K	./helpers/furthest_sum_gpu.py
+8.0K	./helpers/.ipynb_checkpoints/furthest_sum_gpu-checkpoint.py
+8.0K	./helpers/.DS_Store
+8.0K	./helpers/__pycache__/SupdateIndiStep.cpython-311.pyc
+8.0K	./helpers/__pycache__/furthest_sum.cpython-311.pyc
+8.0K	./helpers/__pycache__/furthest_sum.cpython-310.pyc
+8.0K	./figures/full_reconstruction_decoding/.DS_Store
+8.0K	./figures/.DS_Store
+8.0K	./data/pieman/raw/.DS_Store
+8.0K	./data/archetypes/all_results_50/intact/.DS_Store
+8.0K	./data/archetypes/all_results_50/.DS_Store
+8.0K	./data/archetypes/.DS_Store
+8.0K	./data/.DS_Store
+8.0K	./across_cluster_selected_decode_visualize_temporal/cluster_scores_all_archetypes_temporal_across.csv
+8.0K	./aa_information_concentration_outputs/local_parentK_enhancement.csv
+8.0K	./aa_information_concentration_outputs/AA_information_concentration_joint_intact_word.csv
+8.0K	./010_paper_compression_ratio_figures_condition_specific/decoding_with_compression_metrics_across.csv
+8.0K	./007_across_target3_cluster_selected_decode_visualize_spatial/cluster_scores_all_archetypes_spatial_across.csv
+8.0K	./.ipynb_checkpoints/supp_11_simulation_temporal-checkpoint.ipynb
+8.0K	./.ipynb_checkpoints/supp_10_simulation_robustness-checkpoint.ipynb
+8.0K	./.ipynb_checkpoints/supp_09_simulation_overlap_dynamics-checkpoint.ipynb
+8.0K	./.ipynb_checkpoints/supp_08_clustering_geometry-checkpoint.ipynb
+8.0K	./.ipynb_checkpoints/supp_07_network_localization_nulls-checkpoint.ipynb
+8.0K	./.ipynb_checkpoints/supp_05_edge_trim_diagnostics-checkpoint.ipynb
+8.0K	./.ipynb_checkpoints/supp_04_same_data_vs_heldout_topm-checkpoint.ipynb
+8.0K	./.ipynb_checkpoints/supp_03_full_across_within_ratio_landscapes-checkpoint.ipynb
+8.0K	./.ipynb_checkpoints/supp_02_joint_intact_word_convergence-checkpoint.ipynb
+8.0K	./.ipynb_checkpoints/01_fit_TRUE_temporal_msaa_save_npz-checkpoint.ipynb
+4.0K	./temporal_decoding_summaries/topm_archetype_identities.csv
+4.0K	./temporal_decoding_summaries/global_rankings_by_K.npy
+4.0K	./temporal_decoding_summaries/full_reconstruction_summary.csv
+4.0K	./temporal_decoding_summaries/best_topm_summary.csv
+4.0K	./tables/003c_exact_matched_ratio_topm_heatmaps/exact_matched_ratio_K_pairs.csv
+4.0K	./tables/003b_observed_ratio_topm_heatmaps/global_observed_component_ratio_grid.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/quick_mix_strongly_mixed_rep002.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/quick_mix_strongly_mixed_rep001.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/quick_mix_strongly_mixed_rep000.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/quick_mix_selective_rep002.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/quick_mix_selective_rep001.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/quick_mix_selective_rep000.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/quick_mix_canonical_rep002.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/quick_mix_canonical_rep001.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/quick_mix_canonical_rep000.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_strongly_mixed_rep019.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_strongly_mixed_rep018.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_strongly_mixed_rep017.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_strongly_mixed_rep016.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_strongly_mixed_rep015.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_strongly_mixed_rep014.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_strongly_mixed_rep013.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_strongly_mixed_rep012.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_strongly_mixed_rep011.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_strongly_mixed_rep010.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_strongly_mixed_rep009.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_strongly_mixed_rep008.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_strongly_mixed_rep007.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_strongly_mixed_rep006.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_strongly_mixed_rep005.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_strongly_mixed_rep004.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_strongly_mixed_rep003.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_strongly_mixed_rep002.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_strongly_mixed_rep001.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_strongly_mixed_rep000.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_selective_rep019.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_selective_rep018.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_selective_rep017.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_selective_rep016.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_selective_rep015.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_selective_rep014.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_selective_rep013.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_selective_rep012.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_selective_rep011.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_selective_rep010.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_selective_rep009.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_selective_rep008.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_selective_rep007.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_selective_rep006.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_selective_rep005.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_selective_rep004.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_selective_rep003.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_selective_rep002.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_selective_rep001.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_selective_rep000.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_canonical_rep019.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_canonical_rep018.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_canonical_rep017.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_canonical_rep016.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_canonical_rep015.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_canonical_rep014.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_canonical_rep013.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_canonical_rep012.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_canonical_rep011.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_canonical_rep010.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_canonical_rep009.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_canonical_rep008.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_canonical_rep007.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_canonical_rep006.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_canonical_rep005.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_canonical_rep004.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_canonical_rep003.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_canonical_rep002.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_canonical_rep001.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_mixing/paper_mix_canonical_rep000.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/quick_het_strong_rep002.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/quick_het_strong_rep001.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/quick_het_strong_rep000.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/quick_het_none_rep002.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/quick_het_none_rep001.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/quick_het_none_rep000.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/quick_het_moderate_rep002.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/quick_het_moderate_rep001.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/quick_het_moderate_rep000.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_strong_rep019.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_strong_rep018.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_strong_rep017.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_strong_rep016.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_strong_rep015.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_strong_rep014.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_strong_rep013.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_strong_rep012.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_strong_rep011.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_strong_rep010.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_strong_rep009.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_strong_rep008.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_strong_rep007.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_strong_rep006.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_strong_rep005.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_strong_rep004.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_strong_rep003.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_strong_rep002.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_strong_rep001.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_strong_rep000.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_none_rep019.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_none_rep018.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_none_rep017.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_none_rep016.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_none_rep015.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_none_rep014.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_none_rep013.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_none_rep012.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_none_rep011.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_none_rep010.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_none_rep009.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_none_rep008.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_none_rep007.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_none_rep006.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_none_rep005.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_none_rep004.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_none_rep003.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_none_rep002.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_none_rep001.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_none_rep000.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_moderate_rep019.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_moderate_rep018.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_moderate_rep017.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_moderate_rep016.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_moderate_rep015.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_moderate_rep014.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_moderate_rep013.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_moderate_rep012.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_moderate_rep011.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_moderate_rep010.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_moderate_rep009.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_moderate_rep008.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_moderate_rep007.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_moderate_rep006.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_moderate_rep005.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_moderate_rep004.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_moderate_rep003.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_moderate_rep002.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_moderate_rep001.csv
+4.0K	./simulation_soft_membership_revised_outputs/checkpoints_heterogeneity/paper_het_moderate_rep000.csv
+4.0K	./simulation_soft_membership_outputs/soft_membership_results_quick.csv
+4.0K	./simulation_soft_membership_outputs/checkpoints/quick_strongly_mixed_rep001.csv
+4.0K	./simulation_soft_membership_outputs/checkpoints/quick_strongly_mixed_rep000.csv
+4.0K	./simulation_soft_membership_outputs/checkpoints/quick_selective_rep001.csv
+4.0K	./simulation_soft_membership_outputs/checkpoints/quick_selective_rep000.csv
+4.0K	./simulation_soft_membership_outputs/checkpoints/quick_canonical_rep001.csv
+4.0K	./simulation_soft_membership_outputs/checkpoints/quick_canonical_rep000.csv
+4.0K	./revision_8_figure5_selected_K46_outputs/Figure5_Yeo7_allnode_mass.csv
+4.0K	./revision_8_figure5_selected_K46_outputs/Figure5_crossfit_selection_frequency.csv
+4.0K	./revision_05_archetype_interpretation_and_support/selected_archetype_support_summary.csv
+4.0K	./revision_05_archetype_interpretation_and_support/selected_archetype_support_breadth_independent.csv
+4.0K	./revision_05_archetype_interpretation_and_support/selected_archetype_network_mass.csv
+4.0K	./revision_05_archetype_interpretation_and_support/selected_archetype_map_similarity_by_condition.csv
+4.0K	./revision_05_archetype_interpretation_and_support/selected_archetype_condition_summary.csv
+4.0K	./revision_05_archetype_interpretation_and_support/selected_archetype_condition_summary_independent.csv
+4.0K	./revision_05_archetype_interpretation_and_support/selected_archetype_condition_pairwise_wilcoxon.csv
+4.0K	./revision_05_archetype_interpretation_and_support/selected_archetype_condition_pairwise_mannwhitney.csv
+4.0K	./revision_05_archetype_interpretation_and_support/selected_archetype_condition_kruskal.csv
+4.0K	./revision_05_archetype_interpretation_and_support/selected_archetype_condition_friedman.csv
+4.0K	./README_supplement_notebooks.md
+4.0K	./postprocess_within_spatial_outputs/spatial_within_top_archetypes_summary_clean_refactored.csv
+4.0K	./postprocess_across_spatial_outputs/top_archetype_summary.csv
+4.0K	./postprocess_across_spatial_outputs/spatial_across_best_archetypes_by_K.csv
+4.0K	./postprocess_across_spatial_outputs/spatial_across_best_archetypes_by_K_clean_refactored.csv
+4.0K	./pca_matched_baseline_outputs/raw_htfa_summary.csv
+4.0K	./pca_matched_baseline_outputs/pca_msaa_response_summary.csv
+4.0K	./pca_aa_equivalence_outputs/reviewer_pca_best_vs_raw.csv
+4.0K	./pca_aa_equivalence_outputs/raw_htfa_summary.csv
+4.0K	./paper_figure_outputs/Figure6_edge_trim_source.csv
+4.0K	./paper_figure_outputs/Figure5_Yeo7_allnode_mass.csv
+4.0K	./paper_figure_outputs/Figure5_crossfit_selection_frequency.csv
+4.0K	./paper_compression_ratio_figures/decoding_with_compression_metrics_within.csv
+4.0K	./msaa_four_condition_ratio_within_outputs_npz/four_condition_metadata.csv
+4.0K	./msaa_flexible_decoding_outputs_temporal_within/rankings.npy
+4.0K	./msaa_flexible_decoding_outputs_temporal_within/full_summary.csv
+4.0K	./msaa_flexible_decoding_outputs_temporal_within_old/topm_summary.csv
+4.0K	./msaa_flexible_decoding_outputs_temporal_within_old/topm_archetype_identities.csv
+4.0K	./msaa_flexible_decoding_outputs_temporal_within_old/rankings.npy
+4.0K	./msaa_flexible_decoding_outputs_temporal_within_old/per_archetype_mean_accuracy.csv
+4.0K	./msaa_flexible_decoding_outputs_temporal_within_old/full_reconstruction_summary.csv
+4.0K	./msaa_flexible_decoding_outputs_temporal_within_old/best_topm_summary.csv
+4.0K	./msaa_flexible_decoding_outputs_temporal_across/rankings.npy
+4.0K	./msaa_flexible_decoding_outputs_temporal_across/full_summary.csv
+4.0K	./msaa_flexible_decoding_outputs_temporal_across_old/topm_archetype_identities.csv
+4.0K	./msaa_flexible_decoding_outputs_temporal_across_old/rankings.npy
+4.0K	./msaa_flexible_decoding_outputs_temporal_across_old/full_reconstruction_summary.csv
+4.0K	./msaa_flexible_decoding_outputs_temporal_across_old/best_topm_summary.csv
+4.0K	./msaa_flexible_decoding_outputs_spatial_within/rankings.npy
+4.0K	./msaa_flexible_decoding_outputs_spatial_within_old/topm_summary.csv
+4.0K	./msaa_flexible_decoding_outputs_spatial_within_old/topm_archetype_identities.csv
+4.0K	./msaa_flexible_decoding_outputs_spatial_within_old/rankings.npy
+4.0K	./msaa_flexible_decoding_outputs_spatial_within_old/per_archetype_mean_accuracy.csv
+4.0K	./msaa_flexible_decoding_outputs_spatial_within_old/full_summary.csv
+4.0K	./msaa_flexible_decoding_outputs_spatial_within_old/full_reconstruction_summary.csv
+4.0K	./msaa_flexible_decoding_outputs_spatial_within_old/best_topm_summary.csv
+4.0K	./msaa_flexible_decoding_outputs_spatial_across_old/topm_archetype_identities.csv
+4.0K	./msaa_flexible_decoding_outputs_spatial_across_old/rankings.npy
+4.0K	./msaa_flexible_decoding_outputs_spatial_across_old/full_reconstruction_summary.csv
+4.0K	./msaa_flexible_decoding_outputs_spatial_across_old/best_topm_summary.csv
+4.0K	./msaa_edge_trim_sensitivity_K46_top5/edge_trim_top5_jaccard_summary.csv
+4.0K	./msaa_edge_trim_sensitivity_K46_top5/edge_trim_selection_frequency_comparison.csv
+4.0K	./msaa_edge_trim_sensitivity_K46_top5/edge_trim_locked_archetype_single_component_summary.csv
+4.0K	./msaa_edge_trim_sensitivity_K46_top5/edge_trim_accuracy_summary.csv
+4.0K	./hypertools/ppca.py
+4.0K	./hypertools/params.py
+4.0K	./hypertools/normalize.py
+4.0K	./hypertools/exceptions.py
+4.0K	./hypertools/df2mat.py
+4.0K	./hypertools/config.py
+4.0K	./hypertools/analyze.py
+4.0K	./hypertools/__pycache__/procrustes.cpython-310.pyc
+4.0K	./hypertools/__pycache__/ppca.cpython-310.pyc
+4.0K	./hypertools/__pycache__/params.cpython-311.pyc
+4.0K	./hypertools/__pycache__/params.cpython-310.pyc
+4.0K	./hypertools/__pycache__/normalize.cpython-310.pyc
+4.0K	./hypertools/__pycache__/exceptions.cpython-311.pyc
+4.0K	./hypertools/__pycache__/exceptions.cpython-310.pyc
+4.0K	./hypertools/__pycache__/df2mat.cpython-311.pyc
+4.0K	./hypertools/__pycache__/df2mat.cpython-310.pyc
+4.0K	./hypertools/__pycache__/config.cpython-311.pyc
+4.0K	./hypertools/__pycache__/config.cpython-310.pyc
+4.0K	./hypertools/__pycache__/analyze.cpython-311.pyc
+4.0K	./hypertools/__pycache__/analyze.cpython-310.pyc
+4.0K	./helpers/mgetopt.py
+4.0K	./helpers/generate_synthetic_noise.py
+4.0K	./helpers/estimate_background_noise.py
+4.0K	./helpers/__pycache__/SupdateIndiStep.cpython-310.pyc
+4.0K	./helpers/__pycache__/mgetopt.cpython-311.pyc
+4.0K	./helpers/__pycache__/mgetopt.cpython-310.pyc
+4.0K	./four_condition_ratio_decoding_outputs/raw_htfa_summary.csv
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj9_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj8_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj7_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj6_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj5_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj4_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj35_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj34_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj33_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj32_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj31_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj30_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj3_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj29_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj28_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj27_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj26_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj25_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj24_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj23_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj22_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj21_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj20_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj2_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj19_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj18_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj17_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj16_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj15_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj14_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj13_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj12_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj11_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj10_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj1_meta.json
+4.0K	./data/archetypes/all_results_50/word/subjects/word_subj0_meta.json
+4.0K	./data/archetypes/all_results_50/word/meta.json
+4.0K	./data/archetypes/all_results_50/word/cost_fun.npy
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj9_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj8_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj7_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj6_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj5_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj4_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj35_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj34_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj33_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj32_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj31_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj30_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj3_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj29_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj28_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj27_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj26_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj25_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj24_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj23_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj22_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj21_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj20_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj2_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj19_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj18_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj17_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj16_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj15_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj14_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj13_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj12_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj11_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj10_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj1_meta.json
+4.0K	./data/archetypes/all_results_50/rest/subjects/rest_subj0_meta.json
+4.0K	./data/archetypes/all_results_50/rest/meta.json
+4.0K	./data/archetypes/all_results_50/rest/cost_fun.npy
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj9_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj8_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj7_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj6_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj5_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj4_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj35_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj34_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj33_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj32_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj31_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj30_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj3_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj29_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj28_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj27_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj26_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj25_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj24_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj23_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj22_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj21_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj20_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj2_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj19_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj18_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj17_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj16_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj15_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj14_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj13_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj12_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj11_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj10_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj1_meta.json
+4.0K	./data/archetypes/all_results_50/intact/subjects/intact_subj0_meta.json
+4.0K	./data/archetypes/all_results_50/intact/meta.json
+4.0K	./data/archetypes/all_results_50/intact/cost_fun.npy
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj9_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj8_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj7_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj6_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj5_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj4_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj35_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj34_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj33_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj32_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj31_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj30_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj3_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj29_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj28_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj27_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj26_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj25_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj24_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj23_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj22_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj21_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj20_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj2_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj19_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj18_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj17_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj16_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj15_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj14_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj13_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj12_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj11_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj10_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj1_meta.json
+4.0K	./data/archetypes/all_results_265/word/subjects/word_subj0_meta.json
+4.0K	./data/archetypes/all_results_265/word/meta.json
+4.0K	./data/archetypes/all_results_265/word/cost_fun.npy
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj9_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj8_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj7_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj6_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj5_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj4_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj35_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj34_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj33_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj32_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj31_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj30_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj3_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj29_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj28_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj27_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj26_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj25_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj24_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj23_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj22_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj21_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj20_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj2_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj19_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj18_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj17_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj16_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj15_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj14_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj13_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj12_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj11_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj10_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj1_meta.json
+4.0K	./data/archetypes/all_results_265/rest/subjects/rest_subj0_meta.json
+4.0K	./data/archetypes/all_results_265/rest/meta.json
+4.0K	./data/archetypes/all_results_265/rest/cost_fun.npy
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj9_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj8_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj7_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj6_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj5_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj4_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj35_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj34_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj33_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj32_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj31_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj30_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj3_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj29_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj28_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj27_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj26_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj25_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj24_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj23_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj22_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj21_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj20_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj2_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj19_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj18_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj17_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj16_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj15_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj14_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj13_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj12_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj11_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj10_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj1_meta.json
+4.0K	./data/archetypes/all_results_265/intact/subjects/intact_subj0_meta.json
+4.0K	./data/archetypes/all_results_265/intact/meta.json
+4.0K	./data/archetypes/all_results_265/intact/cost_fun.npy
+4.0K	./across_cluster_selected_decode_visualize_temporal/selected_archetypes_temporal_across.npy
+4.0K	./across_cluster_selected_decode_visualize_temporal/decode_from_cluster_selected_archetypes_temporal_across.csv
+4.0K	./across_cluster_selected_decode_visualize_spatial/selected_archetypes_spatial_across.npy
+4.0K	./across_cluster_selected_decode_visualize_spatial/decode_from_cluster_selected_archetypes_spatial_across.csv
+4.0K	./aa_information_concentration_outputs/spatial_K50_detailed_concentration.csv
+4.0K	./aa_information_concentration_outputs/monotonic_K_concentration_trends.csv
+4.0K	./aa_information_concentration_outputs/global_parentK_peak_permutation_test.csv
+4.0K	./aa_information_concentration_outputs/candidate_parentK_permutation_tests.csv
+4.0K	./aa_information_concentration_outputs/candidate_local_enhancement_tests.csv
+4.0K	./008_across_target3_cluster_heatmaps_spatial/selected_archetypes_spatial_across.npy
+4.0K	./008_across_target3_cluster_heatmaps_spatial/decode_from_cluster_selected_archetypes_spatial_across.csv
+4.0K	./007_across_target3_cluster_selected_decode_visualize_temporal/selected_archetypes_temporal_across.npy
+4.0K	./007_across_target3_cluster_selected_decode_visualize_temporal/decode_from_cluster_selected_archetypes_temporal_across.csv
+4.0K	./007_across_target3_cluster_selected_decode_visualize_spatial/selected_archetypes_spatial_across.npy
+4.0K	./007_across_target3_cluster_selected_decode_visualize_spatial/decode_from_cluster_selected_archetypes_spatial_across.csv
+4.0K	./005_postprocess_within_spatial_condition_specific_outputs/spatial_within_top_archetypes_summary_clean_refactored.csv
+4.0K	./003_postprocess_across_spatial_condition_specific_outputs/spatial_across_best_archetypes_by_K_clean_refactored.csv
+4.0K	./003_postprocess_across_spatial_cache/selected_archetypes_dict.npy
+4.0K	./.ipynb_checkpoints/Untitled1-checkpoint.ipynb
+4.0K	./.ipynb_checkpoints/Untitled-checkpoint.ipynb
+4.0K	./.ipynb_checkpoints/03_clustering_and_brainplots_from_npz_notebook_style_opacity-checkpoint.ipynb
+  0B	./repo_file_sizes.txt

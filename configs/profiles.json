@@ -1,0 +1,42 @@
+{
+  "smoke": {
+    "description": "Fast structural smoke test. Uses only 4 subjects per condition, K=5, 20 fit iterations, and 2 decoding repetitions. This is NOT expected to reproduce paper numbers exactly; it verifies the pipeline end-to-end.",
+    "max_subjects_per_condition": 4,
+    "fit_maxiter": 20,
+    "decode_nreps": 2,
+    "decode_nfolds": 2,
+    "top_m": [1, 2, 3],
+    "jobs": {
+      "spatial_across": [5],
+      "temporal_across": [5]
+    }
+  },
+  "mini-paper": {
+    "description": "Small exact-replication profile. Uses all subjects and original fit/decoding settings, but only a handful of K values. K=5 tests all four fit families; K=46 additionally exercises the representative spatial across-condition model used for interpretation.",
+    "max_subjects_per_condition": null,
+    "fit_maxiter": 200,
+    "decode_nreps": 20,
+    "decode_nfolds": 2,
+    "top_m": [1, 2, 3, 5],
+    "jobs": {
+      "spatial_across": [5, 46],
+      "temporal_across": [5],
+      "spatial_within": [5],
+      "temporal_within": [5]
+    }
+  },
+  "full": {
+    "description": "Observed full model-order grids from the original repository inventory. Uses the original 200 fit iterations and 20 decoding repetitions.",
+    "max_subjects_per_condition": null,
+    "fit_maxiter": 200,
+    "decode_nreps": 20,
+    "decode_nfolds": 2,
+    "top_m": [1, 2, 3, 5, 10],
+    "jobs": {
+      "spatial_across": [5, 7, 10, 14, 21, 25, 35, 40, 42, 44, 45, 46, 48, 50, 52, 53, 54, 55, 56, 58, 60, 63, 65, 70, 75, 88, 100, 105, 126, 140, 175, 189, 200, 210, 252, 300, 400, 500, 600, 700],
+      "spatial_within": [5, 7, 10, 14, 21, 25, 35, 42, 50, 53, 63, 70, 75, 88, 100, 105, 126, 140, 175, 189, 200, 210, 252, 300, 400, 500, 600, 700],
+      "temporal_across": [2, 3, 5, 6, 8, 9, 10, 11, 14, 15, 17, 18, 20, 23, 25, 27, 30, 35, 38, 40, 45, 50, 54, 55, 60, 65, 75, 81, 90, 100, 108, 129, 171, 200, 214, 257, 300],
+      "temporal_within": [2, 3, 5, 6, 9, 10, 11, 15, 17, 18, 20, 23, 25, 27, 30, 35, 38, 45, 50, 54, 60, 75, 81, 90, 100, 108, 129, 171, 214, 257, 300]
+    }
+  }
+}
