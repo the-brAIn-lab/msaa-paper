@@ -13,9 +13,9 @@ as the original scientific notebook logic.
 | Within-condition fitting | Yes | same | Automated in mini/full profiles. |
 | Full reconstruction decoding | Yes | `src/msaa_pipeline/decode.py` | Resumable CSV checkpoints. |
 | Per-archetype decoding/ranking | Yes | same | Condition-specific ranking preserved. |
-| Top-m decoding | Yes | same | Automated and resumable. |
+| Same-data top-m decoding | No (legacy only) | `legacy/original_notebooks/` | Intentionally excluded from the canonical pipeline. |
 | Across/within postprocessing | Yes | `analysis/02_decode/` | Original analysis notebooks retained. |
-| Held-out top-m cross-fitting | Yes | `analysis/03_core_results/revision_04_heldout_topm_msaa_crossfit.ipynb` | Paper-specific notebook preserved. |
+| Held-out top-m cross-fitting | Yes | `src/msaa_pipeline/heldout.py` + provenance notebook in `analysis/03_core_results/` | **Only canonical sparse top-m analysis**; automated/resumable. |
 | PCA / matched-ratio benchmark | Yes | `analysis/03_core_results/revision_05_matched_pca_aa_equivalence_integrated_benchmark.ipynb` | Preserved. |
 | Information-concentration / geometry analyses | Yes | `analysis/03_core_results/` | Preserved. |
 | K=46 interpretation/support | Yes | `analysis/04_interpretation/` | Preserved. |

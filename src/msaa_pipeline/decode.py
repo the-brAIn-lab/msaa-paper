@@ -132,8 +132,13 @@ def _append_unique(path: Path, rows, key_cols):
 
 
 def run_decode_job(output_root: Path, analysis_type: str, fit_scope: str, K_values,
-                   *, top_m=(1,2,3,5,10), nfolds=2, nreps=20, seed=42):
-    """Run/resume full, per-archetype, and top-m decoding.
+                   *, nfolds=2, nreps=20, seed=42):
+    """Run/resume full and single-archetype decoding only.
+
+    IMPORTANT: this function intentionally does *not* perform top-m selection.
+    The canonical sparse analysis is the participant-held-out cross-fit in
+    ``msaa_pipeline.heldout``. Keeping top-m out of this stage prevents the
+    historical same-data ranking/evaluation procedure from being regenerated.
 
     CSVs are checkpointed after each condition so a long full sweep can be
     resumed safely. Existing keyed rows are not recomputed.
@@ -142,15 +147,11 @@ def run_decode_job(output_root: Path, analysis_type: str, fit_scope: str, K_valu
     outdir.mkdir(parents=True, exist_ok=True)
     full_path = outdir / "full_summary.csv"
     arch_path = outdir / "per_archetype_mean_accuracy.csv"
-    top_path = outdir / "topm_summary.csv"
-    rankings_path = outdir / "rankings.npy"
 
     full = _load_csv(full_path)
     arch = _load_csv(arch_path)
-    top = _load_csv(top_path)
     full_keys = _keyset(full, ["analysis_type","fit_scope","condition","K"])
     arch_keys = _keyset(arch, ["analysis_type","fit_scope","condition","K","archetype"])
-    top_keys = _keyset(top, ["analysis_type","fit_scope","condition","K","top_m"])
 
     for K in K_values:
         for condition in CONDITIONS:
@@ -184,37 +185,4 @@ def run_decode_job(output_root: Path, analysis_type: str, fit_scope: str, K_valu
                 arch = _append_unique(arch_path, new_arch_rows,
                                       ["analysis_type","fit_scope","condition","K","archetype"])
 
-            cur = arch[(arch["condition"].astype(str) == condition) & (arch["K"].astype(int) == int(K))]
-            if len(cur) < n_arch:
-                raise RuntimeError(f"Incomplete per-archetype table for {analysis_type}/{fit_scope}/{condition}/K={K}")
-            ranked = (
-                cur.groupby("archetype")["mean_accuracy"].mean()
-                .sort_values(ascending=False).index.astype(int).tolist()
-            )
-
-            new_top_rows = []
-            for m in top_m:
-                if int(m) > len(ranked):
-                    continue
-                tkey = tuple(map(str, [analysis_type, fit_scope, condition, int(K), int(m)]))
-                if tkey in top_keys:
-                    continue
-                selected = ranked[:int(m)]
-                dd = decode_subjects(subjects, analysis_type, selected, nfolds, nreps, seed)
-                new_top_rows.append(dict(
-                    analysis_type=analysis_type, fit_scope=fit_scope, condition=condition,
-                    K=int(K), top_m=int(m), selected_archetypes=str(selected),
-                    fit_source_file=str(source), fit_source_basename=source.name,
-                    **summarize(dd)
-                ))
-                top_keys.add(tkey)
-            if new_top_rows:
-                top = _append_unique(top_path, new_top_rows,
-                                     ["analysis_type","fit_scope","condition","K","top_m"])
-
-            rankings = np.load(rankings_path, allow_pickle=True).item() if rankings_path.exists() else {}
-            rankings[(str(condition), int(K))] = ranked
-            np.save(rankings_path, rankings, allow_pickle=True)
-
-    return _load_csv(full_path), _load_csv(arch_path), _load_csv(top_path)
-
+    return _load_csv(full_path), _load_csv(arch_path)

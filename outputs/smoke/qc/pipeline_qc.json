@@ -1,0 +1,14 @@
+{
+  "profile": "smoke",
+  "n_summary_rows": 6,
+  "outputs": [
+    "fit_manifest.csv",
+    "msaa_condrank_decoding_outputs_spatial_across/full_summary.csv",
+    "msaa_condrank_decoding_outputs_spatial_across/per_archetype_mean_accuracy.csv",
+    "msaa_condrank_decoding_outputs_spatial_across/topm_summary.csv",
+    "msaa_condrank_decoding_outputs_temporal_across/full_summary.csv",
+    "msaa_condrank_decoding_outputs_temporal_across/per_archetype_mean_accuracy.csv",
+    "msaa_condrank_decoding_outputs_temporal_across/topm_summary.csv",
+    "qc/full_decoding_summary.csv"
+  ]
+}

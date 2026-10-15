@@ -79,7 +79,7 @@ fit iterations, and fewer decoding repetitions. It verifies that the reorganized
 code can traverse:
 
 ```text
-MAT inputs -> normalization -> MS-AA -> reconstruction -> decoding -> ranking -> top-m -> QC
+MAT inputs -> normalization -> MS-AA -> full/single-archetype decoding -> participant-held-out top-m -> QC
 ```
 
 It writes only to `outputs/smoke/` and cannot overwrite paper results.
@@ -118,7 +118,7 @@ these Make targets so the historical downstream notebooks can find them.
 
 ## Later paper analyses
 
-After the core fits/decoding, the held-out cross-fit analyses, PCA benchmark,
+The held-out top-m cross-fit is now automated in `scripts/run_pipeline.py` and is the **only** canonical top-m analysis. After the core fits/decoding, the PCA benchmark,
 K=46 interpretation, robustness tests, four-condition validation, simulations,
 and manuscript figures are preserved as organized notebooks under `analysis/`
 and `paper/`.
@@ -126,10 +126,10 @@ and `paper/`.
 These notebooks can be executed from the repository root with:
 
 ```bash
-python scripts/execute_notebook.py analysis/03_core_results/revision_04_heldout_topm_msaa_crossfit.ipynb
+make full-heldout
 ```
 
-The helper forces the working directory to the repo root so historical
+The original held-out notebook is retained for provenance, while the reusable runner mirrors its final algorithm. The helper forces the working directory to the repo root so historical
 repo-relative paths continue to resolve after the notebooks were reorganized.
 
 See `docs/PIPELINE.md` for the dependency chain and `docs/NOTEBOOK_MAP.md` for

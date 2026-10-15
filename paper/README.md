@@ -18,3 +18,5 @@ python scripts/execute_notebook.py paper/main_figures/<notebook>.ipynb
 
 The required upstream tables are documented in `docs/PIPELINE.md` and the
 initial dependency audit.
+
+The manuscript sparse-information figures must use `msaa_heldout_topm_outputs_spatial_across/`; same-data top-m outputs are not part of the cleaned paper pipeline.

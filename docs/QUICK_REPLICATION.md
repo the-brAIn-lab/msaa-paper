@@ -15,11 +15,12 @@ This profile uses:
 - first 4 participants per condition
 - 20 fitting iterations
 - 2 decoding repetitions
-- top-m = 1, 2, 3
+- held-out top-m = 1, 2, 3
+- 2 outer held-out participant splits
 
 It runs:
 
-`MAT inputs -> normalization -> MS-AA fit -> reconstruction -> per-archetype decoding -> condition-specific ranking -> top-m decoding -> QC figure`
+`MAT inputs -> normalization -> MS-AA fit -> full/single-archetype decoding -> A-ranks/B-evaluates held-out top-m -> reverse direction -> QC`
 
 This is intentionally fast and **is not expected to reproduce manuscript numbers** because it uses fewer participants and fewer optimization/decoding iterations.
 
@@ -41,6 +42,7 @@ fits only a small subset of model orders:
 - 200 fit iterations
 - 20 decoding repetitions
 - seed = 42
+- held-out sparse analysis: spatial across K=5 and K=46, 20 outer splits
 
 K=5 gives a common checkpoint across spatial/temporal and within/across models.
 K=46 additionally exercises the representative spatial across-condition fit used
@@ -53,9 +55,7 @@ old repository:
 make compare OLD_REPO=/path/to/original/MS_AA
 ```
 
-The comparison writes `outputs/mini_paper/comparison_to_original.json`. For fit
-files, it compares reconstructed data rather than only raw archetype ordering,
-which makes the check robust to a potential component permutation.
+The comparison writes `outputs/mini_paper/comparison_to_original.json`. Historical same-data top-m tables are intentionally ignored. The sparse comparison is against `msaa_heldout_topm_outputs_spatial_across/heldout_topm_crossfit_runs.csv` only. For fit files, reconstructed data are compared rather than only raw archetype ordering.
 
 ## Why both modes?
 

@@ -22,12 +22,14 @@ pieman_data.mat + pieman_posterior_K700.mat
 02_decode
     |  full reconstruction
     |  per-archetype decoding
-    |  condition-specific rankings
-    |  top-m reconstruction decoding
+    |  single-archetype diagnostics
+    v
+held-out top-m cross-fitting
+    |  A ranks -> B evaluates; B ranks -> A evaluates
+    |  only canonical sparse-selection analysis
     v
 03_core_results
-    |  matched-ratio summaries
-    |  held-out top-m cross-fitting
+    |  matched-ratio / PCA summaries
     |  PCA comparison
     |  information concentration / clustering
     v
@@ -51,11 +53,11 @@ empirical fit chain and provide method validation / robustness controls.
 ## What is automated in the cleaned runner?
 
 `scripts/run_pipeline.py` automates the core, deterministic chain from the MAT
-inputs through MS-AA fitting and decoding. This is the part needed for the fast
-`smoke` and exact `mini-paper` checks.
+inputs through MS-AA fitting, full/single-archetype decoding, and the canonical held-out top-m cross-fit. This is the part needed for the fast
+`smoke` and `mini-paper` checks.
 
 The later revision analyses remain as curated notebooks because they contain
-paper-specific analysis choices (held-out cross-fitting, K=46 interpretation,
+paper-specific analysis choices (K=46 interpretation,
 edge-trim sensitivity, network nulls, and simulation variants). They are now
 organized by stage rather than mixed with exploratory attempts.
 
@@ -82,3 +84,6 @@ make full-core
 ```
 
 Both are computationally expensive.
+
+
+See `docs/HELDOUT_TOPM.md` for the canonical sparse-analysis definition. Historical same-data top-m analyses are provenance-only.

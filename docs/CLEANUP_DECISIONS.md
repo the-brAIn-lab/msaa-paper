@@ -45,3 +45,7 @@ mini-paper validation before committing to a full sweep.
 ## Standard atlas dependency
 
 Curated notebooks now read the Schaefer 1000-parcel/Yeo-7 files from `data/reference/`. `scripts/fetch_reference_atlas.py` fetches the standard atlas through Nilearn and generates the six-column label table format expected by the historical code.
+
+## Sparse top-m policy
+
+The cleaned pipeline intentionally removes the historical same-data top-m selection/evaluation procedure from the canonical workflow. The only canonical sparse analysis is participant-held-out cross-fitting implemented in `src/msaa_pipeline/heldout.py`. Historical same-data top-m notebooks remain under `legacy/original_notebooks/` for provenance only.

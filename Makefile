@@ -1,7 +1,7 @@
 PYTHON ?= python
 OLD_REPO ?=
 
-.PHONY: check references smoke mini compare full-fit full-core paper-main paper-supp clean-smoke
+.PHONY: check references smoke mini compare full-fit full-core full-heldout paper-main paper-supp clean-smoke
 
 check:
 	$(PYTHON) scripts/check_inputs.py
@@ -23,9 +23,13 @@ compare:
 full-fit:
 	$(PYTHON) scripts/run_pipeline.py --profile full --output-root . --fit-only
 
-# Full fit + full/per-archetype/top-m decoding. Extremely expensive.
+# Full fit + full/single-archetype decoding + held-out spatial top-m. Extremely expensive.
 full-core:
 	$(PYTHON) scripts/run_pipeline.py --profile full --output-root .
+
+# Run/resume only the canonical held-out sparse analysis after fits already exist.
+full-heldout:
+	$(PYTHON) scripts/run_pipeline.py --profile full --output-root . --heldout-only
 
 # These assume the required upstream canonical result tables already exist.
 paper-main:

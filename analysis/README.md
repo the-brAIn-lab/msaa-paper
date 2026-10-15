@@ -12,6 +12,7 @@ of exploratory notebook creation.
 - `06_four_condition/`: paragraph-scrambled four-condition sensitivity branch.
 - `07_simulations/`: simulation benchmarks and alternative PCA/ICA controls.
 
-The reusable `scripts/run_pipeline.py` implementation covers the fit/decode core
-used for quick verification. These notebooks preserve the original paper-specific
+The reusable `scripts/run_pipeline.py` implementation covers fitting, full/single-archetype decoding, and the canonical participant-held-out top-m cross-fit used for quick verification. These notebooks preserve the original paper-specific
 analysis logic for the later stages.
+
+Historical same-data top-m analyses are not canonical and are retained only under `legacy/original_notebooks/`.
