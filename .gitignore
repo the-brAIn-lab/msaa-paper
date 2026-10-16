@@ -99,3 +99,10 @@ reference/original_outputs/
 *.log
 *.out
 *.err
+# ------------------------------------------------------------
+# Portable validated legacy outputs
+#
+# These are copied into the project for local/student handoff but are several
+# gigabytes and must never be committed. The tracked manifest lives in configs/.
+# ------------------------------------------------------------
+reference_outputs/legacy_full/

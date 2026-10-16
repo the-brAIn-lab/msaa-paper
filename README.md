@@ -103,18 +103,54 @@ make compare OLD_REPO=/path/to/original/MS_AA
 The comparison checks matching decoding rows and first-subject reconstructed
 fits. See `docs/QUICK_REPLICATION.md`.
 
-## Full core sweep
+## Portable reuse of the validated original full sweep
 
-The full K grids are recorded in `configs/profiles.json` from the actual fitted
-model inventory in the original repository.
+The `mini-paper` rerun is the migration/reproducibility gate. Once representative
+fits and decoding reproduce the original analysis, the recommended manuscript
+workflow is to **reuse the already-computed expensive full K-grid outputs** rather
+than spend days recomputing them solely for migration.
+
+For a portable project folder (including student handoff), copy the legacy
+derived outputs into the ignored local store:
 
 ```bash
+make import-legacy OLD_REPO=/path/to/original/MS_AA
+make validate-legacy
+make activate-legacy
+```
+
+The imported bytes live under `reference_outputs/legacy_full/`, which is ignored
+by Git. `configs/legacy_outputs_manifest.csv` is small and should be committed;
+it records portable relative paths, sizes, and SHA-256 hashes. `make
+activate-legacy` creates relative links at the historical output paths expected
+by older notebooks.
+
+A Git clone alone does **not** include ignored legacy data or the two large MAT
+inputs. To give another person the complete working project, copy/archive the
+whole project directory rather than relying only on Git, then have them run:
+
+```bash
+make handoff-check
+make activate-legacy
+```
+
+See `reference_outputs/README.md` and
+`docs/REPRODUCIBILITY_VALIDATION.md`.
+
+## Optional full core sweep
+
+A complete from-scratch rebuild remains available when desired. Deactivate the
+legacy links first so regenerated outputs cannot overwrite or mingle with the
+archived validated results:
+
+```bash
+make deactivate-legacy
 make full-fit     # fit only; expensive
 make full-core    # fit + decoding; very expensive
 ```
 
-The full runner writes canonical output directory names when invoked through
-these Make targets so the historical downstream notebooks can find them.
+The full targets refuse to run while validated legacy links are active. The
+archived bytes remain safely stored under `reference_outputs/legacy_full/`.
 
 ## Later paper analyses
 
@@ -137,7 +173,8 @@ where each analysis now lives.
 
 ## Important preservation rule
 
-Do not discard the old large fit/output directories until the mini-paper
-comparison succeeds. The clean repo intentionally does not bundle multi-GB NPZ
-sweeps; instead it preserves the code/configuration needed to regenerate them
-and provides isolated verification modes before migration.
+Do not commit `data/input/*.mat` or `reference_outputs/legacy_full/`. They are
+intentionally local because they are large. The tracked input checksums, frozen
+analysis configuration, and legacy-output SHA-256 manifest provide the audit
+trail; the complete local project folder provides the convenient student
+handoff.

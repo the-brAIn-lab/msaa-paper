@@ -87,3 +87,32 @@ Both are computationally expensive.
 
 
 See `docs/HELDOUT_TOPM.md` for the canonical sparse-analysis definition. Historical same-data top-m analyses are provenance-only.
+
+## Portable validated legacy full-sweep mode
+
+After `mini-paper` reproduces representative fits/decoding, the cleaned repo can
+reuse the original expensive full K-grid outputs as explicitly validated derived
+artifacts. They are copied **inside the project folder** but outside Git:
+
+```text
+reference_outputs/legacy_full/
+```
+
+Set up once with:
+
+```bash
+make import-legacy OLD_REPO=/path/to/original/MS_AA
+make validate-legacy-hash   # optional full cryptographic verification
+make activate-legacy
+```
+
+Activation creates relative symlinks at the historical top-level output paths so
+curated legacy notebooks do not need machine-specific paths. The links point
+only within the same project folder, so they can be recreated after moving or
+copying the repository.
+
+The optional `full` profile remains available for a future from-scratch rebuild,
+but it is not required merely to establish migration reproducibility. Run `make
+deactivate-legacy` before any full write-producing target.
+
+See `docs/REPRODUCIBILITY_VALIDATION.md` for provenance and handoff details.
