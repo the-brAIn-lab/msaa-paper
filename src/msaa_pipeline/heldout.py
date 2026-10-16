@@ -16,6 +16,53 @@ def _write_csv(df: pd.DataFrame, path: Path) -> None:
     df.to_csv(path, index=False)
 
 
+def _load_frozen_outer_seeds(
+    path: Path | str = Path("configs/heldout_outer_seeds.csv"),
+) -> dict[tuple[str, int, int], int]:
+    """Load the exact outer-split seeds used by the manuscript analysis.
+
+    The split table is analysis configuration/provenance, not a generated
+    intermediate. Freezing these values prevents the participant splits from
+    changing when only a subset of K values is rerun (for example, the mini
+    replication profile).
+    """
+    path = Path(path)
+    if not path.exists():
+        raise FileNotFoundError(
+            f"Missing frozen held-out split table: {path}\n"
+            "The canonical held-out top-m analysis requires "
+            "configs/heldout_outer_seeds.csv."
+        )
+
+    seeds = pd.read_csv(path)
+    required = {"condition", "K", "outer_rep", "outer_seed"}
+    missing = required.difference(seeds.columns)
+    if missing:
+        raise ValueError(
+            f"{path} is missing required columns: {sorted(missing)}"
+        )
+
+    seeds = seeds[["condition", "K", "outer_rep", "outer_seed"]].copy()
+    seeds["condition"] = seeds["condition"].astype(str)
+    seeds["K"] = seeds["K"].astype(int)
+    seeds["outer_rep"] = seeds["outer_rep"].astype(int)
+    seeds["outer_seed"] = seeds["outer_seed"].astype(int)
+
+    dup = seeds.duplicated(["condition", "K", "outer_rep"], keep=False)
+    if dup.any():
+        bad = seeds.loc[dup].sort_values(["condition", "K", "outer_rep"])
+        raise ValueError(
+            "Frozen held-out split table contains duplicate definitions for "
+            "the same condition/K/outer_rep. First duplicates:\n"
+            + bad.head(10).to_string(index=False)
+        )
+
+    return {
+        (row.condition, int(row.K), int(row.outer_rep)): int(row.outer_seed)
+        for row in seeds.itertuples(index=False)
+    }
+
+
 def _split_outer_subject_indices(n_subjects: int, rng: np.random.Generator):
     idx = np.arange(n_subjects)
     rng.shuffle(idx)
@@ -280,9 +327,10 @@ def run_heldout_topm_job(
 
     run_df = _load_csv(run_path)
     rank_df = _load_csv(rank_path)
+    frozen_outer_seeds = _load_frozen_outer_seeds()
 
     for K in map(int, K_values):
-        for condition_index, condition in enumerate(CONDITIONS):
+        for condition in CONDITIONS:
             run_done = _completed_outer_reps(run_df, analysis_type, condition, K)
             rank_done = _completed_outer_reps(rank_df, analysis_type, condition, K)
             completed = run_done.intersection(rank_done)
@@ -301,10 +349,14 @@ def run_heldout_topm_job(
                 if outer_rep in completed:
                     continue
 
-                seed_sequence = np.random.SeedSequence([
-                    int(seed), int(K), int(condition_index), int(outer_rep)
-                ])
-                outer_seed = int(seed_sequence.generate_state(1, dtype=np.uint32)[0])
+                split_key = (str(condition), int(K), int(outer_rep))
+                if split_key not in frozen_outer_seeds:
+                    raise ValueError(
+                        "No frozen held-out outer seed for "
+                        f"condition={condition}, K={K}, outer_rep={outer_rep}. "
+                        "Check configs/heldout_outer_seeds.csv."
+                    )
+                outer_seed = int(frozen_outer_seeds[split_key])
                 outer_rng = np.random.default_rng(outer_seed)
                 A_idx, B_idx = _split_outer_subject_indices(len(subjects), outer_rng)
 

@@ -1,3 +1,0 @@
-analysis_type,fit_scope,condition,K,n_subjects,path,status
-spatial,across,acrossCond,5,12,msaa_flexible_outputs_npz/spatialAA_across_acrossCond_K5.npz,fit
-temporal,across,acrossCond,5,12,msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K5.npz,fit
