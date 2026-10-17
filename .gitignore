@@ -155,3 +155,9 @@ tables
 temporal_decoding_summaries
 outputs/
 *_executed.ipynb
+
+# Activated portable network-localization legacy link
+/013_network_localization_analysis
+
+# Activated portable legacy-output links
+/003_postprocess_across_spatial_cache

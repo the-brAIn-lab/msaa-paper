@@ -20,3 +20,10 @@ The required upstream tables are documented in `docs/PIPELINE.md` and the
 initial dependency audit.
 
 The manuscript sparse-information figures must use `msaa_heldout_topm_outputs_spatial_across/`; same-data top-m outputs are not part of the cleaned paper pipeline.
+
+## Generated figure outputs
+
+Fresh main-text figures are written under `outputs/paper_figures/`. Fresh
+supplementary figures and source tables are written under
+`outputs/paper_supplement/`. These generated outputs are intentionally ignored by
+Git and are kept separate from the read-only validated legacy store.

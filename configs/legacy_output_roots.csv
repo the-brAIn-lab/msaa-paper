@@ -46,3 +46,4 @@ across_cluster_selected_decode_visualize_temporal,false,Historical temporal clus
 008_across_target3_cluster_heatmaps_spatial,false,Historical target-3 heatmap outputs
 tables,false,Legacy generated/supporting tables
 figures,false,Legacy generated/supporting figures
+003_postprocess_across_spatial_cache,false,Supplement 8 cached clustering geometry
