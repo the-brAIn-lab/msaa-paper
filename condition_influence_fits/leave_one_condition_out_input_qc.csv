@@ -1,0 +1,4 @@
+condition,n_observations,T,V,grand_mean,grand_sd,normalizer
+intact,36,300,700,-5.0080516122985586e-11,1.0000003576278687,/Users/lowen/repos/msaa-paper/hypertools/normalize.py
+word,36,300,700,1.5074613432530803e-11,1.000000238418579,/Users/lowen/repos/msaa-paper/hypertools/normalize.py
+rest,36,300,700,1.51135100168176e-05,1.0000001192092896,/Users/lowen/repos/msaa-paper/hypertools/normalize.py
