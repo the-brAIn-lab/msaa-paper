@@ -24,7 +24,7 @@ def main():
     slim = d / "slim" / name
     if slim.exists():
         print("skip", s, name); return
-    threads = int(os.environ.get("MSAA_THREADS", os.environ.get("SLURM_CPUS_PER_TASK", "1")))
+    threads = int(os.environ.get("MSAA_THREADS", "1"))
     os.environ.setdefault("MSAA_TIE_TOL", "1e-08")
     os.chdir(d)
     sys.path.insert(0, str(d / "rerun"))
@@ -40,8 +40,7 @@ def main():
     write_slim(fit, slim)
     (d / "meta").mkdir(exist_ok=True)
     (d / "meta" / name.replace(".npz", ".json")).write_text(json.dumps(dict(
-        fit=name, seed=s, host=platform.node(), threads=threads, wall_s=round(time.time() - t, 1),
-        slurm_job=os.environ.get("SLURM_ARRAY_JOB_ID"), slurm_task=os.environ.get("SLURM_ARRAY_TASK_ID"))))
+        fit=name, seed=s, host=platform.node(), threads=threads, wall_s=round(time.time() - t, 1))))
     print(f"done seed {s} {name} {time.time() - t:.0f}s", flush=True)
 
 

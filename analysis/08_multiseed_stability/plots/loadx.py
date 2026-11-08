@@ -1,8 +1,10 @@
 import numpy as np, sys
+from pathlib import Path
+ROOT = Path(__file__).resolve().parents[3]
 from scipy.io import loadmat
-sys.path.insert(0,'/mnt/user-data/uploads/aa/msaa-paper/src')
+sys.path.insert(0, str(ROOT / 'src'))
 from msaa_pipeline.data import _normalize_across_fallback
-p=loadmat('/mnt/user-data/uploads/aa/msaa-paper/data/input/pieman_data.mat')
+p=loadmat(ROOT / 'data/input/pieman_data.mat')
 X=[]; lab=[]
 for c in ["intact","word","rest"]:
     arr=p[c]; subs=[arr[:,i][0] for i in range(arr.shape[1])]

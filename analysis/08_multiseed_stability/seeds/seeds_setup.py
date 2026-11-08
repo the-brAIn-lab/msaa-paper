@@ -29,7 +29,7 @@ def make_seed_dir(stage, seed):
     for sub in ["src", "helpers"]:
         if (ROOT / sub).exists() and not (d / sub).exists():
             shutil.copytree(ROOT / sub, d / sub, ignore=shutil.ignore_patterns("__pycache__"))
-    # the driver lives in scripts/ in the repo; each seed dir keeps it under rerun/, as on Hellgate
+    # the driver lives in scripts/ in the repo; each seed dir keeps it under rerun/
     shutil.copy2(ROOT / "scripts" / "run_parallel.py", d / "rerun" / "run_parallel.py")
     (d / "data").mkdir(exist_ok=True)
     if not (d / "data" / "input").exists():

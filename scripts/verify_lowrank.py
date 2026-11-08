@@ -10,16 +10,17 @@
    per_archetype_mean_accuracy.csv.
 
 Usage (from the workspace root):
-  python rerun/verify_lowrank.py [--quick]
+  python scripts/verify_lowrank.py [--quick]
+  MSAA_REF_RUN=/path/to/reference_run (a run root with the dense-decode code and outputs)
 """
 from __future__ import annotations
-import argparse, importlib.util, sys, time
+import argparse, importlib.util, os, sys, time
 from pathlib import Path
 import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
-REF = Path("/home/ben/aa/msaa-rerun-2026-10-25")
+REF = Path(os.environ.get("MSAA_REF_RUN", ROOT))
 sys.path.insert(0, str(ROOT / "src"))
 from msaa_pipeline import decode as new  # noqa: E402
 

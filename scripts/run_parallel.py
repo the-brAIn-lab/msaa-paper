@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
-"""Parallel driver for the from-scratch rerun (not part of the repo).
+"""Parallel driver for the full pipeline (fit, decode, held-out, merge).
 
-Low-rank workspace (2026-10-27): reuses the validated rerun's fits (linked or
-renumbered by rerun/reorder_fits.py), so only decode, heldout and merge run.
-decode_subjects now uses the exact low-rank path for <= 10 archetypes.
+decode_subjects uses the exact low-rank path for <= 10 archetypes.
 
 Calls the unchanged msaa_pipeline functions, one task per (job, K[, condition]),
 so results are identical to scripts/run_pipeline.py --profile full: every seed
@@ -13,11 +11,11 @@ Decode and held-out tasks each write into their own shard directory (to avoid
 concurrent appends to one CSV); `merge` concatenates shards into the canonical
 paths under the rerun root.
 
-Usage (from the rerun root):
-  python rerun/run_parallel.py fit     --jobs spatial_across [--workers 7 --threads 2]
-  python rerun/run_parallel.py decode  --jobs spatial_across,temporal_across
-  python rerun/run_parallel.py heldout
-  python rerun/run_parallel.py merge
+Usage (from the run root, normally the repo root):
+  python scripts/run_parallel.py fit     --jobs spatial_across [--workers 7 --threads 2]
+  python scripts/run_parallel.py decode  --jobs spatial_across,temporal_across
+  python scripts/run_parallel.py heldout
+  python scripts/run_parallel.py merge
 """
 from __future__ import annotations
 import argparse, os, sys, time, traceback
@@ -244,7 +242,7 @@ def main():
     ap.add_argument("--ks", default=None, help="comma list restricting K values")
     ap.add_argument("--workers", type=int, default=7)
     ap.add_argument("--threads", type=int, default=1)
-    # ben 2026-10-27: use a tie tolerance so results agree across machines/BLAS
+    # Use a tie tolerance so results agree across machines/BLAS
     # (temporal S is mostly exact zeros, giving exact correlation ties).
     ap.add_argument("--tie-tol", type=float, default=1e-8,
                     help="correlation tie tolerance for decode scoring (msaa_pipeline.decode.TIE_TOL); "

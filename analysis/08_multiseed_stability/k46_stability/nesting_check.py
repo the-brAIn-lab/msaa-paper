@@ -1,4 +1,4 @@
-"""Lucy 2026-11-08: raw nesting sanity check BEFORE consensus aggregation and alignment.
+"""Raw nesting sanity check BEFORE consensus aggregation and alignment.
 
 For every orientation (spatial/temporal, where results exist) x K x condition x fit seed x outer split x direction:
   assert set(top5_raw_ids) <= set(top10_raw_ids)   (raw, seed-own component IDs; no Hungarian, no consensus)

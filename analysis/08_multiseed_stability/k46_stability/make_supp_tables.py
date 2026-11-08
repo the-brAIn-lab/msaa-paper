@@ -1,4 +1,4 @@
-"""Lucy 2026-11-08: permanent M0-M4 crosswalk + compact K=46 supplementary table (from out_final/)."""
+"""Permanent M0-M4 crosswalk + compact K=46 supplementary table (from out_final/)."""
 import sys, numpy as np, pandas as pd
 from pathlib import Path
 OUT = Path("out_final"); AA = Path(sys.argv[1])

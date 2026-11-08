@@ -61,7 +61,7 @@
     }
   },
   "full": {
-    "description": "Every K: spatial 2-700, temporal 2-300 (all four jobs); held-out unchanged (30 seeded K). Extended 2026-10-27 for the Hellgate every-K run; the original grid is profile \"paper_grid\".",
+    "description": "Every K: spatial 2-700, temporal 2-300 (all four jobs); held-out unchanged (30 seeded K). the original grid is profile \"paper_grid\".",
     "max_subjects_per_condition": null,
     "fit_maxiter": 200,
     "decode_nreps": 20,

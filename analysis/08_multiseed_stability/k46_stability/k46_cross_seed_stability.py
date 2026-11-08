@@ -1,4 +1,4 @@
-"""Lucy's 2026-11-07 asks, from existing 10-seed outputs (no refits, no redecode).
+"""K=46 cross-seed stability of the paper archetypes, from existing 10-seed outputs (no refits, no redecode).
 
 1. K=46 alignment for the five paper archetypes (legacy A4,A5,A6,A12,A8 = seed-0/seqnum 28,35,37,31,39).
 2. Stability of each seed's OWN participant-held-out top-5 selection (K=46 and K=51 spatial, K=14 temporal):
@@ -11,7 +11,8 @@ zero lag) -- the same matching used for selection_by_seed.csv and the per-seed n
 "Seed top-5 set" = the 5 archetypes that seed's 40 held-out splits (20 reps x 2 directions) select most often at
 top_m=5 (ties broken by mean rank position). Each split ranks on 18 participants and is scored on the other 18.
 
-Usage: python k46_cross_seed_stability.py SEEDS_RESULTS_DIR AA_DIR OUTDIR
+Usage: python k46_cross_seed_stability.py SEEDS_RESULTS_DIR WORKSPACE_DIR OUTDIR
+  WORKSPACE_DIR holds the repo checkout (msaa-paper/) and the canonical seed-0 run folder.
 """
 import re
 import sys
@@ -53,7 +54,7 @@ NCOL = ["#D7DF23", "#39B54A", "#00A79D", "#27AAE1", "#1C75BC", "#92278F", "#EE2A
 PAPER = {28: "A4", 35: "A5", 37: "A6", 31: "A12", 39: "A8"}   # seqnum id -> legacy paper label (legacy_full fit, map r = 1.0)
 LEGACY = {16: "A7", 45: "A9", **PAPER}
 import os
-if os.environ.get("PAPER_SET"):   # e.g. PAPER_SET=28,35,37,16,39 (ben 2026-11-07: A12 -> #16 = legacy A7)
+if os.environ.get("PAPER_SET"):   # e.g. PAPER_SET=28,35,37,16,39 (revised set: A12 #31 replaced by #16 = legacy A7)
     PAPER = {int(a): LEGACY.get(int(a), f"#{a}") for a in os.environ["PAPER_SET"].split(",")}
 REP_R = 0.9   # matched r >= 0.9 = "same archetype recovered" (matched r is bimodal)
 nodes = pd.read_csv(AA / "msaa-paper/reference_outputs/legacy_full/paper_figure_outputs/Figure5_spatial_maps_allnodes.csv")

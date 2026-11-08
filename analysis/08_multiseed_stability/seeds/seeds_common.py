@@ -1,12 +1,12 @@
 """Shared pieces of the multi-seed run: where things live, which K each stage covers, fit names.
 
-Layout on Hellgate ($RUN_DIR = /mnt/beegfs/scratch/$USER/msaa-seqnum):
+Layout ($RUN_DIR = the run root, by default the repo root):
   $RUN_DIR/msaa_flexible_outputs_npz/      seed 0 = the existing every-K seqnum fits (canonical)
   $RUN_DIR/seeds/<stage>/seed01 .. seed09/ one self-contained run root per seed and stage, a copy of
                                            the seqnum code with its own configs/furthestsum_init.csv.gz
                                            (FurthestSum picks drawn with that seed) and its own outputs
   $RUN_DIR/seeds/slim/seed00/              compact copies of the canonical fits, made by the merge
-  $RUN_DIR/seeds/results/                  merged tables (copied home as seeds-results.tar.gz)
+  $RUN_DIR/seeds/results/                  merged tables (seeds-results)
 Each seed directory looks exactly like $RUN_DIR to the seqnum code, so fitting and decoding run
 the unmodified run_parallel.py there.
 """

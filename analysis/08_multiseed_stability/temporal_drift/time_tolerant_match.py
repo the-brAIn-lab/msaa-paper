@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-"""Time-tolerant comparison of temporal archetypes between two runs (e.g. archbox vs Hellgate).
+"""Time-tolerant comparison of temporal archetypes between two runs (e.g. two machines).
 
 Why: each temporal archetype is built from a few time points (the columns of C, 300 x K).
 fMRI is smooth in time, so neighbouring TRs are near-identical brain states and a fit can put
-an archetype's weight on TR 101 instead of TR 100 at almost no cost. compare_hellgate.py
+an archetype's weight on TR 101 instead of TR 100 at almost no cost. A plain comparison
 correlates C column j with column j time point by time point, so such a shift looks like a
 different archetype. Here C is smoothed along time with a Gaussian (sigma in TRs) before
 correlating, which forgives shifts of about one sigma but not moves to another moment.
 
 Per temporal archetype j it reports:
-  C_corr                raw corr of column j (what compare_hellgate.py calls C_corr)
+  C_corr                raw corr of column j (the plain comparison)
   C_corr_s1/_s2/_s3     corr after smoothing both columns with sigma = 1, 2, 3 TRs
   com_shift_TR          shift of the weighted mean time point of column j, in TRs
   null_s{SIGMA}         best smoothed corr of A's j with any OTHER archetype k != j of B: the
@@ -20,10 +20,9 @@ Per temporal archetype j it reports:
                         changed  otherwise
 Per fit: counts per status, and whether the one-to-one best match on smoothed C is the identity.
 
-  python time_tolerant_match.py --a ~/aa/msaa-rerun-seqnum-2026-10-27 \
-                                --b ~/aa/hellgate-setup/results/hellgate_fingerprint.npz
+  python time_tolerant_match.py --a RUN_ROOT_A --b RUN_ROOT_B_or_fingerprint.npz
 Each side is a run root (with msaa_flexible_outputs_npz/), a folder holding
-hellgate_fingerprint.npz, or a fingerprint .npz from hellgate-setup/fingerprint.py.
+fingerprint.npz, or a fingerprint .npz from fingerprint.py.
 Writes archetypes_tolerant.csv, fits_tolerant.csv and summary.txt to --out (default: results/
 next to this script). numpy + pandas only; scipy is used for the one-to-one match if present.
 """
@@ -44,8 +43,8 @@ def load(path):
     p = Path(path).expanduser()
     if p.is_file():
         fp = fpmod.load(p)
-    elif (p / "hellgate_fingerprint.npz").exists():
-        fp = fpmod.load(p / "hellgate_fingerprint.npz")
+    elif (p / "fingerprint.npz").exists():
+        fp = fpmod.load(p / "fingerprint.npz")
     else:
         names = {f.stem for f in (p / "msaa_flexible_outputs_npz").glob("temporal*.npz") if ".partial" not in f.name}
         print(f"reading {len(names)} temporal fits from {p} ...", flush=True)
@@ -112,8 +111,8 @@ def compare_fit(name, a, b, sigma, close, tol):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--a", default=str(Path.home() / "aa/msaa-rerun-seqnum-2026-10-27"))
-    ap.add_argument("--b", default=str(Path.home() / "aa/hellgate-setup/results/hellgate_fingerprint.npz"))
+    ap.add_argument("--a", required=True, help="run root or fingerprint .npz")
+    ap.add_argument("--b", required=True, help="run root or fingerprint .npz")
     ap.add_argument("--out", default=str(HERE / "results"))
     ap.add_argument("--sigma", type=int, default=2, choices=SIGMAS, help="tolerance in TRs used for status")
     ap.add_argument("--close", type=float, default=0.99, help="raw corr counted as the same archetype")

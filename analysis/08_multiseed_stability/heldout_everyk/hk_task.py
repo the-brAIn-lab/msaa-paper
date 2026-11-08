@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""One Slurm array element: every unfinished outer split of its (analysis, seed, K list).
+"""One task: every unfinished outer split of its (analysis, seed, K list).
    python hk_task.py RUN_DIR smoke|full PHASE INDEX(1-based) WORKERS
 The split itself is rerun/run_parallel.py heldout_split_task line for line (same msaa_pipeline functions,
 ranking/evaluation seeds, nfolds/nreps, top-m), with the outer seed read from the every-K table and

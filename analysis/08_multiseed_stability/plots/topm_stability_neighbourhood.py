@@ -1,4 +1,4 @@
-"""Lucy 2026-11-07 (round 2): top-5 vs top-10 held-out selection stability, spatial K neighbourhood.
+"""Top-5 vs top-10 held-out selection stability, spatial K neighbourhood.
 
 For each spatial K and m in {5, 10}, using each seed's OWN participant-held-out ranking (40 splits = 20 outer reps x 2
 directions; each split ranks on 18 participants, is scored on the other 18):
@@ -19,7 +19,8 @@ directions; each split ranks on 18 participants, is scored on the other 18):
   M0-M4 (K=46 seed-0 #28,#35,#16,#39,#45): forced label in each (K, seed) = Hungarian of all 46 K=46 seed-0 maps vs that
   fit's maps; recovered = r >= 0.9 (M0M4_selection_by_K.csv: recovered / selected&recovered / selected-forced counts).
 
-Usage: python topm_stability_neighbourhood.py SEEDS_RESULTS_DIR AA_DIR OUTDIR K[,K...]
+Usage: python topm_stability_neighbourhood.py SEEDS_RESULTS_DIR WORKSPACE_DIR OUTDIR K[,K...]
+  WORKSPACE_DIR holds the repo checkout (msaa-paper/).
 """
 import re
 import sys

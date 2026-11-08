@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Outer-seed table, preflight and task lists.   python hk_setup.py RUN_DIR smoke|full GROUP_UNITS
 Writes BASE/configs/heldout_outer_seeds_everyk.csv (verified identical if it already exists) and
-BASE/tasks_<phase>.txt, one line per Slurm array element: "<analysis> <seed> <K>:<K>:...".
+BASE/tasks_<phase>.txt, one line per task: "<analysis> <seed> <K>:<K>:...".
 Skips splits that are already finished (BASE/parts/...) and, for spatial, the K already in each
 seed's existing held-out results (the 30 paper K), which the merge reuses. Exit 1 = preflight failed."""
 import sys

@@ -12,7 +12,7 @@ NFOLDS, NREPS, BASE_SEED = 2, 20, 42
 OLD_SUB = "msaa_heldout_topm_outputs_spatial_across"   # existing 30-K held-out results per seed
 NEW_SEED_SALT = 20261102        # outer seeds for K not in configs/heldout_outer_seeds.csv
 
-# phase -> (analysis type, seeds); spatial entirely first, then temporal (ben 2026-11-02)
+# phase -> (analysis type, seeds); spatial entirely first, then temporal
 PHASES = {"s0": ("spatial", [0]), "sA": ("spatial", list(range(1, 10))),
           "t0": ("temporal", [0]), "tA": ("temporal", list(range(1, 10)))}
 PHASE_NAMES = {"s0": "SPATIAL SEED 0", "sA": "SPATIAL SEEDS 1-9", "t0": "TEMPORAL SEED 0", "tA": "TEMPORAL SEEDS 1-9"}

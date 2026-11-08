@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Compact fingerprint of a fit folder, small enough to copy between machines (the full fits are
-~4.8 GB). Per fit it keeps everything compare_hellgate.py needs:
+~4.8 GB). Per fit it keeps everything the cross-run comparison needs:
   C (shared generator, float64), the subject-mean S (float32), subject 0's S and sXC (float32),
   init_index, varexpl, final cost, number of subjects.
 
