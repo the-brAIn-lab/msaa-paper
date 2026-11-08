@@ -23,15 +23,57 @@ def build_subject_objects(subject_list, analysis_type, Subject):
     return [Subject(X=orient_subject_matrix(x, analysis_type), sX=orient_subject_matrix(x, analysis_type)) for x in subject_list]
 
 
-def fit_one(subject_list, K, analysis_type, repo_root: Path, maxiter=200, seed=42, verbose=True):
+INIT_PATH = Path("configs/furthestsum_init.csv.gz")
+
+
+def furthest_sum_picks(subject_list, K, analysis_type, repo_root: Path, seed=42):
+    """The FurthestSum picks multi_subject_aa would compute for this fit.
+
+    Same data stacking, rng draw and call as the initialisation inside
+    helpers/MultiSubject_AA.py, so passing the result back as init_idx gives a
+    bit-identical fit.
+    """
+    helpers = str(repo_root / "helpers")
+    if helpers not in sys.path:
+        sys.path.insert(0, helpers)
+    from furthest_sum import furthest_sum
+    X = np.vstack([orient_subject_matrix(x, analysis_type) for x in subject_list])
+    first = np.random.default_rng(int(seed)).integers(low=0, high=X.shape[1])
+    return [int(i) for i in furthest_sum(X, noc=int(K), i=int(first), exclude=None, treat_as_kernel=False)]
+
+
+def load_frozen_init(repo_root: Path, analysis_type, fit_scope, K, condition=None):
+    """Frozen FurthestSum picks for one fit from configs/furthestsum_init.csv.gz.
+
+    Freezing the picks makes archetype numbering identical on every machine:
+    archetype j is always the one initialised at row/column init_index[j], and
+    with the post-fit sort off, nothing reorders the columns afterwards.
+    """
+    path = repo_root / INIT_PATH
+    if not path.exists():
+        raise FileNotFoundError(f"{path} missing; create it with rerun/freeze_init.py")
+    df = pd.read_csv(path)
+    cond = "acrossCond" if fit_scope == "across" else condition
+    sub = df[(df.analysis_type == analysis_type) & (df.fit_scope == fit_scope)
+             & (df.condition == cond) & (df.K == int(K))].sort_values("archetype")
+    if len(sub) != int(K):
+        raise ValueError(f"No frozen FurthestSum picks for {analysis_type}/{fit_scope}/{cond}/K={K} in {path}")
+    return sub["init_index"].astype(int).tolist()
+
+
+def fit_one(subject_list, K, analysis_type, repo_root: Path, maxiter=200, seed=42, verbose=True,
+            init_idx=None, sort_crit="corr"):
     Subject, multi_subject_aa = _load_msaa(repo_root)
     opts = dict(maxiter=int(maxiter), conv_crit=1e-6, fix_var_iter=5,
-                heteroscedastic=False, use_gpu=False, rngSEED=int(seed))
+                heteroscedastic=False, use_gpu=False, rngSEED=int(seed), sort_crit=sort_crit)
+    if init_idx is not None:
+        opts["init_idx"] = list(init_idx)
     subj_objs = build_subject_objects(subject_list, analysis_type, Subject)
     results_subj, C, cost_fun, varexpl, secs = multi_subject_aa(subj_objs, noc=int(K), opts=opts)
     if verbose:
         print(f"[{analysis_type}] K={K}: variance explained={varexpl:.6f}, seconds={secs:.1f}")
-    return dict(results_subj=results_subj, C=C, cost_fun=cost_fun, varexpl=varexpl, secs=secs, K=int(K))
+    return dict(results_subj=results_subj, C=C, cost_fun=cost_fun, varexpl=varexpl, secs=secs, K=int(K),
+                init_index=None if init_idx is None else np.asarray(init_idx, dtype=int), sort_crit=sort_crit)
 
 
 def fit_filename(analysis_type, fit_scope, K, condition=None):
@@ -59,6 +101,8 @@ def save_fit(path: Path, fit_res: dict, labels, analysis_type, fit_scope, center
         fit_scope=np.array(fit_scope, dtype=object),
         centers=np.array(centers),
         widths=np.array(widths),
+        **({"init_index": fit_res["init_index"]} if fit_res.get("init_index") is not None else {}),
+        **({"sort_crit": np.array(fit_res["sort_crit"], dtype=object)} if "sort_crit" in fit_res else {}),
     )
 
 

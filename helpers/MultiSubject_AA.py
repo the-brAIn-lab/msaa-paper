@@ -45,7 +45,10 @@ def multi_subject_aa(
           - 'heteroscedastic' (True)
           - 'numCstep' (10)
           - 'numSstep' (20)
-          - 'sort_crit' ('corr' | 'energy')
+          - 'sort_crit' ('corr' | 'energy' | 'none'); anything but 'corr' keeps
+            archetype j as the one initialised at the j-th FurthestSum pick
+          - 'init_idx' (None): precomputed FurthestSum picks to use instead of
+            recomputing them
           - 'init' ('FurthestSum' | 'random')
           - 'initSstep' (250)
           - 'rngSEED' (None)
@@ -78,6 +81,7 @@ def multi_subject_aa(
     init_type      = mgetopt(opts, 'init', 'FurthestSum')
     initial_S_steps= int(mgetopt(opts, 'initSstep', 250))
     rngSEED        = mgetopt(opts, 'rngSEED', None)
+    init_idx       = mgetopt(opts, 'init_idx', None)  # frozen FurthestSum picks (optional)
 
     if runGPU and cp is None:
         raise ImportError("opts['use_gpu']=True requested but CuPy is not installed.")
@@ -104,8 +108,13 @@ def multi_subject_aa(
             offset += T
 
         # random initial seed 0..sV-1 (MATLAB used ceil(sV*rand))
-        seed = rng.integers(low=0, high=sV)
-        idx = furthest_sum(Xcombined, noc=noc, i=int(seed), exclude=None, treat_as_kernel=False)
+        seed = rng.integers(low=0, high=sV)  # drawn even with init_idx, so the rng stream is unchanged
+        if init_idx is None:
+            idx = furthest_sum(Xcombined, noc=noc, i=int(seed), exclude=None, treat_as_kernel=False)
+        else:
+            idx = [int(i) for i in init_idx]
+            if len(idx) != noc or len(set(idx)) != noc or min(idx) < 0 or max(idx) >= sV:
+                raise ValueError(f"init_idx must be {noc} distinct indices in [0, {sV})")
         # Build C with ones at (idx[j], j)
         C = xp.zeros((sV, noc), dtype=float)
         C[idx, xp.arange(noc)] = 1.0
@@ -288,12 +297,8 @@ def multi_subject_aa(
         for j in range(noc):
             for bi, s in enumerate(subj):
                 arch[:, bi] = _to_numpy(s.sXC[:, j], runGPU)
-            Ccorr = np.corrcoef(arch, rowvar=False)
-            # upper triangle mean
-            iu = np.triu_indices(B, k=1)
-            vals = Ccorr[iu]
-            mean_corr[j] = float(vals.mean())
-        ind = np.argsort(mean_corr)[::-1]
+            mean_corr[j] = mean_pairwise_corr(arch)
+        ind = corr_sort_order(mean_corr)
     elif sort_crit.lower() != 'energy':
         # fall back to energy with a warning (quiet by default)
         pass
@@ -324,6 +329,32 @@ def multi_subject_aa(
 
 
 # ------------------------- helpers -------------------------
+
+def corr_sort_order(mean_corr):
+    """Archetype order: highest mean inter-subject correlation first.
+
+    NaN (no finite subject pair) goes last, and ties keep index order, so the
+    order is deterministic. The original ``np.argsort(mean_corr)[::-1]`` put
+    NaN first, in an order set by tiny numerical details.
+    """
+    mean_corr = np.asarray(mean_corr, dtype=float)
+    nan = np.isnan(mean_corr)
+    key = np.where(nan, 0.0, -mean_corr)
+    return np.lexsort((np.arange(mean_corr.size), key, nan))
+
+
+def mean_pairwise_corr(arch):
+    """Mean of the finite pairwise correlations between columns of arch.
+
+    A subject whose archetype time course is flat gives NaN correlations;
+    those pairs are skipped instead of making the whole mean NaN.
+    """
+    with np.errstate(divide="ignore", invalid="ignore"):
+        Ccorr = np.corrcoef(arch, rowvar=False)
+    vals = Ccorr[np.triu_indices(arch.shape[1], k=1)]
+    vals = vals[np.isfinite(vals)]
+    return float(vals.mean()) if vals.size else np.nan
+
 
 def _to_numpy(a, runGPU: bool):
     """Bring xp array or scalar to numpy / Python types."""

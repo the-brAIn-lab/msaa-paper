@@ -13,6 +13,7 @@ except Exception:
 from mgetopt import mgetopt
 from SupdateIndiStep import supdate_indi_step
 from furthest_sum import furthest_sum
+from MultiSubject_AA import corr_sort_order, mean_pairwise_corr
 
 
 @dataclass
@@ -256,10 +257,8 @@ def multi_subject_aa_T(
         for j in range(noc):
             for bi, s in enumerate(subj):
                 arch[:, bi] = _to_numpy(s.sXC[:, j], runGPU)
-            Ccorr = np.corrcoef(arch, rowvar=False)
-            iu = np.triu_indices(B, k=1)
-            mean_corr[j] = float(Ccorr[iu].mean())
-        ind = np.argsort(mean_corr)[::-1]
+            mean_corr[j] = mean_pairwise_corr(arch)
+        ind = corr_sort_order(mean_corr)
     elif sort_crit.lower() != 'energy':
         pass  # fall back silently
 
