@@ -161,3 +161,13 @@ outputs/
 
 # Activated portable legacy-output links
 /003_postprocess_across_spatial_cache
+
+# ------------------------------------------------------------
+# Multi-seed stability run outputs (multiseed/run_local.py)
+# ------------------------------------------------------------
+/rerun/
+/seeds/
+/heldout-everyk/
+/heldout-everyk-*-results/
+/heldout-seeds-results/
+/*-results.tar.gz
