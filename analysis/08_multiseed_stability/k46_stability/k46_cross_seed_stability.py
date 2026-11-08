@@ -11,7 +11,7 @@ zero lag) -- the same matching used for selection_by_seed.csv and the per-seed n
 "Seed top-5 set" = the 5 archetypes that seed's 40 held-out splits (20 reps x 2 directions) select most often at
 top_m=5 (ties broken by mean rank position). Each split ranks on 18 participants and is scored on the other 18.
 
-Usage: python lucy_stability.py SEEDS_RESULTS_DIR AA_DIR OUTDIR
+Usage: python k46_cross_seed_stability.py SEEDS_RESULTS_DIR AA_DIR OUTDIR
 """
 import re
 import sys

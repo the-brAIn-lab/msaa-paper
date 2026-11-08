@@ -163,7 +163,7 @@ outputs/
 /003_postprocess_across_spatial_cache
 
 # ------------------------------------------------------------
-# Multi-seed stability run outputs (multiseed/run_local.py)
+# Multi-seed stability run outputs (analysis/08_multiseed_stability/run_local.py)
 # ------------------------------------------------------------
 /rerun/
 /seeds/
@@ -171,4 +171,5 @@ outputs/
 /heldout-everyk-*-results/
 /heldout-seeds-results/
 /*-results.tar.gz
-/multiseed/temporal_drift/results/
+/analysis/08_multiseed_stability/temporal_drift/results/
+/analysis/08_multiseed_stability/seeds/tasks/

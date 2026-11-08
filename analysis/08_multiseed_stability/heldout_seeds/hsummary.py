@@ -27,7 +27,7 @@ SEEDS = [0] + list(range(FIRST, LAST + 1))
 KS = sorted(set(pd.read_csv(RUN / "configs" / "heldout_outer_seeds.csv").K.astype(int)))
 if MODE == "smoke":
     KS = [5, 46]
-if os.environ.get("HS_KS"):            # set by multiseed/run_local.py --ks
+if os.environ.get("HS_KS"):            # set by analysis/08_multiseed_stability/run_local.py --ks
     KS = [k for k in KS if k in {int(x) for x in os.environ["HS_KS"].split(",")}]
 
 

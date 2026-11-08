@@ -21,9 +21,9 @@ Outputs land in the repo root, in the same layout as the original run:
   heldout-seeds-results/   heldout-everyk/ and heldout-everyk-<analysis>-<seed0|all>-results/
 
 Usage (from anywhere):
-  python multiseed/run_local.py --workers 8                       # everything (weeks of CPU time)
-  python multiseed/run_local.py --ks 5,10 --seeds 1,2 --jobs temporal_across --workers 4   # small test
-  python multiseed/run_local.py --steps decode,topm,merge          # just some steps
+  python analysis/08_multiseed_stability/run_local.py --workers 8                       # everything (weeks of CPU time)
+  python analysis/08_multiseed_stability/run_local.py --ks 5,10 --seeds 1,2 --jobs temporal_across --workers 4   # small test
+  python analysis/08_multiseed_stability/run_local.py --steps decode,topm,merge          # just some steps
 
 The full run is very large (about 36,000 fits plus held-out splits at every K; it took several
 days on ~100 cluster cores). --ks / --seeds / --jobs restrict it for testing.
@@ -40,7 +40,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.parent
+ROOT = HERE.parents[1]
 STEPS = ["seed0", "picks", "fits", "decode", "topm", "merge", "heldout30", "heldoutK"]
 JOBS = ["spatial_across", "spatial_within", "temporal_across", "temporal_within"]
 HK_PHASES = ["s0", "sA", "t0", "tA"]

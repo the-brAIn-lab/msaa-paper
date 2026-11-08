@@ -14,7 +14,7 @@ import json
 import os
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]          # run root = repo root (this file is in multiseed/seeds)
+ROOT = Path(__file__).resolve().parents[3]          # run root = repo root (this file is in analysis/08_multiseed_stability/seeds)
 SEEDS_DIR = ROOT / "seeds"
 CONDITIONS = ["intact", "word", "rest"]
 GRID = {"spatial": range(2, 701), "temporal": range(2, 301)}
@@ -24,7 +24,7 @@ TOP_M_VALUES = [1, 2, 3, 5, 10]
 
 def stage_Ks(stage, at):
     """K values a stage covers. full = every K (spatial 2-700, temporal 2-300); smoke = 5 and 10.
-    SEED_KS (comma list, set by multiseed/run_local.py --ks) restricts the full grid."""
+    SEED_KS (comma list, set by analysis/08_multiseed_stability/run_local.py --ks) restricts the full grid."""
     if stage == "full":
         keep = os.environ.get("SEED_KS")
         ks = list(GRID[at])

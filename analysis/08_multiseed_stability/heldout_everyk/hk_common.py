@@ -26,7 +26,7 @@ def phase(mode, ph):
     if mode == "smoke":
         seeds = SMOKE_SEEDS[ph]
     ks = (KS_SMOKE if mode == "smoke" else KS_FULL)[at]
-    # HK_SEEDS / HK_KS (comma lists, set by multiseed/run_local.py) restrict a full run
+    # HK_SEEDS / HK_KS (comma lists, set by analysis/08_multiseed_stability/run_local.py) restrict a full run
     if os.environ.get("HK_TYPES") and at not in os.environ["HK_TYPES"].split(","):
         seeds = []
     if os.environ.get("HK_SEEDS"):

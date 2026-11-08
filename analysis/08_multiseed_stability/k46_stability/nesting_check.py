@@ -64,7 +64,7 @@ for orient in ["spatial", "temporal"]:
         sm = F[F.K <= 5].copy(); sm["want"] = 10; F = pd.concat([F, sm]).drop_duplicates(["K", "condition", "want", "archetype"])
         m = F.merge(raw[raw.seed == s], on=["K", "condition", "want", "archetype"], how="outer")
         bad = (m.selected_count.fillna(0) != m.raw_count.fillna(0)); mism += int(bad.sum()); tot += len(m)
-        # (c) consensus nesting: head(m) by selection_frequency desc, mean_rank_position asc (as in lucy_topm_neighborhood.py)
+        # (c) consensus nesting: head(m) by selection_frequency desc, mean_rank_position asc (as in topm_stability_neighbourhood.py)
         for (K, c), g in F.groupby(["K", "condition"]):
             top = {w: set(gg.sort_values(["selection_frequency", "mean_rank_position"], ascending=[False, True]).head(min(w, K)).archetype)
                    for w, gg in g.groupby("want")}

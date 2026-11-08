@@ -19,7 +19,7 @@ directions; each split ranks on 18 participants, is scored on the other 18):
   M0-M4 (K=46 seed-0 #28,#35,#16,#39,#45): forced label in each (K, seed) = Hungarian of all 46 K=46 seed-0 maps vs that
   fit's maps; recovered = r >= 0.9 (M0M4_selection_by_K.csv: recovered / selected&recovered / selected-forced counts).
 
-Usage: python lucy_topm_neighborhood.py SEEDS_RESULTS_DIR AA_DIR OUTDIR K[,K...]
+Usage: python topm_stability_neighbourhood.py SEEDS_RESULTS_DIR AA_DIR OUTDIR K[,K...]
 """
 import re
 import sys
