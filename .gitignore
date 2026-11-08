@@ -171,3 +171,4 @@ outputs/
 /heldout-everyk-*-results/
 /heldout-seeds-results/
 /*-results.tar.gz
+/multiseed/temporal_drift/results/
