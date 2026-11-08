@@ -29,7 +29,7 @@ OUT = ROOT / "outputs" / "multiseed_stability"
 DATA = REPO / "data" / "input" / "pieman_data.mat"
 X_NPZ = OUT / "X.npz"                     # normalised scans, written by plots/loadx.py
 
-# node table: node, x, y, z, network (Yeo-7 name) for the 700 HTFA nodes
+# node table: node, x, y, z, width, network, code for the 700 HTFA nodes (scripts/build_node_yeo7.py)
 NODES_CONFIG = REPO / "configs" / "node_yeo7.csv"
 NODES_LEGACY = REPO / "reference_outputs" / "legacy_full" / "paper_figure_outputs" / "Figure5_spatial_maps_allnodes.csv"
 NODES = NODES_CONFIG if NODES_CONFIG.exists() else NODES_LEGACY
