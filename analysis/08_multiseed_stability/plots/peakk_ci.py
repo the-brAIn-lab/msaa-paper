@@ -6,17 +6,23 @@ splits, smoothed with a centred rolling mean over W consecutive K; its argmax is
 CI = 2.5-97.5 percentiles of those draws. Point estimate = argmax of the smoothed full-data curve.
 Caveat: all splits/seeds reuse the same 36 participants, so this is split + initialisation uncertainty,
 not uncertainty over new participants.
-Usage: python -I peakk_ci.py HELDOUT_DIR OUT.csv [W=21] [B=2000]
+Usage: python peakk_ci.py ANALYSIS [--which all|seed0] [--dir HELDOUT_DIR] [--out OUT.csv] [--W 21] [--B 2000]
+Default HELDOUT_DIR heldout-everyk-<ANALYSIS>-<which>-results/, OUT outputs/multiseed_stability/peakk_ci/<ANALYSIS>_<which>_W<W>.csv.
 """
-import sys
+import argparse, sys
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
-D = Path(sys.argv[1]); OUT = Path(sys.argv[2])
-W = int(sys.argv[3]) if len(sys.argv) > 3 else 21
-B = int(sys.argv[4]) if len(sys.argv) > 4 else 2000
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))   # analysis/08_multiseed_stability, for paths.py
+import paths  # noqa: E402
+ap = argparse.ArgumentParser(); ap.add_argument("analysis", choices=["spatial", "temporal"])
+ap.add_argument("--which", default="all", choices=["all", "seed0"]); ap.add_argument("--dir"); ap.add_argument("--out")
+ap.add_argument("--W", type=int, default=21); ap.add_argument("--B", type=int, default=2000)
+a = ap.parse_args(); W, B = a.W, a.B
+D = Path(a.dir or paths.heldout_everyk(a.analysis, a.which))
+OUT = Path(a.out or paths.OUT / "peakk_ci" / f"{a.analysis}_{a.which}_W{W}.csv"); OUT.parent.mkdir(parents=True, exist_ok=True)
 rng = np.random.default_rng(20261104)
 R = pd.read_csv(D / "heldout_topm_runs_all_seeds.csv.gz",
                 usecols=["top_m", "mean", "condition", "K", "outer_rep", "fit_seed", "analysis_type"])

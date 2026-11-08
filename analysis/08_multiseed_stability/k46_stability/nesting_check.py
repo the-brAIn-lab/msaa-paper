@@ -7,13 +7,19 @@ Requested m is clamped to K (m = min(m, K)), as in heldout.evaluate_topm_on_subj
 Also checks: (a) every (K, condition, seed) has all 40 splits (20 outer reps x 2 directions);
 (b) the per-seed selection_stability CSVs (input to the consensus sets) reproduce the selected counts recomputed from
 the raw runs; (c) reports, without asserting, how often a seed's consensus top-5 is not inside its consensus top-10.
-Usage: python nesting_check.py HELDOUT_EVERYK_DIR OUTDIR
+Usage: python nesting_check.py [--root RUN_ROOT] [--out OUTDIR]
+Reads RUN_ROOT/heldout-everyk-{spatial,temporal}-all-results/ (default: the run root in paths.py);
+default OUTDIR outputs/multiseed_stability/nesting_check.
 """
-import re, sys
+import argparse, re, sys
 from pathlib import Path
 import numpy as np, pandas as pd
 
-HE, OUT = Path(sys.argv[1]), Path(sys.argv[2]); OUT.mkdir(parents=True, exist_ok=True)
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))   # analysis/08_multiseed_stability, for paths.py
+import paths  # noqa: E402
+ap = argparse.ArgumentParser(); ap.add_argument("--root", default=str(paths.ROOT))
+ap.add_argument("--out", default=str(paths.OUT / "nesting_check")); a = ap.parse_args()
+HE, OUT = Path(a.root), Path(a.out); OUT.mkdir(parents=True, exist_ok=True)
 log = open(OUT / "nesting_summary.txt", "w")
 def say(*a):
     s = " ".join(map(str, a)); print(s, flush=True); log.write(s + "\n"); log.flush()

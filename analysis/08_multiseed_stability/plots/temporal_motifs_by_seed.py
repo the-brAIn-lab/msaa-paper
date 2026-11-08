@@ -4,9 +4,11 @@ scans (slim files keep no per-scan S); seeds >= 1 from slim npz, seed-0 motif in
 Hungarian to seed 0 on the r of C columns (zero lag), so columns keep seed-0 IDs. Where the one-to-one match has r < MERGE_R
 the seed has no separate copy of that archetype, so the panel is left blank instead of showing the unrelated leftover, and is
 labelled with the seed-0 archetype that the seed's best-correlated archetype was matched to.
-Usage: python temporal_motifs_by_seed.py K IDS(comma) FULLFIT_seed0.npz SEEDMAPS_ROOT OUTDIR
+Usage: python temporal_motifs_by_seed.py K IDS(comma) [--fit FULLFIT_seed0.npz] [--out OUTDIR]
+Defaults: the seed-0 fit in msaa_flexible_outputs_npz/, seeds 1-9 from seeds/ (paths.py),
+OUTDIR outputs/multiseed_stability/temporal_motifs_by_seed.
 """
-import re, sys
+import argparse, re, sys
 from pathlib import Path
 import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -14,14 +16,18 @@ import numpy as np, pandas as pd
 from scipy.optimize import linear_sum_assignment
 plt.rcParams["font.family"] = "DejaVu Sans"
 
-K = int(sys.argv[1]); SEL = [int(x) for x in sys.argv[2].split(",")]
-FIT, ROOT, OUT = map(Path, sys.argv[3:6]); OUT.mkdir(parents=True, exist_ok=True)
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))   # analysis/08_multiseed_stability, for paths.py
+import paths  # noqa: E402
+ap = argparse.ArgumentParser(); ap.add_argument("K", type=int); ap.add_argument("ids")
+ap.add_argument("--fit", default=None); ap.add_argument("--out", default=str(paths.OUT / "temporal_motifs_by_seed"))
+a = ap.parse_args(); K = a.K; SEL = [int(x) for x in a.ids.split(",")]
+FIT = Path(a.fit or paths.full_fit0("temporal", K)); OUT = Path(a.out); OUT.mkdir(parents=True, exist_ok=True)
 MERGE_R = 0.5
 f = np.load(FIT, allow_pickle=True); assert int(f["K"]) == K
 S0 = np.stack([np.asarray(r["S"], float) for r in f["results_subj"].tolist()])          # scans x K x T
 C = {0: np.asarray(f["C"].tolist(), float)}; S = {0: S0.mean(0)}; SE0 = S0.std(0, ddof=1) / np.sqrt(len(S0))
-for p in ROOT.rglob(f"temporalAA_across_acrossCond_K{K}.npz"):
-    d = np.load(p); s = int(re.search(r"seed(\d\d)", str(p)).group(1)); C[s] = d["C"].astype(float); S[s] = d["Smean"].astype(float)
+for s, p in paths.seed_fits("temporal", K, seeds=range(1, paths.N_SEEDS)).items():
+    d = np.load(p); C[s] = d["C"].astype(float); S[s] = d["Smean"].astype(float)
 seeds = sorted(C); print("seeds:", seeds); assert all(S[s].shape == (K, C[0].shape[0]) and C[s].shape == C[0].shape for s in seeds)
 
 def corr(A, B):

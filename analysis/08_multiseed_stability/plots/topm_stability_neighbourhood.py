@@ -19,9 +19,11 @@ directions; each split ranks on 18 participants, is scored on the other 18):
   M0-M4 (K=46 seed-0 #28,#35,#16,#39,#45): forced label in each (K, seed) = Hungarian of all 46 K=46 seed-0 maps vs that
   fit's maps; recovered = r >= 0.9 (M0M4_selection_by_K.csv: recovered / selected&recovered / selected-forced counts).
 
-Usage: python topm_stability_neighbourhood.py SEEDS_RESULTS_DIR WORKSPACE_DIR OUTDIR K[,K...]
-  WORKSPACE_DIR holds the repo checkout (msaa-paper/).
+Usage: python topm_stability_neighbourhood.py K[,K...] [--nodes NODES.csv] [--heldout DIR] [--out OUTDIR]
+Defaults (paths.py): every seed's compact spatial fits from seeds/ (K=46 always needed for M0-M4),
+heldout-everyk-spatial-all-results/, OUTDIR outputs/multiseed_stability/topm_stability_neighbourhood.
 """
+import argparse
 import re
 import sys
 from itertools import combinations
@@ -55,17 +57,21 @@ except ImportError:  # device VM has no scipy
         rows = p[1:] - 1; order = np.argsort(rows); return rows[order], np.arange(n)[order]
 
 plt.rcParams["font.family"] = "DejaVu Sans"
-SR, AA, OUT = map(Path, sys.argv[1:4]); OUT.mkdir(parents=True, exist_ok=True)
-KS = [int(k) for k in sys.argv[4].split(",")]
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))   # analysis/08_multiseed_stability, for paths.py
+import paths  # noqa: E402
+ap = argparse.ArgumentParser(); ap.add_argument("ks"); ap.add_argument("--nodes", default=str(paths.NODES))
+ap.add_argument("--heldout", default=str(paths.heldout_everyk("spatial")))
+ap.add_argument("--out", default=str(paths.OUT / "topm_stability_neighbourhood"))
+a = ap.parse_args(); OUT = Path(a.out); OUT.mkdir(parents=True, exist_ok=True)
+KS = [int(k) for k in a.ks.split(",")]
 SEEDS = list(range(10)); CONDS = ["intact", "word", "rest"]; MS = [5, 10]; REP_R = 0.9
 NETS = ["Visual", "Somatomotor", "Dorsal attention", "Ventral attention", "Limbic", "Frontoparietal", "Default mode"]
 NSHORT = ["Vis", "SomMot", "DorsAttn", "VentAttn", "Limbic", "FP", "DMN"]
 MOT = {"M0": 28, "M1": 35, "M2": 16, "M3": 39, "M4": 45}       # K=46 seed-0 ids
 LEG = {"M0": "A4", "M1": "A5", "M2": "A7", "M3": "A8", "M4": "A9"}
-MAPROOTS = [SR / "k46-networks/seeds", SR / "k51-networks/maps/seeds", SR / "kneigh-maps/seeds"]
-nodes = pd.read_csv(AA / "msaa-paper/reference_outputs/legacy_full/paper_figure_outputs/Figure5_spatial_maps_allnodes.csv")
+nodes = pd.read_csv(a.nodes)
 nodes = nodes.drop_duplicates("node").set_index("node").sort_index()["network"].to_numpy()
-HE = SR / "heldout-everyk/heldout-everyk-spatial-all-results"
+HE = Path(a.heldout)
 log = open(OUT / "summary.txt", "w")
 def say(*a):
     s = " ".join(str(x) for x in a); print(s); log.write(s + "\n"); log.flush()
@@ -88,10 +94,7 @@ def jrand(m, K):  # exact E[J] for two independent uniform m-subsets of K
 
 
 def maps(K):
-    M = {}
-    for root in MAPROOTS:
-        for p in root.rglob(f"spatialAA_across_acrossCond_K{K}.npz"):
-            M[int(re.search(r"seed(\d\d)", str(p)).group(1))] = np.load(p)["Smean"].astype(float)
+    M = {s: np.load(p)["Smean"].astype(float) for s, p in paths.seed_fits("spatial", K).items()}
     assert sorted(M) == SEEDS, (K, sorted(M)); return M
 
 

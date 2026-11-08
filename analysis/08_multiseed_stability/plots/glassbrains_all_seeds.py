@@ -1,9 +1,10 @@
 """All seeds on one figure: Yeo-7 glass brains of the selected spatial archetypes, rows = seeds 0-9, columns = archetypes.
 Matching and drawing as glassbrains_per_seed.py: Hungarian-matched to seed 0 on Pearson r of Smean, so columns keep seed-0
 IDs; nodes >= 0.30 x max of the map, marker size by weight, Yeo-7 colour, views l/z/r.
-Usage: python glassbrains_all_seeds.py K IDS(comma) SEEDMAPS_ROOT NODES.csv OUTDIR
+Usage: python glassbrains_all_seeds.py K IDS(comma) [--nodes NODES.csv] [--out OUTDIR]
+Reads every seed's compact K fit from seeds/ (see paths.py); default OUTDIR outputs/multiseed_stability/glassbrains_all_seeds.
 """
-import io, re, sys
+import argparse, io, re, sys
 from pathlib import Path
 import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -13,8 +14,12 @@ from PIL import Image, ImageChops
 from scipy.optimize import linear_sum_assignment
 plt.rcParams["font.family"] = "DejaVu Sans"
 
-K = int(sys.argv[1]); SEL = [int(x) for x in sys.argv[2].split(",")]
-ROOT, NODES, OUT = Path(sys.argv[3]), Path(sys.argv[4]), Path(sys.argv[5]); OUT.mkdir(parents=True, exist_ok=True)
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))   # analysis/08_multiseed_stability, for paths.py
+import paths  # noqa: E402
+ap = argparse.ArgumentParser(); ap.add_argument("K", type=int); ap.add_argument("ids")
+ap.add_argument("--nodes", default=str(paths.NODES)); ap.add_argument("--out", default=str(paths.OUT / "glassbrains_all_seeds"))
+a = ap.parse_args(); K = a.K; SEL = [int(x) for x in a.ids.split(",")]
+NODES, OUT = Path(a.nodes), Path(a.out); OUT.mkdir(parents=True, exist_ok=True)
 THR = 0.30
 NETS = ["Visual", "Somatomotor", "Dorsal attention", "Ventral attention", "Limbic", "Frontoparietal", "Default mode"]
 COL = {"Visual": "#D7DF23", "Somatomotor": "#39B54A", "Dorsal attention": "#00A79D", "Ventral attention": "#27AAE1",
@@ -23,8 +28,8 @@ nodes = pd.read_csv(NODES).drop_duplicates("node").set_index("node").sort_index(
 xyz = nodes[["x", "y", "z"]].to_numpy(float); net = nodes["network"].to_numpy()
 
 S = {}
-for p in ROOT.rglob(f"spatialAA_across_acrossCond_K{K}.npz"):
-    S[int(re.search(r"seed(\d\d)", str(p)).group(1))] = np.nan_to_num(np.load(p)["Smean"].astype(float))
+for s, p in paths.seed_fits("spatial", K).items():
+    S[s] = np.nan_to_num(np.load(p)["Smean"].astype(float))
 seeds = sorted(S); print("seeds:", seeds); assert seeds == list(range(10)) and S[0].shape == (K, len(nodes))
 
 def zr(M): return (M - M.mean(1, keepdims=True)) / M.std(1, keepdims=True)

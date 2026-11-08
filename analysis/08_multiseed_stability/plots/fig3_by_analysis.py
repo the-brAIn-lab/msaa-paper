@@ -7,11 +7,13 @@ Same y-limits in both columns so seed 0 and the 10-fit mean can be compared dire
 Optional peak-K bootstrap CI strips (peakk_ci.py output, raw W=1 versions).
 
 Usage:
-  python -I fig3_by_analysis.py ANALYSIS SEED0_full_summary.csv SEEDS_per_K.csv HELDOUT_SEED0_DIR HELDOUT_ALL_DIR OUTDIR
-         [--peakci0 seed0_ci.csv] [--peakciA all_ci.csv]
+  python fig3_by_analysis.py ANALYSIS [--summary0 full_summary.csv] [--perk per_K.csv] [--heldout0 DIR] [--heldoutA DIR]
+         [--out OUTDIR] [--peakci0 seed0_ci.csv] [--peakciA all_ci.csv]
+  Defaults (paths.py): seed-0 decoding summary, seeds/results/per_K.csv, heldout-everyk-ANALYSIS-{seed0,all}-results/,
+  OUTDIR outputs/multiseed_stability/fig3_by_analysis; the peak-K CI strips use the peakk_ci.py W=1 outputs if present.
   ANALYSIS = spatial | temporal
 """
-import sys
+import argparse, sys
 from pathlib import Path
 
 import matplotlib
@@ -26,14 +28,19 @@ except ImportError:
     _T = {1: 12.706, 2: 4.303, 3: 3.182, 4: 2.776, 5: 2.571, 6: 2.447, 7: 2.365, 8: 2.306, 9: 2.262, 10: 2.228}
     def t975(df): return df.map(lambda v: _T.get(int(v), 1.96))
 
-args = sys.argv[1:]
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))   # analysis/08_multiseed_stability, for paths.py
+import paths  # noqa: E402
+ap = argparse.ArgumentParser(); ap.add_argument("analysis", choices=["spatial", "temporal"])
+for o in ("summary0", "perk", "heldout0", "heldoutA", "out", "peakci0", "peakciA"): ap.add_argument(f"--{o}", default=None)
+a = ap.parse_args(); AT = a.analysis
+SUMM0 = a.summary0 or paths.decoding_summary(AT); PERK = a.perk or paths.SEEDS_RESULTS / "per_K.csv"
+HO0 = a.heldout0 or paths.heldout_everyk(AT, "seed0"); HOA = a.heldoutA or paths.heldout_everyk(AT, "all")
+OUT = Path(a.out or paths.OUT / "fig3_by_analysis")
 CI = {}
-for flag, key in (("--peakci0", "seed0"), ("--peakciA", "seedavg")):
-    if flag in args:
-        i = args.index(flag); c_ = pd.read_csv(args[i + 1])
-        CI[key] = c_[c_.condition == "intact"].set_index("top_m"); del args[i:i + 2]
-AT, SUMM0, PERK, HO0, HOA, OUT = args
-OUT = Path(OUT)
+for given, which, key in ((a.peakci0, "seed0", "seed0"), (a.peakciA, "all", "seedavg")):
+    f = Path(given) if given else paths.OUT / "peakk_ci" / f"{AT}_{which}_W1.csv"
+    if f.exists():
+        c_ = pd.read_csv(f); CI[key] = c_[c_.condition == "intact"].set_index("top_m")
 
 COND = {"intact": "#7b2d8e", "word": "#2ca02c", "rest": "#222222"}
 TOPM = {1: "#1f77b4", 2: "#ff7f0e", 3: "#2ca02c", 5: "#d62728", 10: "#8c564b"}

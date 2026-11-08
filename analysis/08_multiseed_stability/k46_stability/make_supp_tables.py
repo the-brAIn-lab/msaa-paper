@@ -1,12 +1,20 @@
-"""Permanent M0-M4 crosswalk + compact K=46 supplementary table (from out_final/)."""
-import sys, numpy as np, pandas as pd
+"""Permanent M0-M4 crosswalk + compact K=46 supplementary table, from the topm_stability_neighbourhood.py outputs.
+
+Usage: python make_supp_tables.py [--in TOPM_NEIGHBOURHOOD_OUTDIR] [--nodes NODES.csv] [--out OUTDIR]
+Defaults (paths.py): outputs/multiseed_stability/topm_stability_neighbourhood (run it with K list including 46),
+OUTDIR outputs/multiseed_stability/k46_supp_tables.
+"""
+import argparse, sys, numpy as np, pandas as pd
 from pathlib import Path
-OUT = Path("out_final"); AA = Path(sys.argv[1])
-MT = pd.read_csv(OUT / "M0M4_selection_by_K.csv"); MR = pd.read_csv(OUT / "M0M4_recovery_by_K.csv")
-nodes = pd.read_csv(AA / "msaa-paper/reference_outputs/legacy_full/paper_figure_outputs/Figure5_spatial_maps_allnodes.csv")
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))   # analysis/08_multiseed_stability, for paths.py
+import paths  # noqa: E402
+ap = argparse.ArgumentParser(); ap.add_argument("--in", dest="inp", default=str(paths.OUT / "topm_stability_neighbourhood"))
+ap.add_argument("--nodes", default=str(paths.NODES)); ap.add_argument("--out", default=str(paths.OUT / "k46_supp_tables"))
+a = ap.parse_args(); IN = Path(a.inp); OUT = Path(a.out); OUT.mkdir(parents=True, exist_ok=True)
+MT = pd.read_csv(IN / "M0M4_selection_by_K.csv"); MR = pd.read_csv(IN / "M0M4_recovery_by_K.csv")
+nodes = pd.read_csv(a.nodes)
 nodes = nodes.drop_duplicates("node").set_index("node").sort_index()["network"].to_numpy()
-S = np.load(next(Path("..").joinpath("k46-networks/seeds").rglob("*seed00*/**/spatialAA_across_acrossCond_K46.npz"), None) or
-            next(Path("../k46-networks/seeds").rglob("spatialAA_across_acrossCond_K46.npz")))["Smean"].astype(float)
+S = np.load(paths.slim_fit("spatial", 46, 0))["Smean"].astype(float)
 NETS = list(dict.fromkeys(["Visual", "Somatomotor", "Dorsal attention", "Ventral attention", "Limbic", "Frontoparietal", "Default mode"]))
 r46 = MR[MR.K == 46].set_index("motif")
 X = []

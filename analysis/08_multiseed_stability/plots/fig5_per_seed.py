@@ -16,9 +16,12 @@ Similarity (all K archetypes, seed s vs seed 0, matched pairs):
              flat in that scan -- are skipped; n_scans_tc says how many were used)
   motif_r    r of the Fig-5 motif (mean over scans) between seeds
   net_r      r of the 7-network |weight| profiles; same_net = same dominant network
-Usage: python fig5_per_seed.py K ARCHETYPES(comma) SEEDMAPS_ROOT X.npz FULLFIT_seed0.npz NODES.csv SEL.csv OUTDIR
+Usage: python fig5_per_seed.py K ARCHETYPES(comma) [--x X.npz] [--fit FULLFIT_seed0.npz] [--nodes NODES.csv]
+                               [--sel selection_by_seed.csv] [--out OUTDIR]
+Defaults (paths.py): X.npz from plots/loadx.py, the seed-0 fit in msaa_flexible_outputs_npz/, every seed's compact
+fit from seeds/, heldout-everyk-spatial-all-results/selection_by_seed.csv, OUTDIR outputs/multiseed_stability/fig5_per_seed/K<K>.
 """
-import io, re, sys
+import argparse, io, re, sys
 from pathlib import Path
 import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -28,8 +31,14 @@ from PIL import Image, ImageChops
 from scipy.optimize import linear_sum_assignment
 plt.rcParams["font.family"] = "DejaVu Sans"
 
-K = int(sys.argv[1]); SELECTED = [int(x) for x in sys.argv[2].split(",")]
-ROOT, XF, FIT, NODES, SELF, OUT = map(Path, sys.argv[3:9]); OUT.mkdir(parents=True, exist_ok=True)
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))   # analysis/08_multiseed_stability, for paths.py
+import paths  # noqa: E402
+ap = argparse.ArgumentParser(); ap.add_argument("K", type=int); ap.add_argument("ids")
+for o in ("x", "fit", "nodes", "sel", "out"): ap.add_argument(f"--{o}", default=None)
+a = ap.parse_args(); K = a.K; SELECTED = [int(x) for x in a.ids.split(",")]
+XF = Path(a.x or paths.X_NPZ); FIT = Path(a.fit or paths.full_fit0("spatial", K)); NODES = Path(a.nodes or paths.NODES)
+SELF = Path(a.sel or paths.heldout_everyk("spatial") / "selection_by_seed.csv")
+OUT = Path(a.out or paths.OUT / "fig5_per_seed" / f"K{K}"); OUT.mkdir(parents=True, exist_ok=True)
 CONDITIONS = ["intact", "word", "rest"]; DISPLAY_THR_FRAC = 0.30; DPI = 200
 NETS = ["Visual", "Somatomotor", "Dorsal attention", "Ventral attention", "Limbic", "Frontoparietal", "Default mode"]
 COL = {"Visual": "#D7DF23", "Somatomotor": "#39B54A", "Dorsal attention": "#00A79D", "Ventral attention": "#27AAE1",
@@ -43,8 +52,8 @@ Xd = np.load(XF); lab = Xd["lab"]; X = [Xd[f"arr_{i}"].astype(float) for i in ra
 assert list(lab) == list(fit["condition_labels_str"])
 
 S, C = {}, {}
-for p in ROOT.rglob(f"spatialAA_across_acrossCond_K{K}.npz"):
-    s = int(re.search(r"seed(\d\d)", str(p)).group(1)); d = np.load(p)
+for s, p in paths.seed_fits("spatial", K).items():
+    d = np.load(p)
     S[s] = np.nan_to_num(d["Smean"].astype(float)); C[s] = d["C"].astype(float)
 seeds = sorted(S); assert seeds == list(range(10)), seeds
 # check: seed-0 slim C reproduces the full fit's sXC

@@ -11,9 +11,12 @@ zero lag) -- the same matching used for selection_by_seed.csv and the per-seed n
 "Seed top-5 set" = the 5 archetypes that seed's 40 held-out splits (20 reps x 2 directions) select most often at
 top_m=5 (ties broken by mean rank position). Each split ranks on 18 participants and is scored on the other 18.
 
-Usage: python k46_cross_seed_stability.py SEEDS_RESULTS_DIR WORKSPACE_DIR OUTDIR
-  WORKSPACE_DIR holds the repo checkout (msaa-paper/) and the canonical seed-0 run folder.
+Usage: python k46_cross_seed_stability.py [--nodes NODES.csv] [--out OUTDIR]
+Needs (paths.py): every seed's compact fits for spatial K=46, 51 and temporal K=14 in seeds/, the seed-0 temporal
+K=14 fit in msaa_flexible_outputs_npz/, heldout-everyk-{spatial,temporal}-all-results/; optionally the
+fig5_per_seed.py K=46 similarity table as a cross-check. Default OUTDIR outputs/multiseed_stability/k46_cross_seed_stability.
 """
+import argparse
 import re
 import sys
 from itertools import combinations
@@ -46,7 +49,11 @@ except ImportError:  # device VM has no scipy: O(n^3) Hungarian, min-cost, squar
         rows = p[1:] - 1; order = np.argsort(rows); return rows[order], np.arange(n)[order]
 
 plt.rcParams["font.family"] = "DejaVu Sans"
-SR, AA, OUT = map(Path, sys.argv[1:4]); OUT.mkdir(parents=True, exist_ok=True)
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))   # analysis/08_multiseed_stability, for paths.py
+import paths  # noqa: E402
+ap = argparse.ArgumentParser(); ap.add_argument("--nodes", default=str(paths.NODES))
+ap.add_argument("--out", default=str(paths.OUT / "k46_cross_seed_stability")); a = ap.parse_args()
+OUT = Path(a.out); OUT.mkdir(parents=True, exist_ok=True)
 SEEDS = list(range(10)); CONDS = ["intact", "word", "rest"]
 NETS = ["Visual", "Somatomotor", "Dorsal attention", "Ventral attention", "Limbic", "Frontoparietal", "Default mode"]
 NSHORT = ["Vis", "SomMot", "DorsAttn", "VentAttn", "Limbic", "FP", "DMN"]
@@ -57,9 +64,8 @@ import os
 if os.environ.get("PAPER_SET"):   # e.g. PAPER_SET=28,35,37,16,39 (revised set: A12 #31 replaced by #16 = legacy A7)
     PAPER = {int(a): LEGACY.get(int(a), f"#{a}") for a in os.environ["PAPER_SET"].split(",")}
 REP_R = 0.9   # matched r >= 0.9 = "same archetype recovered" (matched r is bimodal)
-nodes = pd.read_csv(AA / "msaa-paper/reference_outputs/legacy_full/paper_figure_outputs/Figure5_spatial_maps_allnodes.csv")
+nodes = pd.read_csv(a.nodes)
 nodes = nodes.drop_duplicates("node").set_index("node").sort_index()["network"].to_numpy()
-HE = SR / "heldout-everyk"
 log = open(OUT / "summary.txt", "w")
 def say(*a):
     s = " ".join(str(x) for x in a); print(s); log.write(s + "\n"); log.flush()
@@ -81,14 +87,13 @@ def mass(v):
 
 def load(mode, K):
     if mode == "spatial":
-        root = {46: SR / "k46-networks/seeds", 51: SR / "k51-networks/maps/seeds"}[K]
-        M = {seed_of(p): np.load(p)["Smean"].astype(float) for p in root.rglob(f"spatialAA_across_acrossCond_K{K}.npz")}
+        M = {s: np.load(p)["Smean"].astype(float) for s, p in paths.seed_fits("spatial", K).items()}
         F = M                                      # match on maps
     else:
         M, F = {}, {}
-        for p in (SR / "k-temporal-maps/seeds").rglob(f"temporalAA_across_acrossCond_K{K}.npz"):
-            d = np.load(p); s = seed_of(p); F[s] = d["C"].astype(float).T; M[s] = d["Smean"].astype(float)
-        f = np.load(AA / f"msaa-rerun-seqnum-2026-10-27/msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K{K}.npz", allow_pickle=True)
+        for s, p in paths.seed_fits("temporal", K, seeds=range(1, paths.N_SEEDS)).items():
+            d = np.load(p); F[s] = d["C"].astype(float).T; M[s] = d["Smean"].astype(float)
+        f = np.load(paths.full_fit0("temporal", K), allow_pickle=True)
         F[0] = np.asarray(f["C"].tolist(), float).T
         M[0] = np.stack([np.asarray(r["S"], float) for r in f["results_subj"].tolist()]).mean(0)
     assert sorted(F) == SEEDS, (mode, K, sorted(F))
@@ -101,9 +106,11 @@ def load(mode, K):
 # ---------------------------------------------------------------- 1. K=46 paper archetypes
 say("=" * 100); say("1. K=46 alignment of the paper archetypes (legacy label = seqnum/seed-0 id)"); say("=" * 100)
 M46, _, match46, R46 = load("spatial", 46)
-sim = pd.read_csv(SR / "per-seed-networks/K46/K46_crossseed_similarity_all.csv")
-for s in SEEDS:  # same matching as the per-seed figure
-    sub = sim[sim.seed == s]; assert all(match46[s][a] == m for a, m in zip(sub.archetype0, sub.matched)), s
+simf = paths.OUT / "fig5_per_seed" / "K46" / "K46_crossseed_similarity_all.csv"
+if simf.exists():  # same matching as the per-seed figure (fig5_per_seed.py 46 ...)
+    sim = pd.read_csv(simf)
+    for s in SEEDS:
+        sub = sim[sim.seed == s]; assert all(match46[s][i] == m for i, m in zip(sub.archetype0, sub.matched)), s
 rows = []
 for a, lab in PAPER.items():
     m0 = mass(M46[0][a])
@@ -138,7 +145,7 @@ def topm_runs(mode, K):
     cache = OUT / f".runs_{mode}_K{K}.csv"
     if cache.exists(): return pd.read_csv(cache)
     parts = []
-    for ch in pd.read_csv(HE / f"heldout-everyk-{mode}-all-results/heldout_topm_runs_all_seeds.csv.gz",
+    for ch in pd.read_csv(paths.heldout_everyk(mode) / "heldout_topm_runs_all_seeds.csv.gz",
                           usecols=["top_m", "selected_archetypes", "condition", "K", "outer_rep", "direction", "fit_seed"], chunksize=500000):
         parts.append(ch[(ch.K == K) & (ch.top_m == 5)])
     d = pd.concat(parts); d.to_csv(cache, index=False); return d
@@ -151,12 +158,12 @@ for mode, K in [("spatial", 46), ("spatial", 51), ("temporal", 14)]:
     rec = {s: {a: R[s][a, b] >= REP_R for a, b in match[s].items()} for s in SEEDS}
     fr = []
     for s in SEEDS:
-        d = pd.read_csv(HE / f"heldout-everyk-{mode}-all-results/seed{s:02d}_heldout_archetype_selection_stability.csv")
+        d = pd.read_csv(paths.heldout_everyk(mode) / f"seed{s:02d}_heldout_archetype_selection_stability.csv")
         d = d[(d.K == K) & (d.top_m == 5)].copy(); d["seed"] = s; d["archetype0"] = d.archetype.map(inv[s])
         fr.append(d)
     fr = pd.concat(fr)
     if mode == "spatial":  # same mapping as hsummary's selection_by_seed.csv
-        chk = pd.read_csv(HE / "heldout-everyk-spatial-all-results/K46_top5.csv") if K == 46 else None
+        chk = pd.read_csv(paths.heldout_everyk("spatial") / "K46_top5.csv") if K == 46 else None
         if chk is not None:
             p = fr.pivot_table(index=["archetype0", "condition"], columns="seed", values="selection_frequency", fill_value=0)
             for _, r in chk.iterrows():
@@ -220,8 +227,8 @@ C0 = FT[0][PAIR].T                                           # T x 2
 Q, _ = np.linalg.qr(C0)
 fitd = {}
 for s in SEEDS:
-    p = (SR / f"k-temporal-maps/seeds/full/seed{s:02d}/slim/temporalAA_across_acrossCond_K14.npz")
-    fitd[s] = float(np.load(p)["varexpl"]) if p.exists() else float(np.load(AA / "msaa-rerun-seqnum-2026-10-27/msaa_flexible_outputs_npz/temporalAA_across_acrossCond_K14.npz", allow_pickle=True)["varexpl"])
+    p = paths.slim_fit("temporal", 14, s)
+    fitd[s] = float(np.load(p if p.exists() else paths.full_fit0("temporal", 14), allow_pickle=True)["varexpl"])
 op0 = C0 @ MT[0][PAIR]                                        # T x T: A5+A9 part of the reconstruction operator X -> X C S
 trows = []
 for s in SEEDS:
