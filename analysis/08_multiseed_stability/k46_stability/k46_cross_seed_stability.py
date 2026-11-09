@@ -1,6 +1,6 @@
 """K=46 cross-seed stability of the paper archetypes, from existing 10-seed outputs (no refits, no redecode).
 
-1. K=46 alignment for the five paper archetypes (legacy A4,A5,A6,A12,A8 = seed-0/seqnum 28,35,37,31,39).
+1. K=46 alignment for the five paper archetypes M0-M4 (seed-0 ids 28, 35, 16, 39, 45; PAPER_SET=... for another set).
 2. Stability of each seed's OWN participant-held-out top-5 selection (K=46 and K=51 spatial, K=14 temporal):
    selection frequency per seed-0 archetype, pairwise Jaccard of the 10 top-5 sets (by condition), Jaccard on the
    identical participant splits across seeds vs. across splits within a seed, and r of aggregate Yeo-7 composition.
@@ -58,10 +58,11 @@ SEEDS = list(range(10)); CONDS = ["intact", "word", "rest"]
 NETS = ["Visual", "Somatomotor", "Dorsal attention", "Ventral attention", "Limbic", "Frontoparietal", "Default mode"]
 NSHORT = ["Vis", "SomMot", "DorsAttn", "VentAttn", "Limbic", "FP", "DMN"]
 NCOL = ["#D7DF23", "#39B54A", "#00A79D", "#27AAE1", "#1C75BC", "#92278F", "#EE2A7B"]
-PAPER = {28: "A4", 35: "A5", 37: "A6", 31: "A12", 39: "A8"}   # seqnum id -> legacy paper label (legacy_full fit, map r = 1.0)
-LEGACY = {16: "A7", 45: "A9", **PAPER}
+PAPER = {28: "M0", 35: "M1", 16: "M2", 39: "M3", 45: "M4"}   # the paper set, seed-0 (canonical) id -> label
+# legacy paper labels (legacy_full fit numbering, map r = 1.0); the submitted set was A4, A5, A6, A12, A8
+LEGACY = {28: "A4", 35: "A5", 37: "A6", 16: "A7", 39: "A8", 45: "A9", 31: "A12"}
 import os
-if os.environ.get("PAPER_SET"):   # e.g. PAPER_SET=28,35,37,16,39 (revised set: A12 #31 replaced by #16 = legacy A7)
+if os.environ.get("PAPER_SET"):   # e.g. PAPER_SET=28,35,37,31,39 (the submitted set)
     PAPER = {int(a): LEGACY.get(int(a), f"#{a}") for a in os.environ["PAPER_SET"].split(",")}
 REP_R = 0.9   # matched r >= 0.9 = "same archetype recovered" (matched r is bimodal)
 nodes = pd.read_csv(a.nodes)

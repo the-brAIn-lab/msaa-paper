@@ -94,9 +94,10 @@ can be overridden with flags (`--help` lists them).
 | Time-tolerant matching of temporal archetypes between two runs | `python temporal_drift/time_tolerant_match.py --a RUN_A --b RUN_B` |
 
 Run them from this folder, or prefix each path with `analysis/08_multiseed_stability/`.
-- `k46_cross_seed_stability.py` uses the submitted K=46 set (#28, 35, 37, 31, 39) by
-  default. Set `PAPER_SET=28,35,37,16,39` (or any list) to change it.
-- M0-M4 = #28, 35, 16, 39, 45 is fixed in `topm_stability_neighbourhood.py`.
+- The paper's K=46 archetypes are M0-M4 = #28, 35, 16, 39, 45 (seed-0 ids;
+  `src/msaa_pipeline/paper_archetypes.py`). `k46_cross_seed_stability.py` uses them by
+  default; set `PAPER_SET=28,35,37,31,39` (or any list) to check another set, e.g. the
+  submitted one.
 - `fig5_per_seed.py` at K=46 also writes the matching table that
   `k46_cross_seed_stability.py` checks itself against when it is present.
 

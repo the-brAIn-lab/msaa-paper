@@ -11,7 +11,7 @@ import pandas as pd
 from scipy.optimize import linear_sum_assignment
 
 FIT_NAME = "spatialAA_across_acrossCond_K46.npz"
-OLD_SELECTED = [4, 5, 6, 12, 8]
+OLD_SELECTED = [4, 5, 7, 8, 9]   # M0-M4 in the legacy numbering (msaa_pipeline.paper_archetypes)
 
 def find_new_fit(root: Path) -> Path:
     candidates = [
