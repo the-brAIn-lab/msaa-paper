@@ -177,6 +177,9 @@ make full-heldout
 The original held-out notebook is retained for provenance, while the reusable runner mirrors its final algorithm. The helper forces the working directory to the repo root so historical
 repo-relative paths continue to resolve after the notebooks were reorganized.
 
+The multi-seed stability analysis (10 initialisations per K, every-K held-out top-m and
+the stability figures) is plain Python; see `analysis/08_multiseed_stability/README.md`.
+
 See `docs/PIPELINE.md` for the dependency chain and `docs/NOTEBOOK_MAP.md` for
 where each analysis now lives.
 

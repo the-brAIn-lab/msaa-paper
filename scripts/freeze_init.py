@@ -8,8 +8,8 @@ Fits read these instead of recomputing FurthestSum, so the archetype
 numbering is identical on every machine. Existing rows are kept unchanged;
 only missing fits are added, so extending the K grid never renumbers old fits.
 
-Usage (from the workspace root):
-  python rerun/freeze_init.py [--profile full] [--workers 8]
+Usage (from the repo root):
+  python scripts/freeze_init.py [--profile full] [--workers 8]
 """
 from __future__ import annotations
 import argparse, os, sys

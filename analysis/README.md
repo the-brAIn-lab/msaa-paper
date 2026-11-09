@@ -11,6 +11,8 @@ of exploratory notebook creation.
 - `05_robustness/`: edge trimming and network-localization/null analyses.
 - `06_four_condition/`: paragraph-scrambled four-condition sensitivity branch.
 - `07_simulations/`: simulation benchmarks and alternative PCA/ICA controls.
+- `08_multiseed_stability/`: 10-seed refits, cross-seed matching, every-K held-out top-m,
+  and the stability figures; scripts, not notebooks (see its README).
 
 The reusable `scripts/run_pipeline.py` implementation covers fitting, full/single-archetype decoding, and the canonical participant-held-out top-m cross-fit used for quick verification. These notebooks preserve the original paper-specific
 analysis logic for the later stages.

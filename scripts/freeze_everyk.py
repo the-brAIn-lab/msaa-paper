@@ -1,5 +1,6 @@
 """freeze_init.py logic for the every-K grid, with the inputs loaded once per worker.
-Uses msaa_pipeline.fit.furthest_sum_picks exactly as rerun/freeze_init.py does; existing rows kept."""
+Uses msaa_pipeline.fit.furthest_sum_picks exactly as scripts/freeze_init.py does; existing rows kept.
+Usage: python scripts/freeze_everyk.py REPO_ROOT OUT.csv.gz"""
 import os, sys, time
 for v in ["OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"]: os.environ[v] = "1"
 from pathlib import Path
