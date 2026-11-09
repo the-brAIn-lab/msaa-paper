@@ -107,7 +107,18 @@ def save_fit(path: Path, fit_res: dict, labels, analysis_type, fit_scope, center
 
 
 def run_fit_job(repo_root: Path, output_root: Path, analysis_type: str, fit_scope: str, K_values,
-                *, max_subjects_per_condition=None, maxiter=200, seed=42, skip_existing=True):
+                *, max_subjects_per_condition=None, maxiter=200, seed=42, skip_existing=True,
+                frozen_init=False):
+    """Fit every K (and condition, for within fits) of one job.
+
+    frozen_init=True uses the frozen FurthestSum picks in configs/furthestsum_init.csv.gz and no
+    post-fit sort, exactly as scripts/run_parallel.py does, so archetype numbering matches the
+    paper's (canonical) fits. frozen_init=False recomputes FurthestSum and sorts archetypes after
+    fitting (the legacy numbering of the original analysis outputs).
+    """
+    if frozen_init and max_subjects_per_condition is not None:
+        raise ValueError("frozen FurthestSum picks were drawn on the full data; "
+                         "use frozen_init=False with max_subjects_per_condition")
     condition_data, centers, widths = load_inputs(
         repo_root, trim_rest_by=100, max_subjects_per_condition=max_subjects_per_condition
     )
@@ -130,7 +141,12 @@ def run_fit_job(repo_root: Path, output_root: Path, analysis_type: str, fit_scop
                 print("Skipping existing", out)
                 status = "existing"
             else:
-                res = fit_one(subjects, int(K), analysis_type, repo_root, maxiter=maxiter, seed=seed)
+                if frozen_init:
+                    init_idx = load_frozen_init(repo_root, analysis_type, fit_scope, int(K), condition)
+                    res = fit_one(subjects, int(K), analysis_type, repo_root, maxiter=maxiter, seed=seed,
+                                  init_idx=init_idx, sort_crit="none")
+                else:
+                    res = fit_one(subjects, int(K), analysis_type, repo_root, maxiter=maxiter, seed=seed)
                 save_fit(out, res, labels, analysis_type, fit_scope, centers, widths)
                 status = "fit"
             manifest_rows.append({

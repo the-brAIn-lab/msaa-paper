@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import argparse, json, sys
+import argparse, json, os, sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
@@ -11,6 +11,7 @@ from msaa_pipeline.fit import run_fit_job
 from msaa_pipeline.decode import run_decode_job
 from msaa_pipeline.heldout import run_heldout_topm_job
 from msaa_pipeline.qc import build_qc
+import msaa_pipeline.decode as decode_mod
 
 
 def main():
@@ -21,12 +22,28 @@ def main():
     ap.add_argument("--decode-only", action="store_true")
     ap.add_argument("--heldout-only", action="store_true", help="Run only the canonical held-out top-m stage; requires fits to exist.")
     ap.add_argument("--force", action="store_true", help="Refit existing model files.")
+    ap.add_argument("--numbering", default="auto", choices=["auto", "frozen", "legacy"],
+                    help="frozen: frozen FurthestSum picks + no post-fit sort (the paper's canonical numbering, "
+                         "as scripts/run_parallel.py); legacy: recompute FurthestSum and sort after fitting "
+                         "(the original outputs' numbering). auto = frozen for the full profile, legacy for "
+                         "smoke and mini-paper, which are checked against the legacy outputs.")
+    ap.add_argument("--tie-tol", type=float, default=None,
+                    help="decode correlation tie tolerance; default 1e-8 for the full profile (as "
+                         "scripts/run_parallel.py), 0 (exact comparison, legacy) otherwise.")
     args = ap.parse_args()
 
     profile = load_profile(REPO, args.profile)
     output_root = Path(args.output_root).resolve() if args.output_root else (REPO / "outputs" / args.profile.replace("-", "_"))
     output_root.mkdir(parents=True, exist_ok=True)
     print(f"Profile: {args.profile}\nOutput root: {output_root}\n{profile['description']}")
+    full = args.profile == "full"
+    frozen = args.numbering == "frozen" or (args.numbering == "auto" and full)
+    if args.tie_tol is not None:
+        decode_mod.TIE_TOL = float(args.tie_tol)
+    elif "MSAA_TIE_TOL" not in os.environ:
+        decode_mod.TIE_TOL = 1e-8 if full else 0.0
+    print(f"Archetype numbering: {'frozen FurthestSum picks (canonical)' if frozen else 'legacy (FurthestSum + sort)'}; "
+          f"decode tie tolerance {decode_mod.TIE_TOL:g}")
 
     manifests = []
     if not args.decode_only and not args.heldout_only:
@@ -37,6 +54,7 @@ def main():
                 REPO, output_root, analysis_type, fit_scope, ks,
                 max_subjects_per_condition=profile["max_subjects_per_condition"],
                 maxiter=profile["fit_maxiter"], seed=42, skip_existing=not args.force,
+                frozen_init=frozen,
             )
             manifests.append(m)
         if manifests:

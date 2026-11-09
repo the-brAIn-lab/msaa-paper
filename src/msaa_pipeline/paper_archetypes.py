@@ -4,13 +4,15 @@ M0-M4 are the five archetypes of the representative K=46 spatial across-conditio
 the paper interprets, chosen with participant-held-out top-5 selection. Archetype numbers
 depend on how the fit was made:
 
-  canonical  scripts/run_parallel.py fits (frozen FurthestSum picks, no post-fit sort; the
-             numbering used in the paper text and the multi-seed analysis)
+  canonical  fits with frozen FurthestSum picks and no post-fit sort: scripts/run_parallel.py,
+             and scripts/run_pipeline.py --profile full (make full-fit). This is the numbering
+             used in the paper text and the multi-seed analysis.
   legacy     the original analysis outputs (reference_outputs/legacy_full/)
 
-A fit without recorded FurthestSum picks is treated as legacy. Fits from
-scripts/run_pipeline.py (make full-fit) also sort archetypes after fitting but are not
-guaranteed to reproduce the legacy order; check them with scripts/compare_k46_archetypes.py.
+A fit without recorded FurthestSum picks is treated as legacy. Legacy-style refits
+(run_pipeline.py --numbering legacy, or the mini-paper profile) sort archetypes after fitting
+but are not guaranteed to reproduce the legacy order; check them with
+scripts/compare_k46_archetypes.py.
 
 The same five archetypes in both numberings (matched maps r >= 0.9999):
 

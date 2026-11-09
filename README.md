@@ -182,12 +182,16 @@ the maps; decoding and held-out summaries agree within about 0.005. A few tempor
 archetypes at high K can land in a slightly different local optimum (mostly a 1-3 TR
 shift); nothing forces bit-identical BLAS results.
 
-## Optional full core sweep (original runner)
+## Optional full core sweep (serial runner)
 
 `make full-fit` / `make full-core` run `scripts/run_pipeline.py --profile full`
-serially. This is the original runner: it recomputes FurthestSum and sorts archetypes
-after fitting (the legacy numbering) and uses exact tie comparison, so its archetype IDs
-differ from the paper's. Use `scripts/run_parallel.py` above to reproduce the paper.
+serially, on one core. For the full profile it uses the same settings as
+`scripts/run_parallel.py`: frozen FurthestSum picks with no post-fit sort (the paper's
+archetype numbering) and decode tie tolerance 1e-8. The `smoke` and `mini-paper` profiles
+keep the legacy settings (FurthestSum recomputed, archetypes sorted after fitting, exact tie
+comparison), because they are checked against the legacy outputs. `--numbering` and
+`--tie-tol` override either default. `scripts/run_parallel.py` above is the faster way to
+reproduce the paper.
 
 Deactivate any legacy links first so regenerated outputs cannot overwrite or mingle with the
 archived validated results:

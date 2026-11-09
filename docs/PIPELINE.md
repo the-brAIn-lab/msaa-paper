@@ -88,7 +88,7 @@ analysis/scope jobs. Held-out top-m in this profile stays on its 30 seeded K
 the fitted-model inventory of the original repository (the submitted paper's grid).
 
 Run the canonical sweep with `scripts/run_parallel.py fit|decode|heldout|merge`, or the
-original serial runner (legacy archetype numbering) with:
+serial runner, which uses the same frozen picks and tie tolerance for the `full` profile, with:
 
 ```bash
 make full-fit
