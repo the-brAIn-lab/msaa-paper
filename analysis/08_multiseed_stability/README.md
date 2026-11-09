@@ -91,9 +91,13 @@ can be overridden with flags (`--help` lists them).
 | M0-M4 crosswalk and K=46 supplementary table (run after the line above) | `python k46_stability/make_supp_tables.py` |
 | K=46 paper archetypes across seeds; top-5 overlap (K46, K51, temporal K14) | `python k46_stability/k46_cross_seed_stability.py` |
 | Raw top-5 vs top-10 nesting check | `python k46_stability/nesting_check.py` |
+| Leave-one-seed-out check of the good-K bands on held-out top-m accuracy | `python plots/goodk_loso.py spatial` (and `temporal`; `--W 9` default, `--W 21` as in peak-K CI) |
 | Time-tolerant matching of temporal archetypes between two runs | `python temporal_drift/time_tolerant_match.py --a RUN_A --b RUN_B` |
 
 Run them from this folder, or prefix each path with `analysis/08_multiseed_stability/`.
+
+`DEFINITIONS.md` defines every selection-stability metric in these tables: recovery, the Hungarian
+cost, recovery-aware labels, consensus sets, chance-corrected Jaccard and the averaging order.
 - The paper's K=46 archetypes are M0-M4 = #28, 35, 16, 39, 45 (seed-0 ids;
   `src/msaa_pipeline/paper_archetypes.py`). `k46_cross_seed_stability.py` uses them by
   default; set `PAPER_SET=28,35,37,31,39` (or any list) to check another set, e.g. the

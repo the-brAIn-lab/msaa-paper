@@ -69,6 +69,7 @@ The reorganized folders contain curated working copies. The complete code-only n
 - `plots/`: Fig 3 seed-0 vs 10-fit mean (`fig3_by_analysis.py`, `peakk_ci.py`), per-seed
   networks (`fig5_per_seed.py`, `loadx.py`), Yeo-7 bars and glass brains across seeds,
   temporal motifs across seeds, top-5 vs top-10 stability (`topm_stability_neighbourhood.py`)
+- `DEFINITIONS.md`: definitions of the selection-stability metrics.
 - `k46_stability/`: K=46 paper archetypes across seeds, M0-M4 crosswalk and supplementary
   table, raw top-5/top-10 nesting check
 - `temporal_drift/`: time-tolerant matching of temporal archetypes between two runs
