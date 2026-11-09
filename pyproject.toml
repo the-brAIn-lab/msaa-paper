@@ -1,0 +1,20 @@
+[project]
+name = "msaa-paper"
+version = "0.1.0"
+description = "Multi-subject archetypal analysis of naturalistic fMRI: analysis code for the paper"
+requires-python = ">=3.12"
+dependencies = [
+    "jupyter==1.1.1",
+    "matplotlib==3.11.2",
+    "nbconvert==7.17.2",
+    "nbformat==5.11.1",
+    "nibabel==5.4.2",
+    "nilearn==0.14.1",
+    "numpy==2.5.4",
+    "pandas==3.1.0",
+    "pillow==13.0.0",
+    "scikit-learn==1.9.1",
+    "scipy==1.18.1",
+    "seaborn==0.13.2",
+    "threadpoolctl==3.7.0",
+]

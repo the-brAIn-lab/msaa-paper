@@ -49,10 +49,19 @@ conda activate msaa-paper
 or:
 
 ```bash
-python -m venv .venv
+python3.12 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
+
+or, with [uv](https://docs.astral.sh/uv/) (uses `uv.lock`, the exact environment of the paper runs):
+
+```bash
+uv sync
+source .venv/bin/activate
+```
+
+All three install the same pinned versions (Python 3.12; numpy 2.5.4, scipy 1.18.1, pandas 3.1.0, ...).
 
 Then place the two MAT files in `data/input/` and run:
 
