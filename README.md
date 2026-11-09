@@ -73,7 +73,7 @@ Then place the two MAT files in `data/input/` and run:
 make check
 ```
 
-Later node-localization analyses also use the standard Schaefer-1000/Yeo-7 atlas. Fetch the exact reference layout expected by the historical notebooks with:
+Node-localization analyses also use the standard Schaefer-1000/Yeo-7 atlas. Fetch the exact reference layout expected by the historical notebooks with:
 
 ```bash
 make references
@@ -121,13 +121,9 @@ fits. See `docs/QUICK_REPLICATION.md`.
 
 ## Portable reuse of the validated original full sweep
 
-The `mini-paper` rerun is the migration/reproducibility gate. Once representative
-fits and decoding reproduce the original analysis, the recommended manuscript
-workflow is to **reuse the already-computed expensive full K-grid outputs** rather
-than spend days recomputing them solely for migration.
-
-For a portable project folder (including student handoff), copy the legacy
-derived outputs into the ignored local store:
+If you have the original analysis outputs, they can be reused instead of recomputing
+the full K grid. `mini-paper` checks that the code reproduces them on a few model orders.
+Copy the legacy derived outputs into the ignored local store:
 
 ```bash
 make import-legacy OLD_REPO=/path/to/original/MS_AA
@@ -142,8 +138,7 @@ activate-legacy` creates relative links at the historical output paths expected
 by older notebooks.
 
 A Git clone alone does **not** include ignored legacy data or the two large MAT
-inputs. To give another person the complete working project, copy/archive the
-whole project directory rather than relying only on Git, then have them run:
+inputs. A copied project directory that includes them can be checked and linked with:
 
 ```bash
 make handoff-check
@@ -194,8 +189,7 @@ serially. This is the original runner: it recomputes FurthestSum and sorts arche
 after fitting (the legacy numbering) and uses exact tie comparison, so its archetype IDs
 differ from the paper's. Use `scripts/run_parallel.py` above to reproduce the paper.
 
-A complete from-scratch rebuild remains available when desired. Deactivate the
-legacy links first so regenerated outputs cannot overwrite or mingle with the
+Deactivate any legacy links first so regenerated outputs cannot overwrite or mingle with the
 archived validated results:
 
 ```bash
@@ -207,21 +201,20 @@ make full-core    # fit + decoding; very expensive
 The full targets refuse to run while validated legacy links are active. The
 archived bytes remain safely stored under `reference_outputs/legacy_full/`.
 
-## Later paper analyses
+## Downstream analyses and figures
 
-The held-out top-m cross-fit is now automated in `scripts/run_pipeline.py` and is the **only** canonical top-m analysis. After the core fits/decoding, the PCA benchmark,
-K=46 interpretation, robustness tests, four-condition validation, simulations,
-and manuscript figures are preserved as organized notebooks under `analysis/`
-and `paper/`.
-
-These notebooks can be executed from the repository root with:
+Participant-held-out top-m cross-fitting is the **only** canonical top-m analysis
+(`docs/HELDOUT_TOPM.md`). After the core fits and decoding, the PCA benchmark, K=46
+interpretation, robustness tests, four-condition validation, simulations and manuscript
+figures are organized notebooks under `analysis/` and `paper/`. From the repository root:
 
 ```bash
-make full-heldout
+make full-heldout   # held-out top-m cross-fit only, once fits exist
+make paper-main     # execute the main-figure notebooks (needs the upstream result tables)
 ```
 
-The original held-out notebook is retained for provenance, while the reusable runner mirrors its final algorithm. The helper forces the working directory to the repo root so historical
-repo-relative paths continue to resolve after the notebooks were reorganized.
+`scripts/execute_notebook.py` runs a notebook with the repo root as working directory, so
+the notebooks' repo-relative paths resolve.
 
 The multi-seed stability analysis (10 initialisations per K, every-K held-out top-m and
 the stability figures) is plain Python; see `analysis/08_multiseed_stability/README.md`.
@@ -234,5 +227,4 @@ where each analysis now lives.
 Do not commit `data/input/*.mat` or `reference_outputs/legacy_full/`. They are
 intentionally local because they are large. The tracked input checksums, frozen
 analysis configuration, and legacy-output SHA-256 manifest provide the audit
-trail; the complete local project folder provides the convenient student
-handoff.
+trail.
