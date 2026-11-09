@@ -21,12 +21,16 @@ revision analyses, manuscript plotting code, large generated objects, and old
 attempts at the top level. This version separates them into:
 
 ```text
-analysis/                 scientific analyses, in pipeline order
+analysis/                 scientific analyses, in pipeline order (01-07 notebooks,
+                          08_multiseed_stability scripts)
 paper/                    final manuscript and supplement plotting notebooks
+scripts/                  runners: run_pipeline.py (smoke/mini), run_parallel.py
+                          (canonical full run), init freezing, node table, checks
 src/msaa_pipeline/        reusable cleaned fit/decode/QC implementation
 helpers/                  original MS-AA implementation used by the analyses
 hypertools/               legacy normalization utilities required for parity
-configs/                  full and small replication profiles
+configs/                  run profiles, frozen FurthestSum picks
+                          (furthestsum_init.csv.gz), node -> Yeo-7 table (node_yeo7.csv)
 data/input/               the two required MAT inputs (not committed)
 data/derived/             optional curated derived/source tables
 outputs/                  isolated smoke / mini-paper outputs
@@ -75,7 +79,10 @@ Later node-localization analyses also use the standard Schaefer-1000/Yeo-7 atlas
 make references
 ```
 
-This reference atlas is not an additional empirical study input.
+This reference atlas is not an additional empirical study input. The Yeo-7 label of
+each of the 700 HTFA nodes is committed as `configs/node_yeo7.csv`; it is rebuilt from
+the atlas with `python scripts/build_node_yeo7.py` (same rule as the interpretation
+notebooks, and it matches the labels behind the paper figures for all 700 nodes).
 
 ## Fast end-to-end check
 
@@ -146,7 +153,46 @@ make activate-legacy
 See `reference_outputs/README.md` and
 `docs/REPRODUCIBILITY_VALIDATION.md`.
 
-## Optional full core sweep
+## Canonical full run (the paper's numbers)
+
+The fits, decoding and held-out top-m behind the revised paper were produced with
+`scripts/run_parallel.py`, a parallel driver around the same `msaa_pipeline` functions.
+Compared with the original analysis it:
+
+- **fits every K** (profile `full`: spatial 2-700, temporal 2-300, for all four
+  analysis/scope jobs; the original, sparser grid is kept as profile `paper_grid`);
+- **freezes the FurthestSum starting picks** in `configs/furthestsum_init.csv.gz`
+  (`scripts/freeze_init.py`, `scripts/freeze_everyk.py`) and does not re-sort archetypes
+  after fitting, so archetype numbers are sequential and identical on every machine.
+  Archetype IDs in the revised paper and figures are these 0-based IDs;
+- **decodes top-m subsets with an exact low-rank method** (`decode_subjects(...,
+  method="auto")`, at most 10 archetypes), about 12x faster and equal to the dense
+  decoder up to rounding (`scripts/verify_lowrank.py`);
+- scores correlations with a **tie tolerance** of 1e-8 (`--tie-tol`) so that exact ties,
+  common in temporal fits, break the same way on every machine.
+
+```bash
+python scripts/run_parallel.py fit     --workers 8 [--jobs spatial_across] [--ks 5,46]
+python scripts/run_parallel.py decode  --workers 8
+python scripts/run_parallel.py heldout --workers 8   # participant-held-out top-m, 30 seeded K
+python scripts/run_parallel.py merge
+```
+
+Each fit, decode and held-out task writes its own output file, so a run can be stopped and resumed. The full every-K
+run is several thousand fits (days on a workstation). Held-out top-m at every K and the
+10-seed stability analysis are in `analysis/08_multiseed_stability/` (see its README).
+
+Across machines, spatial results reproduce exactly in numbering and to r >= 0.9999 in
+the maps; decoding and held-out summaries agree within about 0.005. A few temporal
+archetypes at high K can land in a slightly different local optimum (mostly a 1-3 TR
+shift); nothing forces bit-identical BLAS results.
+
+## Optional full core sweep (original runner)
+
+`make full-fit` / `make full-core` run `scripts/run_pipeline.py --profile full`
+serially. This is the original runner: it recomputes FurthestSum and sorts archetypes
+after fitting (the legacy numbering) and uses exact tie comparison, so its archetype IDs
+differ from the paper's. Use `scripts/run_parallel.py` above to reproduce the paper.
 
 A complete from-scratch rebuild remains available when desired. Deactivate the
 legacy links first so regenerated outputs cannot overwrite or mingle with the

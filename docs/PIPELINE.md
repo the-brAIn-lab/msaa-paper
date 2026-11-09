@@ -45,12 +45,27 @@ held-out top-m cross-fitting
     |  paragraph-scrambled validation
     v
 paper/main_figures + paper/supplement
+
+08_multiseed_stability (scripts; runs beside 02-05 on the same fits)
+    |  9 extra FurthestSum initialisations per K, Hungarian matching to seed 0
+    |  held-out top-m at every K for all 10 seeds
+    v
+stability figures and tables (Fig 3 seed-0 vs 10-fit mean, per-seed networks, K=46/M0-M4 tables)
 ```
 
 Simulation analyses in `analysis/07_simulations/` are largely independent of the
 empirical fit chain and provide method validation / robustness controls.
 
-## What is automated in the cleaned runner?
+## What is automated?
+
+`scripts/run_parallel.py` is the canonical runner for the paper's fits, decoding and
+held-out top-m (every-K grid, frozen FurthestSum picks in `configs/furthestsum_init.csv.gz`
+so archetype numbering is fixed, exact low-rank decoding of top-m subsets, decode tie
+tolerance 1e-8). See the README section "Canonical full run".
+
+`analysis/08_multiseed_stability/run_local.py` runs the multi-seed chain (picks, fits,
+decode, merge, held-out top-m at 30 K and at every K) on one machine; its README lists one
+command per stability figure and table.
 
 `scripts/run_pipeline.py` automates the core, deterministic chain from the MAT
 inputs through MS-AA fitting, full/single-archetype decoding, and the canonical held-out top-m cross-fit. This is the part needed for the fast
@@ -66,12 +81,14 @@ silently rewriting every paper analysis into a new implementation at once.
 
 ## Canonical full model grids
 
-The `full` profile records the K values found in the fitted-model inventory from
-the original repository. It therefore documents the actual model-order sweeps
-that produced the existing outputs, rather than relying on whichever temporary
-K list happened to be left in a notebook cell.
+The `full` profile is every K: spatial 2-700 and temporal 2-300, for all four
+analysis/scope jobs. Held-out top-m in this profile stays on its 30 seeded K
+(`configs/heldout_outer_seeds.csv`); held-out at every K is run by
+`analysis/08_multiseed_stability/`. The `paper_grid` profile keeps the K values found in
+the fitted-model inventory of the original repository (the submitted paper's grid).
 
-Run the full fit sweep with:
+Run the canonical sweep with `scripts/run_parallel.py fit|decode|heldout|merge`, or the
+original serial runner (legacy archetype numbering) with:
 
 ```bash
 make full-fit

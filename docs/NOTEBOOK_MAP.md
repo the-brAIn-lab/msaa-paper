@@ -58,6 +58,28 @@ The reorganized folders contain curated working copies. The complete code-only n
 - `paper/supplement/supp_10_simulation_robustness.ipynb`
 - `paper/supplement/supp_11_simulation_temporal.ipynb`
 
+## Script-based analyses (not notebooks)
+
+`analysis/08_multiseed_stability/` (see its README for commands):
+
+- `run_local.py`: runs the whole multi-seed chain on one machine
+- `seeds/`: starting picks, fits, same-data top-m diagnostic and cross-seed merge for seeds 1-9
+- `heldout_seeds/`: held-out top-m at the 30 seeded K for every seed
+- `heldout_everyk/`: held-out top-m at every K for every seed
+- `plots/`: Fig 3 seed-0 vs 10-fit mean (`fig3_by_analysis.py`, `peakk_ci.py`), per-seed
+  networks (`fig5_per_seed.py`, `loadx.py`), Yeo-7 bars and glass brains across seeds,
+  temporal motifs across seeds, top-5 vs top-10 stability (`topm_stability_neighbourhood.py`)
+- `k46_stability/`: K=46 paper archetypes across seeds, M0-M4 crosswalk and supplementary
+  table, raw top-5/top-10 nesting check
+- `temporal_drift/`: time-tolerant matching of temporal archetypes between two runs
+
+`scripts/`:
+
+- `run_parallel.py`: canonical parallel fit / decode / held-out / merge driver
+- `freeze_init.py`, `freeze_everyk.py`: frozen FurthestSum picks (`configs/furthestsum_init.csv.gz`)
+- `verify_lowrank.py`: low-rank vs dense decoder check
+- `build_node_yeo7.py`: node -> Yeo-7 table (`configs/node_yeo7.csv`)
+
 ## Complete legacy/source snapshot
 
 - `legacy/original_notebooks/001_fit_msaa_flexible.ipynb`

@@ -21,6 +21,11 @@ msaa_heldout_topm_outputs_spatial_across/
   heldout_archetype_selection_stability.csv
 ```
 
+The same procedure is run at every K and for all 10 initialisation seeds by
+`analysis/08_multiseed_stability/` (outputs `heldout-everyk-<analysis>-<seed0|all>-results/`).
+That folder's `topm` step also writes same-data top-m per seed, as a diagnostic only; no
+paper figure uses it.
+
 The historical same-data top-m notebooks remain only under `legacy/original_notebooks/` for provenance.
 They are not part of the reproducible paper pipeline.
 
