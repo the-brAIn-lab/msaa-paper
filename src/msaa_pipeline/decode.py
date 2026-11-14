@@ -73,11 +73,12 @@ def _assignments(n, nfolds, rng):
     return out
 
 
-# Correlations within TIE_TOL of each other count as tied when scoring. 0.0 is
-# the original exact comparison. Temporal S is mostly exact zeros, which makes
-# many correlations mathematically equal; with exact comparison, whether they
-# count as tied then depends on last-bit rounding (BLAS, summation order).
-TIE_TOL = float(os.environ.get("MSAA_TIE_TOL", "0"))
+# Correlations within TIE_TOL of each other count as tied when scoring. Temporal S
+# is mostly exact zeros, which makes many correlations mathematically equal; with
+# exact comparison (0.0, the original rule), whether they count as tied depends on
+# last-bit rounding (BLAS, summation order). Every result in the paper uses 1e-8,
+# so that is the default; set MSAA_TIE_TOL=0 for the original exact comparison.
+TIE_TOL = float(os.environ.get("MSAA_TIE_TOL", "1e-8"))
 
 
 def _decode_corr(corrs, tie_tol=None):

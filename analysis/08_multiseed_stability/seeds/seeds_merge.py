@@ -3,7 +3,7 @@
 seed 0 (the existing every-K fits in $RUN_DIR), and writes $RUN_DIR/seeds/results/:
 
   fits.csv              one row per fit x seed x decoding condition: final loss, varexpl,
-                        iterations, full-K decoding, best single archetype, top-m (across only)
+                        iterations, full-K decoding, best single archetype
   per_K.csv             per analysis/scope/condition/K and metric: mean, SD, min, max over seeds,
                         the canonical fit's value (seed 0), the lowest-loss fit's value and seed,
                         and seed 0's loss rank (1 = lowest)
@@ -12,14 +12,12 @@ seed 0 (the existing every-K fits in $RUN_DIR), and writes $RUN_DIR/seeds/result
                         +-LAG TRs), with summaries of the matched correlations, how far above the
                         next-best archetype they are, and whether per-archetype decoding reproduces
   matching_archetypes.csv.gz  across fits only: one row per seed-0 archetype x seed
-  paper_K46.csv         the K=46 spatial-across paper archetypes (28, 35, 37, 31, 39) across seeds
-  jumpiness.csv         mean |change| from one K to the next for seed 0, the seed mean and the
-                        lowest-loss fit, on the K values every seed has
+  paper_K46.csv         the K=46 spatial-across paper archetypes M0-M4 (28, 35, 16, 39, 45) across seeds
   summary.txt           the headline numbers
 and packs them into $RUN_DIR/seeds-results.tar.gz.
 
   python seeds_merge.py [--workers 16] [--lag 2]
-Exit code 1 (and "INCOMPLETE" in the summary) if any expected seed fit, decode table or top-m part
+Exit code 1 (and "INCOMPLETE" in the summary) if any expected seed fit or decode table
 is missing; the tables are still written for what exists.
 """
 import argparse
@@ -33,13 +31,13 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
-from seeds_common import (CONDITIONS, ROOT, SEEDS_DIR, TOP_M_VALUES, all_seed_dirs, fit_name,  # noqa: E402
+from seeds_common import (CONDITIONS, ROOT, SEEDS_DIR, all_seed_dirs, fit_name,  # noqa: E402
                           stage_Ks, write_slim)
 
 HERE = Path(__file__).resolve().parent
 OUT = SEEDS_DIR / "results"
 SLIM0 = SEEDS_DIR / "slim" / "seed00"
-PAPER_K46 = [28, 35, 37, 31, 39]
+PAPER_K46 = [28, 35, 16, 39, 45]   # M0-M4 (src/msaa_pipeline/paper_archetypes.py)
 LAG = 2
 
 
@@ -117,26 +115,6 @@ def decode_tables(root, at, sc):
         p = p.groupby(["condition", "K", "archetype"])["mean_accuracy"].mean()
         pa = {(c, int(K)): v.droplevel([0, 1]) for (c, K), v in p.groupby(level=[0, 1])}
     return full, pa
-
-
-def topm_table_seed(d):
-    parts = sorted((d / "topm_parts").glob("*.csv")) if (d / "topm_parts").exists() else []
-    if not parts:
-        return None
-    t = pd.concat([pd.read_csv(p) for p in parts], ignore_index=True)
-    return t.groupby(["analysis_type", "condition", "K", "top_m"])["mean"].mean()
-
-
-def topm_table_seed0():
-    out = []
-    for at in ["spatial", "temporal"]:
-        p = ROOT / "topm-everyk" / f"msaa_condrank_decoding_outputs_{at}_across" / "topm_summary.csv"
-        if p.exists():
-            out.append(pd.read_csv(p))
-    if not out:
-        return None
-    t = pd.concat(out, ignore_index=True)
-    return t.groupby(["analysis_type", "condition", "K", "top_m"])["mean"].mean()
 
 
 # ---------- matching ----------
@@ -250,9 +228,6 @@ def main():
                 if s and any(k[0] == s and k[1] == at and k[2] == sc and idx[k][0] == st for k in idx) and full is None:
                     missing_dec.append(f"seed{s:02d}/{st} {at}_{sc}")
                 dec[(s, st, at, sc)] = (full, pa)
-    topm = {(0, None): topm_table_seed0()}
-    for st, s, d in seed_dirs():
-        topm[(s, st)] = topm_table_seed(d)
 
     def stage_of(s, at, sc, cond, K):
         return None if s == 0 else idx[(s, at, sc, cond, K)][0]
@@ -263,7 +238,6 @@ def main():
         cond = None if r.fit_cond == "acrossCond" else r.fit_cond
         st = stage_of(r.seed, r.analysis_type, r.fit_scope, cond, r.K)
         full, pa = dec.get((r.seed, st, r.analysis_type, r.fit_scope), (None, None))
-        tm = topm.get((r.seed, st))
         for c in (CONDITIONS if r.fit_scope == "across" else [cond]):
             row = r._asdict(); row["condition"] = c
             row["full_mean"] = full.get((c, r.K), np.nan) if full is not None else np.nan
@@ -272,16 +246,12 @@ def main():
                 row["best_single"], row["mean_single"], row["best_archetype"] = v.max(), v.mean(), int(v.idxmax())
             else:
                 row["best_single"] = row["mean_single"] = np.nan; row["best_archetype"] = -1
-            for m in TOP_M_VALUES:
-                row[f"top{m}"] = (tm.get((r.analysis_type, c, r.K, m), np.nan)
-                                  if tm is not None and r.fit_scope == "across" else np.nan)
             rows.append(row)
     fits = pd.DataFrame(rows)
     fits.to_csv(OUT / "fits.csv", index=False)
-    missing_topm = int(((fits.fit_scope == "across") & (fits.seed > 0) & fits.top1.isna()).sum())
 
     # per_K.csv
-    metrics = ["full_mean", "best_single", "mean_single"] + [f"top{m}" for m in TOP_M_VALUES] + ["varexpl", "cost_last"]
+    metrics = ["full_mean", "best_single", "mean_single", "varexpl", "cost_last"]
     g = ["analysis_type", "fit_scope", "condition", "K"]
     per = []
     for key, sub in fits.groupby(g):
@@ -351,26 +321,12 @@ def main():
     else:
         P = pd.DataFrame()
 
-    # jumpiness: K-to-K change on the K values every seed has
-    jump = []
-    for key, sub in per[per.metric.isin(["full_mean", "best_single", "top1", "top3", "top5", "top10"])].groupby(
-            ["analysis_type", "fit_scope", "condition", "metric"]):
-        sub = sub[sub.n == sub.n.max()].sort_values("K")
-        if len(sub) < 3:
-            continue
-        d = lambda col: np.nanmean(np.abs(np.diff(sub[col].to_numpy())))
-        jump.append(dict(zip(["analysis_type", "fit_scope", "condition", "metric"], key), n_K=len(sub),
-                         n_seeds=int(sub.n.max()), jump_seed0=d("seed0"), jump_seed_mean=d("mean"),
-                         jump_lowest_loss=d("lowest_loss"), median_seed_sd=sub.sd.median()))
-    J = pd.DataFrame(jump)
-    J.to_csv(OUT / "jumpiness.csv", index=False)
-
     # summary.txt
-    complete = not missing_fits and not missing_dec and missing_topm == 0
+    complete = not missing_fits and not missing_dec
     L = [f"Multi-seed MS-AA run: {'COMPLETE' if complete else 'INCOMPLETE'}",
          f"seed fits: {len(idx)} found, {len(missing_fits)} missing; seeds {sorted({k[0] for k in idx})}; "
          f"stages {sorted({v[0] for v in idx.values()})}",
-         f"decode tables missing: {len(missing_dec)} {missing_dec[:6]}", f"top-m rows missing (across, seeds >= 1): {missing_topm}", ""]
+         f"decode tables missing: {len(missing_dec)} {missing_dec[:6]}", ""]
     if missing_fits:
         L += ["first missing fits: " + "; ".join(" ".join(map(str, f)) for f in missing_fits[:8]), ""]
     if len(per):
@@ -391,9 +347,6 @@ def main():
     if len(P):
         L += ["K=46 spatial-across paper archetypes vs their matches in each seed:",
               P.groupby("archetype")[["corr", "C_corr", "next_best"]].agg(["median", "min"]).round(3).to_string(), ""]
-    if len(J):
-        L += ["K-to-K jumpiness (mean |change| between neighbouring K on the common grid):",
-              J.round(4).to_string(index=False), ""]
     L += [f"results: {OUT}"]
     text = "\n".join(L)
     (OUT / "summary.txt").write_text(text + "\n")

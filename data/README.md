@@ -13,7 +13,7 @@ Place both files in `data/input/` before running any fitting workflow.
 Run:
 
 ```bash
-python scripts/check_inputs.py
+uv run make check
 ```
 
 to confirm that the expected conditions and posterior fields can be read.
@@ -24,10 +24,10 @@ pipeline preserves that behavior.
 
 ## Standard reference atlas
 
-Later network-localization/brain-map analyses use the standard Schaefer 1000-parcel, 7-network atlas. It can be fetched into `data/reference/` with:
+Figure 5 and the node-to-network table use the standard Schaefer 1000-parcel, 7-network atlas. Fetch it into `data/reference/` with:
 
 ```bash
-make references
+uv run make atlas
 ```
 
 This atlas is treated as an external reference resource rather than a scientific starting dataset.

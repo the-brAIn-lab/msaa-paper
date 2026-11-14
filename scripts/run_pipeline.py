@@ -26,7 +26,7 @@ def main():
                     help="frozen: frozen FurthestSum picks + no post-fit sort (the paper's canonical numbering, "
                          "as scripts/run_parallel.py); legacy: recompute FurthestSum and sort after fitting "
                          "(the original outputs' numbering). auto = frozen for the full profile, legacy for "
-                         "smoke and mini-paper, which are checked against the legacy outputs.")
+                         "smoke and mini-paper (their subject subsets have no frozen picks).")
     ap.add_argument("--tie-tol", type=float, default=None,
                     help="decode correlation tie tolerance; default 1e-8 for the full profile (as "
                          "scripts/run_parallel.py), 0 (exact comparison, legacy) otherwise.")

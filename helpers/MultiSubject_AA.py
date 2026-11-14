@@ -142,7 +142,7 @@ def multi_subject_aa(
         else:
             s.sigmaSq = xp.ones((V, 1), dtype=float)
 
-        # Initialize S on the simplex (−log U then normalize)
+        # Initialize S on the simplex (-log U then normalize)
         U = xp.asarray(rng.random((noc, V)), dtype=float)
         s.S = -xp.log(U + xp.finfo(float).tiny)
         s.S /= (s.S.sum(axis=0, keepdims=True) + xp.finfo(float).eps)
@@ -161,7 +161,7 @@ def multi_subject_aa(
             _to_numpy(s.S, runGPU),
             _to_numpy(s.XCtX, runGPU),
             _to_numpy(s.CtXtXC, runGPU),
-            np.ones(s.S.shape[1], dtype=float),   # per-column μ
+            np.ones(s.S.shape[1], dtype=float),   # per-column mu
             int(s.T),
             int(initial_S_steps),
             _to_numpy(s.sigmaSq.squeeze(), runGPU),

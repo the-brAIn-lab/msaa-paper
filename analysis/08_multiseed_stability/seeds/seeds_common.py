@@ -19,7 +19,6 @@ SEEDS_DIR = ROOT / "seeds"
 CONDITIONS = ["intact", "word", "rest"]
 GRID = {"spatial": range(2, 701), "temporal": range(2, 301)}
 JOBS = ["spatial_across", "spatial_within", "temporal_across", "temporal_within"]
-TOP_M_VALUES = [1, 2, 3, 5, 10]
 
 
 def stage_Ks(stage, at):

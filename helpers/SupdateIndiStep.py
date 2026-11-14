@@ -40,7 +40,7 @@ def supdate_indi_step(
     muS : (F,) ndarray
         Updated per-column step sizes.
     SSt : (K, K) ndarray
-        Sufficient statistic (σ²-weighted if sigmaSq is provided).
+        Sufficient statistic (sigma^2-weighted if sigmaSq is provided).
     """
     S = np.asarray(S, dtype=float, order="F")
     XCtX = np.asarray(XCtX, dtype=float, order="F")
@@ -72,7 +72,7 @@ def supdate_indi_step(
         g = (CtS - XCtX) / (numObs * F)
 
         # Project gradient onto tangent space of simplex per column:
-        # g[:,j] -= (g[:,j] · S[:,j]) for each j
+        # g[:,j] -= (dot(g[:,j], S[:,j])) for each j
         col_dots = np.sum(g * S, axis=0)   # (F,)
         g = g - col_dots                   # broadcast over rows
 

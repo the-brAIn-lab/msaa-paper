@@ -42,10 +42,6 @@ data/input/*
 !data/input/.gitkeep
 !data/input/README.md
 
-data/derived/*
-!data/derived/.gitkeep
-!data/derived/README.md
-
 data/reference/*
 !data/reference/.gitkeep
 !data/reference/README.md
@@ -59,12 +55,7 @@ data/reference/*
 # ------------------------------------------------------------
 # New pipeline outputs
 # ------------------------------------------------------------
-outputs/*
-!outputs/.gitkeep
-!outputs/smoke/
-!outputs/smoke/.gitkeep
-!outputs/mini_paper/
-!outputs/mini_paper/.gitkeep
+outputs/
 
 # ------------------------------------------------------------
 # Original-analysis generated result directories
@@ -90,78 +81,12 @@ paper_compression_ratio_figures/
 figures/
 tables/generated/
 
-# Optional local reference copy from the old repo
-reference/original_outputs/
-
 # ------------------------------------------------------------
 # Logs / local run metadata
 # ------------------------------------------------------------
 *.log
 *.out
 *.err
-# ------------------------------------------------------------
-# Portable validated legacy outputs
-#
-# These are copied into the project for local/student handoff but are several
-# gigabytes and must never be committed. The tracked manifest lives in configs/.
-# ------------------------------------------------------------
-reference_outputs/legacy_full/
-
-# Activated portable legacy-output links
-003_postprocess_across_spatial_condition_specific_outputs
-005_postprocess_within_spatial_condition_specific_outputs
-007_across_target3_cluster_selected_decode_visualize_spatial
-007_across_target3_cluster_selected_decode_visualize_temporal
-008_across_target3_cluster_heatmaps_spatial
-009_paper_decoding_figures_condition_specific
-010_paper_compression_ratio_figures_condition_specific
-aa_information_concentration_outputs
-across_cluster_selected_decode_visualize_spatial
-across_cluster_selected_decode_visualize_temporal
-figures
-four_condition_ratio_decoding_outputs
-msaa_condrank_decoding_outputs_spatial_across
-msaa_condrank_decoding_outputs_spatial_within
-msaa_condrank_decoding_outputs_temporal_across
-msaa_condrank_decoding_outputs_temporal_within
-msaa_edge_trim_sensitivity_K46_top5
-msaa_flexible_decoding_outputs_spatial_across
-msaa_flexible_decoding_outputs_spatial_within
-msaa_flexible_decoding_outputs_temporal_across
-msaa_flexible_decoding_outputs_temporal_within
-msaa_flexible_outputs_npz
-msaa_four_condition_ratio_within_outputs_npz
-msaa_heldout_topm_outputs_spatial_across
-paper_compression_ratio_figures
-paper_decoding_figures
-paper_figure_outputs
-pca_aa_equivalence_outputs
-pca_matched_baseline_outputs
-postprocess_across_spatial_outputs
-postprocess_within_spatial_outputs
-revision_05_archetype_interpretation_and_support
-revision_8_figure5_selected_K46_outputs
-select_top10_decode_then_top5_cluster_spatial_across_outputs
-simulation_benchmark_outputs
-simulation_pca_ica_msaa_extended_outputs
-simulation_pca_ica_msaa_outputs
-simulation_pca_ica_msaa_outputs_robustica
-simulation_pca_ica_msaa_outputs_simpleica
-simulation_pca_msaa_extended_outputs
-simulation_soft_membership_outputs
-simulation_soft_membership_revised_outputs
-simulation_three_regime_outputs
-tables
-temporal_decoding_summaries
-outputs/
-*_executed.ipynb
-
-# Activated portable network-localization legacy link
-/013_network_localization_analysis
-
-# Activated portable legacy-output links
-/003_postprocess_across_spatial_cache
-
 # ------------------------------------------------------------
 # Multi-seed stability run outputs (analysis/08_multiseed_stability/run_local.py)
 # ------------------------------------------------------------
@@ -171,5 +96,14 @@ outputs/
 /heldout-everyk-*-results/
 /heldout-seeds-results/
 /*-results.tar.gz
-/analysis/08_multiseed_stability/temporal_drift/results/
 /analysis/08_multiseed_stability/seeds/tasks/
+/heldout-highm/
+/heldout-highm-landscape/
+/heldout-highm*-results/
+
+# figure bundle (scripts/build_figures.py) and other result folders
+/figure_bundle/
+*_executed.ipynb
+/revision_05_archetype_interpretation_and_support/
+/four_condition_comparison/
+/condition_influence_fits/

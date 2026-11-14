@@ -11,19 +11,21 @@ finished fits, decodes and held-out splits are skipped when you rerun.
   picks      FurthestSum starting picks drawn with seeds 1..9           (seeds/picks_task.py, picks_merge.py)
   fits       one fit per seed x analysis x scope x K [x condition]      (seeds/seed_fit.py)
   decode     decode each seed's fits                                     (run_parallel.py decode + merge per seed dir)
-  topm       same-data top-m for each seed's across fits                 (seeds/seed_topm.py)
   merge      cross-seed tables: matching to seed 0, per-K mean/SD, ...   (seeds/seeds_merge.py)
   heldout30  held-out top-m at the 30 paper K for every seed              (run_parallel.py heldout, heldout_seeds/)
   heldoutK   held-out top-m at every K for every seed                     (heldout_everyk/)
+  highm      extra m (7-100) at the 15 matched spatial/temporal K pairs   (heldout_highm/, Fig 4C, S01)
+  landscape  extra m (7-50) at spatial K = 10, 20, ..., 700               (heldout_highm/, S12)
 
 Outputs land in the repo root, in the same layout as the original run:
   seeds/full/seedNN/   per-seed run roots      seeds/results/, seeds-results.tar.gz
   heldout-seeds-results/   heldout-everyk/ and heldout-everyk-<analysis>-<seed0|all>-results/
+  heldout-highm-results/   heldout-highm-landscape-results/
 
 Usage (from anywhere):
   python analysis/08_multiseed_stability/run_local.py --workers 8                       # everything (weeks of CPU time)
   python analysis/08_multiseed_stability/run_local.py --ks 5,10 --seeds 1,2 --jobs temporal_across --workers 4   # small test
-  python analysis/08_multiseed_stability/run_local.py --steps decode,topm,merge          # just some steps
+  python analysis/08_multiseed_stability/run_local.py --steps decode,merge               # just some steps
 
 The full run is very large (about 36,000 fits plus held-out splits at every K; it took several
 days on ~100 cluster cores). --ks / --seeds / --jobs restrict it for testing.
@@ -41,7 +43,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
-STEPS = ["seed0", "picks", "fits", "decode", "topm", "merge", "heldout30", "heldoutK"]
+STEPS = ["seed0", "picks", "fits", "decode", "merge", "heldout30", "heldoutK", "highm", "landscape"]
 JOBS = ["spatial_across", "spatial_within", "temporal_across", "temporal_within"]
 HK_PHASES = ["s0", "sA", "t0", "tA"]
 
@@ -139,10 +141,6 @@ def main():
             run([py, "rerun/run_parallel.py", "decode", "--workers", a.workers], cwd=d, env=env, check=False)
             run([py, "rerun/run_parallel.py", "merge"], cwd=d, env=env, check=False)
 
-    if "topm" in steps:
-        ntask = max(1, a.workers * 4)
-        run_many([[py, "seed_topm.py", "full", i, ntask] for i in range(1, ntask + 1)], a.workers, {**env, **one}, "top-m")
-
     if "merge" in steps:
         run([py, "seeds_merge.py", "--workers", a.workers], cwd=HERE / "seeds", env={**env, **one}, check=False)
 
@@ -162,6 +160,20 @@ def main():
             for i in range(1, n + 1):
                 run([py, kit / "hk_task.py", ROOT, "full", ph, i, a.workers], env=env)
             run([py, kit / "hk_merge.py", ROOT, "full", ph, a.workers], env=env, check=False)
+
+    # high-m held-out: rescoring with the every-K run's saved rankings (needs heldoutK); m = 10 and the
+    # full model must reproduce the every-K run exactly, which hm_merge.py checks (VALIDATION PASS/FAIL)
+    for step, grid in (("highm", "pairs"), ("landscape", "landscape")):
+        if step not in steps:
+            continue
+        kit = HERE / "heldout_highm"
+        henv = {**env, "HM_GRID": grid}
+        run([py, kit / "hm_setup.py", ROOT, "full"], env=henv)
+        base = ROOT / ("heldout-highm" + ("-landscape" if grid == "landscape" else ""))
+        for at in ("spatial", "temporal"):
+            for i in range(1, n_lines(base / f"tasks_{at}.txt") + 1):
+                run([py, kit / "hm_task.py", ROOT, "full", at, i, a.workers], env=henv)
+        run([py, kit / "hm_merge.py", ROOT, "full"], env=henv, check=False)
     log("done")
 
 

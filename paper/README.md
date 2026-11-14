@@ -1,29 +1,11 @@
-# Paper figure notebooks
+# Paper figures
 
-`main_figures/` contains the current Figure 2–6 notebooks. Figure 1 is conceptual
-and has no analysis dependency in the supplied code snapshot.
+`main_figures/` and `supplement/` hold the notebooks and scripts that draw Figures 2, 3, 5, 6 and
+S07, S08, S10, S11, S13 from saved result tables (the rest are drawn by
+`analysis/08_multiseed_stability/`). None of them fit or decode.
 
-`supplement/` contains the cleaned/curated supplementary plotting and analysis
-notebooks from the code snapshot.
+`scripts/build_figures.py` runs all of them and assembles the figure bundle; `docs/REPRODUCE.md`
+maps each figure to its script and inputs.
 
-Most paper notebooks intentionally consume saved analysis tables rather than
-refitting models. This keeps plotting changes separate from scientific fitting
-and statistical analysis.
-
-Run a nested notebook from the repository root with:
-
-```bash
-python scripts/execute_notebook.py paper/main_figures/<notebook>.ipynb
-```
-
-The required upstream tables are documented in `docs/PIPELINE.md` and the
-initial dependency audit.
-
-The manuscript sparse-information figures must use `msaa_heldout_topm_outputs_spatial_across/`; same-data top-m outputs are not part of the cleaned paper pipeline.
-
-## Generated figure outputs
-
-Fresh main-text figures are written under `outputs/paper_figures/`. Fresh
-supplementary figures and source tables are written under
-`outputs/paper_supplement/`. These generated outputs are intentionally ignored by
-Git and are kept separate from the read-only validated legacy store.
+- `FIGURE_CAPTIONS.tex`: LaTeX captions for every figure (`\caption{...}` + `\label{...}`), with the uncertainty definitions and conventions.
+- `FIGURE_BUNDLE_README.txt`: the README that goes into the bundle.

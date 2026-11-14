@@ -19,7 +19,7 @@ def furthest_sum(
     ----------
     K : ndarray
         Either:
-          - data matrix of shape (D, N) with N observations as **columns**, or
+          - data matrix of shape (D, N) with N observations as columns, or
           - kernel/Gram matrix of shape (N, N) (symmetric, PSD).
     noc : int
         Number of candidate archetypes to extract.
@@ -46,7 +46,7 @@ def furthest_sum(
         ||x_j - x_s|| = sqrt(||x_j||^2 - 2 <x_j, x_s> + ||x_s||^2).
     - Kernel mode (N x N): distances via the kernel trick:
         ||x_j - x_s|| = sqrt(K_jj - 2 K_js + K_ss).
-    - Matches MATLAB’s rolling scheme:
+    - Matches MATLAB's rolling scheme:
         for k = 1 .. noc+10:
             if k > noc-1: remove the earliest picked index from the active set
             pick new index that maximizes cumulative distance to the (rolling) set

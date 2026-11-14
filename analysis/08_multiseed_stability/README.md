@@ -37,10 +37,11 @@ skips finished fits, decodes and held-out splits.
 | `picks` | FurthestSum starting picks for seeds 1-9 |
 | `fits` | one fit per seed x analysis x scope x K (x condition) |
 | `decode` | decode each seed's fits (exact low-rank decoder) |
-| `topm` | same-data top-m for each seed (diagnostic only; the paper uses held-out top-m) |
 | `merge` | cross-seed tables: Hungarian matching to seed 0, per-K mean and SD, ... |
 | `heldout30` | participant-held-out top-m at the 30 paper K, every seed |
 | `heldoutK` | participant-held-out top-m at every K, every seed |
+| `highm` | extra m (7-100) at the 15 matched spatial/temporal K pairs, reusing the every-K rankings (Fig 4C, S01) |
+| `landscape` | extra m (7-50) at spatial K = 10, 20, ..., 700, same reuse (S12) |
 
 ```bash
 # small test, about 30 min on 4 cores: one K, all 10 seeds
@@ -68,9 +69,10 @@ msaa_flexible_outputs_npz/                       seed-0 fits
 msaa_condrank_decoding_outputs_<analysis>_across/ seed-0 decoding
 seeds/full/seedNN/                               one self-contained run root per seed (its slim/ holds compact fits)
 seeds/slim/seed00/                               compact copies of the seed-0 fits
-seeds/results/                                   per_K.csv, matching_*.csv, jumpiness.csv, ...
+seeds/results/                                   per_K.csv, matching_*.csv, paper_K46.csv, ...
 heldout-seeds-results/                           held-out top-m, 30 paper K
 heldout-everyk-<spatial|temporal>-<seed0|all>-results/   held-out top-m, every K
+heldout-highm-results/, heldout-highm-landscape-results/   held-out top-m at high m (checked against the every-K run)
 ```
 
 ## 3. Make the figures and tables
@@ -81,18 +83,16 @@ can be overridden with flags (`--help` lists them).
 
 | figure / table | command |
 |---|---|
-| Peak-K bootstrap CIs, used by Fig 3 | `for a in spatial temporal; do for w in seed0 all; do python plots/peakk_ci.py $a --which $w --W 1; done; done` |
-| Fig 3 by analysis: seed 0 vs 10-fit mean, decoding and held-out top-m | `python plots/fig3_by_analysis.py spatial` and `... temporal` |
-| K=51 Yeo-7 composition bars, all seeds | `python plots/yeo7_bars_all_seeds.py 51 28,40,16,50,37` |
-| K=51 glass brains, all seeds | `python plots/glassbrains_all_seeds.py 51 28,40,16,50,37` |
-| K=51 per-seed network figures (`K51_seed{0-9}_networks`) and cross-seed similarity | `python plots/loadx.py` (once), then `python plots/fig5_per_seed.py 51 28,40,16,50,37` |
-| K=14 temporal motifs, all seeds | `python plots/temporal_motifs_by_seed.py 14 9,4,5,7,0` |
+| Fig 4A/B (10-seed held-out top-m, per condition and in the one-axis layout), Fig 4D (temporal matched retained fraction, 25/50/70 %), full-model held-out accuracy vs K (run after the matched-fraction section below) | `python plots/fig4_heldout_panels.py` |
+| Fig 4C and S01: spatial - temporal held-out top-m at the 15 exactly matched K/D ratios (m = 1-100), mean of seeds and number of seeds with spatial > temporal; needs `heldout-highm-results/` (step `highm`) | `python plots/fig4c_matched_ratio_heatmaps.py` |
+| Supplement: complete held-out spatial top-m landscape over K x m (accuracy and retained fraction; m = 1-50, K = 10-700 in steps of 10); needs `heldout-highm-landscape-results/` (step `landscape`) | `python plots/spatial_topm_landscape.py` |
+| K=46 per-seed matching to seed 0, map and time-course r for every archetype (needed by the K=46 stability script); also draws one M0-M4 page per seed | `python plots/loadx.py` (once), then `python plots/fig5_per_seed.py 46 28,35,16,39,45` |
 | Top-5 vs top-10 selection stability across the K neighbourhood; M0-M4 top-5 vs top-10 | `python plots/topm_stability_neighbourhood.py 45,46,47,48,49,50,51,52,53,54,55` |
 | M0-M4 crosswalk and K=46 supplementary table (run after the line above) | `python k46_stability/make_supp_tables.py` |
-| K=46 paper archetypes across seeds; top-5 overlap (K46, K51, temporal K14) | `python k46_stability/k46_cross_seed_stability.py` |
-| Raw top-5 vs top-10 nesting check | `python k46_stability/nesting_check.py` |
-| Leave-one-seed-out check of the good-K bands on held-out top-m accuracy | `python plots/goodk_loso.py spatial` (and `temporal`; `--W 9` default, `--W 21` as in peak-K CI) |
-| Time-tolerant matching of temporal archetypes between two runs | `python temporal_drift/time_tolerant_match.py --a RUN_A --b RUN_B` |
+| K=46 paper archetypes (M0-M4) across seeds: map r, time-course r, Yeo-7 r, recovered; top-5 overlap (run after `fig5_per_seed.py 46`) | `python k46_stability/k46_cross_seed_stability.py` |
+| Raw top-5 vs top-10 nesting check (checks the S05/S06 selection tables; see `DEFINITIONS.md`) | `python k46_stability/nesting_check.py` |
+| Compact M0-M4 summary across seeds (map r, temporal profile r, Yeo-7 r, recovered at r >= 0.9; run after the K=46 stability script) | `python k46_stability/m0m4_summary.py` |
+| Temporal K=14 supplement: accumulation, generator-anchor masking, motifs at higher K (run the revision_10a and revision_10c notebooks first) | `python plots/k14_supplement.py` |
 
 Run them from this folder, or prefix each path with `analysis/08_multiseed_stability/`.
 
@@ -102,15 +102,58 @@ cost, recovery-aware labels, consensus sets, chance-corrected Jaccard and the av
   `src/msaa_pipeline/paper_archetypes.py`). `k46_cross_seed_stability.py` uses them by
   default; set `PAPER_SET=28,35,37,31,39` (or any list) to check another set, e.g. the
   submitted one.
-- `fig5_per_seed.py` at K=46 also writes the matching table that
-  `k46_cross_seed_stability.py` checks itself against when it is present.
+- `fig5_per_seed.py` at K=46 writes the per-seed similarity table (including the
+  time-course r) that `k46_cross_seed_stability.py` reads and checks its matching against.
 
 To make figures from a finished run somewhere else (for example results copied from a
 cluster), point the scripts at that run root:
 
 ```bash
-MSAA_ROOT=/path/to/run_root python plots/fig3_by_analysis.py spatial
+MSAA_ROOT=/path/to/run_root python plots/fig4_heldout_panels.py
 ```
+
+## 3b. Temporal matched retained fraction and the K=14 contrast
+
+Fixed top-m favours small K because the same m is a larger share of the basis. This asks
+the question at a fixed fraction instead: with m = round(fraction x K) temporal archetypes,
+selected on one participant half and scored on the other (the same splits, rankings and
+decoder seeds as the held-out top-m above), what fraction of the full model's above-chance
+accuracy is retained? It needs the `heldoutK` step for temporal (its per-split rankings in
+`heldout-everyk/parts/temporal/`) and every seed's temporal across fits; nothing is refit.
+Run from the repo root (`R=.`), or set `R` to another run root:
+
+```bash
+cd analysis/08_multiseed_stability/matched_fraction
+R=../../..; B=$R/outputs/multiseed_stability/matched_fraction; mkdir -p $B
+KS=5,8,10,12,14,16,20,25,30,40,50; CONDS=intact,word; SEEDS=0:1:2:3:4:5:6:7:8:9
+python collect_rankings.py $R $B/rankings.csv ${KS//,/:} ${CONDS//,/:} $SEEDS 20
+roots=(--fit-root $R/msaa_flexible_outputs_npz)
+for s in 01 02 03 04 05 06 07 08 09; do roots+=(--fit-root $R/seeds/full/seed$s/msaa_flexible_outputs_npz); done
+python temporal_matched_fraction.py build-manifests "${roots[@]}" --k-values $KS --conditions $CONDS \
+  --fit-manifest $B/fit_manifest.csv --task-manifest $B/task_manifest.csv      # 220 tasks
+python temporal_matched_fraction.py audit --task-manifest $B/task_manifest.csv \
+  --ranking-csv $B/rankings.csv --outer-reps 20 --output $B/rankings_audit.csv
+N=$(($(wc -l < $B/task_manifest.csv) - 1))
+for i in $(seq 0 $((N - 1))); do        # independent and resumable: run them in parallel if you like
+  python temporal_matched_fraction.py run-task --task-manifest $B/task_manifest.csv --task-id $i \
+    --ranking-csv $B/rankings.csv --output-dir $B --fractions 0.25,0.50,0.70,1.00 \
+    --outer-reps 20 --nfolds 2 --nreps 20 --base-seed 42
+done
+python validate.py $R $B            # must say PASS: identical to held-out top-m where m is 1/2/3/5/10
+python temporal_matched_fraction.py aggregate --task-manifest $B/task_manifest.csv --output-dir $B \
+  --fractions 0.25,0.50,0.70,1.00 --outer-reps 20 --require-complete
+python k14_local_contrast.py $B/aggregate $B/k14_local_contrast
+```
+
+`aggregate/` holds the retention curves and tables, averaged direction -> outer split -> fit
+seed (`matched_fraction_summary.csv`, `matched_fraction_seed_summary.csv`, one plot per
+condition and per fraction). `k14_local_contrast.py` writes the seed-level table (seed,
+condition, K, requested fraction, selected m, actual fraction m/K, raw subset and
+full-model accuracy, above-chance retention), the paired contrast
+Delta14 = R(14) - [R(12) + R(16)] / 2 with a bootstrap 95% CI and the number of seeds with
+Delta14 > 0, and plots of raw subset accuracy, full-model accuracy and per-seed K=12/14/16.
+At 50% the fraction is exactly matched there (6/12 = 7/14 = 8/16). Each task takes a minute
+or two on 2 cores; the 220 tasks are a few CPU-hours.
 
 ## 4. What to expect when you rerun
 
@@ -120,7 +163,6 @@ MSAA_ROOT=/path/to/run_root python plots/fig3_by_analysis.py spatial
   about 0.005.
 - **Temporal archetypes at high K may differ:** a few can come out slightly different on
   other hardware or BLAS builds (local optima). Most such differences are shifts of 1-3 TRs.
-  `temporal_drift/time_tolerant_match.py` measures this.
 - **Nothing forces bit-identical results:** the BLAS is whatever the numpy wheel ships.
 
 ## Supporting scripts (in `scripts/`)
@@ -129,6 +171,4 @@ MSAA_ROOT=/path/to/run_root python plots/fig3_by_analysis.py spatial
 - `freeze_init.py`, `freeze_everyk.py`: compute the frozen FurthestSum picks in
   `configs/furthestsum_init.csv.gz`. Existing rows are never changed, so extending the
   K grid does not renumber old fits.
-- `verify_lowrank.py`: checks the low-rank decoder against the dense one
-  (`MSAA_REF_RUN=/path/to/reference_run python scripts/verify_lowrank.py --quick`).
 - `build_node_yeo7.py`: builds `configs/node_yeo7.csv`.

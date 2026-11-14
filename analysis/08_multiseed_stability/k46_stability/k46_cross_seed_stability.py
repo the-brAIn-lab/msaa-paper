@@ -13,8 +13,8 @@ top_m=5 (ties broken by mean rank position). Each split ranks on 18 participants
 
 Usage: python k46_cross_seed_stability.py [--nodes NODES.csv] [--out OUTDIR]
 Needs (paths.py): every seed's compact fits for spatial K=46, 51 and temporal K=14 in seeds/, the seed-0 temporal
-K=14 fit in msaa_flexible_outputs_npz/, heldout-everyk-{spatial,temporal}-all-results/; optionally the
-fig5_per_seed.py K=46 similarity table as a cross-check. Default OUTDIR outputs/multiseed_stability/k46_cross_seed_stability.
+K=14 fit in msaa_flexible_outputs_npz/, heldout-everyk-{spatial,temporal}-all-results/, and the
+plots/fig5_per_seed.py K=46 similarity table (map r, time-course r; run fig5_per_seed.py 46 first). Default OUTDIR outputs/multiseed_stability/k46_cross_seed_stability.
 """
 import argparse
 import re
@@ -108,10 +108,11 @@ def load(mode, K):
 say("=" * 100); say("1. K=46 alignment of the paper archetypes (legacy label = seqnum/seed-0 id)"); say("=" * 100)
 M46, _, match46, R46 = load("spatial", 46)
 simf = paths.OUT / "fig5_per_seed" / "K46" / "K46_crossseed_similarity_all.csv"
-if simf.exists():  # same matching as the per-seed figure (fig5_per_seed.py 46 ...)
-    sim = pd.read_csv(simf)
-    for s in SEEDS:
-        sub = sim[sim.seed == s]; assert all(match46[s][i] == m for i, m in zip(sub.archetype0, sub.matched)), s
+if not simf.exists():  # time-course r comes from the per-seed table (same matching as here)
+    raise SystemExit(f"missing {simf}: run plots/fig5_per_seed.py 46 28,35,16,39,45 first")
+sim = pd.read_csv(simf)
+for s in SEEDS:
+    sub = sim[sim.seed == s]; assert all(match46[s][i] == m for i, m in zip(sub.archetype0, sub.matched)), s
 rows = []
 for a, lab in PAPER.items():
     m0 = mass(M46[0][a])
@@ -282,11 +283,11 @@ for i, a in enumerate(PAPER):
     for n in range(7):
         ax.barh(i, comp[0, n], left=left, color=NCOL[n], edgecolor="white", lw=0.5, height=0.62)
         left += comp[0, n]
-    ax.text(1.01, i, f"{comp[:, 6].mean():.2f}±{comp[:, 6].std(ddof=1):.2f} DMN" if NETS[np.argmax(comp[0])] == "Default mode" else
-            f"{comp[:, np.argmax(comp[0])].mean():.2f}±{comp[:, np.argmax(comp[0])].std(ddof=1):.2f} {NSHORT[np.argmax(comp[0])]}",
+    ax.text(1.01, i, f"{comp[:, 6].mean():.2f}\u00b1{comp[:, 6].std(ddof=1):.2f} DMN" if NETS[np.argmax(comp[0])] == "Default mode" else
+            f"{comp[:, np.argmax(comp[0])].mean():.2f}\u00b1{comp[:, np.argmax(comp[0])].std(ddof=1):.2f} {NSHORT[np.argmax(comp[0])]}",
             va="center", fontsize=8.5, transform=ax.get_yaxis_transform())
 ax.set_yticks(x); ax.set_yticklabels([""] * 5); ax.invert_yaxis(); ax.set_xlim(0, 1); ax.set_xlabel("share of |weight|", fontsize=10)
-ax.set_title("Yeo-7 composition, seed 0\n(text: dominant net mean±SD over 10 seeds)", fontsize=10.5)
+ax.set_title("Yeo-7 composition, seed 0\n(text: dominant net mean\u00b1SD over 10 seeds)", fontsize=10.5)
 for n in range(7): ax.bar(0, 0, color=NCOL[n], label=NSHORT[n])
 ax.legend(ncol=4, fontsize=7.5, loc="upper center", bbox_to_anchor=(0.5, -0.17), frameon=False)
 fig.colorbar(im, ax=fig.axes[:3], fraction=0.015, pad=0.01)
@@ -307,7 +308,7 @@ for mode, K in [("spatial", 46), ("spatial", 51), ("temporal", 14)]:
         for i, a in enumerate(ids):
             for s in SEEDS:
                 if a in st["top"][s]: ax.add_patch(plt.Rectangle((s - 0.5, i - 0.5), 1, 1, fill=False, ec="#E4572E", lw=2))
-                if not st["rec"][s][a]: ax.text(s, i, "×", ha="center", va="center", color="0.4", fontsize=9)
+                if not st["rec"][s][a]: ax.text(s, i, "\u00d7", ha="center", va="center", color="0.4", fontsize=9)
         lab = [f"#{a}" + (f" {PAPER[a]}" if K == 46 and a in PAPER else "") + f"  ({cnt[a]}/10)" for a in ids]
         ax.set_yticks(range(len(ids))); ax.set_yticklabels(lab, fontsize=8.5); ax.set_xticks(SEEDS); ax.set_xlabel("seed")
         ax.set_title(f"{c}: split-level selection freq (blue); orange box = in seed's top-5", fontsize=10)
@@ -326,9 +327,9 @@ for mode, K in [("spatial", 46), ("spatial", 51), ("temporal", 14)]:
             ax.set_xticks(SEEDS); ax.set_xlabel("seed"); ax.set_ylim(0, 1); ax.set_ylabel("share of |weight| (mean of top-5)")
             ax.set_title(f"{c}: Yeo-7 of each seed's top-5\npairwise r mean {py.mean():.3f}, min {py.min():.3f}", fontsize=10)
             if ri == 0: ax.legend(ncol=4, fontsize=7.5, loc="upper center", bbox_to_anchor=(0.5, 1.42), frameon=False)
-    fig.suptitle(f"{mode.capitalize()} K={K}: does each seed's own participant-held-out ranking pick the same top-5? (seed-0 IDs; × = seed's match has map r < 0.9)"
+    fig.suptitle(f"{mode.capitalize()} K={K}: does each seed's own participant-held-out ranking pick the same top-5? (seed-0 IDs; \u00d7 = seed's match has map r < 0.9)"
                  if mode == "spatial" else
-                 f"Temporal K={K}: does each seed's own participant-held-out ranking pick the same top-5? (seed-0 IDs, matched on C; × = C r < 0.9)",
+                 f"Temporal K={K}: does each seed's own participant-held-out ranking pick the same top-5? (seed-0 IDs, matched on C; \u00d7 = C r < 0.9)",
                  fontsize=12.5, fontweight="bold")
     fig.tight_layout(rect=(0, 0, 1, 0.965))
     for e in ("png", "pdf"): fig.savefig(OUT / f"top5_overlap_{mode}_K{K}.{e}", dpi=200 if e == "png" else None, bbox_inches="tight")

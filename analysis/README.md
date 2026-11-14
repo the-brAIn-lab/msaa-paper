@@ -1,20 +1,17 @@
-# Analysis notebooks
+# Analyses
 
-The numbered folders reflect scientific dependency rather than the chronology
-of exploratory notebook creation.
+Each folder holds what one part of the paper needs; `docs/REPRODUCE.md` says which output each
+makes and which figure uses it.
 
-- `01_fit/`: empirical spatial/temporal MS-AA model fitting.
-- `02_decode/`: reconstruction and decoding analyses.
-- `03_core_results/`: matched-ratio analyses, held-out sparse cross-fitting,
-  PCA comparison, information concentration, and clustering-related results.
-- `04_interpretation/`: representative K=46 archetype interpretation/support.
-- `05_robustness/`: edge trimming and network-localization/null analyses.
-- `06_four_condition/`: paragraph-scrambled four-condition sensitivity branch.
-- `07_simulations/`: simulation benchmarks and alternative PCA/ICA controls.
-- `08_multiseed_stability/`: 10-seed refits, cross-seed matching, every-K held-out top-m,
-  and the stability figures; scripts, not notebooks (see its README).
+- `03_core_results/`: PCA vs MS-AA benchmark tables (Fig 2), temporal K = 14 accumulation and
+  generator-anchor masking (S02).
+- `04_interpretation/`: K = 46 motif support (Fig 6B/C), leave-one-condition-out refits and
+  condition deployment (Fig 6D, S08).
+- `05_robustness/`: edge-trim sensitivity of the K = 46 held-out top-5 (S10).
+- `06_four_condition/`: four-condition (paragraph-scrambled) sensitivity (S11).
+- `07_simulations/`: simulation benchmark (Fig 3) and its sensitivity sweep (S13).
+- `08_multiseed_stability/`: the seed-0 and 10-seed runs (fits, decoding, held-out top-m at every
+  K and at high m), the matched-fraction analysis and the cross-seed stability tables, plus the
+  scripts that draw Fig 4, S01-S06, S09 and S12 (see its README).
 
-The reusable `scripts/run_pipeline.py` implementation covers fitting, full/single-archetype decoding, and the canonical participant-held-out top-m cross-fit used for quick verification. These notebooks preserve the original paper-specific
-analysis logic for the later stages.
-
-Historical same-data top-m analyses are not canonical and are retained only under `legacy/original_notebooks/`.
+Notebooks run from the repo root: `uv run python scripts/execute_notebook.py <notebook>`.
