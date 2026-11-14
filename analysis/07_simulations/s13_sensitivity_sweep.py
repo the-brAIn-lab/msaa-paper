@@ -10,7 +10,7 @@ nothing here re-implements the simulation.
 Design
 ------
 * Eight panels: observation noise, between-subject heterogeneity, fitted K,
-  motif overlap (distinctiveness scale), and the four dynamical-mixing
+  spatial motif overlap (distinctiveness scale), and the four dynamical-mixing
   components (mean dwell, transition width, secondary-motif weight, AR(1) rho).
 * Five levels per panel; all non-varied parameters stay at the notebook's
   metastable defaults (noise 0.25, heterogeneity 1.0, K 6, distinctiveness

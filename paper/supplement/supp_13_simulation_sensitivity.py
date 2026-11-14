@@ -5,7 +5,7 @@ Reads the one-at-a-time sweep written by
 sized for a ~5 inch print width:
 
 * top row: observation noise, between-subject heterogeneity, fitted K,
-  motif overlap;
+  spatial motif overlap;
 * bottom row: the four components of dynamical mixing (mean dwell, transition
   width, secondary-motif weight, AR(1) rho of the secondary background).
 
@@ -49,7 +49,7 @@ PANELS = [
     ("noise_sd", "Noise", "Noise SD", [0.05, 0.10, 0.25, 0.40, 0.60]),
     ("heterogeneity_scale", "Heterogeneity", "Heterogeneity scale", [0.0, 0.5, 1.0, 1.5, 2.0]),
     ("K_fit", "Fitted K", "Fitted K (true K = 6)", [4, 5, 6, 7, 8]),
-    ("distinctiveness_scale", "Motif overlap", "Mean motif cosine", [1.15, 1.0, 0.85, 0.70, 0.55]),
+    ("distinctiveness_scale", "Spatial motif\noverlap", "Mean spatial-motif cosine", [1.15, 1.0, 0.85, 0.70, 0.55]),
     ("mean_dwell", "Dwell time", "Mean dwell (TRs)", [16, 14, 12, 10, 8]),
     ("transition_width", "Transition width", "Transition width (TRs)", [2, 3, 4, 6, 8]),
     ("secondary_weight", "Secondary weight", "Secondary-motif weight", [0.10, 0.175, 0.25, 0.35, 0.45]),
