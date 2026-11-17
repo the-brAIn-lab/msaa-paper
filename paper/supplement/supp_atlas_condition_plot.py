@@ -99,7 +99,7 @@ for i, aid in enumerate(M):
         bp["boxes"][0].set(facecolor=COLOR[c], edgecolor=COLOR[c], alpha=0.85)
         axA.scatter(np.full(len(v), pos) + np.linspace(-0.07, 0.07, len(v)), v, s=2, color=COLOR[c], alpha=0.35, lw=0)
 axA.set_xticks(range(len(M))); axA.set_xticklabels(M.values(), fontsize=7)
-axA.set_ylabel("Rank-1 contribution per\nobservation (Frobenius norm)", fontsize=7, labelpad=1)
+axA.set_ylabel("Rank-1 contribution per\nscan (Frobenius norm)", fontsize=7, labelpad=1)
 fig.legend([plt.Rectangle((0, 0), 1, 1, color=COLOR[c]) for c, _ in CONDS] + [plt.Line2D([], [], color="#E69F00", ls="--", lw=1.0)],
            [l for _, l in CONDS] + ["Recovery threshold (r = 0.9)"], frameon=False,
            fontsize=6.5, ncol=4, loc="outside lower center", handlelength=1.0, handleheight=0.8, columnspacing=1.2,
