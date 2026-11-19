@@ -34,7 +34,7 @@ CONDS = [("intact", "Intact narrative"), ("word", "Word-scrambled"), ("rest", "R
 COLOR = {"intact": "#7B3294", "word": "#2CA25F", "rest": "#222222"}
 NETS = ["Visual", "Somatomotor", "Dorsal attention", "Ventral attention", "Limbic", "Frontoparietal", "Default mode"]
 NET_SHORT = ["Vis", "SomMot", "DorsAttn", "VentAttn", "Limbic", "FP", "DMN"]
-MODES = [("all_nodes", "All 700 nodes", "#2a78d6"), ("center_inside_atlas", "Centre inside atlas", "#eb6834"),
+MODES = [("all_nodes", "All 700 nodes", "#2a78d6"), ("center_inside_atlas", "Center inside atlas", "#eb6834"),
          ("confidence_ge_0.50", "Assignment confidence \u2265 0.5", "#1baf7a")]
 
 
