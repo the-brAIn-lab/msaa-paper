@@ -37,7 +37,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-METHOD_COLORS = {"MS-AA": "#1f77b4", "PCA": "#ff7f0e"}
+METHOD_COLORS = {"MS-AA": "#eb6834", "PCA": "#2a78d6"}  # same as Fig 3 (PCA blue, MS-AA orange)
 N_TRUE = 6
 # Smallest win count out of 20 with two-sided exact sign-test p < 0.05 (p = 0.041).
 SIGN_TEST_MIN = 15
