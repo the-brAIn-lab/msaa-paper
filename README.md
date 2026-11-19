@@ -7,7 +7,7 @@ figure and source table in the paper and supplement.
 
 ```bash
 uv sync
-# put pieman_data.mat and pieman_posterior_K700.mat in data/input/ (see data/README.md)
+# put pieman_data.mat and pieman_posterior_K700.mat in data/input/ (from pieman2_htfa.pkl, Zenodo DOI 10.5281/zenodo.24358585; see data/README.md)
 uv run make check      # the inputs can be read
 uv run make atlas      # Schaefer-1000 / Yeo-7 atlas into data/reference/
 uv run make smoke      # small end-to-end run (4 participants, K = 5), a few minutes

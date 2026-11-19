@@ -12,10 +12,14 @@ Place both files in `data/input/` before running any fitting workflow.
 
 ## Getting the inputs
 
-The HTFA representation of the Pieman dataset (Simony et al., 2016) is available
-as `pieman2_htfa.pkl` at
-<https://www.dropbox.com/scl/fi/vw5q3iiej9q288mng4s8w/pieman2_htfa.pkl>.
-It holds the same per-scan 700-node HTFA weights and node centers/widths as the
+The HTFA representation of the Pieman dataset is available as `pieman2_htfa.pkl`
+from the Zenodo deposit by Owen & Manning, DOI
+[10.5281/zenodo.24358585](https://doi.org/10.5281/zenodo.24358585), licensed
+CC BY 4.0. The original fMRI data are from Simony et al. (2016).
+
+Secondary mirror: <https://www.dropbox.com/scl/fi/vw5q3iiej9q288mng4s8w/pieman2_htfa.pkl>
+
+The file holds the same per-scan 700-node HTFA weights and node centers/widths as the
 two MAT files; we verified the values are identical. Its paragraph-scrambled
 condition has 17 scans because a duplicated entry was removed.
 
