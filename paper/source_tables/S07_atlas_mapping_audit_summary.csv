@@ -1,0 +1,12 @@
+metric,value
+n_nodes_total,700.0
+n_centers_inside_cortical_atlas,515.0
+n_centers_outside_or_background,185.0
+pct_centers_inside_cortical_atlas,73.57142857142857
+center_vs_integrated_assignment_agreement_pct_inside,87.57281553398059
+median_assignment_confidence_all,0.8071863050280403
+median_assignment_confidence_inside,0.7664198335992958
+median_assignment_confidence_outside,0.9154901737724078
+n_assignment_confidence_below_0.50,73.0
+n_assignment_confidence_below_0.60,178.0
+median_distance_to_atlas_mm_outside_centers,6.739251383554095
