@@ -194,7 +194,7 @@ axes[0].set_title("Intact: mean spatial \u2212 temporal", fontsize=FS_TITLE, fon
 axes[1].set_title("Intact: seeds with spatial > temporal", fontsize=FS_TITLE, fontweight="bold")
 cbar(fig, im, axes[0], "Held-out accuracy,\nspatial \u2212 temporal", ticks=[-0.02, 0, 0.02], location="bottom", shrink=0.9, aspect=22, pad=0.02)
 cbar(fig, im2, axes[1], CONS_LABEL, ticks=[0, 5, 10], location="bottom", shrink=0.9, aspect=22, pad=0.02)
-axes[0].text(-0.2, 1.04, "C", transform=axes[0].transAxes, fontsize=10, fontweight="bold", va="bottom")
+axes[0].text(-0.2, 1.04, "A", transform=axes[0].transAxes, fontsize=10, fontweight="bold", va="bottom")
 for ext in ("png", "pdf"):
     fig.savefig(OUT / f"Fig4C_matched_ratio_heatmaps_intact.{ext}", dpi=600, bbox_inches="tight", pad_inches=0.02)
 print("wrote", OUT, "|", len(summ), "cells")

@@ -167,7 +167,7 @@ def matched_fraction_panel():
         ax.set_xlabel("Temporal model order (K)", fontsize=7, labelpad=1)
         ax.legend(frameon=False, fontsize=6, loc="lower right")
     axes[0].set_ylabel("Fraction of above-chance\nfull-model accuracy retained", fontsize=7, labelpad=1)
-    axes[0].text(-0.3, 1.06, "D", transform=axes[0].transAxes, fontsize=10, fontweight="bold", va="bottom")
+    axes[0].text(-0.3, 1.06, "B", transform=axes[0].transAxes, fontsize=10, fontweight="bold", va="bottom")
     fig.suptitle("Temporal MS-AA: retained accuracy at matched fraction of K", fontsize=8.5, fontweight="bold")
     save(fig, "Fig4D_temporal_matched_fraction", g)
 
