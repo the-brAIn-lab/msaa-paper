@@ -1,11 +1,11 @@
-"""Compact M0-M4 stability summary across the nine further fit seeds (plan: K=46 paper motifs).
+"""Compact M0-M4 stability summary across the nine further fit seeds (K=50 paper motifs).
 
 For each paper motif M0-M4 and each seed 1-9 (Hungarian match to the seed-0 motif on the 700-node
 group-mean maps): spatial map r, temporal profile r (per-scan time-course r, Fisher-z averaged over
 the 108 scans) and Yeo-7 composition r, plus recovered = map r >= 0.9. Only the M0-M4 names are
 shown; the raw component IDs are in the supplementary crosswalk (make_supp_tables.py).
 
-Reads k46_cross_seed_stability.py's K46_paper_archetypes_alignment.csv.
+Reads k50_cross_seed_stability.py's K50_paper_archetypes_alignment.csv.
 Usage: python m0m4_summary.py [--alignment CSV] [--out OUTDIR]
 Writes M0M4_stability_summary.csv (one row per motif: median and minimum of each r, recovered n/9)
 and M0M4_stability_summary.png/.pdf (three motif x seed heatmaps; x = not recovered).
@@ -51,7 +51,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import paths  # noqa: E402
 
 ap = argparse.ArgumentParser()
-ap.add_argument("--alignment", default=str(paths.OUT / "k46_cross_seed_stability" / "K46_paper_archetypes_alignment.csv"))
+ap.add_argument("--alignment", default=str(paths.OUT / "k50_cross_seed_stability" / "K50_paper_archetypes_alignment.csv"))
 ap.add_argument("--out", default=str(paths.OUT / "m0m4_summary"))
 a = ap.parse_args()
 OUT = Path(a.out); OUT.mkdir(parents=True, exist_ok=True)
@@ -98,7 +98,7 @@ axes[0].set_yticklabels([f"{m}  ({r})" for m, r in zip(summ.motif, summ.recovere
 cb = fig.colorbar(im, ax=axes, shrink=0.6, aspect=22, pad=0.02, ticks=[0, 0.5, 1])
 cb.set_label("Pearson r with the seed-0 motif", fontsize=7, labelpad=2)
 cb.ax.tick_params(labelsize=6.5, length=2, width=0.6); cb.outline.set_linewidth(0.6)
-fig.suptitle("Spatial MS-AA, K = 46: motifs M0\u2013M4 across further fit seeds", fontsize=8.5, fontweight="bold")
+fig.suptitle("Spatial MS-AA, K = 50: motifs M0\u2013M4 across further fit seeds", fontsize=8.5, fontweight="bold")
 for ext in ("png", "pdf"):
     fig.savefig(OUT / f"M0M4_stability_summary.{ext}", dpi=600, bbox_inches="tight", pad_inches=0.02)
 print(summ.round(3).to_string(index=False))

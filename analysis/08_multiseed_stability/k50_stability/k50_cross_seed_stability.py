@@ -1,7 +1,8 @@
-"""K=46 cross-seed stability of the paper archetypes, from existing 10-seed outputs (no refits, no redecode).
+"""K=50 cross-seed stability of the paper archetypes, from existing 10-seed outputs (no refits, no redecode).
 
-1. K=46 alignment for the five paper archetypes M0-M4 (seed-0 ids 28, 35, 16, 39, 45; PAPER_SET=... for another set).
-2. Stability of each seed's OWN participant-held-out top-5 selection (K=46 and K=51 spatial, K=14 temporal):
+1. K=50 alignment for the five paper archetypes M0-M4 (seed-0 ids 28, 39, 16, 37, 49; PAPER_SET=... for another set;
+   K_REP=46 PAPER_SET=28,35,16,39,45 reproduces the earlier K=46 tables).
+2. Stability of each seed's OWN participant-held-out top-5 selection (K=50 and K=51 spatial, K=14 temporal):
    selection frequency per seed-0 archetype, pairwise Jaccard of the 10 top-5 sets (by condition), Jaccard on the
    identical participant splits across seeds vs. across splits within a seed, and r of aggregate Yeo-7 composition.
 3. Temporal K=14: is the A5+A9 subspace / reconstruction preserved in seeds 4 and 9 where they merge?
@@ -11,10 +12,10 @@ zero lag) -- the same matching used for selection_by_seed.csv and the per-seed n
 "Seed top-5 set" = the 5 archetypes that seed's 40 held-out splits (20 reps x 2 directions) select most often at
 top_m=5 (ties broken by mean rank position). Each split ranks on 18 participants and is scored on the other 18.
 
-Usage: python k46_cross_seed_stability.py [--nodes NODES.csv] [--out OUTDIR]
-Needs (paths.py): every seed's compact fits for spatial K=46, 51 and temporal K=14 in seeds/, the seed-0 temporal
+Usage: python k50_cross_seed_stability.py [--nodes NODES.csv] [--out OUTDIR]
+Needs (paths.py): every seed's compact fits for spatial K=K_REP (50), 51 and temporal K=14 in seeds/, the seed-0 temporal
 K=14 fit in msaa_flexible_outputs_npz/, heldout-everyk-{spatial,temporal}-all-results/, and the
-plots/fig5_per_seed.py K=46 similarity table (map r, time-course r; run fig5_per_seed.py 46 first). Default OUTDIR outputs/multiseed_stability/k46_cross_seed_stability.
+plots/fig5_per_seed.py K=K_REP similarity table (map r, time-course r; run fig5_per_seed.py 50 first). Default OUTDIR outputs/multiseed_stability/k50_cross_seed_stability.
 """
 import argparse
 import re
@@ -51,14 +52,18 @@ except ImportError:  # device VM has no scipy: O(n^3) Hungarian, min-cost, squar
 plt.rcParams["font.family"] = "DejaVu Sans"
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))   # analysis/08_multiseed_stability, for paths.py
 import paths  # noqa: E402
+sys.path.insert(0, str(paths.REPO / "src"))
+from msaa_pipeline.paper_archetypes import IDS as PAPER_IDS, LABELS as PAPER_LABELS, PAPER_K  # noqa: E402
+import os as _os
+K_REP = int(_os.environ.get("K_REP", PAPER_K))   # representative K (the paper's, unless overridden)
 ap = argparse.ArgumentParser(); ap.add_argument("--nodes", default=str(paths.NODES))
-ap.add_argument("--out", default=str(paths.OUT / "k46_cross_seed_stability")); a = ap.parse_args()
+ap.add_argument("--out", default=str(paths.OUT / f"k{K_REP}_cross_seed_stability")); a = ap.parse_args()
 OUT = Path(a.out); OUT.mkdir(parents=True, exist_ok=True)
 SEEDS = list(range(10)); CONDS = ["intact", "word", "rest"]
 NETS = ["Visual", "Somatomotor", "Dorsal attention", "Ventral attention", "Limbic", "Frontoparietal", "Default mode"]
 NSHORT = ["Vis", "SomMot", "DorsAttn", "VentAttn", "Limbic", "FP", "DMN"]
 NCOL = ["#D7DF23", "#39B54A", "#00A79D", "#27AAE1", "#1C75BC", "#92278F", "#EE2A7B"]
-PAPER = {28: "M0", 35: "M1", 16: "M2", 39: "M3", 45: "M4"}   # the paper set, seed-0 (canonical) id -> label
+PAPER = dict(zip(PAPER_IDS["canonical"], PAPER_LABELS))   # the paper set, seed-0 (canonical) id -> label
 # legacy paper labels (legacy_full fit numbering, map r = 1.0); the submitted set was A4, A5, A6, A12, A8
 LEGACY = {28: "A4", 35: "A5", 37: "A6", 16: "A7", 39: "A8", 45: "A9", 31: "A12"}
 import os
@@ -104,12 +109,12 @@ def load(mode, K):
     return M, F, match, R
 
 
-# ---------------------------------------------------------------- 1. K=46 paper archetypes
-say("=" * 100); say("1. K=46 alignment of the paper archetypes (legacy label = seqnum/seed-0 id)"); say("=" * 100)
-M46, _, match46, R46 = load("spatial", 46)
-simf = paths.OUT / "fig5_per_seed" / "K46" / "K46_crossseed_similarity_all.csv"
+# ---------------------------------------------------------------- 1. K=K_REP paper archetypes
+say("=" * 100); say(f"1. K={K_REP} alignment of the paper archetypes (legacy label = seqnum/seed-0 id)"); say("=" * 100)
+M46, _, match46, R46 = load("spatial", K_REP)   # names kept from the K=46 version
+simf = paths.OUT / "fig5_per_seed" / f"K{K_REP}" / f"K{K_REP}_crossseed_similarity_all.csv"
 if not simf.exists():  # time-course r comes from the per-seed table (same matching as here)
-    raise SystemExit(f"missing {simf}: run plots/fig5_per_seed.py 46 28,35,16,39,45 first")
+    raise SystemExit(f"missing {simf}: run plots/fig5_per_seed.py {K_REP} {','.join(map(str, PAPER))} first")
 sim = pd.read_csv(simf)
 for s in SEEDS:
     sub = sim[sim.seed == s]; assert all(match46[s][i] == m for i, m in zip(sub.archetype0, sub.matched)), s
@@ -124,8 +129,8 @@ for a, lab in PAPER.items():
                          yeo7_profile_r=np.corrcoef(m0, ms)[0, 1], dominant_net_seed0=NETS[m0.argmax()],
                          dominant_net=NETS[ms.argmax()], same_dominant_net=m0.argmax() == ms.argmax(),
                          **{f"yeo_{n}": v for n, v in zip(NSHORT, ms)}))
-A = pd.DataFrame(rows); A.to_csv(OUT / "K46_paper_archetypes_alignment.csv", index=False)
-sim.to_csv(OUT / "K46_all_archetypes_alignment.csv", index=False)
+A = pd.DataFrame(rows); A.to_csv(OUT / f"K{K_REP}_paper_archetypes_alignment.csv", index=False)
+sim.to_csv(OUT / f"K{K_REP}_all_archetypes_alignment.csv", index=False)
 o = A[A.seed > 0]
 say(o.groupby(["paper_label", "archetype_seed0"], sort=False).agg(
     map_r_median=("map_r", "median"), map_r_min=("map_r", "min"), recovered=("recovered", "sum"),
@@ -134,7 +139,7 @@ say(o.groupby(["paper_label", "archetype_seed0"], sort=False).agg(
 say("(recovered / same_net = out of 9 seeds; recovered = matched map r >= 0.9)")
 say("Failures (map r < 0.9):"); say(o[~o.recovered][["paper_label", "archetype_seed0", "seed", "map_r", "best_other_map_r", "dominant_net"]].round(3).to_string(index=False))
 allK = sim[sim.seed > 0]
-say(f"All 46 archetypes, seeds 1-9: {np.mean(allK.map_r >= REP_R):.0%} of matches have map r >= 0.9; median {allK.map_r.median():.3f}")
+say(f"All {K_REP} archetypes, seeds 1-9: {np.mean(allK.map_r >= REP_R):.0%} of matches have map r >= 0.9; median {allK.map_r.median():.3f}")
 
 # ---------------------------------------------------------------- 2. held-out top-5 stability
 say(""); say("=" * 100); say("2. Stability of each seed's own held-out top-5 selection"); say("=" * 100)
@@ -154,8 +159,8 @@ def topm_runs(mode, K):
 
 
 ALL_SUM, STAB = [], {}
-for mode, K in [("spatial", 46), ("spatial", 51), ("temporal", 14)]:
-    M, F, match, R = (M46, None, match46, R46) if K == 46 else load(mode, K)
+for mode, K in [("spatial", K_REP), ("spatial", 51), ("temporal", 14)]:
+    M, F, match, R = (M46, None, match46, R46) if K == K_REP else load(mode, K)
     inv = {s: {b: a for a, b in match[s].items()} for s in SEEDS}
     rec = {s: {a: R[s][a, b] >= REP_R for a, b in match[s].items()} for s in SEEDS}
     fr = []
@@ -165,7 +170,8 @@ for mode, K in [("spatial", 46), ("spatial", 51), ("temporal", 14)]:
         fr.append(d)
     fr = pd.concat(fr)
     if mode == "spatial":  # same mapping as hsummary's selection_by_seed.csv
-        chk = pd.read_csv(paths.heldout_everyk("spatial") / "K46_top5.csv") if K == 46 else None
+        chkf = paths.heldout_everyk("spatial") / f"K{K}_top5.csv"   # written by hk_merge.py for K=46 only
+        chk = pd.read_csv(chkf) if K == K_REP and chkf.exists() else None
         if chk is not None:
             p = fr.pivot_table(index=["archetype0", "condition"], columns="seed", values="selection_frequency", fill_value=0)
             for _, r in chk.iterrows():
@@ -205,7 +211,7 @@ for mode, K in [("spatial", 46), ("spatial", 51), ("temporal", 14)]:
         sf = pd.DataFrame(dict(archetype0=cnt.index, n_seeds_in_top5=cnt.values))
         sf["mean_split_selection_freq"] = sf.archetype0.map(meanfreq)
         sf["seeds_recovered_r09"] = [sum(rec[s][a] for s in SEEDS) for a in sf.archetype0]
-        if K == 46: sf["paper_label"] = sf.archetype0.map(PAPER).fillna("")
+        if K == K_REP: sf["paper_label"] = sf.archetype0.map(PAPER).fillna("")
         sf.insert(0, "condition", c); sf.insert(0, "K", K); sf.insert(0, "analysis", mode)
         sf.sort_values(["n_seeds_in_top5", "mean_split_selection_freq"], ascending=False).to_csv(OUT / f"{mode}_K{K}_{c}_top5_selection_frequency.csv", index=False)
         pd.DataFrame(J, index=SEEDS, columns=SEEDS).to_csv(OUT / f"{mode}_K{K}_{c}_top5_jaccard_pairwise.csv")
@@ -267,7 +273,7 @@ def heat(ax, Mx, rl, cl, title, vmin=0, vmax=1, fmt="{:.2f}", cmap="viridis", ba
     ax.set_title(title, fontsize=11, pad=6); return im
 
 
-# Fig A: K=46 paper archetypes
+# Fig A: K=K_REP paper archetypes
 lab = [f"{l} (#{a})" for a, l in PAPER.items()]
 fig = plt.figure(figsize=(17.5, 5.2)); gs = fig.add_gridspec(1, 4, width_ratios=[1, 1, 1, 0.9], wspace=0.28)
 for k, (col, t) in enumerate([("map_r", "Spatial map r (matched)"), ("timecourse_r", "Time-course r (scan-wise, Fisher-z mean)"),
@@ -291,13 +297,13 @@ ax.set_title("Yeo-7 composition, seed 0\n(text: dominant net mean\u00b1SD over 1
 for n in range(7): ax.bar(0, 0, color=NCOL[n], label=NSHORT[n])
 ax.legend(ncol=4, fontsize=7.5, loc="upper center", bbox_to_anchor=(0.5, -0.17), frameon=False)
 fig.colorbar(im, ax=fig.axes[:3], fraction=0.015, pad=0.01)
-fig.suptitle("K=46 paper archetypes across nine further initialisations (Hungarian-matched to seed 0; bold = map r < 0.9, i.e. not recovered)",
+fig.suptitle(f"K={K_REP} paper archetypes across nine further initialisations (Hungarian-matched to seed 0; bold = map r < 0.9, i.e. not recovered)",
              fontsize=12.5, fontweight="bold", y=1.02)
-for e in ("png", "pdf"): fig.savefig(OUT / f"K46_paper_archetypes_alignment.{e}", dpi=220 if e == "png" else None, bbox_inches="tight")
+for e in ("png", "pdf"): fig.savefig(OUT / f"K{K_REP}_paper_archetypes_alignment.{e}", dpi=220 if e == "png" else None, bbox_inches="tight")
 plt.close(fig)
 
 # Fig B: top-5 overlap summary per (mode, K)
-for mode, K in [("spatial", 46), ("spatial", 51), ("temporal", 14)]:
+for mode, K in [("spatial", K_REP), ("spatial", 51), ("temporal", 14)]:
     ncol = 3 if mode == "spatial" else 2
     fig, axs = plt.subplots(3, ncol, figsize=(6.2 * ncol, 12), gridspec_kw=dict(width_ratios=[1.5, 1, 1.15][:ncol]), squeeze=False)
     for ri, c in enumerate(CONDS):
@@ -309,7 +315,7 @@ for mode, K in [("spatial", 46), ("spatial", 51), ("temporal", 14)]:
             for s in SEEDS:
                 if a in st["top"][s]: ax.add_patch(plt.Rectangle((s - 0.5, i - 0.5), 1, 1, fill=False, ec="#E4572E", lw=2))
                 if not st["rec"][s][a]: ax.text(s, i, "\u00d7", ha="center", va="center", color="0.4", fontsize=9)
-        lab = [f"#{a}" + (f" {PAPER[a]}" if K == 46 and a in PAPER else "") + f"  ({cnt[a]}/10)" for a in ids]
+        lab = [f"#{a}" + (f" {PAPER[a]}" if K == K_REP and a in PAPER else "") + f"  ({cnt[a]}/10)" for a in ids]
         ax.set_yticks(range(len(ids))); ax.set_yticklabels(lab, fontsize=8.5); ax.set_xticks(SEEDS); ax.set_xlabel("seed")
         ax.set_title(f"{c}: split-level selection freq (blue); orange box = in seed's top-5", fontsize=10)
         ax = axs[ri, 1]; pj = st["J"][np.triu_indices(10, 1)]

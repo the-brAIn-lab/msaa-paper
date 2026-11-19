@@ -86,24 +86,24 @@ can be overridden with flags (`--help` lists them).
 | Fig 4A/B (10-seed held-out top-m, per condition and in the one-axis layout), Fig 4D (temporal matched retained fraction, 25/50/70 %), full-model held-out accuracy vs K (run after the matched-fraction section below) | `python plots/fig4_heldout_panels.py` |
 | Fig 4C and S01: spatial - temporal held-out top-m at the 15 exactly matched K/D ratios (m = 1-100), mean of seeds and number of seeds with spatial > temporal; needs `heldout-highm-results/` (step `highm`) | `python plots/fig4c_matched_ratio_heatmaps.py` |
 | Supplement: complete held-out spatial top-m landscape over K x m (accuracy and retained fraction; m = 1-50, K = 10-700 in steps of 10); needs `heldout-highm-landscape-results/` (step `landscape`) | `python plots/spatial_topm_landscape.py` |
-| K=46 per-seed matching to seed 0, map and time-course r for every archetype (needed by the K=46 stability script); also draws one M0-M4 page per seed | `python plots/loadx.py` (once), then `python plots/fig5_per_seed.py 46 28,35,16,39,45` |
+| K=50 per-seed matching to seed 0, map and time-course r for every archetype (needed by the K=50 stability script); also draws one M0-M4 page per seed | `python plots/loadx.py` (once), then `python plots/fig5_per_seed.py 50 28,35,16,39,45` |
 | Top-5 vs top-10 selection stability across the K neighbourhood; M0-M4 top-5 vs top-10 | `python plots/topm_stability_neighbourhood.py 45,46,47,48,49,50,51,52,53,54,55` |
-| M0-M4 crosswalk and K=46 supplementary table (run after the line above) | `python k46_stability/make_supp_tables.py` |
-| K=46 paper archetypes (M0-M4) across seeds: map r, time-course r, Yeo-7 r, recovered; top-5 overlap (run after `fig5_per_seed.py 46`) | `python k46_stability/k46_cross_seed_stability.py` |
-| Raw top-5 vs top-10 nesting check (checks the S05/S06 selection tables; see `DEFINITIONS.md`) | `python k46_stability/nesting_check.py` |
-| Compact M0-M4 summary across seeds (map r, temporal profile r, Yeo-7 r, recovered at r >= 0.9; run after the K=46 stability script) | `python k46_stability/m0m4_summary.py` |
+| M0-M4 crosswalk and K=50 supplementary table (run after the line above) | `python k50_stability/make_supp_tables.py` |
+| K=50 paper archetypes (M0-M4) across seeds: map r, time-course r, Yeo-7 r, recovered; top-5 overlap (run after `fig5_per_seed.py 50`) | `python k50_stability/k50_cross_seed_stability.py` |
+| Raw top-5 vs top-10 nesting check (checks the S05/S06 selection tables; see `DEFINITIONS.md`) | `python k50_stability/nesting_check.py` |
+| Compact M0-M4 summary across seeds (map r, temporal profile r, Yeo-7 r, recovered at r >= 0.9; run after the K=50 stability script) | `python k50_stability/m0m4_summary.py` |
 | Temporal K=14 supplement: accumulation, generator-anchor masking, motifs at higher K (run the revision_10a and revision_10c notebooks first) | `python plots/k14_supplement.py` |
 
 Run them from this folder, or prefix each path with `analysis/08_multiseed_stability/`.
 
 `DEFINITIONS.md` defines every selection-stability metric in these tables: recovery, the Hungarian
 cost, recovery-aware labels, consensus sets, chance-corrected Jaccard and the averaging order.
-- The paper's K=46 archetypes are M0-M4 = #28, 35, 16, 39, 45 (seed-0 ids;
-  `src/msaa_pipeline/paper_archetypes.py`). `k46_cross_seed_stability.py` uses them by
+- The paper's K=50 archetypes are M0-M4 = #28, 39, 16, 37, 49 (seed-0 ids;
+  `src/msaa_pipeline/paper_archetypes.py`). `k50_cross_seed_stability.py` uses them by
   default; set `PAPER_SET=28,35,37,31,39` (or any list) to check another set, e.g. the
   submitted one.
-- `fig5_per_seed.py` at K=46 writes the per-seed similarity table (including the
-  time-course r) that `k46_cross_seed_stability.py` reads and checks its matching against.
+- `fig5_per_seed.py` at K=50 writes the per-seed similarity table (including the
+  time-course r) that `k50_cross_seed_stability.py` reads and checks its matching against.
 
 To make figures from a finished run somewhere else (for example results copied from a
 cluster), point the scripts at that run root:

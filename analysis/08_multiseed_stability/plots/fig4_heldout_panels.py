@@ -41,6 +41,8 @@ plt.rcParams.update({"axes.linewidth": 0.6, "xtick.major.width": 0.6, "ytick.maj
 ap = argparse.ArgumentParser()
 ap.add_argument("--mf", default=None)
 ap.add_argument("--out", default=None)
+ap.add_argument("--mark-k", type=int, default=None,
+                help="draw a thin dashed line at this spatial K on panel A (the representative model, e.g. 50)")
 a = ap.parse_args()
 MF = Path(a.mf or paths.OUT / "matched_fraction" / "aggregate")
 OUT = Path(a.out or paths.OUT / "fig4_heldout_panels"); OUT.mkdir(parents=True, exist_ok=True)
@@ -85,6 +87,8 @@ def topm_panel(at, ms, name, letter):
             ax.fill_between(x.K, x["mean"] - x.sd, x["mean"] + x.sd, color=col, alpha=0.25, lw=0)
             ax.plot(x.K, x["mean"], color=col, lw=1.0, label=f"top-{m}")
         ax.axhline(CHANCE, color="0.5", ls="--", lw=0.6)
+        if at == "spatial" and a.mark_k:   # representative model used for the motif analyses
+            ax.axvline(a.mark_k, color="0.6", ls=(0, (3, 2)), lw=0.6, zorder=0.5)
         ax.set_title(LABEL[c], fontsize=7.5, pad=2)
         style(ax, at)
         ax.legend(frameon=False, fontsize=6, loc="upper right")

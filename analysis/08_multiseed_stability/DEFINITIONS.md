@@ -1,6 +1,6 @@
 # Selection-stability metrics: definitions and checks
 
-This file defines the quantities in the multi-seed selection-stability outputs: the K=46 tables,
+This file defines the quantities in the multi-seed selection-stability outputs: the K=50 tables,
 the top-5 vs top-10 neighbourhood summary and the M0-M4 supplementary table. Everything here is
 spatial participant-held-out selection on the every-K, 10-seed run. Fit seeds are 0-9, and seed 0
 is the reference (canonical) fit.
@@ -9,10 +9,10 @@ Scripts (in this folder):
 
 | Script | Output folder (under `outputs/multiseed_stability/`) |
 |---|---|
-| `k46_stability/nesting_check.py` | `nesting_check/` |
-| `k46_stability/k46_cross_seed_stability.py` | `k46_cross_seed_stability/` |
+| `k50_stability/nesting_check.py` | `nesting_check/` |
+| `k50_stability/k50_cross_seed_stability.py` | `k50_cross_seed_stability/` |
 | `plots/topm_stability_neighbourhood.py` | `topm_stability_neighbourhood/` |
-| `k46_stability/make_supp_tables.py` | `k46_supp_tables/` |
+| `k50_stability/make_supp_tables.py` | `k50_supp_tables/` |
 
 ## 1. Raw nesting check (before consensus and before alignment)
 
@@ -40,7 +40,7 @@ This gives 20 splits x 2 directions = 40 rankings per K x condition x seed.
 **b. Hungarian matching cost.** For each K and each seed s, the cost matrix is -r, where r is the
 Pearson correlation between the seed-0 and seed-s spatial maps. Each map is the subject-mean map
 (Smean) of one archetype, a 700-node vector. The match is a one-to-one assignment over all K
-archetypes (`scipy.optimize.linear_sum_assignment`). For the M0-M4 motifs at K != 46, all 46 K=46
+archetypes (`scipy.optimize.linear_sum_assignment`). For the M0-M4 motifs at K != 50, all 50 K=50
 seed-0 maps are matched against that fit's K maps, with the matrix padded to square.
 
 **c. Recovery.** An archetype counts as recovered in seed s when its Hungarian partner's map
@@ -77,7 +77,7 @@ compared, including the A->B / B->A pair from the same split.
   appears in the seed's consensus top-m.
 - *Selected but not recovered* (`selected_not_recovered`): the number of seeds in which the
   motif's forced partner (r < 0.90) appears in the consensus top-m. These are least-bad pairings,
-  not genuine recoveries. In the K=46 summary across all archetypes, it counts (seed 1-9, pick)
+  not genuine recoveries. In the K=50 summary across all archetypes, it counts (seed 1-9, pick)
   occurrences whose Hungarian partner has r < 0.90, so its maximum is 9 x m.
 - *Selection given recovery*: selected & recovered divided by recovered seeds, with seed 0
   included (out of 10).
@@ -103,29 +103,35 @@ over the set. The seed-to-seed agreement is the Pearson r between these 7-vector
 
 ## 4. M0-M4 crosswalk
 
-M0-M4 are the only named K=46 motifs. They were chosen by participant-held-out top-5 selection
-frequency pooled across the 10 fit seeds, as stated in the paper's Methods:
+M0-M4 are the only named motifs. They come from the representative K=50 spatial across-condition
+fit (the paper used K=46 until 19 Nov 2026; that set is kept below for the record). They were
+chosen by participant-held-out top-5 selection frequency pooled across the 10 fit seeds, as stated
+in the paper's Methods:
 
 - For each archetype and condition, selection frequency is the fraction of the 40 cross-fitted
   rankings (20 outer splits x 2 directions) in which it appears in the top 5.
 - Frequencies are averaged over fit seeds 0-9 after aligning each seed to seed 0 by Hungarian
   matching of spatial maps (Sec. 2). A seed that does not recover a motif contributes the
   frequency of its forced match.
-- The five highest-frequency archetypes are kept after excluding canonical 31, which was not
-  reproducibly recovered (matched map r < 0.90 in 5 of 9 seeds). The same five result whether
-  frequency is ranked in intact alone, intact + word-scrambled, or all conditions.
+- Each archetype is scored by its highest 10-seed mean frequency over the three conditions, and the
+  five highest are kept after excluding archetypes not reproducibly recovered across seeds. At
+  K=50 that excludes canonical 31 (recovered, matched map r >= 0.90, in only 5 of 9 seeds).
+  K=50 ranking: 28 .995 (word), 16 .885 (intact), 39 .698 (word), 49 .622 (intact),
+  37 .508 (intact); next 36 .460, 31 .393 (excluded). Source:
+  `heldout-everyk-spatial-all-results/selection_by_seed.csv`.
 - The motifs are displayed from, and numbered by, the seed-0 fit.
 
 The ids are defined once in `src/msaa_pipeline/paper_archetypes.py`.
 
-| Motif | Canonical id (seed 0, 0-based) | Legacy id (`reference_outputs/legacy_full/`) | Legacy label | In the originally submitted figure set |
-|---|---|---|---|---|
-| M0 | 28 | 4 | A4 | yes |
-| M1 | 35 | 5 | A5 | yes |
-| M2 | 16 | 7 | A7 | no |
-| M3 | 39 | 8 | A8 | yes |
-| M4 | 45 | 9 | A9 | no |
+| Motif | K=50 canonical id (seed 0, 0-based) | K=46 canonical id of the same map | Note |
+|---|---|---|---|
+| M0 | 28 | 28 | same map (r >= 0.999) |
+| M1 | 39 | 35 (K=46 M1) | same map |
+| M2 | 16 | 16 (K=46 M2) | same map |
+| M3 | 37 | 37 (legacy A6, in the originally submitted set) | new motif; replaces K=46 M3 (K=46 id 39 = K=50 id 36) |
+| M4 | 49 | 45 (K=46 M4) | same map |
 
-The originally submitted set was A4, A5, A6, A12, A8 (canonical 28, 35, 37, 31, 39).
-`make_supp_tables.py` writes this crosswalk with each motif's dominant Yeo-7 networks
-(`k46_supp_tables/M0M4_crosswalk.csv`), along with the K=46 per-motif table defined in Sec. 2h.
+Previous K=46 set: canonical 28, 35, 16, 39, 45 = legacy A4, A5, A7, A8, A9. The originally
+submitted set was A4, A5, A6, A12, A8 (K=46 canonical 28, 35, 37, 31, 39).
+`make_supp_tables.py` writes the crosswalk with each motif's dominant Yeo-7 networks
+(`k50_supp_tables/M0M4_crosswalk.csv`), along with the K=50 per-motif table defined in Sec. 2h.

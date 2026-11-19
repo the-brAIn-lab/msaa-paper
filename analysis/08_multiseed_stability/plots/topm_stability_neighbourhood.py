@@ -16,11 +16,11 @@ directions; each split ranks on 18 participants, is scored on the other 18):
                               seed-0 archetype has map r < 0.9 (max 9*m); frac_ = / (9*m)
   RECOVERY-AWARE (main): a pick whose Hungarian match to seed 0 has r < 0.9 gets a unique seed-specific label (cannot count as
   overlap); *_forced columns use the forced Hungarian label (upper bound). Yeo-7 uses the actual selected maps.
-  M0-M4 (K=46 seed-0 #28,#35,#16,#39,#45): forced label in each (K, seed) = Hungarian of all 46 K=46 seed-0 maps vs that
-  fit's maps; recovered = r >= 0.9 (M0M4_selection_by_K.csv: recovered / selected&recovered / selected-forced counts).
+  M0-M4 (K=50 seed-0 #28,#39,#16,#37,#49, src/msaa_pipeline/paper_archetypes.py): forced label in each (K, seed) =
+  Hungarian of all 50 K=50 seed-0 maps vs that fit's maps; recovered = r >= 0.9 (M0M4_selection_by_K.csv: recovered / selected&recovered / selected-forced counts).
 
 Usage: python topm_stability_neighbourhood.py K[,K...] [--nodes NODES.csv] [--heldout DIR] [--out OUTDIR]
-Defaults (paths.py): every seed's compact spatial fits from seeds/ (K=46 always needed for M0-M4),
+Defaults (paths.py): every seed's compact spatial fits from seeds/ (K=50 always needed for M0-M4),
 heldout-everyk-spatial-all-results/, OUTDIR outputs/multiseed_stability/topm_stability_neighbourhood.
 """
 import argparse
@@ -96,8 +96,13 @@ KS = [int(k) for k in a.ks.split(",")]
 SEEDS = list(range(10)); CONDS = ["intact", "word", "rest"]; MS = [5, 10]; REP_R = 0.9
 NETS = ["Visual", "Somatomotor", "Dorsal attention", "Ventral attention", "Limbic", "Frontoparietal", "Default mode"]
 NSHORT = ["Vis", "SomMot", "DorsAttn", "VentAttn", "Limbic", "FP", "DMN"]
-MOT = {"M0": 28, "M1": 35, "M2": 16, "M3": 39, "M4": 45}       # K=46 seed-0 ids
-LEG = {"M0": "A4", "M1": "A5", "M2": "A7", "M3": "A8", "M4": "A9"}
+sys.path.insert(0, str(paths.REPO / "src"))
+from msaa_pipeline.paper_archetypes import IDS as PAPER_IDS, LABELS as PAPER_LABELS, PAPER_K  # noqa: E402
+REF_K = PAPER_K                                                 # representative K the motifs are defined at
+MOT = dict(zip(PAPER_LABELS, PAPER_IDS["canonical"]))            # K=50 seed-0 ids: 28, 39, 16, 37, 49
+K46_ID = {"M0": 28, "M1": 35, "M2": 16, "M3": 37, "M4": 45}       # K=46 seed-0 id of the same map (crosswalk)
+LEG = {"M0": "A4", "M1": "A5", "M2": "A7", "M3": "A6", "M4": "A9"}  # legacy label of that K=46 map
+# previous K=46 set (REF_K 46): MOT {M0: 28, M1: 35, M2: 16, M3: 39, M4: 45}, LEG {.. M3: A8 ..}
 nodes = pd.read_csv(a.nodes)
 nodes = nodes.drop_duplicates("node").set_index("node").sort_index()["network"].to_numpy()
 HE = Path(a.heldout)
@@ -144,7 +149,7 @@ else:
     FREQ = pd.concat([pd.read_csv(HE / f"seed{s:02d}_heldout_archetype_selection_stability.csv").assign(seed=s) for s in SEEDS])
     FREQ = FREQ[FREQ.K.isin(KS) & FREQ.top_m.isin(MS)]
 
-    M46 = maps(46); MOTIDX = list(MOT.values())
+    M46 = maps(REF_K); MOTIDX = list(MOT.values())   # M46 = the reference-K seed-0 maps (name kept)
     rows, mrows, sets_rows, motrows = [], [], [], []
     for K in KS:
         M = maps(K); match, R, inv, rec, mfor = {}, {}, {}, {}, {}
@@ -152,7 +157,7 @@ else:
             R[s] = rowcorr(M[0], M[s]); i, j = linear_sum_assignment(-R[s]); match[s] = dict(zip(i.tolist(), j.tolist()))
             inv[s] = {b: a for a, b in match[s].items()}
             rec[s] = {a: (s == 0) or R[s][a, b] >= REP_R for a, b in match[s].items()}
-            # forced label of M0-M4 in (K, seed): Hungarian of all 46 K=46 seed-0 maps vs this fit's K maps (padded square)
+            # forced label of M0-M4 in (K, seed): Hungarian of all REF_K reference-K seed-0 maps vs this fit's K maps (padded square)
             rm = rowcorr(M46[0], M[s]); n = max(rm.shape); P = np.full((n, n), -1.0); P[:rm.shape[0], :rm.shape[1]] = rm
             i, j = linear_sum_assignment(-P); hm = dict(zip(i.tolist(), j.tolist()))
             mfor[s] = [(hm[a], float(rm[a, hm[a]]) if hm[a] < rm.shape[1] else np.nan) for a in MOTIDX]
@@ -207,15 +212,15 @@ else:
                     sel = [s for s in SEEDS if mfor[s][mi][0] in own[s]]
                     fq = f.set_index(["seed", "archetype"]).selection_frequency
                     sf = [fq.get((s, mfor[s][mi][0]), 0.0) for s in ok]
-                    motrows.append(dict(K=K, condition=c, top_m=m, motif=mlab, legacy=LEG[mlab], k46_seed0_id=MOT[mlab],
-                                        n_recovered=len(ok), n_selected_and_recovered=len(set(sel) & set(ok)),
+                    motrows.append(dict(K=K, condition=c, top_m=m, motif=mlab, legacy=LEG[mlab], seed0_id=MOT[mlab], ref_K=REF_K,
+                                        k46_seed0_id=K46_ID[mlab], n_recovered=len(ok), n_selected_and_recovered=len(set(sel) & set(ok)),
                                         n_selected_forced_r_lt_090=len(set(sel) - set(ok)),
                                         frac_selected_given_recovered=len(set(sel) & set(ok)) / len(ok) if ok else np.nan,
                                         mean_split_selection_freq_given_recovered=np.mean(sf) if ok else np.nan,
                                         forced_r_by_seed=[round(mfor[s][mi][1], 3) for s in SEEDS]))
         for i, mlab in enumerate(MOT):
             rs = np.array([mfor[s][i][1] for s in SEEDS])
-            mrows.append(dict(K=K, motif=mlab, legacy=LEG[mlab], k46_seed0_id=MOT[mlab], forced_match_seed0=mfor[0][i][0],
+            mrows.append(dict(K=K, motif=mlab, legacy=LEG[mlab], seed0_id=MOT[mlab], ref_K=REF_K, k46_seed0_id=K46_ID[mlab], forced_match_seed0=mfor[0][i][0],
                               r_seed0=rs[0], r_median=np.median(rs), r_min=rs.min(), seeds_recovered=int((rs >= REP_R).sum()),
                               r_by_seed=[round(x, 3) for x in rs]))
 
@@ -267,8 +272,8 @@ for m in MS:
         fig.savefig(OUT / f"topm_stability_neighbourhood_top{m}.{e}", dpi=600, bbox_inches="tight", pad_inches=0.02)
     plt.close(fig)
 
-# S06: M0-M4 per-motif selection at K=46: solid = selected & recovered (r >= .9), hatched = forced label selected (r < .9)
-if 46 in KS:
+# S06: M0-M4 per-motif selection at K=REF_K: solid = selected & recovered (r >= .9), hatched = forced label selected (r < .9)
+if REF_K in KS:
     from matplotlib.patches import Patch
     from matplotlib.lines import Line2D
     COL = {5: "#4C9BE8", 10: "#E4572E"}
@@ -276,7 +281,7 @@ if 46 in KS:
     fig, axs = plt.subplots(3, 1, figsize=(5.0, 3.9), sharex=True, layout="constrained")
     fig.get_layout_engine().set(w_pad=0.02, h_pad=0.02, hspace=0.04)
     for ci, c in enumerate(CONDS):
-        ax = axs[ci]; d = MT[(MT.K == 46) & (MT.condition == c)]; x = np.arange(5)
+        ax = axs[ci]; d = MT[(MT.K == REF_K) & (MT.condition == c)]; x = np.arange(5)
         nrec = d[d.top_m == 5].set_index("motif").loc[list(MOT)].n_recovered.to_numpy()
         for o, m in [(-0.2, 5), (0.2, 10)]:
             col = COL[m]
@@ -295,9 +300,9 @@ if 46 in KS:
     h = [Patch(color=COL[5], label="Top-5"), Patch(color=COL[10], label="Top-10"),
          Patch(facecolor="white", edgecolor="0.4", hatch="////", lw=0.6, label="Selected, not recovered (r < 0.90)"),
          Line2D([], [], color="k", ls="--", lw=0.8, label="Seeds with motif recovered")]
-    fig.suptitle("K = 46: M0\u2013M4 in each seed's own top-5 and top-10", fontsize=9, fontweight="bold")
+    fig.suptitle(f"K = {REF_K}: M0\u2013M4 in each seed's own top-5 and top-10", fontsize=9, fontweight="bold")
     fig.legend(handles=h, frameon=False, fontsize=FS_TICK, loc="outside lower center", ncol=2, handlelength=1.6,
                handleheight=0.9, columnspacing=1.2)
-    for e in ("png", "pdf"): fig.savefig(OUT / f"M0M4_top5_vs_top10_K46.{e}", dpi=600, bbox_inches="tight", pad_inches=0.02)
+    for e in ("png", "pdf"): fig.savefig(OUT / f"M0M4_top5_vs_top10_K{REF_K}.{e}", dpi=600, bbox_inches="tight", pad_inches=0.02)
     plt.close(fig)
 print("figures:", ", ".join(sorted(p.name for p in OUT.glob("*.png"))))

@@ -9,7 +9,7 @@ If RUN_ROOT is not the repo, the code folders (src, helpers, hypertools, configs
 into it, because the notebooks use paths relative to the run root.
 
 Nothing here refits or re-decodes: each step only reads result tables (and, for Figure 5,
-the K = 46 fit) and draws. Intermediate figure files go to RUN_ROOT/outputs/; the bundle
+the K = 50 fit) and draws. Intermediate figure files go to RUN_ROOT/outputs/; the bundle
 (main-png/, main-pdf/, supplement-png/, supplement-pdf/, tables/, README.txt)
 goes to BUNDLE_DIR.
 """
@@ -35,15 +35,16 @@ STEPS = {
     "fig3": [["nb:paper/main_figures/paper_figure03_PCA_MSAA_simulation_benchmark.ipynb"]],
     "fig4": [[f"{MS}/plots/fig4_heldout_panels.py"]],
     "fig4c": [[f"{MS}/plots/fig4c_matched_ratio_heatmaps.py"]],
-    "fig5": [["nb:paper/main_figures/paper_figure05_selected_K46_archetypes.ipynb"]],
+    "fig5": [["nb:paper/main_figures/paper_figure05_selected_K50_archetypes.ipynb"]],
     "fig6": [["nb:paper/main_figures/paper_figure06_support_and_robustness.ipynb"]],
+    "fig8": [["paper/main_figures/figure08_support_robustness.py"]],   # Fig 6 panels A-D plus E (retention) and F (edge trim)
     "s02": [[f"{MS}/plots/k14_supplement.py"]],
     "s03": [[f"{MS}/matched_fraction/k14_local_contrast.py",
              "{root}/outputs/multiseed_stability/matched_fraction/aggregate",
              "{root}/outputs/multiseed_stability/matched_fraction/k14_local_contrast"]],
-    "s04": [[f"{MS}/k46_stability/m0m4_summary.py"]],
+    "s04": [[f"{MS}/k50_stability/m0m4_summary.py"]],
     "s05": [[f"{MS}/plots/topm_stability_neighbourhood.py", K_NEIGHBOURHOOD, "--plot-only"],
-            [f"{MS}/k46_stability/make_supp_tables.py"]],
+            [f"{MS}/k50_stability/make_supp_tables.py"]],
     "s07": [["paper/supplement/supp_atlas_condition_plot.py", "--root", "{root}"]],
     "s10": [["nb:paper/supplement/supp_05_edge_trim_diagnostics.ipynb"]],
     "s11": [["paper/supplement/supp_four_condition_plot.py",
@@ -53,7 +54,7 @@ STEPS = {
 }
 # S07 needs the Figure 5 notebook's audit tables; S04/S05 tables need nothing else drawn first.
 ORDER = ["fig2", "fig3", "fig4", "fig4c", "fig5", "fig6", "s02", "s03", "s04", "s05", "s07", "s10", "s11",
-         "s12", "s13"]
+         "s12", "s13", "fig8"]   # fig8 reads the S10 edge-trim summary
 
 O, M = "outputs", "outputs/multiseed_stability"
 # bundle file (without extension) <- figure written by the step (without extension), relative to RUN_ROOT
@@ -64,15 +65,16 @@ FIGURES = {
     "main/Figure4B_temporal_fixed_topm": f"{M}/fig4_heldout_panels/Fig4B_temporal_heldout_topm",
     "main/Figure4C_spatial_minus_temporal_matched_ratio": f"{M}/fig4c_matched_ratio_heatmaps/Fig4C_matched_ratio_heatmaps_intact",
     "main/Figure4D_temporal_matched_retained_fraction": f"{M}/fig4_heldout_panels/Fig4D_temporal_matched_fraction",
-    "main/Figure5_selected_spatial_motifs_M0-M4": "paper_figure_outputs/Figure5_selected_K46_archetypes",
+    "main/Figure5_selected_spatial_motifs_M0-M4": "paper_figure_outputs/Figure5_selected_K50_archetypes",
     "main/Figure6_motif_support_and_robustness": f"{O}/paper_figures/Figure6_selected_motif_support_robustness",
+    "main/Figure8_motif_support_and_robustness_A-F": f"{O}/paper_figures/Figure8_motif_support_and_robustness",
     "supplement/S01_spatial_minus_temporal_heatmaps_and_seed_consistency": f"{M}/fig4c_matched_ratio_heatmaps/FigS_matched_ratio_heatmaps_all_conditions",
     "supplement/S02_temporal_K14_accumulation_anchor_masking_higherK_splitting": f"{M}/k14_supplement/FigS_temporal_K14_accumulation_anchor_fragmentation",
     "supplement/S03_temporal_K12_14_16_seed_contrasts": f"{M}/matched_fraction/k14_local_contrast/per_seed_K12_14_16",
     "supplement/S04_M0-M4_cross_seed_stability": f"{M}/m0m4_summary/M0M4_stability_summary",
     "supplement/S05a_K45-55_selection_stability_top5": f"{M}/topm_stability_neighbourhood/topm_stability_neighbourhood_top5",
     "supplement/S05b_K45-55_selection_stability_top10": f"{M}/topm_stability_neighbourhood/topm_stability_neighbourhood_top10",
-    "supplement/S06_M0-M4_selected_and_recovered_top5_top10": f"{M}/topm_stability_neighbourhood/M0M4_top5_vs_top10_K46",
+    "supplement/S06_M0-M4_selected_and_recovered_top5_top10": f"{M}/topm_stability_neighbourhood/M0M4_top5_vs_top10_K50",
     "supplement/S07_atlas_mapping_audit": f"{O}/paper_supplement/Supplement_M0M4_atlas_mapping_audit",
     "supplement/S08_condition_contributions": f"{O}/paper_supplement/Supplement_M0M4_condition_contributions",
     "supplement/S09_full_model_accuracy_vs_K": f"{M}/fig4_heldout_panels/FigS_full_model_accuracy_vs_K",
@@ -95,17 +97,19 @@ TABLES = {
     "Figure6A_cross_seed_map_r_source.csv": f"{O}/paper_figures/Figure6_cross_seed_map_r_source.csv",
     "Figure6B_C_support_source.csv": "revision_05_archetype_interpretation_and_support/selected_archetype_support_by_independent_participant.csv",
     "Figure6D_S08_LOCO_map_r_source.csv": f"{O}/paper_figures/Figure6_loco_map_r_source.csv",
+    "Figure8E_K50_retention_source.csv": f"{O}/paper_figures/Figure8E_K50_retention_source.csv",
+    "Figure8F_K50_edge_trim_source.csv": f"{O}/paper_figures/Figure8F_K50_edge_trim_source.csv",
     "temporal_K14_anchor_masked_vs_unmasked.csv": f"{O}/temporal_compact_dictionary_K14_local/K14_anchor_masked_vs_unmasked.csv",
     "temporal_K14_local_contrast_delta14.csv": f"{M}/matched_fraction/k14_local_contrast/delta14_contrast.csv",
     "temporal_matched_fraction_seed_level.csv": f"{M}/matched_fraction/k14_local_contrast/seed_level_table.csv",
     "M0-M4_cross_seed_stability_summary.csv": f"{M}/m0m4_summary/M0M4_stability_summary.csv",
     "K45-55_selection_stability.csv": f"{M}/topm_stability_neighbourhood/topm_stability_neighbourhood.csv",
     "M0-M4_selection_by_K.csv": f"{M}/topm_stability_neighbourhood/M0M4_selection_by_K.csv",
-    "M0-M4_raw_ID_crosswalk.csv": f"{M}/k46_supp_tables/M0M4_crosswalk.csv",
-    "K46_M0-M4_supplementary_table.csv": f"{M}/k46_supp_tables/supp_table_K46_M0M4.csv",
+    "M0-M4_raw_ID_crosswalk.csv": f"{M}/k50_supp_tables/M0M4_crosswalk.csv",
+    "K50_M0-M4_supplementary_table.csv": f"{M}/k50_supp_tables/supp_table_K50_M0M4.csv",
     "S07_atlas_mapping_audit_summary.csv": "paper_figure_outputs/Figure5_HTFA_Yeo_mapping_audit_summary.csv",
     "S09_full_model_accuracy_source.csv": f"{M}/fig4_heldout_panels/FigS_full_model_accuracy_vs_K_source.csv",
-    "S10_edge_trim_source.csv": "msaa_edge_trim_sensitivity_K46_top5/edge_trim_accuracy_summary.csv",
+    "S10_edge_trim_source.csv": "msaa_edge_trim_sensitivity_K50_top5/edge_trim_accuracy_summary.csv",
     "S11_four_condition_msaa.csv": "four_condition_ratio_decoding_outputs/aa_full_summary_with_retention.csv",
     "S11_four_condition_pca.csv": "four_condition_ratio_decoding_outputs/pca_summary_with_retention.csv",
     "S11_four_condition_raw_htfa.csv": "four_condition_ratio_decoding_outputs/raw_htfa_summary.csv",
@@ -191,9 +195,9 @@ def main():
     env = dict(os.environ, MSAA_ROOT=str(root), MSAA_TIE_TOL=os.environ.get("MSAA_TIE_TOL", "1e-08"),
                PYTHONPATH=os.pathsep.join([str(REPO / "src"), os.environ.get("PYTHONPATH", "")]).rstrip(os.pathsep),
                MPLBACKEND="Agg")
-    # Figure 6 reads the K = 46 cross-seed alignment from the run root
+    # Figure 6 reads the K = 50 cross-seed alignment from the run root
     env.setdefault("MSAA_SEED_ALIGNMENT",
-                   str(root / "outputs/multiseed_stability/k46_cross_seed_stability/K46_paper_archetypes_alignment.csv"))
+                   str(root / "outputs/multiseed_stability/k50_cross_seed_stability/K50_paper_archetypes_alignment.csv"))
     link_code(root)
     if not a.no_draw:
         for s in steps:

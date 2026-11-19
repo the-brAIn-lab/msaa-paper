@@ -1,10 +1,12 @@
-"""The five K=46 spatial archetypes interpreted in the paper (M0-M4), in either numbering.
+"""The five K=50 spatial archetypes interpreted in the paper (M0-M4), in either numbering.
 
-M0-M4 are the five archetypes of the representative K=46 spatial across-condition fit that
+M0-M4 are the five archetypes of the representative K=50 spatial across-condition fit that
 the paper interprets. They were chosen by participant-held-out top-5 selection frequency
-averaged over the 10 fit seeds (each aligned to seed 0 by Hungarian matching), after
-excluding canonical 31, which was not reproducibly recovered across seeds; see
-analysis/08_multiseed_stability/DEFINITIONS.md Sec. 4. The ids below are seed-0 ids.
+averaged over the 10 fit seeds (each aligned to seed 0 by Hungarian matching), in the best
+condition, after excluding archetypes not reproducibly recovered across seeds (canonical 31,
+recovered in 5/9 seeds); see analysis/08_multiseed_stability/DEFINITIONS.md Sec. 4. The ids
+below are seed-0 ids. Ranking (10-seed mean frequency, best condition): 28 .995 word, 16 .885
+intact, 39 .698 word, 49 .622 intact, 37 .508 intact; next 36 .460, 31 .393 (excluded).
 Archetype numbers depend on how the fit was made:
 
   canonical  fits with frozen FurthestSum picks and no post-fit sort: scripts/run_parallel.py,
@@ -12,25 +14,30 @@ Archetype numbers depend on how the fit was made:
              used in the paper text and the multi-seed analysis.
   legacy     the original analysis outputs (reference_outputs/legacy_full/)
 
-A fit without recorded FurthestSum picks is treated as legacy. Legacy-style refits
-(run_pipeline.py --numbering legacy, or the mini-paper profile) sort archetypes after fitting
-but are not guaranteed to reproduce the legacy order; check them with
-scripts/compare_k46_archetypes.py.
+A fit without recorded FurthestSum picks is treated as legacy. There are no legacy K=50
+paper ids (the legacy outputs were interpreted at K=46), so a legacy K=50 fit is refused.
 
-The same five archetypes in both numberings (matched maps r >= 0.9999):
+  label  canonical K=50
+  M0     28
+  M1     39
+  M2     16
+  M3     37
+  M4     49
 
-  label  canonical  legacy
-  M0     28         4
-  M1     35         5
-  M2     16         7
-  M3     39         8
-  M4     45         9
+Earlier (K=46) set, kept for the record (matched maps r >= 0.9999 between numberings):
+
+  label  canonical K=46  legacy K=46   K=50 match
+  M0     28              4             28 (r >= 0.999)
+  M1     35              5             39
+  M2     16              7             16
+  M3     39              8             36 (dropped at K=50)
+  M4     45              9             49
 
 Usage in a notebook (run from the repo root):
 
     import sys; sys.path.insert(0, "src")
     from msaa_pipeline.paper_archetypes import paper_archetypes
-    SELECTED_ARCHETYPES, LABELS = paper_archetypes()          # reads the K=46 fit in msaa_flexible_outputs_npz/
+    SELECTED_ARCHETYPES, LABELS = paper_archetypes()          # reads the K=50 fit in msaa_flexible_outputs_npz/
     LABEL = dict(zip(SELECTED_ARCHETYPES, LABELS))
 """
 from __future__ import annotations
@@ -39,9 +46,11 @@ from pathlib import Path
 
 import numpy as np
 
-PAPER_K = 46
+PAPER_K = 50
 LABELS = ["M0", "M1", "M2", "M3", "M4"]
-IDS = {"canonical": [28, 35, 16, 39, 45], "legacy": [4, 5, 7, 8, 9]}
+IDS = {"canonical": [28, 39, 16, 37, 49]}
+# K=46 set (previous representative model): canonical [28, 35, 16, 39, 45], legacy [4, 5, 7, 8, 9]
+IDS_K46 = {"canonical": [28, 35, 16, 39, 45], "legacy": [4, 5, 7, 8, 9]}
 DEFAULT_FIT = Path("msaa_flexible_outputs_npz") / f"spatialAA_across_acrossCond_K{PAPER_K}.npz"
 
 
@@ -50,14 +59,17 @@ def numbering(fit_file: str | Path = DEFAULT_FIT) -> str:
     p = Path(fit_file)
     if not p.exists():
         raise FileNotFoundError(f"{p} not found: run the K={PAPER_K} spatial across fit first "
-                                "(scripts/run_parallel.py fit --jobs spatial_across --ks 46)")
+                                "(scripts/run_parallel.py fit --jobs spatial_across --ks 50)")
     with np.load(p, allow_pickle=True) as f:
         return "canonical" if "init_index" in f.files else "legacy"
 
 
 def paper_archetypes(fit_file: str | Path = DEFAULT_FIT) -> tuple[list[int], list[str]]:
     """(archetype ids in the fit's own numbering, labels M0-M4)."""
-    return list(IDS[numbering(fit_file)]), list(LABELS)
+    n = numbering(fit_file)
+    if n not in IDS:
+        raise ValueError(f"{fit_file}: no {n}-numbered M0-M4 ids at K={PAPER_K}; use a canonical (frozen-pick) fit")
+    return list(IDS[n]), list(LABELS)
 
 
 def label_map(fit_file: str | Path = DEFAULT_FIT) -> dict[int, str]:

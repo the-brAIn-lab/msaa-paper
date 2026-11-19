@@ -1,4 +1,4 @@
-"""Supplementary figures for the K=46 paper motifs M0-M4, in paper style.
+"""Supplementary figures for the K=50 paper motifs M0-M4, in paper style.
 
   atlas audit  Yeo-7 composition of each motif with all 700 HTFA nodes, only nodes whose centre lies
                inside the cortical atlas, and only nodes assigned with confidence >= 0.5, plus the
@@ -20,6 +20,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
+from msaa_pipeline.paper_archetypes import IDS as PAPER_IDS, LABELS as PAPER_LABELS, PAPER_K  # noqa: E402
+
 ap = argparse.ArgumentParser()
 ap.add_argument("--root", default=os.environ.get("MSAA_ROOT", str(Path(__file__).resolve().parents[2])))
 ap.add_argument("--out", default=None)
@@ -27,9 +31,9 @@ a = ap.parse_args()
 ROOT = Path(a.root)
 OUT = Path(a.out or ROOT / "outputs" / "paper_supplement"); OUT.mkdir(parents=True, exist_ok=True)
 FIG5 = ROOT / "paper_figure_outputs"
-CI = ROOT / "outputs" / "interpretation" / "condition_influence_and_seed_stability_K46"
+CI = ROOT / "outputs" / "interpretation" / f"condition_influence_and_seed_stability_K{PAPER_K}"
 
-M = {28: "M0", 35: "M1", 16: "M2", 39: "M3", 45: "M4"}      # seed-0 id -> paper name (see the crosswalk)
+M = dict(zip(PAPER_IDS["canonical"], PAPER_LABELS))      # seed-0 id -> paper name (K=50: 28, 39, 16, 37, 49; see the crosswalk)
 CONDS = [("intact", "Intact narrative"), ("word", "Word-scrambled"), ("rest", "Rest")]
 COLOR = {"intact": "#7B3294", "word": "#2CA25F", "rest": "#222222"}
 NETS = ["Visual", "Somatomotor", "Dorsal attention", "Ventral attention", "Limbic", "Frontoparietal", "Default mode"]

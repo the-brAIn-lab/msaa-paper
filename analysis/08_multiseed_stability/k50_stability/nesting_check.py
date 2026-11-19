@@ -81,7 +81,7 @@ for orient in ["spatial", "temporal"]:
     C = pd.DataFrame(cons_rows); allrows.append(C)
     say(f"[{orient}] CONSENSUS (after aggregation over 40 splits, not asserted): seed top-5 inside seed top-10 in "
         f"{int(C.consensus_top5_in_top10.sum())}/{len(C)} (K x cond x seed); max outside {C.n_top5_outside_top10.max()}")
-    for K in [46, 51, 14]:
+    for K in [46, 50, 51, 14]:   # 50 = the representative K (46 kept for the record)
         cc = C[C.K == K]
         if len(cc): say(f"   K={K}: {int(cc.consensus_top5_in_top10.sum())}/{len(cc)}  " + "; ".join(
             f"{r.condition} s{r.seed} {r.outside}" for r in cc[~cc.consensus_top5_in_top10].itertuples()))
