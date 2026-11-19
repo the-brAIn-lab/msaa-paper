@@ -1,8 +1,11 @@
 """The five K=46 spatial archetypes interpreted in the paper (M0-M4), in either numbering.
 
 M0-M4 are the five archetypes of the representative K=46 spatial across-condition fit that
-the paper interprets, chosen with participant-held-out top-5 selection. Archetype numbers
-depend on how the fit was made:
+the paper interprets. They were chosen by participant-held-out top-5 selection frequency
+averaged over the 10 fit seeds (each aligned to seed 0 by Hungarian matching), after
+excluding canonical 31, which was not reproducibly recovered across seeds; see
+analysis/08_multiseed_stability/DEFINITIONS.md Sec. 4. The ids below are seed-0 ids.
+Archetype numbers depend on how the fit was made:
 
   canonical  fits with frozen FurthestSum picks and no post-fit sort: scripts/run_parallel.py,
              and scripts/run_pipeline.py --profile full (make full-fit). This is the numbering

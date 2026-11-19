@@ -103,9 +103,20 @@ over the set. The seed-to-seed agreement is the Pearson r between these 7-vector
 
 ## 4. M0-M4 crosswalk
 
-M0-M4 are the only named K=46 motifs. They are the five archetypes of the seed-0 K=46 spatial
-across-condition fit in the intact held-out top-5 consensus set. The ids are defined once in
-`src/msaa_pipeline/paper_archetypes.py`.
+M0-M4 are the only named K=46 motifs. They were chosen by participant-held-out top-5 selection
+frequency pooled across the 10 fit seeds, as stated in the paper's Methods:
+
+- For each archetype and condition, selection frequency is the fraction of the 40 cross-fitted
+  rankings (20 outer splits x 2 directions) in which it appears in the top 5.
+- Frequencies are averaged over fit seeds 0-9 after aligning each seed to seed 0 by Hungarian
+  matching of spatial maps (Sec. 2). A seed that does not recover a motif contributes the
+  frequency of its forced match.
+- The five highest-frequency archetypes are kept after excluding canonical 31, which was not
+  reproducibly recovered (matched map r < 0.90 in 5 of 9 seeds). The same five result whether
+  frequency is ranked in intact alone, intact + word-scrambled, or all conditions.
+- The motifs are displayed from, and numbered by, the seed-0 fit.
+
+The ids are defined once in `src/msaa_pipeline/paper_archetypes.py`.
 
 | Motif | Canonical id (seed 0, 0-based) | Legacy id (`reference_outputs/legacy_full/`) | Legacy label | In the originally submitted figure set |
 |---|---|---|---|---|
