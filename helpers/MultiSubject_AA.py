@@ -1,4 +1,7 @@
 # multi_subject_aa.py
+# Python adaptation of the original multisubject archetypal analysis implementation of
+# Hinrich et al. (2016), "Archetypal analysis for modeling multisubject fMRI data",
+# IEEE J. Sel. Top. Signal Process. 10(7):1160-1171, doi:10.1109/JSTSP.2016.2595103.
 from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any, Dict, List, Optional, Tuple

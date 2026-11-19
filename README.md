@@ -43,3 +43,15 @@ data/                 input/ (the two HTFA .mat files) and reference/ (atlas); n
 ```
 
 The HTFA inputs themselves (raw fMRI to HTFA) are made outside this repository.
+
+## Source tables
+
+`paper/source_tables/` holds the exact tables behind every figure in the paper and supplement, with
+a README mapping each file to its figure.
+
+## License
+
+MIT; see `LICENSE`. The vendored `hypertools/` folder is from hypertools (Contextual Dynamics
+Laboratory) and keeps its own MIT license in `hypertools/LICENSE`; `hypertools/srm.py` keeps its
+Apache-2.0 header (Intel Corporation). `helpers/MultiSubject_AA.py` adapts the multisubject AA
+implementation of Hinrich et al. (2016), doi:10.1109/JSTSP.2016.2595103.
