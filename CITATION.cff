@@ -1,0 +1,52 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper (and the HTFA data deposit, DOI 10.5281/zenodo.24358585)."
+type: software
+title: "Sparse Distributed Archetypal Motifs Capture Shared Network Structure in Naturalistic fMRI"
+abstract: "Analysis code for multi-subject archetypal analysis (MS-AA) of naturalistic fMRI, from the HTFA inputs to the figures and source tables of the paper and supplement."
+authors:
+  - family-names: Oliver
+    given-names: Ben
+    affiliation: "Department of Computer Science, University of Montana"
+    orcid: "https://orcid.org/0009-0009-6425-6578"
+  - family-names: Shepherd
+    given-names: Alex
+    affiliation: "Department of Computer Science, University of Montana"
+  - family-names: Stone
+    given-names: Emily
+    affiliation: "Department of Mathematics, University of Montana"
+    orcid: "https://orcid.org/0000-0003-4979-895X"
+  - family-names: Owen
+    given-names: "Lucy L. W."
+    affiliation: "Department of Computer Science, University of Montana"
+    orcid: "https://orcid.org/0000-0003-1844-6011"
+repository-code: "https://github.com/the-brAIn-lab/msaa-paper"
+license: MIT  # vendored hypertools/ (MIT) and hypertools/srm.py (Apache-2.0) keep their own notices; see README.md
+version: "0.1.0"
+keywords:
+  - fmri
+  - neuroimaging
+  - archetypal-analysis
+  - naturalistic-fmri
+references:
+  - type: data
+    title: "Hierarchical topographic factor analysis (HTFA) representation of the \"Pie Man\" narrative-listening fMRI dataset (700 nodes)"
+    authors:
+      - family-names: Owen
+        given-names: "Lucy L. W."
+      - family-names: Manning
+        given-names: "Jeremy R."
+        orcid: "https://orcid.org/0000-0001-7613-4732"
+    year: 2026
+    publisher:
+      name: Zenodo
+    doi: "10.5281/zenodo.24358585"
+# Uncomment once assigned:
+# doi: "10.5281/zenodo.XXXXXXX"          # code archive (GitHub release -> Zenodo)
+# preferred-citation:
+#   type: article
+#   title: "Sparse Distributed Archetypal Motifs Capture Shared Network Structure in Naturalistic fMRI"
+#   authors: (same as above)
+#   journal: "Network Neuroscience"
+#   year: YYYY
+#   doi: "10.1162/netn_a_XXXXX"          # journal DOI
+#   # or, for the preprint: type: unpublished / doi: "10.1101/XXXX.XX.XX.XXXXXX"
