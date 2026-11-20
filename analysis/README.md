@@ -1,7 +1,8 @@
 # Analyses
 
 Each folder holds what one part of the paper needs; `docs/REPRODUCE.md` says which output each
-makes and which figure uses it.
+makes and which figure uses it. Figure numbers here (Fig 2, Fig 3, ...) are the figure-bundle
+numbers; the root `README.md` maps them to the manuscript's.
 
 - `03_core_results/`: PCA vs MS-AA benchmark tables (Fig 2), temporal K = 14 accumulation and
   generator-anchor masking (S02).

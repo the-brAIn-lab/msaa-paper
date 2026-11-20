@@ -1,5 +1,9 @@
 # Sparse Distributed Archetypal Motifs Capture Shared Network Structure in Naturalistic fMRI
 
+[![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/)
+[![Data DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24358585.svg)](https://doi.org/10.5281/zenodo.24358585)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
 Code for Oliver, Shepherd, Stone & Owen, *Sparse Distributed Archetypal Motifs Capture Shared Network
 Structure in Naturalistic fMRI* (Network Neuroscience, under revision): multi-subject archetypal
 analysis (MS-AA), from the two HTFA inputs to the figures and source tables in the paper and supplement.
@@ -59,7 +63,9 @@ anything, read the committed source tables directly (next section).
 ```text
 src/msaa_pipeline/    fitting, decoding, participant-held-out top-m (used by every analysis)
 helpers/              the MS-AA implementation (MultiSubject_AA.py, FurthestSum)
-hypertools/           the normalisation the inputs go through (kept for exact parity)
+hypertools/           hypertools normalize(), used by the PCA-benchmark, simulation and leave-one-
+                      condition-out notebooks (the pipeline applies the same z-score itself; see
+                      src/msaa_pipeline/data.py)
 tests/                parity check of the low-rank decoding path (make test)
 scripts/              run_parallel.py (fit/decode/held-out driver), build_figures.py, input checks,
                       atlas fetch, the frozen FurthestSum picks

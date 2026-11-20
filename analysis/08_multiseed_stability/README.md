@@ -13,8 +13,8 @@ Everything runs on one machine from the repo root. All paths are relative to the
 From the repo root, as in the main README:
 
 ```bash
-uv sync && source .venv/bin/activate        # or: pip install -r requirements.txt (Python 3.12)
-# put pieman_data.mat and pieman_posterior_K700.mat in data/input/
+uv sync --frozen && source .venv/bin/activate   # or: pip install -r requirements.txt (Python 3.12)
+make data PKL=/path/to/pieman2_htfa.pkl          # writes the two inputs to data/input/ (see data/README.md)
 make check
 ```
 

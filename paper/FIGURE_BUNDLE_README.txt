@@ -1,4 +1,4 @@
-paper figures, 14 Nov 2026
+paper figures (figure-bundle numbering; manuscript numbers in brackets)
 
 each figure is a PNG and a vector PDF, drawn at 5" width
 the source data behind each figure are in tables/
@@ -7,14 +7,18 @@ all held-out numbers use the 1e-8 tie rule.
 
 Main figures (main-png/, main-pdf/)
 
-    Figure2     PCA vs spatial and temporal MS-AA, with raw HTFA and chance
-    Figure3     simulation: motif recovery vs span preservation
-    Figure4A    spatial held-out top-m accuracy
-    Figure4B    temporal held-out top-m accuracy
-    Figure4C    spatial minus temporal at matched component ratios (intact)
-    Figure4D    temporal retained accuracy at matched fractions of K
-    Figure5     selected spatial motifs M0-M4 at K = 50
-    Figure6     support and robustness of M0-M4
+    Figure2     [main Fig 3]   PCA vs spatial and temporal MS-AA, with raw HTFA and chance
+    Figure3     [main Fig 4]   simulation: motif recovery vs span preservation
+    Figure4A    [main Fig 5A]  spatial held-out top-m accuracy
+    Figure4B    [main Fig 5B]  temporal held-out top-m accuracy
+    Figure4C    [main Fig 6A]  spatial minus temporal at matched component ratios (intact)
+    Figure4D    [main Fig 6B]  temporal retained accuracy at matched fractions of K
+    Figure5     [main Fig 7]   selected spatial motifs M0-M4 at K = 50
+    Figure6     [main Fig 8 A-D] support and robustness of M0-M4
+    Figure8     [main Fig 8]   support and robustness of M0-M4, panels A-F
+                               (adds E, K = 50 retention, and F, edge trim)
+
+Main Figs 1-2 are schematics and are not in the bundle.
 
 Supplement (supplement-png/, supplement-pdf/)
 

@@ -116,4 +116,4 @@ sizes.
 | S12             | `plots/spatial_topm_landscape.py`                                                                      |
 | S13             | `paper/supplement/supp_13_simulation_sensitivity.py`                                                   |
 
-Figure 1 is a schematic and is not generated here.
+Main Figures 1–2 are schematics and are not generated here; the published files of every figure are in `paper/final_figures/`.
