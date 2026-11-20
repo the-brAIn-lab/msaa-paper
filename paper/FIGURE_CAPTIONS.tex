@@ -1,70 +1,27 @@
-
 % main-{png,pdf}/Figure2_PCA_vs_MSAA_benchmark
 \caption{\textbf{Empirical benchmark: PCA reconstruction vs.\ spatial and temporal MS-AA.}
-Timepoint-identification accuracy against the normalized representational ratio (components /
-dimension) for PCA reconstruction (blue), spatial MS-AA (orange) and temporal MS-AA (green) in the
-(A) Intact narrative, (B) Word-scrambled and (C) Rest conditions (shared y-axis). Dotted line: raw
-HTFA representation (700 nodes). Grey dashed line: chance (1/300). Bands: $\pm 1$ SEM over 40
-decoder repetitions, reflecting decoder fold variability only (definition 1).}
+Timepoint-identification accuracy against the normalized representational ratio (components / dimension) for PCA reconstruction (blue), spatial MS-AA (orange) and temporal MS-AA (green) in the (A) Intact narrative, (B) Word-scrambled and (C) Rest conditions (shared y-axis). Dotted line: raw HTFA representation (700 nodes). Grey dashed line: chance (1/300). Bands: $\pm 1$ SEM over 40 decoder repetitions, reflecting decoder fold variability only (definition 1).}
 \label{fig:benchmark}
 
 % main-{png,pdf}/Figure3_simulation_motif_vs_span
 \caption{\textbf{Simulation benchmark: motif recovery vs.\ span preservation.}
-(A) Direct spatial configuration recovery ($r$ between true and matched configurations) for MS-AA
-and PCA in the PCA-favorable, AA-favorable and metastable regimes. Small points: individual
-replicates (20 per regime); large markers: mean with bootstrap 95\% CI. (B) Paired MS-AA $-$ PCA
-difference in recovery in the metastable regime; each point is one replicate. (C) Recovery of individual configurations vs.\ of the
-latent span in the metastable regime (mean $\pm$ bootstrap 95\% CI): MS-AA aligns individual
-motifs; PCA preserves the span. (D) A representative metastable replicate, chosen beforehand by an
-objective criterion (Methods): true configurations with the matched MS-AA archetypes and PCA
-components.}
+(A) Direct spatial configuration recovery ($r$ between true and matched configurations) for MS-AA and PCA in the PCA-favorable, AA-favorable and metastable regimes. Small points: individual replicates (20 per regime); large markers: mean with bootstrap 95\% CI. (B) Paired MS-AA $-$ PCA difference in recovery in the metastable regime; each point is one replicate. (C) Recovery of individual configurations vs.\ of the latent span in the metastable regime (mean $\pm$ bootstrap 95\% CI): MS-AA aligns individual motifs; PCA preserves the span. (D) A representative metastable replicate, chosen beforehand by an objective criterion (Methods): true configurations with the matched MS-AA archetypes and PCA components.}
 \label{fig:simulation}
 
 % main-{png,pdf}/Figure4A_spatial_fixed_topm, Figure4B_temporal_fixed_topm,
 % Figure4C_spatial_minus_temporal_matched_ratio, Figure4D_temporal_matched_retained_fraction
 \caption{\textbf{Participant-held-out top-$m$ timepoint identification.}
-Archetypes are ranked on one half of the participants and scored on the other (20 outer splits
-$\times$ 2 directions; $10^{-8}$ tie rule). In A, B and D, lines: mean over 10 fit seeds; bands: $\pm 1$ SD across
-fit seeds (definition 2); grey dashed line: chance (1/300).
-(A) Spatial MS-AA: held-out top-$m$ timepoint-identification accuracy against spatial model order
-($K$) for $m = 3, 5, 10$ (shades of each condition's colour), one panel per condition, shared
-y-axis. (B) As A for temporal MS-AA, $m = 1, 2, 3, 5, 10$.
-(C) Spatial $-$ temporal held-out accuracy in Intact narrative at 15 exactly matched component
-ratios (spatial $K/700$ = temporal $K/300$; pairs listed in Methods). Left: mean over fit seeds.
-Right: number of seeds (of 10) in which spatial exceeds temporal, on a scale centred at 5 (0:
-temporal higher in every seed; 10: spatial higher in every seed). This is consistency across
-initializations, not a significance test. Grey cells: $m > K$ for one of the pair. All three
-conditions are in Fig.~S1.
-(D) Temporal MS-AA: fraction of above-chance full-model accuracy retained by the top-$m$ archetypes
-when $m = \mathrm{round}(\text{fraction} \times K)$ for fractions of 25\%, 50\% and 70\%, in Intact
-narrative and Word-scrambled. Rest is omitted because its full-model accuracy is near chance. The
-local $K = 12/14/16$ contrast is in Fig.~S3.}
+Archetypes are ranked on one half of the participants and scored on the other (20 outer splits $\times$ 2 directions; $10^{-8}$ tie rule). In A, B and D, lines: mean over 10 fit seeds; bands: $\pm 1$ SD across fit seeds (definition 2); grey dashed line: chance (1/300). (A) Spatial MS-AA: held-out top-$m$ timepoint-identification accuracy against spatial model order ($K$) for $m = 3, 5, 10$ (shades of each condition's colour), one panel per condition, shared y-axis. (B) As A for temporal MS-AA, $m = 1, 2, 3, 5, 10$. (C) Spatial $-$ temporal held-out accuracy in Intact narrative at 15 exactly matched component ratios (spatial $K/700$ = temporal $K/300$; pairs listed in Methods). Left: mean over fit seeds. Right: number of seeds (of 10) in which spatial exceeds temporal, on a scale centred at 5 (0: temporal higher in every seed; 10: spatial higher in every seed). This is consistency across initializations, not a significance test. Grey cells: $m > K$ for one of the pair. All three conditions are in Fig.~S1. (D) Temporal MS-AA: fraction of above-chance full-model accuracy retained by the top-$m$ archetypes when $m = \mathrm{round}(\text{fraction} \times K)$ for fractions of 25\%, 50\% and 70\%, in Intact narrative and Word-scrambled. Rest is omitted because its full-model accuracy is near chance. The local $K = 12/14/16$ contrast is in Fig.~S3.}
 \label{fig:heldout}
 
 % main-{png,pdf}/Figure5_selected_spatial_motifs_M0-M4
-\caption{\textbf{Held-out-selected motifs from spatial MS-AA at $K = 46$.}
-The five motifs (M0--M4) chosen by participant-held-out top-5 selection from the spatial MS-AA fit
-at $K = 46$ (fit seed 0). Left: temporal profile over the 300 timepoints (mean $\pm 1$ SEM over
-participant-condition observations); the profiles share one y-axis, so amplitudes are comparable.
-Middle: spatial deployment on glass brains (left sagittal, axial, right sagittal), coloured by
-Yeo-7 network. Marker size is scaled within each motif to the node's relative spatial coefficient,
-so sizes compare within a motif but not between motifs. Bottom left: Yeo-7 composition, the share
-of each motif's absolute spatial weight in each network (descriptive; all 700 nodes; atlas audit in
-Fig.~S7). Bottom right: cross-fitted top-5 selection frequency, the fraction of the 40 cross-fitted
-rankings whose top-5 contains the motif, by condition.}
+\caption{\textbf{Held-out-selected motifs from spatial MS-AA at $K = 50$.}
+The five motifs (M0--M4) chosen by participant-held-out top-5 selection from the spatial MS-AA fit at $K = 50$ (fit seed 0). Left: temporal profile over the 300 timepoints (mean $\pm 1$ SEM over participant-condition observations); the profiles share one y-axis, so amplitudes are comparable. Middle: spatial deployment on glass brains (left sagittal, axial, right sagittal), coloured by Yeo-7 network. Marker size is scaled within each motif to the node's relative spatial coefficient, so sizes compare within a motif but not between motifs. Bottom left: Yeo-7 composition, the share of each motif's absolute spatial weight in each network (descriptive; all 700 nodes; atlas audit in Fig.~S7). Bottom right: top-5 selection frequency by condition, the fraction of the 40 cross-fitted rankings (20 outer splits $\times$ 2 directions) whose top-5 contains the motif, averaged over 10 fit seeds; this is the quantity used to select $M0$--$M4$ (Methods).}
 \label{fig:motifs}
 
 % main-{png,pdf}/Figure6_motif_support_and_robustness
 \caption{\textbf{Support and robustness of motifs M0--M4.}
-Spatial MS-AA, $K = 46$. (A) Cross-seed recovery: Pearson $r$ between each motif's seed-0 spatial
-map and its Hungarian-matched partner in fit seeds 1--9. Outlined cells fall below the recovery
-threshold $r = 0.90$; the full set of metrics is in Fig.~S4. (B) Observation-level support: spatial
-support $\lVert S_{k,:} \rVert_2$ of each motif in each of the 108 participant-condition
-observations, coloured by condition (box: median and IQR; whiskers: $1.5 \times$ IQR).
-(C) Condition-specific deployment: mean spatial support per condition, $\pm 1$ SEM over its 36
-observations. (D) Leave-one-condition-out stability: Pearson $r$ between each motif's spatial map in
-the full fit and in a refit without the indicated condition (colour). Dashed line: $r = 0.90$.
-Edge-trim diagnostics are in Fig.~S10.}
+Spatial MS-AA, $K = 50$. (A) Cross-seed recovery: Pearson $r$ between each motif's seed-0 spatial map and its Hungarian-matched partner in fit seeds 1--9. Outlined cells fall below the recovery threshold $r = 0.90$; the full set of metrics is in Fig.~S4. (B) Observation-level support: spatial support $\lVert W^{(s)}[k,:] \rVert_2$ of each motif in each of the 108 participant-condition observations, coloured by condition (box: median and IQR; whiskers: $1.5 \times$ IQR). (C) Condition-specific deployment: mean spatial support per condition, $\pm 1$ SEM over its 36 observations. (D) Leave-one-condition-out stability: Pearson $r$ between each motif's spatial map in the full fit and in a refit without the indicated condition (colour). Dashed line: $r = 0.90$. Edge-trim diagnostics are in Fig.~S10.}
 \label{fig:robustness}
 
 
@@ -77,145 +34,67 @@ Edge-trim diagnostics are in Fig.~S10.}
 
 % supplement-{png,pdf}/S01_spatial_minus_temporal_heatmaps_and_seed_consistency
 \caption{\textbf{Spatial vs.\ temporal MS-AA at matched component ratios, all conditions.}
-The complete version of Fig.~4C for Intact narrative, Word-scrambled and Rest. Left column: mean
-over 10 fit seeds of spatial $-$ temporal held-out top-$m$ timepoint-identification accuracy. Right
-column: number of seeds (of 10) with spatial $>$ temporal, on a diverging scale centred at 5 (0 =
-temporal higher in all seeds, 5 = mixed, 10 = spatial higher in all); no comparison was an exact
-tie. x-axis: the 15 matched ratios (spatial $K/700$ = temporal $K/300$; every other one labelled;
-pairs listed in Methods). Grey: $m > K$. Seed consistency is descriptive, not a significance test.}
+The complete version of Fig.~4C for Intact narrative, Word-scrambled and Rest. Left column: mean over 10 fit seeds of spatial $-$ temporal held-out top-$m$ timepoint-identification accuracy. Right column: number of seeds (of 10) with spatial $>$ temporal, on a diverging scale centred at 5 (0 = temporal higher in all seeds, 5 = mixed, 10 = spatial higher in all); no comparison was an exact tie. x-axis: the 15 matched ratios (spatial $K/700$ = temporal $K/300$; every other one labelled; pairs listed in Methods). Grey: $m > K$. Seed consistency is descriptive, not a significance test.}
 \label{fig:s01}
 
 % supplement-{png,pdf}/S02_temporal_K14_accumulation_anchor_masking_higherK_splitting
 \caption{\textbf{Temporal MS-AA at $K = 14$: accumulation, generator-anchor masking and higher-$K$ splitting.}
-Temporal MS-AA, $K = 14$, fit seed 0. (A) Fraction of above-chance full-model accuracy retained by
-the held-out top-$m$, $m = 1, \ldots, 14$. Bands: $\pm 1$ SEM over the 20 outer participant splits
-(definition 3). Rest is greyed out and not interpreted: its full-model accuracy is near chance, so
-the ratio has a near-floor denominator. (B) Generator-anchor masking: held-out accuracy above chance
-unmasked (solid) and with $\pm 2$ TR around each archetype's generator TR removed (dashed; frozen
-unmasked ranking). Each curve is shown above its own chance (1/300 unmasked, 1/remaining TRs
-masked). Labels give the share of above-chance accuracy retained at $m = 14$. Rest is not shown (see
-A). Bands as in A. (C) Splitting at higher model order: for each $K = 14$ temporal motif
-(T0--T13), the best spatial-map $r$ with any archetype of the temporal fits at $K = 16, \ldots,
-100$.}
+Temporal MS-AA, $K = 14$, fit seed 0. (A) Fraction of above-chance full-model accuracy retained by the held-out top-$m$, $m = 1, \ldots, 14$. Bands: $\pm 1$ SEM over the 20 outer participant splits (definition 3). Rest is greyed out and not interpreted: its full-model accuracy is near chance, so the ratio has a near-floor denominator. (B) Generator-anchor masking: held-out accuracy above chance unmasked (solid) and with $\pm 2$ TR around each archetype's generator TR removed (dashed; frozen unmasked ranking). Each curve is shown above its own chance (1/300 unmasked, 1/remaining TRs masked). Labels give the share of above-chance accuracy retained at $m = 14$. Rest is not shown (see A). Bands as in A. (C) Splitting at higher model order: for each $K = 14$ temporal motif (T0--T13), the best spatial-map $r$ with any archetype of the temporal fits at $K = 16, \ldots, 100$.}
 \label{fig:s02}
 
 % supplement-{png,pdf}/S03_temporal_K12_14_16_seed_contrasts
 \caption{\textbf{Temporal MS-AA: local contrast at $K = 12$, 14, 16.}
-Fraction of above-chance full-model accuracy retained at $K = 12$, 14 and 16 when
-$m = \mathrm{round}(\text{fraction} \times K)$ for fractions of 25\%, 50\% and 70\% (the $m$ used is
-printed under each $K$). Grey lines: individual fit seeds; coloured line: mean of the 10 seeds.
-Subtitles give the seed-averaged $\Delta_{14} = R(14) - [R(12) + R(16)]/2$ and the number of seeds
-with $\Delta_{14} > 0$. Seeds are initializations, not independent samples, so counts are reported
-instead of a test (bootstrap CIs over seeds are in the supplementary tables).}
+Fraction of above-chance full-model accuracy retained at $K = 12$, 14 and 16 when $m = \mathrm{round}(\text{fraction} \times K)$ for fractions of 25\%, 50\% and 70\% (the $m$ used is printed under each $K$). Grey lines: individual fit seeds; coloured line: mean of the 10 seeds. Subtitles give the seed-averaged $\Delta_{14} = R(14) - [R(12) + R(16)]/2$ and the number of seeds with $\Delta_{14} > 0$. Seeds are initializations, not independent samples, so counts are reported instead of a test (bootstrap CIs over seeds are in the supplementary tables).}
 \label{fig:s03}
 
 % supplement-{png,pdf}/S04_M0-M4_cross_seed_stability
 \caption{\textbf{Motifs M0--M4 across further fit seeds.}
-Spatial MS-AA, $K = 46$. Pearson $r$ between each seed-0 motif and its Hungarian-matched partner
-(matched on spatial maps over all 46 archetypes) in fit seeds 1--9, for the spatial map, temporal
-profile and Yeo-7 composition (top to bottom). A motif is recovered in a seed when its spatial-map
-$r \geq 0.90$; non-recovered seeds are outlined in all three panels. Row labels: number of seeds
-(of 9) in which the motif is recovered. Matched $r$ is bimodal (near 1 or below about 0.4), so the
-threshold is a clean cut.}
+Spatial MS-AA, $K = 50$. Pearson $r$ between each seed-0 motif and its Hungarian-matched partner (matched on spatial maps over all 50 archetypes) in fit seeds 1--9, for the spatial map, temporal profile and Yeo-7 composition (top to bottom). A motif is recovered in a seed when its spatial-map $r \geq 0.90$; non-recovered seeds are outlined in all three panels. Row labels: number of seeds (of 9) in which the motif is recovered. Matched $r$ is bimodal (near 1 or below about 0.4), so the threshold is a clean cut.}
 \label{fig:s04}
 
 % supplement-{png,pdf}/S05a_K45-55_selection_stability_top5 and S05b_K45-55_selection_stability_top10
 \caption{\textbf{Stability of held-out top-5 (S5a) and top-10 (S5b) selection across fit seeds, $K = 45$--55.}
-Spatial MS-AA, one panel per condition (top to bottom), $K$ across. Rows: recovery-aware Jaccard
-between seeds' consensus top-$m$ sets (a pick matches only if its seed-0 partner is recovered,
-$r \geq 0.90$), mean over the 45 seed pairs; the same Jaccard chance-corrected against two random
-$m$-subsets of $K$, $(J - J_{\text{rand}}) / (1 - J_{\text{rand}})$; same-split similarity across
-seeds; across-split similarity within a seed (the participant-split component); and the fraction
-of M0--M4 recovered at that $K$ (the same in every condition, since recovery is defined on the
-fit). Further diagnostics are in the supplementary tables.}
+Spatial MS-AA, one panel per condition (top to bottom), $K$ across. Rows: recovery-aware Jaccard between seeds' consensus top-$m$ sets (a pick matches only if its seed-0 partner is recovered, $r \geq 0.90$), mean over the 45 seed pairs; the same Jaccard chance-corrected against two random $m$-subsets of $K$, $(J - J_{\text{rand}}) / (1 - J_{\text{rand}})$; same-split similarity across seeds; across-split similarity within a seed (the participant-split component); and the fraction of M0--M4 recovered at that $K$ (the same in every condition, since recovery is defined on the fit). Further diagnostics are in the supplementary tables.}
 \label{fig:s05}
 
 % supplement-{png,pdf}/S06_M0-M4_selected_and_recovered_top5_top10
 \caption{\textbf{M0--M4 in each seed's own top-5 and top-10.}
-Spatial MS-AA, $K = 46$, one panel per condition (top to bottom). Bars: number of fit seeds (of 10)
-whose consensus top-5 (blue) or top-10 (orange) contains the motif. Solid: selected and recovered
-($r \geq 0.90$). Hatched ($+n$): selected only under a forced Hungarian assignment with $r < 0.90$,
-a least-bad pairing rather than a recovery. Dashed line: number of seeds in which the motif is
-recovered at all, the upper limit for the solid bar.}
+Spatial MS-AA, $K = 50$, one panel per condition (top to bottom). Bars: number of fit seeds (of 10) whose consensus top-5 (blue) or top-10 (orange) contains the motif. Solid: selected and recovered ($r \geq 0.90$). Hatched ($+n$): selected only under a forced Hungarian assignment with $r < 0.90$, a least-bad pairing rather than a recovery. Dashed line: number of seeds in which the motif is recovered at all, the upper limit for the solid bar.}
 \label{fig:s06}
 
 % supplement-{png,pdf}/S07_atlas_mapping_audit
 \caption{\textbf{Atlas mapping audit.}
-Yeo-7 composition (share of absolute spatial weight) of M0--M4 (one panel per motif, networks as
-rows) under three node sets: all 700 HTFA nodes; the 515 nodes whose centres fall inside the
-cortical atlas (the other 185 lie outside it or in background; median distance of outside centres
-6.7~mm); and nodes with assignment
-confidence $\geq 0.5$ (73 nodes fall below). Inside the atlas, centre-based and kernel-weighted
-assignments agree for 87.6\% of nodes. Composition is stable across these node sets and is
-descriptive, not an enrichment test.}
+Yeo-7 composition (share of absolute spatial weight) of M0--M4 (one panel per motif, networks as rows) under three node sets: all 700 HTFA nodes; the 515 nodes whose centres fall inside the cortical atlas (the other 185 lie outside it or in background; median distance of outside centres 6.7~mm); and nodes with assignment confidence $\geq 0.5$ (73 nodes fall below). Inside the atlas, centre-based and kernel-weighted assignments agree for 87.6\% of nodes. Composition is stable across these node sets and is descriptive, not an enrichment test.}
 \label{fig:s07}
 
 % supplement-{png,pdf}/S08_condition_contributions
 \caption{\textbf{Condition contributions.}
-Spatial MS-AA, $K = 46$, M0--M4. (A) Deployment by condition: rank-1 contribution (Frobenius norm of
-the motif's rank-1 term) in each participant-condition observation, 36 per condition. Box: median
-and IQR; whiskers: $1.5 \times$ IQR. (B) Leave-one-condition-out stability: Pearson $r$ between the
-full-fit spatial map and the matched map from a refit without that condition (as in Fig.~6D).
-Dashed line: $r = 0.90$.}
+Spatial MS-AA, $K = 50$, M0--M4. (A) Deployment by condition: rank-1 contribution (Frobenius norm of the motif's rank-1 term) in each participant-condition observation, 36 per condition. Box: median and IQR; whiskers: $1.5 \times$ IQR. (B) Leave-one-condition-out stability: Pearson $r$ between the full-fit spatial map and the matched map from a refit without that condition (as in Fig.~6D). Dashed line: $r = 0.90$.}
 \label{fig:s08}
 
 % supplement-{png,pdf}/S09_full_model_accuracy_vs_K
 \caption{\textbf{Full-model held-out accuracy vs.\ model order.}
-Participant-held-out timepoint-identification accuracy using all $K$ archetypes, for spatial MS-AA
-($K = 10, \ldots, 700$) and temporal MS-AA ($K$ up to 300), by condition. Lines: mean over 10 fit
-seeds; bands: $\pm 1$ SD across fit seeds (often narrower than the line). Grey dashed line: chance
-(1/300). These are the denominators of the retained fractions in Fig.~4D, S2 and S3.}
+Participant-held-out timepoint-identification accuracy using all $K$ archetypes, for spatial MS-AA ($K = 10, \ldots, 700$) and temporal MS-AA ($K$ up to 300), by condition. Lines: mean over 10 fit seeds; bands: $\pm 1$ SD across fit seeds (often narrower than the line). Grey dashed line: chance (1/300). These are the denominators of the retained fractions in Fig.~4D, S2 and S3.}
 \label{fig:s09}
 
 % supplement-{png,pdf}/S10_edge_trim_diagnostics
 \caption{\textbf{Edge-trim sensitivity of the held-out top-5 result.}
-Spatial MS-AA, $K = 46$, fit seed 0, held-out top-5. (A) Timepoint-identification accuracy
-untrimmed and with the first and last 10 TRs removed; mean $\pm$ SEM over the 20 outer participant
-splits (definition 3). Grey dashed line: chance (1/300). (B) Fraction of above-chance accuracy
-retained after trimming. Rest is marked n/a because its untrimmed accuracy is near chance; its raw
-accuracies are in A. (C) Mean Jaccard overlap between untrimmed and trimmed top-5 sets. (D) Change
-in cross-fitted top-5 selection frequency of M0--M4 (trimmed $-$ untrimmed).}
+Spatial MS-AA, $K = 50$, fit seed 0, held-out top-5. (A) Timepoint-identification accuracy untrimmed and with the first and last 10 TRs removed; mean $\pm$ SEM over the 20 outer participant splits (definition 3). Grey dashed line: chance (1/300). (B) Fraction of above-chance accuracy retained after trimming. Rest is marked n/a because its untrimmed accuracy is near chance; its raw accuracies are in A. (C) Mean Jaccard overlap between untrimmed and trimmed top-5 sets. (D) Change in cross-fitted top-5 selection frequency of M0--M4 (trimmed $-$ untrimmed).}
 \label{fig:s10}
 
 % supplement-{png,pdf}/S11_four_condition_paragraph_sensitivity
 \caption{\textbf{Four-condition sensitivity analysis (paragraph-scrambled).}
-Full-model timepoint-identification accuracy against normalized component ratio with the
-Paragraph-scrambled condition added, ordered by disruption: (A) Intact narrative, (B)
-Paragraph-scrambled, (C) Word-scrambled, (D) Rest (each panel with its own y-axis). Unlike the main
-analyses, PCA and MS-AA are fit separately within each condition (15 matched ratios; Methods), so
-this complements rather than replaces the shared-basis results. Line style marks the method (PCA:
-dash-dot, triangles; spatial MS-AA: solid, squares; temporal MS-AA: dashed, circles). Coloured
-dotted line: raw HTFA (700 nodes); grey dotted line: chance (1/272 for Paragraph-scrambled, which
-has 272 timepoints; 1/300 otherwise). Error bars: $\pm 1$ SEM over 40 decoder repetitions
-(definition 1). Paragraph-scrambled has 17 participants (36 in the other conditions).}
+Full-model timepoint-identification accuracy against normalized component ratio with the Paragraph-scrambled condition added, ordered by disruption: (A) Intact narrative, (B) Paragraph-scrambled, (C) Word-scrambled, (D) Rest (each panel with its own y-axis). Unlike the main analyses, PCA and MS-AA are fit separately within each condition (15 matched ratios; Methods), so this complements rather than replaces the shared-basis results. Line style marks the method (PCA: dash-dot, triangles; spatial MS-AA: solid, squares; temporal MS-AA: dashed, circles). Coloured dotted line: raw HTFA (700 nodes); grey dotted line: chance (1/272 for Paragraph-scrambled, which has 272 timepoints; 1/300 otherwise). Error bars: $\pm 1$ SEM over 40 decoder repetitions (definition 1). Paragraph-scrambled has 17 participants (36 in the other conditions).}
 \label{fig:s11}
 
 % supplement-{png,pdf}/S12_spatial_heldout_topm_landscape_K_by_m
 \caption{\textbf{Complete participant-held-out spatial $K \times m$ landscape.}
-Spatial MS-AA, participant-held-out (cross-fitted) top-$m$ selection over the full $K \times m$
-grid, for Intact narrative, Word-scrambled and Rest (columns). Top row: held-out top-$m$
-timepoint-identification accuracy. Bottom row: fraction of above-chance full-model accuracy
-retained. x: spatial model order ($K = 10, \ldots, 700$ in steps of 10); y:
-$m = 1, 2, 3, 5, 7, 10, 15, 20, 25, 30, 40, 50$. Each cell is the mean over 10 fit seeds (20 outer
-splits $\times$ 2 directions; $10^{-8}$ tie rule); seed SDs are in the supplementary tables
-(definition 2). Grey: $m > K$. Retained fractions in Rest have a near-floor denominator and should
-not be interpreted.}
+Spatial MS-AA, participant-held-out (cross-fitted) top-$m$ selection over the full $K \times m$ grid, for Intact narrative, Word-scrambled and Rest (columns). Top row: held-out top-$m$ timepoint-identification accuracy. Bottom row: fraction of above-chance full-model accuracy retained. x: spatial model order ($K = 10, \ldots, 700$ in steps of 10); y: $m = 1, 2, 3, 5, 7, 10, 15, 20, 25, 30, 40, 50$. Each cell is the mean over 10 fit seeds (20 outer splits $\times$ 2 directions; $10^{-8}$ tie rule); seed SDs are in the supplementary tables (definition 2). Grey: $m > K$. Retained fractions in Rest have a near-floor denominator and should not be interpreted.}
 \label{fig:s12}
 
 % supplement-{png,pdf}/S13_simulation_sensitivity
 \caption{\textbf{Sensitivity of direct motif recovery to simulation parameters.}
-Direct spatial configuration recovery ($r$, as in Fig.~3A) for MS-AA (blue) and PCA (orange) in the
-metastable regime, varying one parameter at a time from the Fig.~3 defaults: (A) observation-noise
-SD, (B) between-subject heterogeneity, (C) fitted model order $K$ (true $K = 6$), (D) spatial motif overlap
-(labelled by mean pairwise cosine between the true spatial motifs), and (E--H) the four components of dynamical
-mixing, each varied with the other three at baseline: (E) mean state dwell time, (F) transition
-width, (G) secondary-motif recruitment weight, (H) AR(1) persistence of the secondary-recruitment
-background. Settings run from easier to harder left to right, at equal spacing with actual values
-as tick labels. All settings use the 20 simulation seeds of Fig.~3, so the shaded baseline
-reproduces Fig.~3 exactly. Markers: mean with bootstrap 95\% CI; faint bars: min to max over the
-20 replicates. Numbers: replicates (of 20) in which MS-AA exceeded PCA; red marks counts below 15
-(two-sided exact sign test $p \geq 0.05$). In C, unmatched true motifs score 0 when $K < 6$, so
-recovery cannot exceed $K/6$ (dashed ceilings). Shared y-axis, 0.4--1.0.}
+Direct spatial configuration recovery ($r$, as in Fig.~3A) for MS-AA (blue) and PCA (orange) in the metastable regime, varying one parameter at a time from the Fig.~3 defaults: (A) observation-noise SD, (B) between-subject heterogeneity, (C) fitted model order $K$ (true $K = 6$), (D) spatial motif overlap (labelled by mean pairwise cosine between the true spatial motifs), and (E--H) the four components of dynamical mixing, each varied with the other three at baseline: (E) mean state dwell time, (F) transition width, (G) secondary-motif recruitment weight, (H) AR(1) persistence of the secondary-recruitment background. Settings run from easier to harder left to right, at equal spacing with actual values as tick labels. All settings use the 20 simulation seeds of Fig.~3, so the shaded baseline reproduces Fig.~3 exactly. Markers: mean with bootstrap 95\% CI; faint bars: min to max over the 20 replicates. Numbers: replicates (of 20) in which MS-AA exceeded PCA; red marks counts below 15 (two-sided exact sign test $p \geq 0.05$). In C, unmatched true motifs score 0 when $K < 6$, so recovery cannot exceed $K/6$ (dashed ceilings). Shared y-axis, 0.4--1.0.}
 \label{fig:s13}
 
 
@@ -228,42 +107,17 @@ recovery cannot exceed $K/6$ (dashed ceilings). Shared y-axis, 0.4--1.0.}
 
 \paragraph{Uncertainty definitions.}
 \begin{enumerate}
-  \item \textbf{SEM over decoder repetitions.} Used in Fig.~2 and S11. The timepoint-identification
-    decoder is run 40 times with different random fold assignments, and the band is the standard
-    error of the mean over those 40 repetitions. It reflects decoder fold variability on a fixed
-    fit, not variability across participants or fits.
-  \item \textbf{SD across fit seeds.} Used in Fig.~4A, 4B, 4D and S9 (and summarised as counts in
-    Fig.~4C, S1, S3, S4--S6). Every MS-AA fit was repeated from 10 FurthestSum initializations (fit
-    seeds 0--9) on the same data. The SD across seeds measures how sensitive a result is to
-    initialization. \textbf{Fit seeds are not independent statistical samples}: they share the
-    data, the participants and the held-out splits. We therefore report seed spread and seed
+  \item \textbf{SEM over decoder repetitions.} Used in Fig.~2 and S11. The timepoint-identification decoder is run 40 times with different random fold assignments, and the band is the standard error of the mean over those 40 repetitions. It reflects decoder fold variability on a fixed fit, not variability across participants or fits.
+  \item \textbf{SD across fit seeds.} Used in Fig.~4A, 4B, 4D and S9 (and summarised as counts in Fig.~4C, S1, S3, S4--S6). Every MS-AA fit was repeated from 10 FurthestSum initializations (fit seeds 0--9) on the same data. The SD across seeds measures how sensitive a result is to initialization. \textbf{Fit seeds are not independent statistical samples}: they share the data, the participants and the held-out splits. We therefore report seed spread and seed
     consistency (for example ``10/10 seeds'') and do not run significance tests over seeds.
-  \item \textbf{Participant-split variability.} Used in S2 and S10 (SEM over the 20 outer
-    participant splits) and in the cross-fitted selection frequencies (Fig.~5, S5, S6). Each outer
-    split divides the 36 participants into two halves of 18. Archetypes are ranked on one half and
-    scored on the other, in both directions, giving 40 rankings per $K \times$ condition $\times$
-    seed. This variability reflects which participants are in the ranking and scoring halves. The
-    20 splits overlap, so their SEM is descriptive, not a formal standard error over independent
-    samples.
+  \item \textbf{Participant-split variability.} Used in S2 and S10 (SEM over the 20 outer participant splits) and in the cross-fitted selection frequencies (Fig.~5, S5, S6). Each outer split divides the 36 participants into two halves of 18. Archetypes are ranked on one half and scored on the other, in both directions, giving 40 rankings per $K \times$ condition $\times$ seed. This variability reflects which participants are in the ranking and scoring halves. The 20 splits overlap, so their SEM is descriptive, not a formal standard error over independent samples.
 \end{enumerate}
-Variability over observations (Fig.~5 temporal profiles, Fig.~6B--C, S8A) is over
-\textbf{participant-condition observations}: one per participant per condition (36 participants
-$\times$ 3 conditions = 108 observations, 36 per condition). These are not 108 unique participants,
-because each participant contributes up to three observations.
+Variability over observations (Fig.~5 temporal profiles, Fig.~6B--C, S8A) is over \textbf{participant-condition observations}: one per participant per condition (36 participants $\times$ 3 conditions = 108 observations, 36 per condition). These are not 108 unique participants, because each participant contributes up to three observations.
 
 \paragraph{Conventions.}
 \begin{itemize}
-  \item \textbf{Chance} for timepoint identification is 1/300 (300 timepoints per condition), drawn
-    as a grey dashed line.
-  \item \textbf{Tie rule.} When the decoder scores correlations, values within $10^{-8}$ of each
-    other count as tied. The decoded timepoint is the first within $10^{-8}$ of the row maximum,
-    and the rank counts entries $\leq$ diagonal $+\,10^{-8}$. This makes the exact ties that are
-    common in temporal fits break the same way on every machine. All held-out numbers use this
-    rule.
-  \item \textbf{Held-out averaging.} For a given fit seed, the two directions (A$\to$B, B$\to$A)
-    are averaged within each outer split, then the 20 splits are averaged. Multi-seed figures then
-    average the 10 seeds.
-  \item \textbf{Yeo-7} composition is \textbf{descriptive}: it reports the share of a motif's
-    absolute spatial weight that falls in each Yeo-7 network. It is not an enrichment test, and no
-    null model is implied.
+  \item \textbf{Chance} for timepoint identification is 1/300 (300 timepoints per condition), drawn as a grey dashed line.
+  \item \textbf{Tie rule.} When the decoder scores correlations, values within $10^{-8}$ of each other count as tied. The decoded timepoint is the first within $10^{-8}$ of the row maximum, and the rank counts entries $\leq$ diagonal $+\,10^{-8}$. This makes the exact ties that are common in temporal fits break the same way on every machine. All held-out numbers use this rule.
+  \item \textbf{Held-out averaging.} For a given fit seed, the two directions (A$\to$B, B$\to$A) are averaged within each outer split, then the 20 splits are averaged. Multi-seed figures then average the 10 seeds.
+  \item \textbf{Yeo-7} composition is \textbf{descriptive}: it reports the share of a motif's absolute spatial weight that falls in each Yeo-7 network. It is not an enrichment test, and no null model is implied.
 \end{itemize}
