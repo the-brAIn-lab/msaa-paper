@@ -10,7 +10,7 @@ intact, 39 .698 word, 49 .622 intact, 37 .508 intact; next 36 .460, 31 .393 (exc
 Archetype numbers depend on how the fit was made:
 
   canonical  fits with frozen FurthestSum picks and no post-fit sort: scripts/run_parallel.py,
-             and scripts/run_pipeline.py --profile full (make full-fit). This is the numbering
+             and scripts/run_pipeline.py --profile full. This is the numbering
              used in the paper text and the multi-seed analysis.
   legacy     the original analysis outputs (reference_outputs/legacy_full/)
 

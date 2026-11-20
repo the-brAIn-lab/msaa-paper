@@ -1,7 +1,8 @@
-# MS-AA paper
+# Sparse Distributed Archetypal Motifs Capture Shared Network Structure in Naturalistic fMRI
 
-Code for the multi-subject archetypal analysis (MS-AA) paper: from the two HTFA inputs to every
-figure and source table in the paper and supplement.
+Code for Oliver, Shepherd, Stone & Owen, *Sparse Distributed Archetypal Motifs Capture Shared Network
+Structure in Naturalistic fMRI* (Network Neuroscience, under revision): multi-subject archetypal
+analysis (MS-AA), from the two HTFA inputs to the figures and source tables in the paper and supplement.
 
 ## Data
 
@@ -59,8 +60,10 @@ The HTFA inputs themselves (raw fMRI to HTFA) are made outside this repository.
 
 ## Source tables
 
-`paper/source_tables/` holds the exact tables behind every figure in the paper and supplement, with
-a README mapping each file to its figure.
+`paper/source_tables/` holds the tables behind the paper's data figures, with a README mapping each
+file to its figure (and listing the few panels without a separate table).
+
+Figure numbers in this repository (file names, docs, build steps) follow the figure-bundle numbering: Fig 2 = main Fig 3, Fig 3 = main Fig 4, Fig 4A/B = main Fig 5A/B, Fig 4C = main Fig 6A, Fig 4D = main Fig 6B, Fig 5 = main Fig 7, Fig 6/Fig 8 = main Fig 8. Supplementary numbers are unchanged.
 
 ## License
 

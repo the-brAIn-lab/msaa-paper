@@ -1,6 +1,6 @@
 paper figures, 14 Nov 2026
 
-each figure is a PNG and a vector PDF, drwan fo 5" widthw
+each figure is a PNG and a vector PDF, drawn at 5" width
 the source data behind each figure are in tables/
 all held-out numbers use the 1e-8 tie rule.
 10-seed results average the two directions within each outer split, then the 20 splits within a seed, then the 10 fit seeds.

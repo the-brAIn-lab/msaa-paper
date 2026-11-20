@@ -1,5 +1,7 @@
 # Reproducing the paper
 
+Figure numbers in this repository (file names, docs, build steps) follow the figure-bundle numbering: Fig 2 = main Fig 3, Fig 3 = main Fig 4, Fig 4A/B = main Fig 5A/B, Fig 4C = main Fig 6A, Fig 4D = main Fig 6B, Fig 5 = main Fig 7, Fig 6/Fig 8 = main Fig 8. Supplementary numbers are unchanged.
+
 Everything starts from the two HTFA inputs in `data/input/` (see `data/README.md`). The chain has
 two parts: **results** (fits, decoding, held-out top-m and the follow-up analyses; expensive) and
 **figures** (`scripts/build_figures.py`; minutes, reads only result tables).
@@ -53,7 +55,7 @@ uv run python scripts/build_figures.py --no-draw                 # just reassemb
 
 Each step draws one figure (or a few) from the result tables and writes it under
 `<run root>/outputs/`; the bundle gets PNG + PDF of every figure, the source tables in `tables/`,
-and `paper/FIGURE_BUNDLE_README.txt` as its README. Captions (LaTeX, ready for the manuscript) are in `paper/FIGURE_CAPTIONS.tex`.
+and `paper/FIGURE_BUNDLE_README.txt` as its README. Draft captions (bundle figure numbering; the published captions in the paper take precedence) are in `paper/FIGURE_CAPTIONS.tex`.
 Every figure is drawn at the journal's print width (about 5 in), so the type sizes are the printed
 sizes.
 
@@ -65,6 +67,7 @@ sizes.
 | Fig 4C, S01     | `plots/fig4c_matched_ratio_heatmaps.py`                                                                |
 | Fig 5           | `paper/main_figures/paper_figure05_*.ipynb`                                                            |
 | Fig 6           | `paper/main_figures/paper_figure06_*.ipynb`                                                            |
+| Fig 8 (main, A-F) | `paper/main_figures/figure08_support_robustness.py` (build step `fig8`)                              |
 | S02             | `plots/k14_supplement.py`                                                                              |
 | S03             | `matched_fraction/k14_local_contrast.py`                                                               |
 | S04             | `k50_stability/m0m4_summary.py`                                                                        |
