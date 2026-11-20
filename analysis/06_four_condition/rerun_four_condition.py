@@ -17,11 +17,9 @@ Usage (repo root, BLAS threads set by the caller, e.g. OMP_NUM_THREADS=2):
     python analysis/06_four_condition/rerun_four_condition.py all   --out DIR [--workers 8]
 Writes DIR/fits/*.npz and DIR/four_condition_ratio_decoding_outputs/{raw_htfa_summary,
 pca_summary_with_retention, aa_full_summary_with_retention}.csv (same columns as August).
-Pings ~/.discord_webhook (if present) at every 10% of each stage and at the end.
+Logs progress to stdout and DIR/pings.log at every 10% of each stage and at the end.
 """
 import argparse
-import json
-import subprocess
 import sys
 import time
 import traceback
@@ -43,7 +41,6 @@ PARAGRAPH_DUPLICATE_INDEX = 3  # 700-factor HTFA, as in August
 TRIM_REST_BY = 100
 RATIOS = [0.01, 0.02, 0.03, 0.05, 0.075, 0.10, 0.125, 0.15, 0.20, 0.25, 0.30, 0.40, 0.50, 0.75, 1.00]
 NFOLDS, NREPS, SEED, TIE_TOL = 2, 20, 42, 1e-8
-HOOK_FILE = Path.home() / ".discord_webhook"
 
 
 def ping(msg, log=None):
@@ -52,10 +49,6 @@ def ping(msg, log=None):
     if log is not None:
         with open(log, "a") as f:
             f.write(line + "\n")
-    if HOOK_FILE.exists():
-        hook = HOOK_FILE.read_text().strip()
-        subprocess.run(["curl", "-sS", "-o", "/dev/null", "-H", "Content-Type: application/json",
-                        "-d", json.dumps({"content": msg}), hook], check=False)
 
 
 _DATA = None
