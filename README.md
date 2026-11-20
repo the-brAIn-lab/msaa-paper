@@ -64,14 +64,18 @@ tests/                parity check of the low-rank decoding path (make test)
 scripts/              run_parallel.py (fit/decode/held-out driver), build_figures.py, input checks,
                       atlas fetch, the frozen FurthestSum picks
 analysis/             the analyses behind the figures, in pipeline order (see analysis/README.md)
-paper/                figure notebooks/scripts that only draw, captions, bundle README
+paper/                figure notebooks/scripts that only draw, source tables, final_figures/ (the published figures)
 configs/              frozen FurthestSum picks, held-out outer-split seeds, node -> Yeo-7 table, profiles
 data/                 input/ (the two HTFA .mat files) and reference/ (atlas); not committed
 ```
 
 The HTFA inputs themselves (raw fMRI to HTFA) are made outside this repository.
 
-## Source tables
+## Final figures and source tables
+
+`paper/final_figures/` holds every main and supplementary figure exactly as published (EPS + PDF,
+manuscript numbering, including the Figure 1-2 schematics).
+
 
 `paper/source_tables/` holds the tables behind the paper's data figures, with a README mapping each
 file to its figure (and listing the few panels without a separate table).
