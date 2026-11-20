@@ -20,17 +20,23 @@ see [data/README.md](data/README.md).
 ## Setup
 
 ```bash
-uv sync
-# put pieman_data.mat and pieman_posterior_K700.mat in data/input/ (from pieman2_htfa.pkl, Zenodo DOI 10.5281/zenodo.24358585; see data/README.md)
-uv run make check      # the inputs can be read
-uv run make atlas      # Schaefer-1000 / Yeo-7 atlas into data/reference/
-uv run make smoke      # small end-to-end run (4 participants, K = 5), a few minutes
+uv sync --frozen
+# download pieman2_htfa.pkl from Zenodo (DOI 10.5281/zenodo.24358585), then write the two inputs to data/input/:
+uv run make data PKL=/path/to/pieman2_htfa.pkl   # = uv run python scripts/pkl_to_mat.py /path/to/pieman2_htfa.pkl
+uv run make check      # low-rank decoding parity test, then the inputs can be read
+uv run make atlas      # Schaefer-1000 / Yeo-7 atlas into data/reference/ (needs internet)
+uv run make smoke      # small end-to-end run (4 participants, K = 5), seconds
 ```
+
+`make atlas` downloads the atlas with nilearn, so on a cluster whose compute nodes are offline,
+run it once on a login node before submitting batch jobs.
 
 Without uv (for example on a cluster), install the same pinned versions into a Python 3.12
 environment with `pip install -r requirements.txt` (exported from `uv.lock` with
 `uv export --frozen --no-hashes --no-emit-project -o requirements.txt`; regenerate it after changing
-dependencies) and use that environment's `python` in place of `uv run`.
+dependencies), activate it, and run the same targets with plain `make` (for example `make check`).
+The package is not installed in either mode: every script and notebook puts `src/` on `sys.path`
+itself, so `msaa_pipeline` needs no `pip install -e .` and no `PYTHONPATH`.
 
 ## Reproduce
 
@@ -42,12 +48,19 @@ uv run make figures OUT=figure_bundle    # every figure + source table, from tho
 `docs/REPRODUCE.md` lists which step makes each result, which figure uses it, and how to run a
 subset. `make figures ROOT=/path/to/results` draws from results kept outside the repo.
 
+Local versus cluster scale: `make data`, `check`, `test`, `atlas` and `smoke` run in seconds to
+minutes on a laptop. `make results` is cluster scale (weeks of CPU time on one machine).
+`make figures` takes minutes but needs finished results: it draws from the result folders
+`make results` writes, not from `paper/source_tables/`. To check a number without rerunning
+anything, read the committed source tables directly (next section).
+
 ## Layout
 
 ```text
 src/msaa_pipeline/    fitting, decoding, participant-held-out top-m (used by every analysis)
 helpers/              the MS-AA implementation (MultiSubject_AA.py, FurthestSum)
 hypertools/           the normalisation the inputs go through (kept for exact parity)
+tests/                parity check of the low-rank decoding path (make test)
 scripts/              run_parallel.py (fit/decode/held-out driver), build_figures.py, input checks,
                       atlas fetch, the frozen FurthestSum picks
 analysis/             the analyses behind the figures, in pipeline order (see analysis/README.md)
@@ -63,7 +76,7 @@ The HTFA inputs themselves (raw fMRI to HTFA) are made outside this repository.
 `paper/source_tables/` holds the tables behind the paper's data figures, with a README mapping each
 file to its figure (and listing the few panels without a separate table).
 
-Figure numbers in this repository (file names, docs, build steps) follow the figure-bundle numbering: Fig 2 = main Fig 3, Fig 3 = main Fig 4, Fig 4A/B = main Fig 5A/B, Fig 4C = main Fig 6A, Fig 4D = main Fig 6B, Fig 5 = main Fig 7, Fig 6/Fig 8 = main Fig 8. Supplementary numbers are unchanged.
+Main Figs. 1–2 are conceptual schematics; figure numbers in this repository (file names, docs, build steps) follow the figure-bundle numbering: Fig 2 = main Fig 3, Fig 3 = main Fig 4, Fig 4A/B = main Fig 5A/B, Fig 4C = main Fig 6A, Fig 4D = main Fig 6B, Fig 5 = main Fig 7, Fig 6/Fig 8 = main Fig 8. Supplementary numbers are unchanged.
 
 ## License
 

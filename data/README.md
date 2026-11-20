@@ -26,7 +26,8 @@ condition has 17 scans because a duplicated entry was removed.
 Create the two inputs with:
 
 ```bash
-uv run python scripts/pkl_to_mat.py <path-to-pieman2_htfa.pkl>
+uv run make data PKL=<path-to-pieman2_htfa.pkl>
+# same as: uv run python scripts/pkl_to_mat.py <path-to-pieman2_htfa.pkl> [--out data/input]
 ```
 
 This writes `pieman_data.mat` and `pieman_posterior_K700.mat` to `data/input/`.
