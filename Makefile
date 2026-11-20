@@ -3,17 +3,28 @@ PYTHON ?= python
 ROOT ?= .
 OUT ?= $(ROOT)/figure_bundle
 
-.PHONY: check atlas smoke results figures
+.PHONY: data check test atlas smoke results figures
 
-# the two HTFA inputs are in data/input/
-check:
+# convert the Zenodo pieman2_htfa.pkl into the two HTFA inputs in data/input/:
+#   make data PKL=/path/to/pieman2_htfa.pkl
+data:
+	@test -n "$(PKL)" || { echo "usage: make data PKL=/path/to/pieman2_htfa.pkl"; exit 2; }
+	$(PYTHON) scripts/pkl_to_mat.py "$(PKL)"
+
+# the two HTFA inputs are in data/input/, and the low-rank decoding path matches the dense one
+check: test
 	$(PYTHON) scripts/check_inputs.py
 
-# Schaefer-1000 / Yeo-7 atlas into data/reference/ (Figure 5 and the node table)
+# fast-path parity checks on synthetic data (seconds; no inputs needed)
+test:
+	$(PYTHON) tests/test_lowrank_parity.py
+
+# Schaefer-1000 / Yeo-7 atlas into data/reference/ (Figure 5 and the node table).
+# Downloads from the internet: on a cluster, run it on a login node before offline batch jobs.
 atlas:
 	$(PYTHON) scripts/fetch_reference_atlas.py
 
-# small end-to-end run (4 participants, K = 5) into outputs/smoke/; minutes
+# small end-to-end run (4 participants, K = 5, 20 iterations) into outputs/smoke/; seconds
 smoke:
 	$(PYTHON) scripts/run_pipeline.py --profile smoke
 
