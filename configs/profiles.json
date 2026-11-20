@@ -26,7 +26,7 @@
     }
   },
   "mini-paper": {
-    "description": "Small paper-method replication profile. Uses all subjects and original fit/decoding settings. Sparse top-m is ONLY participant-held-out cross-fitting; spatial across K=5 and K=46 use 20 outer splits.",
+    "description": "Small paper-method replication profile. Uses all subjects and original fit/decoding settings. Sparse top-m is ONLY participant-held-out cross-fitting; spatial across K=5 and K=50 use 20 outer splits.",
     "max_subjects_per_condition": null,
     "fit_maxiter": 200,
     "decode_nreps": 20,
@@ -40,7 +40,7 @@
     "jobs": {
       "spatial_across": [
         5,
-        46
+        50
       ],
       "temporal_across": [
         5
@@ -56,7 +56,7 @@
     "heldout_jobs": {
       "spatial_across": [
         5,
-        46
+        50
       ]
     }
   },

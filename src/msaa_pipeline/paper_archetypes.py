@@ -14,8 +14,8 @@ Archetype numbers depend on how the fit was made:
              used in the paper text and the multi-seed analysis.
   legacy     the original analysis outputs (reference_outputs/legacy_full/)
 
-A fit without recorded FurthestSum picks is treated as legacy. There are no legacy K=50
-paper ids (the legacy outputs were interpreted at K=46), so a legacy K=50 fit is refused.
+A fit without recorded FurthestSum picks is treated as legacy. There are no legacy-numbered
+K=50 paper ids, so a legacy K=50 fit is refused.
 
   label  canonical K=50
   M0     28
@@ -23,15 +23,6 @@ paper ids (the legacy outputs were interpreted at K=46), so a legacy K=50 fit is
   M2     16
   M3     37
   M4     49
-
-Earlier (K=46) set, kept for the record (matched maps r >= 0.9999 between numberings):
-
-  label  canonical K=46  legacy K=46   K=50 match
-  M0     28              4             28 (r >= 0.999)
-  M1     35              5             39
-  M2     16              7             16
-  M3     39              8             36 (dropped at K=50)
-  M4     45              9             49
 
 Usage in a notebook (run from the repo root):
 
@@ -49,8 +40,6 @@ import numpy as np
 PAPER_K = 50
 LABELS = ["M0", "M1", "M2", "M3", "M4"]
 IDS = {"canonical": [28, 39, 16, 37, 49]}
-# K=46 set (previous representative model): canonical [28, 35, 16, 39, 45], legacy [4, 5, 7, 8, 9]
-IDS_K46 = {"canonical": [28, 35, 16, 39, 45], "legacy": [4, 5, 7, 8, 9]}
 DEFAULT_FIT = Path("msaa_flexible_outputs_npz") / f"spatialAA_across_acrossCond_K{PAPER_K}.npz"
 
 

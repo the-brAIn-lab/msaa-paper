@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """K<K>_top<m>.csv from selection_by_seed.csv: held-out top-m selection frequency of every seed-0 archetype
 in each condition and fit seed, plus the 10-seed mean and the number of seeds >= 0.5 (the table hk_merge.py
-writes for K=46; the Figure 5 notebook and the M0-M4 selection rule read it at the representative K).
+writes for the representative K; the Figure 5 notebook and the M0-M4 selection rule read it at the representative K).
 
 Usage: python hk_topm_table.py K [--top-m 5] [--sel selection_by_seed.csv] [--out DIR]
 Defaults (paths.py): heldout-everyk-spatial-all-results/selection_by_seed.csv, written next to it.

@@ -6,7 +6,7 @@ Writes RUN_DIR/heldout-seeds[-smoke]-results/:
                          (mean, sd, min, max, seed0); also mean full-model accuracy and retention
   selection_by_seed.csv  held-out selection frequency per seed, archetypes renamed to seed-0 IDs
                          (Hungarian match on group-mean spatial maps, map_r = match quality)
-  K46_top5.csv           K=46 top-5: per seed-0 archetype and condition, frequency in every seed
+  K50_top5.csv           K=50 top-5: per seed-0 archetype and condition, frequency in every seed
   summary.txt            first line SUMMARY COMPLETE / INCOMPLETE
 """
 import os
@@ -20,7 +20,8 @@ from scipy.optimize import linear_sum_assignment
 
 RUN, MODE, FIRST, LAST = Path(sys.argv[1]), sys.argv[2], int(sys.argv[3]), int(sys.argv[4])
 SUB = "msaa_heldout_topm_outputs_spatial_across"
-PAPER = [28, 35, 37, 31, 39]
+PAPER = [28, 39, 16, 37, 49]   # M0-M4 (src/msaa_pipeline/paper_archetypes.py)
+REP_K = 50                      # representative K
 OUT = RUN / ("heldout-seeds-results" if MODE == "full" else "heldout-seeds-smoke-results")
 OUT.mkdir(exist_ok=True)
 SEEDS = [0] + list(range(FIRST, LAST + 1))
@@ -84,21 +85,21 @@ for K in KS:
 sel = pd.DataFrame(rows)
 sel.to_csv(OUT / "selection_by_seed.csv", index=False)
 
-k46 = sel[(sel.K == 46) & (sel.top_m == 5)]
-if len(k46):
-    t = k46.pivot_table(index=["archetype0", "condition"], columns="seed", values="selection_frequency", fill_value=0)
+krep = sel[(sel.K == REP_K) & (sel.top_m == 5)]
+if len(krep):
+    t = krep.pivot_table(index=["archetype0", "condition"], columns="seed", values="selection_frequency", fill_value=0)
     t["mean"] = t.mean(axis=1); t["seeds_ge_0.5"] = (t.drop(columns="mean") >= 0.5).sum(axis=1)
     t = t.sort_values("mean", ascending=False)
-    t.to_csv(OUT / "K46_top5.csv")
-    lines += ["", "K=46 top-5 held-out selection frequency (seed-0 IDs; * = Fig 5 archetype), top 12 rows:",
+    t.to_csv(OUT / f"K{REP_K}_top5.csv")
+    lines += ["", f"K={REP_K} top-5 held-out selection frequency (seed-0 IDs; * = M0-M4), top 12 rows:",
               t.head(12).round(2).rename(index=lambda a: f"{a}*" if a in PAPER else a, level=0).to_string()]
 
 for c in ["intact", "word", "rest"]:
     x = per_K[(per_K.condition == c) & (per_K.top_m.isin([5, 10]))]
     lines.append(f"\n{c}: held-out top-5/10 accuracy over seeds, median across K of seed SD = "
-                 f"{x.sd.median():.4f}; at K=46: " + ", ".join(
+                 f"{x.sd.median():.4f}; at K={REP_K}: " + ", ".join(
                      f"top-{m} {r['mean']:.4f} +- {r['sd']:.4f} (seed0 {r.seed0:.4f})"
-                     for m in (5, 10) for _, r in x[(x.K == 46) & (x.top_m == m)].iterrows()))
+                     for m in (5, 10) for _, r in x[(x.K == REP_K) & (x.top_m == m)].iterrows()))
 head = "SUMMARY COMPLETE" if ok else "SUMMARY INCOMPLETE"
 (OUT / "summary.txt").write_text("\n".join([f"{head} ({MODE}, seeds {SEEDS[0]}-{SEEDS[-1]}, {len(KS)} K)"] + lines) + "\n")
 print((OUT / "summary.txt").read_text(), flush=True)

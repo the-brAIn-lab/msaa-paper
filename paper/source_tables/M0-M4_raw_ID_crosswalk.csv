@@ -1,6 +1,6 @@
-motif,k50_seed0_component_id_0based,k46_seed0_component_id_0based,legacy_label_of_k46_map,in_submitted_paper_set,dominant_yeo7,dominant_share,second_yeo7,second_share
-M0,28,28,A4,True,Default mode,0.326,Somatomotor,0.311
-M1,39,35,A5,True,Visual,0.789,Dorsal attention,0.05
-M2,16,16,A7,False,Default mode,0.55,Visual,0.145
-M3,37,37,A6,True,Default mode,0.545,Frontoparietal,0.136
-M4,49,45,A9,False,Dorsal attention,0.352,Frontoparietal,0.18
+motif,k50_seed0_component_id_0based,dominant_yeo7,dominant_share,second_yeo7,second_share
+M0,28,Default mode,0.326,Somatomotor,0.311
+M1,39,Visual,0.789,Dorsal attention,0.05
+M2,16,Default mode,0.55,Visual,0.145
+M3,37,Default mode,0.545,Frontoparietal,0.136
+M4,49,Dorsal attention,0.352,Frontoparietal,0.18

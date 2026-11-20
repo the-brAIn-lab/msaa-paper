@@ -9,7 +9,7 @@ Per seed (cached in BASE/merged/<analysis>/seedNN once complete):
 Phase bundle RUN_DIR/heldout-everyk-<analysis>-<seed0|all>[-smoke]-results(.tar.gz):
   heldout_per_K.csv (condition x K x top_m over seeds: n_seeds mean sd min max seed0 + full + retention),
   per-seed summaries/stability, heldout_topm_runs_all_seeds.csv.gz (with fit_seed), and for spatial
-  selection_by_seed.csv (seed-0 IDs, Hungarian on slim group-mean maps) + K46_top5.csv; summary.txt
+  selection_by_seed.csv (seed-0 IDs, Hungarian on slim group-mean maps) + K50_top5.csv; summary.txt
   (first line SUMMARY COMPLETE / INCOMPLETE). sA/tA bundles include seed 0. Exit 1 if incomplete."""
 import shutil
 import sys
@@ -32,7 +32,8 @@ BASE = base_dir(RUN, MODE)
 AT, SEEDS, KS = phase(MODE, PH)
 if PH in ("sA", "tA"):
     SEEDS = [0] + SEEDS
-PAPER = [28, 35, 37, 31, 39]
+PAPER = [28, 39, 16, 37, 49]   # M0-M4 (src/msaa_pipeline/paper_archetypes.py)
+REP_K = 50                      # representative K
 KEY = ["analysis_type", "fit_scope", "condition", "K", "outer_rep", "direction"]
 SORT = ["mean_accuracy", "rank_mean", "archetype"]
 
@@ -167,12 +168,12 @@ def main():
         sel = pd.DataFrame(rows); sel.to_csv(OUT / "selection_by_seed.csv", index=False)
         if nomatch:
             lines.append(f"selection_by_seed: {nomatch} (seed, K) without slim maps, left out")
-        k46 = sel[(sel.K == 46) & (sel.top_m == 5)] if len(sel) else sel
-        if len(k46):
-            t = k46.pivot_table(index=["archetype0", "condition"], columns="seed", values="selection_frequency", fill_value=0)
+        krep = sel[(sel.K == REP_K) & (sel.top_m == 5)] if len(sel) else sel
+        if len(krep):
+            t = krep.pivot_table(index=["archetype0", "condition"], columns="seed", values="selection_frequency", fill_value=0)
             t["mean"] = t.mean(axis=1); t["seeds_ge_0.5"] = (t.drop(columns="mean") >= 0.5).sum(axis=1)
-            t = t.sort_values("mean", ascending=False); t.to_csv(OUT / "K46_top5.csv")
-            lines += ["", "K=46 top-5 held-out selection frequency (seed-0 IDs; * = Fig 5 archetype), top 12 rows:",
+            t = t.sort_values("mean", ascending=False); t.to_csv(OUT / f"K{REP_K}_top5.csv")
+            lines += ["", f"K={REP_K} top-5 held-out selection frequency (seed-0 IDs; * = M0-M4), top 12 rows:",
                       t.head(12).round(2).rename(index=lambda a: f"{a}*" if a in PAPER else a, level=0).to_string()]
     for c in CONDS:
         for m in (5, 10):

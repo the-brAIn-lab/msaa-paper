@@ -100,9 +100,6 @@ sys.path.insert(0, str(paths.REPO / "src"))
 from msaa_pipeline.paper_archetypes import IDS as PAPER_IDS, LABELS as PAPER_LABELS, PAPER_K  # noqa: E402
 REF_K = PAPER_K                                                 # representative K the motifs are defined at
 MOT = dict(zip(PAPER_LABELS, PAPER_IDS["canonical"]))            # K=50 seed-0 ids: 28, 39, 16, 37, 49
-K46_ID = {"M0": 28, "M1": 35, "M2": 16, "M3": 37, "M4": 45}       # K=46 seed-0 id of the same map (crosswalk)
-LEG = {"M0": "A4", "M1": "A5", "M2": "A7", "M3": "A6", "M4": "A9"}  # legacy label of that K=46 map
-# previous K=46 set (REF_K 46): MOT {M0: 28, M1: 35, M2: 16, M3: 39, M4: 45}, LEG {.. M3: A8 ..}
 nodes = pd.read_csv(a.nodes)
 nodes = nodes.drop_duplicates("node").set_index("node").sort_index()["network"].to_numpy()
 HE = Path(a.heldout)
@@ -149,7 +146,7 @@ else:
     FREQ = pd.concat([pd.read_csv(HE / f"seed{s:02d}_heldout_archetype_selection_stability.csv").assign(seed=s) for s in SEEDS])
     FREQ = FREQ[FREQ.K.isin(KS) & FREQ.top_m.isin(MS)]
 
-    M46 = maps(REF_K); MOTIDX = list(MOT.values())   # M46 = the reference-K seed-0 maps (name kept)
+    MREF = maps(REF_K); MOTIDX = list(MOT.values())   # MREF = the reference-K seed-0 maps
     rows, mrows, sets_rows, motrows = [], [], [], []
     for K in KS:
         M = maps(K); match, R, inv, rec, mfor = {}, {}, {}, {}, {}
@@ -158,7 +155,7 @@ else:
             inv[s] = {b: a for a, b in match[s].items()}
             rec[s] = {a: (s == 0) or R[s][a, b] >= REP_R for a, b in match[s].items()}
             # forced label of M0-M4 in (K, seed): Hungarian of all REF_K reference-K seed-0 maps vs this fit's K maps (padded square)
-            rm = rowcorr(M46[0], M[s]); n = max(rm.shape); P = np.full((n, n), -1.0); P[:rm.shape[0], :rm.shape[1]] = rm
+            rm = rowcorr(MREF[0], M[s]); n = max(rm.shape); P = np.full((n, n), -1.0); P[:rm.shape[0], :rm.shape[1]] = rm
             i, j = linear_sum_assignment(-P); hm = dict(zip(i.tolist(), j.tolist()))
             mfor[s] = [(hm[a], float(rm[a, hm[a]]) if hm[a] < rm.shape[1] else np.nan) for a in MOTIDX]
         def lab(s, own_id):  # recovery-aware label: seed-0 id if recovered (r >= 0.9), else unique seed-specific label
@@ -212,15 +209,15 @@ else:
                     sel = [s for s in SEEDS if mfor[s][mi][0] in own[s]]
                     fq = f.set_index(["seed", "archetype"]).selection_frequency
                     sf = [fq.get((s, mfor[s][mi][0]), 0.0) for s in ok]
-                    motrows.append(dict(K=K, condition=c, top_m=m, motif=mlab, legacy=LEG[mlab], seed0_id=MOT[mlab], ref_K=REF_K,
-                                        k46_seed0_id=K46_ID[mlab], n_recovered=len(ok), n_selected_and_recovered=len(set(sel) & set(ok)),
+                    motrows.append(dict(K=K, condition=c, top_m=m, motif=mlab, seed0_id=MOT[mlab], ref_K=REF_K,
+                                        n_recovered=len(ok), n_selected_and_recovered=len(set(sel) & set(ok)),
                                         n_selected_forced_r_lt_090=len(set(sel) - set(ok)),
                                         frac_selected_given_recovered=len(set(sel) & set(ok)) / len(ok) if ok else np.nan,
                                         mean_split_selection_freq_given_recovered=np.mean(sf) if ok else np.nan,
                                         forced_r_by_seed=[round(mfor[s][mi][1], 3) for s in SEEDS]))
         for i, mlab in enumerate(MOT):
             rs = np.array([mfor[s][i][1] for s in SEEDS])
-            mrows.append(dict(K=K, motif=mlab, legacy=LEG[mlab], seed0_id=MOT[mlab], ref_K=REF_K, k46_seed0_id=K46_ID[mlab], forced_match_seed0=mfor[0][i][0],
+            mrows.append(dict(K=K, motif=mlab, seed0_id=MOT[mlab], ref_K=REF_K, forced_match_seed0=mfor[0][i][0],
                               r_seed0=rs[0], r_median=np.median(rs), r_min=rs.min(), seeds_recovered=int((rs >= REP_R).sum()),
                               r_by_seed=[round(x, 3) for x in rs]))
 

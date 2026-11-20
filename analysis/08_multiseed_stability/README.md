@@ -69,7 +69,7 @@ msaa_flexible_outputs_npz/                       seed-0 fits
 msaa_condrank_decoding_outputs_<analysis>_across/ seed-0 decoding
 seeds/full/seedNN/                               one self-contained run root per seed (its slim/ holds compact fits)
 seeds/slim/seed00/                               compact copies of the seed-0 fits
-seeds/results/                                   per_K.csv, matching_*.csv, paper_K46.csv, ...
+seeds/results/                                   per_K.csv, matching_*.csv, paper_K50.csv, ...
 heldout-seeds-results/                           held-out top-m, 30 paper K
 heldout-everyk-<spatial|temporal>-<seed0|all>-results/   held-out top-m, every K
 heldout-highm-results/, heldout-highm-landscape-results/   held-out top-m at high m (checked against the every-K run)

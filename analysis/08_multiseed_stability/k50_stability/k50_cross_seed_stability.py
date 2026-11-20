@@ -1,7 +1,7 @@
 """K=50 cross-seed stability of the paper archetypes, from existing 10-seed outputs (no refits, no redecode).
 
-1. K=50 alignment for the five paper archetypes M0-M4 (seed-0 ids 28, 39, 16, 37, 49; PAPER_SET=... for another set;
-   K_REP=46 PAPER_SET=28,35,16,39,45 reproduces the earlier K=46 tables).
+1. K=50 alignment for the five paper archetypes M0-M4 (seed-0 ids 28, 39, 16, 37, 49; K_REP=... PAPER_SET=...
+   for another K or set).
 2. Stability of each seed's OWN participant-held-out top-5 selection (K=50 and K=51 spatial, K=14 temporal):
    selection frequency per seed-0 archetype, pairwise Jaccard of the 10 top-5 sets (by condition), Jaccard on the
    identical participant splits across seeds vs. across splits within a seed, and r of aggregate Yeo-7 composition.
@@ -111,18 +111,18 @@ def load(mode, K):
 
 # ---------------------------------------------------------------- 1. K=K_REP paper archetypes
 say("=" * 100); say(f"1. K={K_REP} alignment of the paper archetypes (legacy label = seqnum/seed-0 id)"); say("=" * 100)
-M46, _, match46, R46 = load("spatial", K_REP)   # names kept from the K=46 version
+MREF, _, matchREF, RREF = load("spatial", K_REP)
 simf = paths.OUT / "fig5_per_seed" / f"K{K_REP}" / f"K{K_REP}_crossseed_similarity_all.csv"
 if not simf.exists():  # time-course r comes from the per-seed table (same matching as here)
     raise SystemExit(f"missing {simf}: run plots/fig5_per_seed.py {K_REP} {','.join(map(str, PAPER))} first")
 sim = pd.read_csv(simf)
 for s in SEEDS:
-    sub = sim[sim.seed == s]; assert all(match46[s][i] == m for i, m in zip(sub.archetype0, sub.matched)), s
+    sub = sim[sim.seed == s]; assert all(matchREF[s][i] == m for i, m in zip(sub.archetype0, sub.matched)), s
 rows = []
 for a, lab in PAPER.items():
-    m0 = mass(M46[0][a])
+    m0 = mass(MREF[0][a])
     for s in SEEDS:
-        b = match46[s][a]; ms = mass(M46[s][b]); r = R46[s][a].copy(); rb = r[b]; r[b] = -np.inf
+        b = matchREF[s][a]; ms = mass(MREF[s][b]); r = RREF[s][a].copy(); rb = r[b]; r[b] = -np.inf
         t = sim[(sim.seed == s) & (sim.archetype0 == a)].iloc[0]
         rows.append(dict(paper_label=lab, archetype_seed0=a, seed=s, matched_archetype=b, map_r=rb,
                          best_other_map_r=r.max(), recovered=rb >= REP_R, timecourse_r=t.tc_r,
@@ -160,7 +160,7 @@ def topm_runs(mode, K):
 
 ALL_SUM, STAB = [], {}
 for mode, K in [("spatial", K_REP), ("spatial", 51), ("temporal", 14)]:
-    M, F, match, R = (M46, None, match46, R46) if K == K_REP else load(mode, K)
+    M, F, match, R = (MREF, None, matchREF, RREF) if K == K_REP else load(mode, K)
     inv = {s: {b: a for a, b in match[s].items()} for s in SEEDS}
     rec = {s: {a: R[s][a, b] >= REP_R for a, b in match[s].items()} for s in SEEDS}
     fr = []
@@ -170,7 +170,7 @@ for mode, K in [("spatial", K_REP), ("spatial", 51), ("temporal", 14)]:
         fr.append(d)
     fr = pd.concat(fr)
     if mode == "spatial":  # same mapping as hsummary's selection_by_seed.csv
-        chkf = paths.heldout_everyk("spatial") / f"K{K}_top5.csv"   # written by hk_merge.py for K=46 only
+        chkf = paths.heldout_everyk("spatial") / f"K{K}_top5.csv"   # written by hk_merge.py / hk_topm_table.py only
         chk = pd.read_csv(chkf) if K == K_REP and chkf.exists() else None
         if chk is not None:
             p = fr.pivot_table(index=["archetype0", "condition"], columns="seed", values="selection_frequency", fill_value=0)

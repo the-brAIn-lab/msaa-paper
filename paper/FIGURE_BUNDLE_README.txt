@@ -13,7 +13,7 @@ Main figures (main-png/, main-pdf/)
     Figure4B    temporal held-out top-m accuracy
     Figure4C    spatial minus temporal at matched component ratios (intact)
     Figure4D    temporal retained accuracy at matched fractions of K
-    Figure5     selected spatial motifs M0-M4 at K = 46
+    Figure5     selected spatial motifs M0-M4 at K = 50
     Figure6     support and robustness of M0-M4
 
 Supplement (supplement-png/, supplement-pdf/)

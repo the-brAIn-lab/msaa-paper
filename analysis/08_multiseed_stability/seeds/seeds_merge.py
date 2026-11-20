@@ -12,7 +12,7 @@ seed 0 (the existing every-K fits in $RUN_DIR), and writes $RUN_DIR/seeds/result
                         +-LAG TRs), with summaries of the matched correlations, how far above the
                         next-best archetype they are, and whether per-archetype decoding reproduces
   matching_archetypes.csv.gz  across fits only: one row per seed-0 archetype x seed
-  paper_K46.csv         the K=46 spatial-across paper archetypes M0-M4 (28, 35, 16, 39, 45) across seeds
+  paper_K50.csv         the K=50 spatial-across paper archetypes M0-M4 (28, 39, 16, 37, 49) across seeds
   summary.txt           the headline numbers
 and packs them into $RUN_DIR/seeds-results.tar.gz.
 
@@ -37,7 +37,7 @@ from seeds_common import (CONDITIONS, ROOT, SEEDS_DIR, all_seed_dirs, fit_name, 
 HERE = Path(__file__).resolve().parent
 OUT = SEEDS_DIR / "results"
 SLIM0 = SEEDS_DIR / "slim" / "seed00"
-PAPER_K46 = [28, 35, 16, 39, 45]   # M0-M4 (src/msaa_pipeline/paper_archetypes.py)
+PAPER_K, PAPER_IDS = 50, [28, 39, 16, 37, 49]   # M0-M4 (src/msaa_pipeline/paper_archetypes.py)
 LAG = 2
 
 
@@ -316,8 +316,8 @@ def main():
     A = pd.concat(arows, ignore_index=True) if arows else pd.DataFrame()
     if len(A):
         A.to_csv(OUT / "matching_archetypes.csv.gz", index=False)
-        P = A[(A.analysis_type == "spatial") & (A.K == 46) & A.archetype.isin(PAPER_K46)]
-        P.to_csv(OUT / "paper_K46.csv", index=False)
+        P = A[(A.analysis_type == "spatial") & (A.K == PAPER_K) & A.archetype.isin(PAPER_IDS)]
+        P.to_csv(OUT / f"paper_K{PAPER_K}.csv", index=False)
     else:
         P = pd.DataFrame()
 
@@ -345,7 +345,7 @@ def main():
         if "frac_lag_nonzero" in M:
             L += [f"temporal: median share of matches at a nonzero lag {M.frac_lag_nonzero.median():.2f}", ""]
     if len(P):
-        L += ["K=46 spatial-across paper archetypes vs their matches in each seed:",
+        L += [f"K={PAPER_K} spatial-across paper archetypes vs their matches in each seed:",
               P.groupby("archetype")[["corr", "C_corr", "next_best"]].agg(["median", "min"]).round(3).to_string(), ""]
     L += [f"results: {OUT}"]
     text = "\n".join(L)

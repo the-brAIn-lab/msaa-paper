@@ -18,14 +18,12 @@ nodes = pd.read_csv(a.nodes)
 nodes = nodes.drop_duplicates("node").set_index("node").sort_index()["network"].to_numpy()
 S = np.load(paths.slim_fit("spatial", PAPER_K, 0))["Smean"].astype(float)
 NETS = list(dict.fromkeys(["Visual", "Somatomotor", "Dorsal attention", "Ventral attention", "Limbic", "Frontoparietal", "Default mode"]))
-r46 = MR[MR.K == PAPER_K].set_index("motif")   # name kept from the K=46 version
+rrep = MR[MR.K == PAPER_K].set_index("motif")
 X = []
-for m, row in r46.iterrows():
+for m, row in rrep.iterrows():
     a = np.abs(np.nan_to_num(S[int(row.seed0_id)])); share = {n: a[nodes == n].sum() / a.sum() for n in NETS}
     top = sorted(share, key=share.get, reverse=True)
     X.append(dict(motif=m, **{f"k{PAPER_K}_seed0_component_id_0based": int(row.seed0_id)},
-                  k46_seed0_component_id_0based=int(row.k46_seed0_id), legacy_label_of_k46_map=row.legacy,
-                  in_submitted_paper_set=row.legacy in ("A4", "A5", "A6", "A12", "A8"),
                   dominant_yeo7=top[0], dominant_share=round(share[top[0]], 3), second_yeo7=top[1], second_share=round(share[top[1]], 3)))
 X = pd.DataFrame(X); X.to_csv(OUT / "M0M4_crosswalk.csv", index=False); print(X.to_string(index=False))
 d = MT[MT.K == PAPER_K]
@@ -34,7 +32,7 @@ for (m, c), g in d.groupby(["motif", "condition"], sort=False):
     g5, g10 = g[g.top_m == 5].iloc[0], g[g.top_m == 10].iloc[0]; nrec = int(g5.n_recovered)
     rows.append(dict(motif=m, condition=c,
         recovered_seeds1to9=f"{nrec-1}/9", recovery_rate=round((nrec - 1) / 9, 2),
-        min_map_r=r46.loc[m, "r_min"].round(3),
+        min_map_r=rrep.loc[m, "r_min"].round(3),
         top5_selected_and_recovered=f"{int(g5.n_selected_and_recovered)}/10",
         top10_selected_and_recovered=f"{int(g10.n_selected_and_recovered)}/10",
         selected_not_recovered_top5=int(g5.n_selected_forced_r_lt_090), selected_not_recovered_top10=int(g10.n_selected_forced_r_lt_090),

@@ -1,13 +1,12 @@
 # Source tables
 
 These are the exact tables behind the published figures, copied unchanged from the figure bundle of
-17 Nov 2026 (`tables/`). On 19 Nov 2026 the representative spatial model moved from K = 46 to K = 50,
-and every motif-dependent table (main Figs. 7-8, Supp. Figs. S4-S8 and S10) was replaced with its
-K = 50 version from the K = 50 figure bundle. Figure and supplementary-figure numbers below follow the
+17 Nov 2026 (`tables/`), with every motif-dependent table (main Figs. 7-8, Supp. Figs. S4-S8 and
+S10) taken from the K = 50 figure bundle of 19 Nov 2026. Figure and supplementary-figure numbers below follow the
 manuscript. File names keep the older bundle numbering (for example `Figure2_*` is main Figure 3,
 `Figure4*` is main Figures 5-6, `Figure5_*` is main Figure 7 and `Figure6*` is main Figure 8).
 
-Archetype indices (the `archetype`, `k46_seed0_id` and similar columns) refer to the spatial MS-AA
+Archetype indices (the `archetype`, `seed0_id` and similar columns) refer to the spatial MS-AA
 fit at K = 50, fit seed 0, and are 0-based. They are arbitrary up to permutation: a different seed
 or software version can number the same archetypes differently. Motif labels M0-M4 are the stable
 names; `M0-M4_raw_ID_crosswalk.csv` maps them to the raw indices.
@@ -29,7 +28,7 @@ names; `M0-M4_raw_ID_crosswalk.csv` maps them to the raw indices.
 | `Figure6A_cross_seed_map_r_source.csv` | Main Fig. 8A: seed-0 vs. seeds 1-9 spatial-map r for M0-M4 |
 | `Figure6B_C_support_source.csv` | Main Fig. 8B-C: per-scan spatial support; its `component_fro` column is the rank-1 contribution in Supp. Fig. S8A |
 | `Figure6D_S08_LOCO_map_r_source.csv` | Main Fig. 8D and Supp. Fig. S8B: leave-one-condition-out spatial-map r |
-| `M0-M4_raw_ID_crosswalk.csv` | Motif crosswalk: M0-M4 to raw K = 50 seed-0 archetype indices, the K = 46 indices of the same maps, earlier labels, dominant Yeo-7 networks |
+| `M0-M4_raw_ID_crosswalk.csv` | Motif crosswalk: M0-M4 to raw K = 50 seed-0 archetype indices, dominant Yeo-7 networks |
 | `M0-M4_cross_seed_stability_summary.csv` | Motif stability: Supp. Fig. S4 summary (map, temporal-profile and Yeo-7 r across seeds; recovered counts), text results on recovery |
 | `K50_M0-M4_supplementary_table.csv` | Motif stability: Supp. Figs. S4 and S6, recovery and selected-and-recovered counts per motif and condition at K = 50 |
 | `Figure8E_K50_retention_source.csv` | Main Fig. 8E: held-out top-3/5/10 retention at K = 50 (10-seed mean and SD) |

@@ -104,8 +104,7 @@ over the set. The seed-to-seed agreement is the Pearson r between these 7-vector
 ## 4. M0-M4 crosswalk
 
 M0-M4 are the only named motifs. They come from the representative K=50 spatial across-condition
-fit (the paper used K=46 until 19 Nov 2026; that set is kept below for the record). They were
-chosen by participant-held-out top-5 selection frequency pooled across the 10 fit seeds, as stated
+fit. They were chosen by participant-held-out top-5 selection frequency pooled across the 10 fit seeds, as stated
 in the paper's Methods:
 
 - For each archetype and condition, selection frequency is the fraction of the 40 cross-fitted
@@ -123,15 +122,13 @@ in the paper's Methods:
 
 The ids are defined once in `src/msaa_pipeline/paper_archetypes.py`.
 
-| Motif | K=50 canonical id (seed 0, 0-based) | K=46 canonical id of the same map | Note |
-|---|---|---|---|
-| M0 | 28 | 28 | same map (r >= 0.999) |
-| M1 | 39 | 35 (K=46 M1) | same map |
-| M2 | 16 | 16 (K=46 M2) | same map |
-| M3 | 37 | 37 (legacy A6, in the originally submitted set) | new motif; replaces K=46 M3 (K=46 id 39 = K=50 id 36) |
-| M4 | 49 | 45 (K=46 M4) | same map |
+| Motif | K=50 canonical id (seed 0, 0-based) |
+|---|---|
+| M0 | 28 |
+| M1 | 39 |
+| M2 | 16 |
+| M3 | 37 |
+| M4 | 49 |
 
-Previous K=46 set: canonical 28, 35, 16, 39, 45 = legacy A4, A5, A7, A8, A9. The originally
-submitted set was A4, A5, A6, A12, A8 (K=46 canonical 28, 35, 37, 31, 39).
 `make_supp_tables.py` writes the crosswalk with each motif's dominant Yeo-7 networks
 (`k50_supp_tables/M0M4_crosswalk.csv`), along with the K=50 per-motif table defined in Sec. 2h.
