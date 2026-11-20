@@ -55,7 +55,7 @@ uv run python scripts/build_figures.py --no-draw                 # just reassemb
 
 Each step draws one figure (or a few) from the result tables and writes it under
 `<run root>/outputs/`; the bundle gets PNG + PDF of every figure, the source tables in `tables/`,
-and `paper/FIGURE_BUNDLE_README.txt` as its README. Draft captions (bundle figure numbering; the published captions in the paper take precedence) are in `paper/FIGURE_CAPTIONS.tex`.
+and `paper/FIGURE_BUNDLE_README.txt` as its README. Figure captions are in the paper.
 Every figure is drawn at the journal's print width (about 5 in), so the type sizes are the printed
 sizes.
 
