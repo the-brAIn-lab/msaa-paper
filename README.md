@@ -3,6 +3,19 @@
 Code for the multi-subject archetypal analysis (MS-AA) paper: from the two HTFA inputs to every
 figure and source table in the paper and supplement.
 
+## Data
+
+The analyses use the Pieman naturalistic-listening fMRI dataset of Simony et al. (2016), in the
+700-node hierarchical topographic factor analysis (HTFA) representation released by Owen & Manning:
+
+**[`pieman2_htfa.pkl` on Zenodo, DOI 10.5281/zenodo.24358585](https://doi.org/10.5281/zenodo.24358585)** (CC BY 4.0)
+
+The file holds, for every scan, the time-by-node HTFA weights (700 nodes) plus the node centers
+and widths. Conditions: intact story, word-scrambled story and rest (36 scans each; 108 scans from
+87 participants), and paragraph-scrambled story (17 scans, used only in the four-condition
+sensitivity analysis). `scripts/pkl_to_mat.py` converts it to the two inputs the pipeline reads;
+see [data/README.md](data/README.md).
+
 ## Setup
 
 ```bash
