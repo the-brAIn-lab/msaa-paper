@@ -8,6 +8,16 @@ Code for Oliver, Shepherd, Stone & Owen, *Sparse Distributed Archetypal Motifs C
 Structure in Naturalistic fMRI* (Network Neuroscience, under revision): multi-subject archetypal
 analysis (MS-AA), from the two HTFA inputs to the figures and source tables in the paper and supplement.
 
+<p align="center">
+  <img src="docs/assets/fig1_msaa_schematic.png" alt="Multisubject archetypal analysis (MS-AA) schematic" width="800"><br>
+  <sub><b>Figure 1.</b> Multisubject archetypal analysis (MS-AA): a shared generator <i>C</i> defines data-anchored archetypes across scans with scan-specific archetypes <i>A</i><sup>(<i>s</i>)</sup> and mixing weights <i>S</i><sup>(<i>s</i>)</sup>.</sub>
+</p>
+
+<p align="center">
+  <img src="docs/assets/fig2_spatial_temporal.png" alt="Spatial and temporal orientations of MS-AA" width="800"><br>
+  <sub><b>Figure 2.</b> Spatial and temporal MS-AA orientations applied to 700-node HTFA fMRI data.</sub>
+</p>
+
 ## Data
 
 The analyses use the Pieman naturalistic-listening fMRI dataset of Simony et al. (2016), in the
