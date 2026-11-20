@@ -22,6 +22,22 @@ def coerce_TxV(x):
     return x.astype(np.float32, copy=False)
 
 
+# Normalisation of the inputs ("across" z-score: each node's column is centred and scaled by
+# the mean and std of that node over all scans of a condition stacked together).
+#
+# normalize_subject_list() first tries hypertools/normalize.py, then falls back to
+# _normalize_across_fallback(). Loaded this way (by file path, without hypertools/ on
+# sys.path), hypertools/normalize.py cannot import its sibling modules
+# (``from format_data import ...``), so _load_legacy_normalizer() returns None and every
+# pipeline fit (scripts/run_pipeline.py, scripts/run_parallel.py, the multi-seed and
+# four-condition runs) uses _normalize_across_fallback(). That is the path behind all MS-AA
+# fits in the paper. The notebooks that normalise data themselves (the PCA benchmark,
+# the simulations and the leave-one-condition-out refits) put hypertools/ on sys.path
+# and call hypertools' normalize(x, normalize="across") directly. The two compute the
+# same z-score; the fallback adds 1e-8 to the std and returns float32, so values can
+# differ only at float32 rounding level. Kept as is so that existing results reproduce.
+
+
 def _normalize_across_fallback(subjects, eps=1e-8):
     subj = [coerce_TxV(x) for x in subjects]
     stacked = np.vstack(subj)

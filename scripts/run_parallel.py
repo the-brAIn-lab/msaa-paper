@@ -112,7 +112,7 @@ def heldout_split_task(analysis_type, K, condition, outer_rep, top_m, nfolds, nr
     """One outer split of run_heldout_topm_job, with the identical seeds and steps."""
     import pandas as pd
     import numpy as np
-    from msaa_pipeline.decode import get_subjects
+    from msaa_pipeline.decode import get_subjects, source_label
     from msaa_pipeline.heldout import (_load_frozen_outer_seeds, _split_outer_subject_indices,
                                        _subset_subjects, rank_archetypes_on_subjects,
                                        evaluate_topm_on_subjects)
@@ -153,7 +153,7 @@ def heldout_split_task(analysis_type, K, condition, outer_rep, top_m, nfolds, nr
         heldout["outer_seed"] = outer_seed
         heldout["n_ranking_subjects"] = len(ranking_subjects)
         heldout["n_evaluation_subjects"] = len(evaluation_subjects)
-        heldout["fit_source_file"] = str(source)
+        heldout["fit_source_file"] = source_label(source, ROOT)
         heldout["fit_source_basename"] = source.name
         new_runs.append(heldout)
     d.mkdir(parents=True, exist_ok=True)
@@ -195,7 +195,7 @@ def merge():
 
     def fix_src(df):
         if "fit_source_file" in df:
-            df["fit_source_file"] = df["fit_source_basename"].map(lambda b: str(FIT_DIR / b))
+            df["fit_source_file"] = df["fit_source_basename"].map(lambda b: f"{FIT_DIR.name}/{b}")
         return df
 
     for job in prof["jobs"]:

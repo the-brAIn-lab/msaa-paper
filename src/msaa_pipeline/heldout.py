@@ -4,7 +4,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from .decode import CONDITIONS, decode_subjects, get_subjects
+from .decode import CONDITIONS, decode_subjects, get_subjects, source_label
 
 
 def _load_csv(path: Path) -> pd.DataFrame:
@@ -408,7 +408,7 @@ def run_heldout_topm_job(
                     heldout["outer_seed"] = outer_seed
                     heldout["n_ranking_subjects"] = len(ranking_subjects)
                     heldout["n_evaluation_subjects"] = len(evaluation_subjects)
-                    heldout["fit_source_file"] = str(source)
+                    heldout["fit_source_file"] = source_label(source, output_root)
                     heldout["fit_source_basename"] = source.name
                     new_runs.append(heldout)
 

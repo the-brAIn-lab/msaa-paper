@@ -114,7 +114,7 @@ def main():
     ks = ["--ks", a.ks] if a.ks else []
     rp = ROOT / "scripts" / "run_parallel.py"
     if not (ROOT / "data" / "input" / "pieman_data.mat").exists():
-        raise SystemExit("data/input/pieman_data.mat is missing (see data/input/README.md)")
+        raise SystemExit("data/input/pieman_data.mat is missing (see data/README.md)")
 
     if "seed0" in steps:
         run([py, rp, "fit", "--jobs", a.jobs, *ks, "--workers", a.workers, "--threads", a.threads], env=env)

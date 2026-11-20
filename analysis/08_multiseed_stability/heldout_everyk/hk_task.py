@@ -36,7 +36,7 @@ def unit(run, base, at, s, K, condition, reps):
     """Outer splits `reps` of one (seed, K, condition); loads the fit once."""
     import numpy as np
     import pandas as pd
-    from msaa_pipeline.decode import get_subjects
+    from msaa_pipeline.decode import get_subjects, source_label
     from msaa_pipeline.heldout import (_split_outer_subject_indices, _subset_subjects,
                                        rank_archetypes_on_subjects, evaluate_topm_on_subjects)
     todo = [r for r in reps if not (split_dir(base, at, s, K, condition, r) / "runs.csv").exists()]
@@ -78,7 +78,7 @@ def unit(run, base, at, s, K, condition, reps):
             heldout["outer_seed"] = outer_seed
             heldout["n_ranking_subjects"] = len(ranking_subjects)
             heldout["n_evaluation_subjects"] = len(evaluation_subjects)
-            heldout["fit_source_file"] = str(source)
+            heldout["fit_source_file"] = source_label(source, run)
             heldout["fit_source_basename"] = source.name
             new_runs.append(heldout)
         d.mkdir(parents=True, exist_ok=True)

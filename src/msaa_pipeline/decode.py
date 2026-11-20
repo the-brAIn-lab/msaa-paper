@@ -24,6 +24,22 @@ def fit_path(output_root: Path, analysis_type, fit_scope, K, condition=None):
     return base / f"{analysis_type}AA_within_{condition}_K{K}.npz"
 
 
+def source_label(source: Path, root: Path | None = None) -> str:
+    """Path of a fit file for the output tables, relative to the run root.
+
+    Tables record where each result came from without machine-specific absolute
+    paths (cluster scratch, home folders): relative to ``root`` when the fit is
+    under it, otherwise ``<parent folder>/<file name>``.
+    """
+    source = Path(source)
+    if root is not None:
+        try:
+            return source.resolve().relative_to(Path(root).resolve()).as_posix()
+        except ValueError:
+            pass
+    return f"{source.parent.name}/{source.name}"
+
+
 def get_subjects(output_root: Path, analysis_type, fit_scope, K, condition):
     p = fit_path(output_root, analysis_type, fit_scope, K, condition)
     if not p.exists():
@@ -161,8 +177,11 @@ def _decode_subjects_lowrank(subjects, analysis_type, idx, nfolds, nreps, seed):
             ib = np.flatnonzero(cols != fold)
             PA, PB = P[:, ia], P[:, ib]
             num = PA @ (G[np.ix_(ia, ib)] @ PB.T)
-            na = np.sqrt(np.einsum("tr,rt->t", PA, G[np.ix_(ia, ia)] @ PA.T))
-            nb = np.sqrt(np.einsum("tr,rt->t", PB, G[np.ix_(ib, ib)] @ PB.T))
+            # squared row norms are >= 0 in exact arithmetic; clamp rounding below 0
+            # (zero-variance rows) so sqrt gives 0, not NaN with a RuntimeWarning.
+            # A zero norm then gives a 0 correlation via nan_to_num, as before.
+            na = np.sqrt(np.maximum(np.einsum("tr,rt->t", PA, G[np.ix_(ia, ia)] @ PA.T), 0.0))
+            nb = np.sqrt(np.maximum(np.einsum("tr,rt->t", PB, G[np.ix_(ib, ib)] @ PB.T), 0.0))
             with np.errstate(divide="ignore", invalid="ignore"):
                 corrs = num / np.outer(na, nb)
             corrs = np.nan_to_num(corrs, nan=0.0, posinf=0.0, neginf=0.0)
@@ -276,7 +295,7 @@ def run_decode_job(output_root: Path, analysis_type: str, fit_scope: str, K_valu
             if fkey not in full_keys:
                 d = decode_subjects(subjects, analysis_type, None, nfolds, nreps, seed)
                 rows = [dict(analysis_type=analysis_type, fit_scope=fit_scope, condition=condition,
-                             K=int(K), fit_source_file=str(source), fit_source_basename=source.name,
+                             K=int(K), fit_source_file=source_label(source, output_root), fit_source_basename=source.name,
                              **summarize(d))]
                 full = _append_unique(full_path, rows, ["analysis_type","fit_scope","condition","K"])
                 full_keys.add(fkey)
@@ -291,7 +310,7 @@ def run_decode_job(output_root: Path, analysis_type: str, fit_scope: str, K_valu
                 ss = summarize(dd)
                 new_arch_rows.append(dict(
                     analysis_type=analysis_type, fit_scope=fit_scope, condition=condition,
-                    K=int(K), archetype=int(a), fit_source_file=str(source), fit_source_basename=source.name,
+                    K=int(K), archetype=int(a), fit_source_file=source_label(source, output_root), fit_source_basename=source.name,
                     mean_accuracy=ss["mean"], sem_accuracy=ss["err"], std_accuracy=ss["std"],
                     count=ss["count"], rank_mean=ss["rank_mean"], error_mean=ss["error_mean"]
                 ))

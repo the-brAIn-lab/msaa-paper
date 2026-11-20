@@ -51,7 +51,7 @@ def load_frozen_init(repo_root: Path, analysis_type, fit_scope, K, condition=Non
     """
     path = repo_root / INIT_PATH
     if not path.exists():
-        raise FileNotFoundError(f"{path} missing; create it with rerun/freeze_init.py")
+        raise FileNotFoundError(f"{path} missing; create it with scripts/freeze_init.py")
     df = pd.read_csv(path)
     cond = "acrossCond" if fit_scope == "across" else condition
     sub = df[(df.analysis_type == analysis_type) & (df.fit_scope == fit_scope)
