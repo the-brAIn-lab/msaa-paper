@@ -25,6 +25,8 @@ names; `M0-M4_raw_ID_crosswalk.csv` maps them to the raw indices.
 | `Figure5_temporal_profiles.csv` | Main Fig. 7: temporal profiles of M0-M4 (mean and SEM over scans) |
 | `Figure5_Yeo7_allnode_mass.csv` | Main Fig. 7: Yeo-7 composition of M0-M4, all 700 nodes; text results on network shares |
 | `Figure5_crossfit_selection_frequency.csv` | Main Fig. 7: cross-fitted top-5 selection frequency by condition (10-seed mean) |
+| `K50_all_archetype_selection_ranking.csv` | Methods (selection of M0-M4): held-out top-5 selection frequency of every K = 50 archetype by condition, per fit seed and 10-seed mean (seed-0 ids in `archetype0`); the five motifs, the next-ranked archetype (0.46) and the excluded, non-recovered archetype (raw id 31, seventh) are read from it |
+| `Figure5_spatial_maps_allnodes.csv` | Main Fig. 7: participant-averaged spatial maps of M0-M4 on all 700 nodes, with node coordinates and Yeo-7 labels; source of the mean pairwise cosine (0.17, maximum 0.44) in the Supplementary Results |
 | `Figure6A_cross_seed_map_r_source.csv` | Main Fig. 8A: seed-0 vs. seeds 1-9 spatial-map r for M0-M4 |
 | `Figure6B_C_support_source.csv` | Main Fig. 8B-C: per-scan spatial support; its `component_fro` column is the rank-1 contribution in Supp. Fig. S8A |
 | `Figure6D_S08_LOCO_map_r_source.csv` | Main Fig. 8D and Supp. Fig. S8B: leave-one-condition-out spatial-map r |
@@ -45,7 +47,7 @@ names; `M0-M4_raw_ID_crosswalk.csv` maps them to the raw indices.
 | `S12_spatial_topm_landscape.csv` | Supp. Fig. S12: full spatial K x m held-out landscape (accuracy and retained fraction, seed mean and SD) |
 | `S12_landscape_run_validation.txt` | Supp. Fig. S12: validation record of the high-m landscape run |
 | `S13_simulation_sensitivity_source.csv` | Supp. Fig. S13: plotted simulation-sensitivity values |
-| `S13_simulation_sensitivity_runs.csv` | Supp. Fig. S13: every fit (680), including the combined-mixing check in the text |
+| `S13_simulation_sensitivity_runs.csv` | Supp. Fig. S13: every fit (680), including the combined-mixing check in the text. The `diag_*` columns are run diagnostics that the paper does not use; `diag_mean_dwell` and `diag_median_dwell` in particular do not track the dwell setting and should not be interpreted |
 
 Not covered here: main Figs. 1-2 are schematics, main Fig. 4 (simulation benchmark) has no table in
 this set, and Supp. Figs. S2C and S10C-D are drawn from results that have no separate table.
